@@ -8448,6 +8448,23 @@ input::-ms-reveal {
   float: none;
 }
 
+.faq-item-expand {
+  padding: 0;
+}
+
+.faq-expand-holder {
+  padding: 30px;
+}
+
+.icon-expand {
+  position: relative;
+  z-index: 5;
+}
+
+.icon-expand .btn {
+  outline: none !important;
+}
+
 /*custom css for [Pledge] Pledge now button gets overlap by UI arrow #81*/
 
 .birthdayinputbox form:after {
@@ -8459,4 +8476,6 @@ input::-ms-reveal {
 .birthdayinputbox form {
   padding-bottom: 20px;
 }
+
+
 
