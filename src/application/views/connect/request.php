@@ -2,7 +2,14 @@
   <div class="container">
     <div class="row">
        <div class="contact">
-       <?php echo $contents['content'];?>
+
+        <h1>Speaker request</h1>
+
+        <p>Would you like sleepbus to visit your school or business?<br />
+        Please complete your details below and we will be in touch.</p>
+
+        <div class="contactfbbox2"><img alt="" src="/images/icon13.png" /></div>
+
        
        <div class="contactin" id="enquiriesfrom">
        <div class="row">
@@ -31,3 +38,25 @@
        </div>
     </div>
   </div>
+
+<!-- CTA -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="container">
+<div class="row donateh2">
+<h2>Other ways you can get involved</h2>
+
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home">
+<div class="donatehomeimg"><img alt="" src="/images/icon2.png" /></div>
+
+<p>Pledge your next Birthday for safe sleeps.</p>
+<a class="btn btn-primary btn-pledge" href="/pledge">PLEDGE</a></div>
+
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home">
+<div class="donatehomeimg"><img alt="" src="/images/icon3.png" /></div>
+
+<p>Do something crazy or creative to raise money.</p>
+<a class="btn btn-info" href="/fundraise">FUNDRAISE</a></div>
+</div>
+</div>
+</div>
+

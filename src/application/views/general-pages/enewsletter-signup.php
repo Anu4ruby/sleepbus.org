@@ -8,9 +8,15 @@
 	?>  
 <div id="errorDiv" style="height:30px; <?php $errors=validation_errors(); if(empty($errors)){?>display:none;<?php } else{?> display:inline; <?php }?>"><?php echo validation_errors("<p style='color:#e60000;'>","</p>"); ?></div>
        
-        <?php
-         echo $contents['content'];
-        ?> 
+
+<h1>Sign up to our eNews</h1>
+
+<p>Sign up to receive awesome updates from sleepbus.<br />
+They&rsquo;re worthwhile. We&nbsp;promise.</p>
+
+<div class="contactfbbox2"><img alt="" src="/images/icon12.png" /></div>
+
+
        <div class="contactin" id="form-block">
        <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><?php echo form_input($newsletter_attributes['name']); ?></div>
