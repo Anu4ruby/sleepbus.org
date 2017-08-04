@@ -10,9 +10,8 @@ class Generalpages extends MY_Controller {
   }
 
   public function about_us() {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',6,'About Us');
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',6);
-    $this->data['contents']=$this->Website_model->GetPageContent(2);
+    $this->data['meta']['page_title'] = "About us";
+
     $this->load->view('templates/header',$this->data);
     $this->load->view('general-pages/about-us',$this->data);
     $this->load->view('templates/footer');
