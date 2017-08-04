@@ -28,12 +28,6 @@ class Enewsletter extends MY_Controller
 
     if($this->form_validation->run() == TRUE)
     { 
-     //mailchimp integration 
-/*	 $this->load->library('Mcapi');
-	 $list_id = "0af5fb2649";
-	 $mergeVars = array('FNAME'=>$values['name'],'LNAME'=>'');
-	 $this->mcapi->listSubscribe($list_id, $values['email'], $mergeVars);
-*/	
      if(!$this->Website_model->getIsSubscribed($values['email']))
      {
  	  $name=$this->commonfunctions->ReplaceSpecialChars($values['name']);   
@@ -44,7 +38,6 @@ class Enewsletter extends MY_Controller
      }
      $this->RedirectPage('enewsletter-thanks');
     }
-    //else { $this->RedirectPage(); exit;}
     
    }
    // Required for Newsletter Form Attributes in all pages
