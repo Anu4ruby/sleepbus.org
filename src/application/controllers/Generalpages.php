@@ -79,9 +79,8 @@ class Generalpages extends MY_Controller {
   }
 
   public function privacy_policy() {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',18,'Privacy Policy');
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',18);
-    $this->data['contents']=$this->Website_model->GetPageContent(11);
+    $this->data['meta']['page_title'] = "Privacy policy";
+
     $this->load->view('templates/header',$this->data);
     $this->load->view('general-pages/privacy-policy',$this->data);
     $this->load->view('templates/footer');
