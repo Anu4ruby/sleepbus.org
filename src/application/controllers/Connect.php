@@ -67,10 +67,8 @@ class Connect extends MY_Controller {
     } else $this->session->set_userdata('form_token','contact');
 
     $this->data['attribute']=$this->Website_model->ContactFormAttribute($values);
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','4','Connect');
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',4);
+    $this->data['meta']['page_title'] = "Connect with us";
     $this->websitejavascript->include_footer_js=array('ContactUsJs');
-    $this->data['contents']=$this->Website_model->GetPageContent(5);
 
     $this->load->view('templates/header',$this->data);
     $this->load->view('connect/connect',$this->data);
