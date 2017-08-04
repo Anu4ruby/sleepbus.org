@@ -28,12 +28,6 @@ class Enewsletter extends MY_Controller
 
     if($this->form_validation->run() == TRUE)
     { 
-     //mailchimp integration 
-/*	 $this->load->library('Mcapi');
-	 $list_id = "0af5fb2649";
-	 $mergeVars = array('FNAME'=>$values['name'],'LNAME'=>'');
-	 $this->mcapi->listSubscribe($list_id, $values['email'], $mergeVars);
-*/	
      if(!$this->Website_model->getIsSubscribed($values['email']))
      {
  	  $name=$this->commonfunctions->ReplaceSpecialChars($values['name']);   
@@ -44,17 +38,15 @@ class Enewsletter extends MY_Controller
      }
      $this->RedirectPage('enewsletter-thanks');
     }
-    //else { $this->RedirectPage(); exit;}
     
    }
    // Required for Newsletter Form Attributes in all pages
    $this->data['newsletter_attributes']=$this->Website_model->NewsLetterFormAttribute($values);
 
-   $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','13','eNewsletter Singup');
-   $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',13);   
-   $this->data['contents']=$this->Website_model->GetPageContent(7);
-   $this->load->view('templates/header',$this->data);
-   $this->load->view('general-pages/enewsletter-signup',$this->data);
+   $this->data['meta']['page_title'] = "Newsletter signup";
+
+   $this->load->view('templates/header', $this->data);
+   $this->load->view('general-pages/enewsletter-signup', $this->data);
    $this->load->view('templates/footer');
   }
  }

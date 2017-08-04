@@ -55,13 +55,12 @@ class Speaker extends MY_Controller {
 
    } else $this->session->set_userdata('form_token','speaker');
 
-   $this->data['attribute']=$this->Website_model->SpeakerRequestFormAttribute($values);
-   $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','5','Speaker Request');
-   $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',5);
-   $this->websitejavascript->include_footer_js=array('SpeakerRequestJs');
-   $this->data['contents']=$this->Website_model->GetPageContent(6);
-   $this->load->view('templates/header',$this->data);
-   $this->load->view('connect/request',$this->data);
+   $this->data['attribute'] = $this->Website_model->SpeakerRequestFormAttribute($values);
+   $this->data['meta']['page_title'] = "Speaker request";
+   $this->websitejavascript->include_footer_js = array('SpeakerRequestJs');
+
+   $this->load->view('templates/header', $this->data);
+   $this->load->view('connect/request', $this->data);
    $this->load->view('templates/footer');
   }
 
