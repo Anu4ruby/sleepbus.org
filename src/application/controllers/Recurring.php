@@ -174,9 +174,8 @@ class Recurring extends MY_Controller {
     $this->session->unset_userdata('shipping_details');
     $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','35','Monthly Donation Setup Successful');
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',35);
-    $this->data['thanks']=$this->Website_model->GetThankMessages(12);
     $this->load->view('templates/header',$this->data);
-    $this->load->view('recurring/success-message',$this->data);
+    $this->load->view('recurring/success-message');
     $this->load->view('templates/footer');
   }
 
@@ -184,9 +183,8 @@ class Recurring extends MY_Controller {
     $this->session->unset_userdata('shipping_details');	  
     $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','36','Donation Cancelled!');
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',36);
-    $this->data['thanks']=$this->Website_model->GetThankMessages(13);
     $this->load->view('templates/header',$this->data);
-    $this->load->view('recurring/cancel',$this->data);
+    $this->load->view('recurring/cancel');
     $this->load->view('templates/footer');
   }
 }

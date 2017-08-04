@@ -216,9 +216,8 @@ class Donation extends MY_Controller {
     $this->session->unset_userdata('donate_campaign_id');
     $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','36','Donation Cancelled!');
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',36);
-    $this->data['thanks']=$this->Website_model->GetThankMessages(13);
     $this->load->view('templates/header',$this->data);
-    $this->load->view('donation/cancel',$this->data);
+    $this->load->view('donation/cancel');
     $this->load->view('templates/footer');
   }
 
@@ -227,9 +226,8 @@ class Donation extends MY_Controller {
     $this->session->unset_userdata('donate_campaign_id');
     $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','37','Donation Unsuccessful!');
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',37);
-    $this->data['thanks']=$this->Website_model->GetThankMessages(14);
     $this->load->view('templates/header',$this->data);
-    $this->load->view('donation/unsuccess-message',$this->data);
+    $this->load->view('donation/unsuccess-message');
     $this->load->view('templates/footer');
   }
 
@@ -472,9 +470,8 @@ class Donation extends MY_Controller {
 
     $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','34','Donation Successful');
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',34);
-    $this->data['thanks']=$this->Website_model->GetThankMessages(11);
     $this->load->view('templates/header',$this->data);
-    $this->load->view('donation/success-message',$this->data);
+    $this->load->view('thanks/onetime-donation-thanks');
     $this->load->view('templates/footer');
   }     
 

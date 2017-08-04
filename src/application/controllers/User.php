@@ -123,11 +123,11 @@
       $this->SendEmail($email);
     }
 
-    $this->data['thanks']=$this->Website_model->GetThankMessages(7);
+    $thanks_message = '<div>Congratulations!&nbsp;You have successfully&nbsp;created a campaign.</div>';
 
     $this->session->unset_userdata('birthday_pledge');
     $this->session->unset_userdata('campaign_records');
-    $this->RedirectPage('user/home',$this->data['thanks']['message']);
+    $this->RedirectPage('user/home', $thanks_message);
   }
  
   public function donations() {

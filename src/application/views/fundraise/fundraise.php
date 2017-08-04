@@ -12,8 +12,12 @@
 <input type="hidden" name="unit_fund" value="27.50" id="unit_fund"  />
 
   <div class="letgo">
+    <h1>Let&rsquo;s go!</h1>
 
-    <?php echo $page_heading[0]['page_heading'];?>
+    <div class="fundraise-subheading">Start a fundraising campaign of your own for safe sleeps. You can do anything from hosting&nbsp;a dinner party&nbsp;to doing something crazy. Just have fun!</div>
+
+
+
 
     
 

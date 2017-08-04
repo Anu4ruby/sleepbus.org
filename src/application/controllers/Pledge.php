@@ -56,8 +56,9 @@ class Pledge extends MY_Controller {
 					$birthday_pledge['dob_real_format']=$values['day']."/".$values['month']."/".$values['year'];
 					$birthday_pledge['newsletter_subscription']=$values['newsletter_subscription'];
 					$this->session->set_userdata('birthday_pledge',$birthday_pledge);
-					$this->data['thanks']=$this->Website_model->GetThankMessages(6);
-					$this->RedirectPage('fundraise',$this->data['thanks']['message']);
+          $thanks_message = '<div>Your birthday pledge has been created successfully. Continue&nbsp;to a create a campaign by filing out this form.&nbsp;</div>';
+
+					$this->RedirectPage('fundraise', $thanks_message);
 				}
 			} else $this->session->set_userdata('form_token','pledge');
 
