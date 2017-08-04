@@ -28,19 +28,18 @@ class Generalpages extends MY_Controller {
   }
 
   public function meet_the_board() {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',7,'Meet The Board');
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',7);
-    $this->data['contents']=$this->Website_model->GetPageContent(4);
-    $this->load->view('templates/header',$this->data);
-    $this->load->view('general-pages/general-pages',$this->data);
+    $this->data['meta']['page_title'] = "Meet the board";
+
+    $this->load->view('templates/header', $this->data);
+    $this->load->view('general-pages/meet-the-board', $this->data);
     $this->load->view('templates/footer');
   }
 
   public function simon_story() {
     $this->data['meta']['page_title'] = "Simon's Story";
 
-    $this->load->view('templates/header',$this->data);
-    $this->load->view('general-pages/simons-story',$this->data);
+    $this->load->view('templates/header', $this->data);
+    $this->load->view('general-pages/simons-story', $this->data);
     $this->load->view('templates/footer');
   }
 
