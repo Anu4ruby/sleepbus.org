@@ -72,6 +72,8 @@ class Fundraise extends MY_Controller {
 
     $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',30,'Fundraise');
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',30);
+
+    // getting Fundraise form 'Let's Go! Start your fundraising...'
     $this->data['page_heading']=$this->Website_model->GetPageHeading(9);
     $birthday_records=$this->session->userdata('birthday_pledge');
 
