@@ -1,3 +1,4 @@
+<!-- monthly donation form -->
 	<?php
  	 echo form_open(base_url().'donation/donate',$attribute_monthly['form']);
      echo form_hidden('caller2','Send');
@@ -16,4 +17,4 @@
 	 <?php
      echo form_close();
 	?> 
-     
+<!-- end monthly donation form -->

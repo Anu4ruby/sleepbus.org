@@ -68,6 +68,7 @@ class Donation extends MY_Controller {
       $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',32);
       $this->data['page_heading']=$this->Website_model->GetPageHeading(9);
       $this->data['attribute']=$this->Donation_model->GetDonateFormAttributes($values,$this->data['common_settings']['unit_fund']);
+
       $this->websitejavascript->include_footer_js=array('DonationJs');
       $this->load->view('templates/header',$this->data);
       $this->load->view('donation/donation-form',$this->data);
@@ -313,11 +314,8 @@ class Donation extends MY_Controller {
     $this->data['attribute']=$this->Donation_model->GetDonateFormForOneTimeAttributes($values,$this->data['common_settings']['unit_fund']);
     $this->data['attribute_monthly']=$this->Website_model->GetMonthlyDonateFormAttributes($values_monthly,$this->data['common_settings']['unit_fund']);
     $this->websitejavascript->include_footer_js=array('DonationJs','RecurringDonationJs');
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',38,'Donate');
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',38);
-    $this->data['top_text']=$this->Website_model->GetTopText(14);
-    $this->data['one_time_donation_form']=$this->load->view('donation/one-time-donation-form',$this->data,true);
-    $this->data['monthly_donation_form']=$this->load->view('donation/monthly-donation-form',$this->data,true);
+    $this->data['meta']['page_title'] = "Donate";
+
     $this->load->view('templates/header',$this->data);
     $this->load->view('donation/donate-page',$this->data);
     $this->load->view('templates/footer');

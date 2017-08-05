@@ -1,3 +1,4 @@
+<!-- one time donation form -->
 	<?php
  	 echo form_open(base_url().'donate',$attribute['form']);
      echo form_hidden('caller','Send');
@@ -19,4 +20,4 @@
     <?php
      echo form_close();
 	?> 
-     
+<!-- end one time donation form -->
