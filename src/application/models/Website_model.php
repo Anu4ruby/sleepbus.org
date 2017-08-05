@@ -126,10 +126,7 @@
   {
    return $this->db_query->FetchSingleInformation(MESSAGE_SETTINGS,"","1='1'");
   }
-  public function GetEmailSettings()
-  {
-   return $this->db_query->FetchSingleInformation(EMAIL_SETTINGS,"","1='1'");
-  }
+
   public function GetBanner($page_type,$page_id)
   {
    $banner=array();
@@ -162,15 +159,7 @@
   {
    return $this->db_query->FetchInformation($table_name,"","$parent_field='$parent_id' and status='1' order by position $limit"); 
   }
-  public function GetEmailMessages($page_id)
-  {
-   return $this->db->select('subject,message,receiver,receiver_to_emails,receiver_cc_emails,receiver_bcc_emails,sender_email,sender_name')->from(EMAIL_MESSAGES)->where('id',$page_id)->get()->row_array();
-  }  
-  public function GetThankMessages($id)
-  {
-   return $this->db_query->FetchSingleInformation(THANK_MESSAGES,"message","id=$id");
-  }
-  
+
   public function GetBrochures($table_name,$parent_field,$parent_id)
   {
    return $this->db_query->FetchInformation($table_name,"","$parent_field='$parent_id' and status='1' order by position"); 

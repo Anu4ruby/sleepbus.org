@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.23-MariaDB, for Linux (x86_64)
+-- MySQL dump 10.16  Distrib 10.2.7-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: 172.17.0.4    Database: scrubbus
+-- Host: localhost    Database: sleepbus_local
 -- ------------------------------------------------------
--- Server version	10.1.23-MariaDB-1~jessie
+-- Server version	10.2.7-MariaDB-10.2.7+maria~jessie
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,7 +33,7 @@ CREATE TABLE `about_section` (
   `image_quality` varchar(25) NOT NULL,
   `image_alt_title_text` varchar(250) NOT NULL,
   `url` varchar(250) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE `accessories` (
   `accessories_title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `image_file` varchar(255) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE `accessories_brochures` (
   `brochure_title` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
@@ -126,7 +126,7 @@ CREATE TABLE `account_type` (
   `type_name` varchar(255) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
@@ -153,7 +153,7 @@ CREATE TABLE `admin_levels` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
@@ -181,7 +181,7 @@ CREATE TABLE `admin_modules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) NOT NULL,
   `dateadded` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   `module_name` varchar(511) NOT NULL,
   `url` text NOT NULL,
@@ -201,7 +201,7 @@ CREATE TABLE `admin_modules` (
 
 LOCK TABLES `admin_modules` WRITE;
 /*!40000 ALTER TABLE `admin_modules` DISABLE KEYS */;
-INSERT INTO `admin_modules` VALUES (1,0,'2012-11-16 12:18:40','2016-04-29 20:24:12','zeemoadmin','Admin User','user','user.png','user.png','users.png','1',23,''),(6,0,'2012-11-16 15:24:10','2016-04-29 20:24:17','zeemoadmin','General Pages','generalpages','cms.png','cms.png','cms.png','1',2,''),(7,6,'2012-11-16 15:46:35','2014-05-22 20:52:44','zeemoadmin','Home Page','generalpages/homepage','','','','1',1,''),(8,0,'2012-11-16 17:40:57','2016-06-03 03:46:28','zeemoadmin','Common Settings','commonsettings','setting.png','common-settings.png','setting.png','1',14,''),(12,0,'2012-11-19 14:02:08','2016-04-29 20:24:12','zeemoadmin','Modules','modules','modules-home.png','modules-top.png','modules-left.png','1',24,''),(13,12,'2012-11-19 14:06:10','2014-05-20 23:35:06','zeemoadmin','Manage Modules','modules/manage','','','','1',1,''),(14,12,'2012-11-20 02:39:50','2014-05-20 23:35:06','zeemoadmin','Manage Submodules','modules/managesubmodules','','','','1',1,''),(15,1,'2012-11-25 14:11:44','2014-05-20 23:35:06','zeemoadmin','Add / Edit Level','user/addlevel','','','','1',1,''),(16,1,'2012-11-25 14:12:53','2014-05-20 23:35:06','zeemoadmin','Manage Levels','user/managelevels','','','','1',1,''),(17,1,'2012-11-25 14:13:40','2014-05-20 23:35:06','zeemoadmin','Add / Edit User','user/adduser','','','','1',1,''),(18,1,'2012-11-25 14:14:15','2014-05-20 23:35:06','zeemoadmin','Manage Users','user/manageusers','','','','1',1,''),(19,1,'2012-12-05 17:11:10','2014-05-20 23:35:06','zeemoadmin','Superadmin Section','user/superadmin','','','','1',1,''),(21,6,'2012-12-06 16:43:04','2015-12-10 20:27:58','zeemoadmin','Static Pages','generalpages/pagecontent','','','','1',2,''),(22,6,'2012-12-06 16:43:52','2016-03-30 17:23:21','zeemoadmin','Contact','generalpages/contact','','','','0',2,'<p>&nbsp;zcvZXczcAAsdasdSDASFDASD</p>'),(23,8,'2012-12-10 16:18:25','2014-12-04 17:03:00','zeemoadmin','Common Settings','commonsettings/setting','','','','1',1,''),(25,8,'2012-12-10 16:20:09','2016-03-30 17:24:11','zeemoadmin','Page Headings','commonsettings/pageheadings','','','','0',2,''),(26,0,'2012-12-12 10:36:40','2016-06-03 03:46:28','zeemoadmin','Manage Banners','banners','manage-banners-home.png','manage-banners-top.png','manage-bannersleft.png','0',9,''),(27,26,'2012-12-12 11:21:31','2014-05-20 23:35:06','zeemoadmin','Banner at a Glance','banners/banner-in-a-glance','','','','1',1,'<p><span style=\"color: rgb(128, 0, 0);\"><span style=\"background-color: rgb(255, 255, 255);\"><strong>You can manage your home page banners from this section</strong></span></span></p>\r\n<p>ROME: Google avoided about $2 billion in worldwide  <a href=\"http://economictimes.indiatimes.com/topic/income-taxes\" pg=\"asTopicL1\">income taxes</a> in 2011 by shifting $9.8 billion in revenues into a  <a href=\"http://economictimes.indiatimes.com/topic/Bermuda\" pg=\"asTopicL1\">Bermuda</a> shell company, almost double the total from three years before, filings show.</p>\r\n<p>By legally funneling profits from overseas subsidiaries into Bermuda,  which doesn\'t have a corporate income tax, Google cut its overall tax  rate almost to half. The amount moved to Bermuda is equivalent to about  80% of Google\'s total pretax profit in 2011.<br />\r\n<br />\r\nThe increase in  Google\'s revenues routed to Bermuda, disclosed in a November 21 filing  by a subsidiary in the Netherlands, could fuel the outrage spreading  across Europe and in the US over corporate tax dodging. Governments in  France, the UK, Italy and Australia are probing Google\'s tax avoidance  as they seek to boost revenue during economic doldrums.<br />\r\n<br />\r\nLast week, the European Union\'s executive body, the  <a href=\"http://economictimes.indiatimes.com/topic/European-Commission\" pg=\"asTopicL1\">European Commission</a>,  advised member states to create blacklists of tax havens and adopt  anti-abuse rules. Tax evasion and avoidance, which cost the  <a href=\"http://economictimes.indiatimes.com/topic/EU\" pg=\"asTopicL1\">EU</a>  e1 trillion ($1.3 trillion) a year, are &quot;scandalous&quot; and &quot;an attack on  the fundamental principle of fairness,&quot; Algirdas Semeta, the EC\'s  commissioner for  <a href=\"http://economictimes.indiatimes.com/topic/taxation\" pg=\"asTopicL1\">taxation</a>, said at a press conference in Brussels.<br />\r\n<br />\r\n&quot;The tax strategy of Google and other multinationals is a deep  embarrassment to governments around Europe,&quot; said Richard Murphy, an  accountant and director of Tax Research LLP in Norfolk, England. &quot;The  political awareness now being created in the UK, and to a lesser degree  elsewhere in Europe, is: It\'s us or them. People understand that if  Google doesn\'t pay, somebody else has to pay or services get cut.&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Assange said to cheers from around 100 supporters that despite  spending half of 2012 holed up in the building it had been a &quot;huge year&quot;  in which his anti-secrecy website had released documents about Syria  and other topics.&nbsp;&quot;Next year will be equally busy. WikiLeaks has already  over one million documents being prepared to be released, documents  that affect every country in the world -- every country in this world,&quot;  he said to applause.</p>\r\n<p>&nbsp;</p>\r\n<p>The Australian former computer hacker thanked Ecuadorian president  Rafael Correa for granting him asylum and hit out at the United States  and other Western governments.&nbsp;&quot;True democracy is not the White House,  true democracy is not cameras, true democracy is the resistance of  people armed with the truth against lies from Tahrir to London,&quot; he  said.&nbsp;But the 41-year-old added that &quot;the door is open, and the door has  always been open, for anyone who wishes to speak to me&quot; to resolve the  situation.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>'),(28,0,'2012-12-13 14:51:44','2016-04-29 20:29:21','zeemoadmin','News','news','news.png','news.png','news.png','0',4,''),(29,28,'2012-12-13 14:52:35','2014-05-20 23:35:06','zeemoadmin','Add / Edit News','news/addnews','','','','1',1,''),(30,28,'2012-12-13 14:53:47','2014-05-20 23:35:06','zeemoadmin','Manage News','news/managenews','','','','1',1,''),(31,0,'2012-12-17 12:43:11','2016-04-29 20:24:12','zeemoadmin','Testimonials','testimonials','now-showing-home.png','now-showing-top.png','now-showing-left.png','0',22,''),(32,31,'2012-12-17 12:56:16','2014-05-20 23:35:06','zeemoadmin','Add Testimonial','testimonials/addtestimonial','','','','1',1,''),(33,31,'2012-12-17 12:57:40','2014-05-20 23:35:06','zeemoadmin','Manage Testimonials','testimonials/managetestimonials','','','','1',1,''),(35,0,'2012-12-18 12:54:48','2016-04-29 20:24:12','zeemoadmin','Meta / Title Tags','metatags','meta.png','meta.png','meta.png','1',17,''),(36,35,'2012-12-18 12:58:09','2016-04-04 18:06:57','zeemoadmin','Single Page Metas','metatags/single-page-metas','','','','1',2,''),(39,35,'2012-12-18 13:00:46','2016-04-04 18:06:53','zeemoadmin','News','metatags/news-metas','','','','0',3,''),(40,1,'2012-12-21 12:46:22','2014-05-20 23:35:06','zeemoadmin','Update Personal Account','user/updateaccount','','','','1',1,''),(41,28,'2013-01-21 10:35:19','2014-05-21 23:14:48','zeemoadmin','Manage Images','news/manageimages','','','','1',1,''),(42,28,'2013-01-21 10:36:12','2014-05-21 23:14:50','zeemoadmin','Manage Downloads','news/managedownloads','','','','1',1,''),(51,0,'2013-01-28 15:26:19','2016-04-29 20:24:12','zeemoadmin','Downloads','downloads','download.png','download.png','download.png','0',20,''),(52,51,'2013-01-28 15:26:59','2014-05-20 23:35:06','zeemoadmin','Categories','downloads/categories','','','','1',1,''),(53,51,'2013-01-28 15:27:51','2014-05-20 23:35:06','zeemoadmin','Manage Downloads','downloads/managedownloads','','','','1',1,''),(54,6,'2013-01-29 16:17:12','2016-03-30 17:23:25','zeemoadmin','Manage Images','generalpages/manageimages','','','','0',3,''),(55,6,'2013-01-29 16:17:50','2016-03-30 17:23:29','zeemoadmin','Manage Downloads','generalpages/managedownloads','','','','0',4,''),(63,26,'2013-02-05 14:08:58','2014-12-03 15:08:57','zeemoadmin','Services Banner','banners/service-banner','','','','0',1,''),(65,26,'2013-02-05 14:15:26','2014-12-03 15:08:59','zeemoadmin','Products Banner','banners/products-default-banner','','','','0',1,''),(66,0,'2013-02-05 15:41:10','2016-04-29 20:29:21','zeemoadmin','Products','products','product.png','product.png','product.png','0',5,'this is product section'),(67,66,'2013-02-05 15:47:10','2014-05-20 23:35:06','zeemoadmin','Add / Edit Category','products/add-category','','','','1',1,'add category section'),(68,66,'2013-02-05 15:47:55','2014-05-20 23:35:06','zeemoadmin','Manage Categories','products/manage-categories','','','','1',1,'this is manage categories section'),(70,26,'2013-02-07 10:54:13','2014-12-03 15:09:07','zeemoadmin','News Banner','banners/news-banner','','','','0',1,''),(71,35,'2013-02-07 14:39:57','2016-04-04 18:06:57','zeemoadmin','Products','metatags/product-default-metas','','','','0',4,''),(72,26,'2013-02-12 12:15:04','2014-05-20 23:35:06','zeemoadmin','Home Page Banners','banners/homepage','','','','1',1,''),(73,66,'2013-02-13 17:13:08','2014-05-20 23:35:06','zeemoadmin','Manage Products','products/manage-products','','','','1',1,'manage product section'),(75,66,'2013-02-26 15:53:36','2014-05-20 23:35:06','zeemoadmin','Copy Move Products','products/copy-move-products','','','','1',1,''),(76,8,'2013-03-05 15:51:36','2015-12-28 20:41:11','zeemoadmin','Lead Types','commonsettings/form-lead-types','','','','1',3,''),(78,66,'2013-03-07 15:55:15','2014-05-20 23:35:06','zeemoadmin','Top Text','products/toptext','','','','1',1,''),(80,0,'2013-03-11 10:30:27','2016-04-29 20:24:12','zeemoadmin','Leads Report','leads','leads-report.png','leads-report.png','leads-report.png','1',21,''),(81,80,'2013-03-11 10:31:44','2016-04-07 15:35:09','zeemoadmin','Leads Report','leads/leads-report','','','','1',1,''),(82,80,'2013-03-11 10:32:35','2016-04-07 15:35:07','zeemoadmin','Leads Source','leads/leads-source','','','','1',2,''),(83,0,'2013-05-03 15:52:05','2016-04-29 20:24:12','zeemoadmin','Blog Section','blogs','blogs.png','blogs.png','blogs.png','1',16,''),(84,83,'2013-05-03 15:55:29','2016-04-11 16:39:45','zeemoadmin','Add Blog','blogs/add-blog','','','','1',2,''),(85,83,'2013-05-03 15:56:08','2016-04-11 16:39:45','zeemoadmin','Manage Blogs','blogs/manage-blogs','','','','1',3,''),(86,83,'2013-05-03 15:56:56','2016-04-11 16:39:45','zeemoadmin','Add Category','blogs/add-category','','','','1',3,''),(87,83,'0000-00-00 00:00:00','2016-04-11 16:39:45','zeemoadmin','Add Blogger','blogs/add-blogger','','','','1',3,''),(88,35,'2013-05-06 10:22:04','2016-04-04 18:06:57','zeemoadmin','Blogs','metatags/blog-default-metas','','','','1',6,''),(89,8,'2013-09-26 16:33:18','2016-03-30 17:24:10','zeemoadmin','Social Media Icons','commonsettings/social-media-icon','','','','0',4,''),(90,0,'2014-03-14 15:49:55','2016-04-29 20:24:12','zeemoadmin','Zeemo Settings','zeemosettings','setting.png','common-settings.png','setting.png','1',25,''),(91,90,'2014-03-14 15:53:40','2015-06-04 18:47:50','zeemoadmin','Resource','zeemosettings/resource','','','','1',2,''),(96,0,'2014-05-22 18:43:04','2016-04-29 20:24:12','zeemoadmin','Manage CTA','cta','cta-home.png','cta.png','cta-left.png','1',15,''),(97,96,'2014-05-22 18:45:56','2016-04-04 18:02:48','zeemoadmin','Add / Edit CTA','cta/icon-setting','','','','1',2,''),(98,96,'2014-05-22 18:46:31','2016-04-04 18:02:13','zeemoadmin','Single Pages','cta/single-pages','','','','1',4,''),(99,96,'2014-05-22 18:54:26','2016-04-04 18:02:48','zeemoadmin','Blog Pages','cta/blog-default-cta','','','','1',6,''),(100,96,'2014-05-22 18:55:03','2016-04-04 18:02:48','zeemoadmin','News','cta/news-default-cta','','','','0',7,''),(101,96,'2014-05-22 18:55:26','2016-04-04 18:02:48','zeemoadmin','Products','cta/product-default-cta','','','','0',8,''),(102,0,'2014-05-23 15:19:27','2016-04-29 20:24:12','zeemoadmin','FAQ','faq','service1.png','service_2.png','service1.png','0',18,''),(103,102,'2014-05-23 15:20:07','2014-05-22 16:50:58','zeemoadmin','Add / Edit FAQ','faq/add-faq','','','','1',1,''),(104,102,'2014-05-23 15:20:48','2014-05-22 16:50:58','zeemoadmin','Manage FAQs','faq/manage-faqs','','','','1',2,''),(105,6,'2014-05-23 18:42:24','2016-03-30 17:23:23','zeemoadmin','Our Expertise','generalpages/more-info-section','','','','0',2,''),(107,8,'2014-05-23 19:49:10','2015-12-28 20:41:11','zeemoadmin','Footer Text','commonsettings/footer-text','','','','1',2,''),(108,0,'2014-12-03 19:42:34','2016-04-29 20:24:12','zeemoadmin','Email Notification Center','notification','ebooks1.png','ebooks2.png','ebooks3.png','1',19,''),(109,108,'2014-12-03 19:43:26','2014-12-02 20:39:07','zeemoadmin','Setup Email Messages','notification/email-messages','','','','1',1,''),(110,108,'2014-12-03 19:44:36','2014-12-04 17:38:10','zeemoadmin','Setup Thank Messages','notification/thankyou-messages','','','','1',2,''),(111,108,'2014-12-03 19:45:19','2014-12-02 20:39:07','zeemoadmin','Email Sender Information','notification/sender-information','','','','1',2,''),(112,108,'2014-12-03 21:05:26','2014-12-04 17:38:10','zeemoadmin','Auto Email Notification (Cron Job)','notification/setup-email-notification','','','','0',2,''),(113,90,'2015-06-05 17:17:50','2015-06-04 18:47:50','zeemoadmin','Common Settings','zeemosettings/common-settings','','','','1',1,''),(114,0,'2015-12-04 20:56:35','2016-04-29 20:24:17','zeemoadmin','Manage Landing Pages','landingpages','landing-home.png','landing-top.png','landing-left.png','1',3,''),(115,114,'2015-12-04 20:57:07','2015-12-03 20:27:32','zeemoadmin','Manage Landing Pages','landingpages/manage-landing-pages','','','','1',2,''),(116,114,'2015-12-04 20:57:32','2015-12-03 20:27:32','zeemoadmin','Add Landing Page','landingpages/add-landing-page','','','','1',1,''),(117,35,'2015-12-04 21:44:03','2016-04-04 18:06:56','zeemoadmin','About Section Meta','metatags/about-section-metas','','','','1',1,''),(118,96,'2015-12-04 22:01:27','2016-04-04 18:02:13','zeemoadmin','About Section CTA','cta/about-section-cta','','','','1',3,''),(119,96,'2015-12-04 22:01:45','2016-04-04 18:02:48','zeemoadmin','Landing Page CTA','cta/landing-page-cta','','','','1',1,''),(120,0,'2015-12-29 21:03:24','2016-04-29 20:24:17','zeemoadmin','About Section','about','about.png','about.png','about.png','0',1,''),(121,120,'2015-12-29 21:04:15','2015-12-28 20:34:24','zeemoadmin','Add Page','about/add-page','','','','1',2,''),(122,120,'2015-12-29 21:04:25','2015-12-28 20:34:25','zeemoadmin','Manage Pages','about/manage-pages','','','','1',1,''),(123,0,'2016-04-01 15:19:34','2016-04-29 20:29:21','zeemoadmin','Completed Projects','projects','project-home.png','project-top.png','project1.png','1',6,''),(124,123,'2016-04-01 15:21:09','2016-03-31 14:52:45','zeemoadmin','Top Text','projects/toptext','','','','1',1,''),(125,123,'2016-04-01 15:21:40','2016-03-31 14:52:45','zeemoadmin','Add / Edit Project','projects/add-project','','','','1',2,''),(126,123,'2016-04-01 15:21:55','2016-03-31 14:52:45','zeemoadmin','Manage Projects','projects/manage-projects','','','','1',3,''),(127,123,'2016-04-01 15:22:19','2016-03-31 14:52:41','zeemoadmin','Manage Images','projects/manage-images','','','','1',4,''),(128,0,'2016-04-04 21:06:29','2016-06-03 03:46:28','zeemoadmin','Corporate Support','support','company-home.png','company1.png','company-left.png','1',12,''),(129,128,'2016-04-04 21:07:01','2016-04-03 22:45:15','zeemoadmin','Top Text','support/toptext','','','','1',1,''),(130,128,'2016-04-04 21:08:54','2016-04-03 22:45:19','zeemoadmin','Our Support Text','support/support-text','','','','1',2,''),(131,128,'2016-04-04 21:09:13','2016-04-03 22:45:19','zeemoadmin','Add / Edit Item','support/add-item','','','','1',3,''),(132,128,'2016-04-04 21:09:24','2016-04-03 22:45:18','zeemoadmin','Manage Items','support/manage-items','','','','1',4,''),(133,96,'2016-04-05 16:32:13','2016-04-04 18:02:48','zeemoadmin','Completed Projects','cta/project-default-cta','','','','1',5,''),(134,35,'2016-04-05 16:36:53','2016-04-04 18:06:57','zeemoadmin','Completed Projects','metatags/project-default-metas','','','','1',5,''),(135,80,'2016-04-08 14:05:07','2016-04-07 15:35:10','zeemoadmin','Newsletter Subcribers','leads/newsletter-subscribers','','','','1',3,''),(136,83,'2016-04-12 15:09:45','2016-04-11 16:39:45','zeemoadmin','Top Text','blogs/toptext','','','','1',1,''),(137,0,'2016-04-12 19:02:21','2016-06-03 03:46:28','zeemoadmin','In The Media','media','website-live1.png','website-live1.png','website-live1.png','1',11,''),(138,137,'2016-04-12 19:03:01','2016-04-11 20:55:10','zeemoadmin','Add / Edit Item','media/add-item','','','','1',3,''),(139,137,'2016-04-12 19:03:14','2016-04-11 20:55:10','zeemoadmin','Manage Items','media/manage-items','','','','1',4,''),(140,137,'2016-04-12 19:03:56','2016-04-11 20:55:13','zeemoadmin','Top Content','media/toptext','','','','1',1,''),(141,137,'2016-04-12 19:25:10','2016-04-11 20:55:13','zeemoadmin','Bottom Text','media/bottom-text','','','','1',2,''),(142,0,'2016-04-13 20:26:38','2016-06-03 03:46:28','zeemoadmin','Sleepbus Toolbox','toolbox','investor-home.png','investor-top.png','modules-left1.png','1',13,''),(143,142,'2016-04-13 20:26:56','2016-04-12 21:58:40','zeemoadmin','Top Text','toolbox/toptext','','','','1',1,''),(144,142,'2016-04-13 20:27:24','2016-04-12 21:58:43','zeemoadmin','Branding Content','toolbox/branding-content','','','','1',2,''),(145,142,'2016-04-13 20:27:42','2016-04-12 21:58:49','zeemoadmin','Videos','toolbox/videos','','','','1',3,''),(146,142,'2016-04-13 20:28:08','2016-04-12 21:58:49','zeemoadmin','Facebook timeline photos','toolbox/facebook-timeline','','','','1',4,''),(147,142,'2016-04-13 20:28:37','2016-04-12 21:58:48','zeemoadmin','Twitter Backgrounds','toolbox/twitter-backgrounds','','','','1',5,''),(148,0,'2016-04-15 20:04:02','2016-06-03 03:46:28','zeemoadmin','Manage User Accounts','account','friends-home1.png','friends-top1.png','friends-left1.png','1',10,''),(149,148,'2016-04-15 20:04:25','2016-05-05 02:22:01','zeemoadmin','Headings / Subheadings','account/pageheadings','','','','1',1,''),(150,148,'2016-04-15 20:04:42','2016-05-05 02:22:01','zeemoadmin','Account Types','account/account-type','','','','1',2,''),(151,0,'2016-04-15 20:59:06','2016-04-29 20:29:21','zeemoadmin','Campaign','campaign','investor-home1.png','investor-top1.png','modules-left2.png','1',7,''),(152,151,'2016-04-15 20:59:48','2016-04-24 15:48:27','zeemoadmin','Campaign Types','campaign/campaign-type','','','','1',2,''),(153,151,'2016-04-15 21:01:05','2016-04-24 15:48:27','zeemoadmin','Campaign Images','campaign/manage-images','','','','1',3,''),(154,151,'2016-04-15 21:01:16','2016-04-24 15:48:27','zeemoadmin','Headings / Subheadings','campaign/pageheadings','','','','1',1,''),(155,151,'2016-04-22 21:14:25','2016-04-24 15:48:27','zeemoadmin','Pledge Content','campaign/pledge-content','','','','1',4,''),(156,151,'2016-04-25 14:18:24','2016-04-24 16:16:28','zeemoadmin','Common Settings','campaign/setting','','','','1',5,''),(157,0,'2016-04-30 14:24:12','2016-06-03 03:46:28','zeemoadmin','Donation & Reporting','donation','reporting-home1.png','reporting-heading1.jpg','reporting-left-icon1.png','1',8,''),(158,157,'2016-04-30 14:25:31','2016-05-05 22:20:49','zeemoadmin','Donate','donation/donate','','','','1',1,''),(159,157,'2016-04-30 14:27:30','2016-05-05 22:20:49','zeemoadmin','One Year Safe Sleep','donation/one-year-safe-sleep','','','','1',2,''),(160,148,'2016-05-05 20:21:59','2016-05-05 02:22:01','zeemoadmin','Manage Users','account/manageusers','','','','1',3,''),(161,157,'2016-05-06 16:20:12','2016-05-05 22:20:49','zeemoadmin','Donation Report','donation/reporting','','','','1',3,'');
+INSERT INTO `admin_modules` VALUES (1,0,'2012-11-16 12:18:40','2016-04-29 20:24:12','zeemoadmin','Admin User','user','user.png','user.png','users.png','1',23,''),(6,0,'2012-11-16 15:24:10','2016-04-29 20:24:17','zeemoadmin','General Pages','generalpages','cms.png','cms.png','cms.png','1',2,''),(7,6,'2012-11-16 15:46:35','2014-05-22 20:52:44','zeemoadmin','Home Page','generalpages/homepage','','','','1',1,''),(8,0,'2012-11-16 17:40:57','2016-06-03 03:46:28','zeemoadmin','Common Settings','commonsettings','setting.png','common-settings.png','setting.png','1',14,''),(12,0,'2012-11-19 14:02:08','2016-04-29 20:24:12','zeemoadmin','Modules','modules','modules-home.png','modules-top.png','modules-left.png','1',24,''),(13,12,'2012-11-19 14:06:10','2014-05-20 23:35:06','zeemoadmin','Manage Modules','modules/manage','','','','1',1,''),(14,12,'2012-11-20 02:39:50','2014-05-20 23:35:06','zeemoadmin','Manage Submodules','modules/managesubmodules','','','','1',1,''),(15,1,'2012-11-25 14:11:44','2014-05-20 23:35:06','zeemoadmin','Add / Edit Level','user/addlevel','','','','1',1,''),(16,1,'2012-11-25 14:12:53','2014-05-20 23:35:06','zeemoadmin','Manage Levels','user/managelevels','','','','1',1,''),(17,1,'2012-11-25 14:13:40','2014-05-20 23:35:06','zeemoadmin','Add / Edit User','user/adduser','','','','1',1,''),(18,1,'2012-11-25 14:14:15','2014-05-20 23:35:06','zeemoadmin','Manage Users','user/manageusers','','','','1',1,''),(19,1,'2012-12-05 17:11:10','2014-05-20 23:35:06','zeemoadmin','Superadmin Section','user/superadmin','','','','1',1,''),(21,6,'2012-12-06 16:43:04','2015-12-10 20:27:58','zeemoadmin','Static Pages','generalpages/pagecontent','','','','1',2,''),(22,6,'2012-12-06 16:43:52','2016-03-30 17:23:21','zeemoadmin','Contact','generalpages/contact','','','','0',2,'<p>&nbsp;zcvZXczcAAsdasdSDASFDASD</p>'),(23,8,'2012-12-10 16:18:25','2014-12-04 17:03:00','zeemoadmin','Common Settings','commonsettings/setting','','','','1',1,''),(25,8,'2012-12-10 16:20:09','2016-03-30 17:24:11','zeemoadmin','Page Headings','commonsettings/pageheadings','','','','0',2,''),(26,0,'2012-12-12 10:36:40','2016-06-03 03:46:28','zeemoadmin','Manage Banners','banners','manage-banners-home.png','manage-banners-top.png','manage-bannersleft.png','0',9,''),(27,26,'2012-12-12 11:21:31','2014-05-20 23:35:06','zeemoadmin','Banner at a Glance','banners/banner-in-a-glance','','','','1',1,'<p><span style=\"color: rgb(128, 0, 0);\"><span style=\"background-color: rgb(255, 255, 255);\"><strong>You can manage your home page banners from this section</strong></span></span></p>\r\n<p>ROME: Google avoided about $2 billion in worldwide  <a href=\"http://economictimes.indiatimes.com/topic/income-taxes\" pg=\"asTopicL1\">income taxes</a> in 2011 by shifting $9.8 billion in revenues into a  <a href=\"http://economictimes.indiatimes.com/topic/Bermuda\" pg=\"asTopicL1\">Bermuda</a> shell company, almost double the total from three years before, filings show.</p>\r\n<p>By legally funneling profits from overseas subsidiaries into Bermuda,  which doesn\'t have a corporate income tax, Google cut its overall tax  rate almost to half. The amount moved to Bermuda is equivalent to about  80% of Google\'s total pretax profit in 2011.<br />\r\n<br />\r\nThe increase in  Google\'s revenues routed to Bermuda, disclosed in a November 21 filing  by a subsidiary in the Netherlands, could fuel the outrage spreading  across Europe and in the US over corporate tax dodging. Governments in  France, the UK, Italy and Australia are probing Google\'s tax avoidance  as they seek to boost revenue during economic doldrums.<br />\r\n<br />\r\nLast week, the European Union\'s executive body, the  <a href=\"http://economictimes.indiatimes.com/topic/European-Commission\" pg=\"asTopicL1\">European Commission</a>,  advised member states to create blacklists of tax havens and adopt  anti-abuse rules. Tax evasion and avoidance, which cost the  <a href=\"http://economictimes.indiatimes.com/topic/EU\" pg=\"asTopicL1\">EU</a>  e1 trillion ($1.3 trillion) a year, are &quot;scandalous&quot; and &quot;an attack on  the fundamental principle of fairness,&quot; Algirdas Semeta, the EC\'s  commissioner for  <a href=\"http://economictimes.indiatimes.com/topic/taxation\" pg=\"asTopicL1\">taxation</a>, said at a press conference in Brussels.<br />\r\n<br />\r\n&quot;The tax strategy of Google and other multinationals is a deep  embarrassment to governments around Europe,&quot; said Richard Murphy, an  accountant and director of Tax Research LLP in Norfolk, England. &quot;The  political awareness now being created in the UK, and to a lesser degree  elsewhere in Europe, is: It\'s us or them. People understand that if  Google doesn\'t pay, somebody else has to pay or services get cut.&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Assange said to cheers from around 100 supporters that despite  spending half of 2012 holed up in the building it had been a &quot;huge year&quot;  in which his anti-secrecy website had released documents about Syria  and other topics.&nbsp;&quot;Next year will be equally busy. WikiLeaks has already  over one million documents being prepared to be released, documents  that affect every country in the world -- every country in this world,&quot;  he said to applause.</p>\r\n<p>&nbsp;</p>\r\n<p>The Australian former computer hacker thanked Ecuadorian president  Rafael Correa for granting him asylum and hit out at the United States  and other Western governments.&nbsp;&quot;True democracy is not the White House,  true democracy is not cameras, true democracy is the resistance of  people armed with the truth against lies from Tahrir to London,&quot; he  said.&nbsp;But the 41-year-old added that &quot;the door is open, and the door has  always been open, for anyone who wishes to speak to me&quot; to resolve the  situation.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>'),(28,0,'2012-12-13 14:51:44','2016-04-29 20:29:21','zeemoadmin','News','news','news.png','news.png','news.png','0',4,''),(29,28,'2012-12-13 14:52:35','2014-05-20 23:35:06','zeemoadmin','Add / Edit News','news/addnews','','','','1',1,''),(30,28,'2012-12-13 14:53:47','2014-05-20 23:35:06','zeemoadmin','Manage News','news/managenews','','','','1',1,''),(31,0,'2012-12-17 12:43:11','2016-04-29 20:24:12','zeemoadmin','Testimonials','testimonials','now-showing-home.png','now-showing-top.png','now-showing-left.png','0',22,''),(32,31,'2012-12-17 12:56:16','2014-05-20 23:35:06','zeemoadmin','Add Testimonial','testimonials/addtestimonial','','','','1',1,''),(33,31,'2012-12-17 12:57:40','2014-05-20 23:35:06','zeemoadmin','Manage Testimonials','testimonials/managetestimonials','','','','1',1,''),(35,0,'2012-12-18 12:54:48','2016-04-29 20:24:12','zeemoadmin','Meta / Title Tags','metatags','meta.png','meta.png','meta.png','1',17,''),(36,35,'2012-12-18 12:58:09','2016-04-04 18:06:57','zeemoadmin','Single Page Metas','metatags/single-page-metas','','','','1',2,''),(39,35,'2012-12-18 13:00:46','2016-04-04 18:06:53','zeemoadmin','News','metatags/news-metas','','','','0',3,''),(40,1,'2012-12-21 12:46:22','2014-05-20 23:35:06','zeemoadmin','Update Personal Account','user/updateaccount','','','','1',1,''),(41,28,'2013-01-21 10:35:19','2014-05-21 23:14:48','zeemoadmin','Manage Images','news/manageimages','','','','1',1,''),(42,28,'2013-01-21 10:36:12','2014-05-21 23:14:50','zeemoadmin','Manage Downloads','news/managedownloads','','','','1',1,''),(51,0,'2013-01-28 15:26:19','2016-04-29 20:24:12','zeemoadmin','Downloads','downloads','download.png','download.png','download.png','0',20,''),(52,51,'2013-01-28 15:26:59','2014-05-20 23:35:06','zeemoadmin','Categories','downloads/categories','','','','1',1,''),(53,51,'2013-01-28 15:27:51','2014-05-20 23:35:06','zeemoadmin','Manage Downloads','downloads/managedownloads','','','','1',1,''),(54,6,'2013-01-29 16:17:12','2016-03-30 17:23:25','zeemoadmin','Manage Images','generalpages/manageimages','','','','0',3,''),(55,6,'2013-01-29 16:17:50','2016-03-30 17:23:29','zeemoadmin','Manage Downloads','generalpages/managedownloads','','','','0',4,''),(63,26,'2013-02-05 14:08:58','2014-12-03 15:08:57','zeemoadmin','Services Banner','banners/service-banner','','','','0',1,''),(65,26,'2013-02-05 14:15:26','2014-12-03 15:08:59','zeemoadmin','Products Banner','banners/products-default-banner','','','','0',1,''),(66,0,'2013-02-05 15:41:10','2016-04-29 20:29:21','zeemoadmin','Products','products','product.png','product.png','product.png','0',5,'this is product section'),(67,66,'2013-02-05 15:47:10','2014-05-20 23:35:06','zeemoadmin','Add / Edit Category','products/add-category','','','','1',1,'add category section'),(68,66,'2013-02-05 15:47:55','2014-05-20 23:35:06','zeemoadmin','Manage Categories','products/manage-categories','','','','1',1,'this is manage categories section'),(70,26,'2013-02-07 10:54:13','2014-12-03 15:09:07','zeemoadmin','News Banner','banners/news-banner','','','','0',1,''),(71,35,'2013-02-07 14:39:57','2016-04-04 18:06:57','zeemoadmin','Products','metatags/product-default-metas','','','','0',4,''),(72,26,'2013-02-12 12:15:04','2014-05-20 23:35:06','zeemoadmin','Home Page Banners','banners/homepage','','','','1',1,''),(73,66,'2013-02-13 17:13:08','2014-05-20 23:35:06','zeemoadmin','Manage Products','products/manage-products','','','','1',1,'manage product section'),(75,66,'2013-02-26 15:53:36','2014-05-20 23:35:06','zeemoadmin','Copy Move Products','products/copy-move-products','','','','1',1,''),(76,8,'2013-03-05 15:51:36','2015-12-28 20:41:11','zeemoadmin','Lead Types','commonsettings/form-lead-types','','','','1',3,''),(78,66,'2013-03-07 15:55:15','2014-05-20 23:35:06','zeemoadmin','Top Text','products/toptext','','','','1',1,''),(80,0,'2013-03-11 10:30:27','2016-04-29 20:24:12','zeemoadmin','Leads Report','leads','leads-report.png','leads-report.png','leads-report.png','1',21,''),(81,80,'2013-03-11 10:31:44','2016-04-07 15:35:09','zeemoadmin','Leads Report','leads/leads-report','','','','1',1,''),(82,80,'2013-03-11 10:32:35','2016-04-07 15:35:07','zeemoadmin','Leads Source','leads/leads-source','','','','1',2,''),(83,0,'2013-05-03 15:52:05','2016-04-29 20:24:12','zeemoadmin','Blog Section','blogs','blogs.png','blogs.png','blogs.png','1',16,''),(84,83,'2013-05-03 15:55:29','2016-04-11 16:39:45','zeemoadmin','Add Blog','blogs/add-blog','','','','1',2,''),(85,83,'2013-05-03 15:56:08','2016-04-11 16:39:45','zeemoadmin','Manage Blogs','blogs/manage-blogs','','','','1',3,''),(86,83,'2013-05-03 15:56:56','2016-04-11 16:39:45','zeemoadmin','Add Category','blogs/add-category','','','','1',3,''),(87,83,'0000-00-00 00:00:00','2016-04-11 16:39:45','zeemoadmin','Add Blogger','blogs/add-blogger','','','','1',3,''),(88,35,'2013-05-06 10:22:04','2016-04-04 18:06:57','zeemoadmin','Blogs','metatags/blog-default-metas','','','','1',6,''),(89,8,'2013-09-26 16:33:18','2016-03-30 17:24:10','zeemoadmin','Social Media Icons','commonsettings/social-media-icon','','','','0',4,''),(90,0,'2014-03-14 15:49:55','2016-04-29 20:24:12','zeemoadmin','Zeemo Settings','zeemosettings','setting.png','common-settings.png','setting.png','1',25,''),(91,90,'2014-03-14 15:53:40','2015-06-04 18:47:50','zeemoadmin','Resource','zeemosettings/resource','','','','1',2,''),(96,0,'2014-05-22 18:43:04','2016-04-29 20:24:12','zeemoadmin','Manage CTA','cta','cta-home.png','cta.png','cta-left.png','1',15,''),(97,96,'2014-05-22 18:45:56','2016-04-04 18:02:48','zeemoadmin','Add / Edit CTA','cta/icon-setting','','','','1',2,''),(98,96,'2014-05-22 18:46:31','2016-04-04 18:02:13','zeemoadmin','Single Pages','cta/single-pages','','','','1',4,''),(99,96,'2014-05-22 18:54:26','2016-04-04 18:02:48','zeemoadmin','Blog Pages','cta/blog-default-cta','','','','1',6,''),(100,96,'2014-05-22 18:55:03','2016-04-04 18:02:48','zeemoadmin','News','cta/news-default-cta','','','','0',7,''),(101,96,'2014-05-22 18:55:26','2016-04-04 18:02:48','zeemoadmin','Products','cta/product-default-cta','','','','0',8,''),(102,0,'2014-05-23 15:19:27','2016-04-29 20:24:12','zeemoadmin','FAQ','faq','service1.png','service_2.png','service1.png','0',18,''),(103,102,'2014-05-23 15:20:07','2014-05-22 16:50:58','zeemoadmin','Add / Edit FAQ','faq/add-faq','','','','1',1,''),(104,102,'2014-05-23 15:20:48','2014-05-22 16:50:58','zeemoadmin','Manage FAQs','faq/manage-faqs','','','','1',2,''),(105,6,'2014-05-23 18:42:24','2016-03-30 17:23:23','zeemoadmin','Our Expertise','generalpages/more-info-section','','','','0',2,''),(107,8,'2014-05-23 19:49:10','2015-12-28 20:41:11','zeemoadmin','Footer Text','commonsettings/footer-text','','','','1',2,''),(113,90,'2015-06-05 17:17:50','2015-06-04 18:47:50','zeemoadmin','Common Settings','zeemosettings/common-settings','','','','1',1,''),(114,0,'2015-12-04 20:56:35','2016-04-29 20:24:17','zeemoadmin','Manage Landing Pages','landingpages','landing-home.png','landing-top.png','landing-left.png','1',3,''),(115,114,'2015-12-04 20:57:07','2015-12-03 20:27:32','zeemoadmin','Manage Landing Pages','landingpages/manage-landing-pages','','','','1',2,''),(116,114,'2015-12-04 20:57:32','2015-12-03 20:27:32','zeemoadmin','Add Landing Page','landingpages/add-landing-page','','','','1',1,''),(117,35,'2015-12-04 21:44:03','2016-04-04 18:06:56','zeemoadmin','About Section Meta','metatags/about-section-metas','','','','1',1,''),(118,96,'2015-12-04 22:01:27','2016-04-04 18:02:13','zeemoadmin','About Section CTA','cta/about-section-cta','','','','1',3,''),(119,96,'2015-12-04 22:01:45','2016-04-04 18:02:48','zeemoadmin','Landing Page CTA','cta/landing-page-cta','','','','1',1,''),(120,0,'2015-12-29 21:03:24','2016-04-29 20:24:17','zeemoadmin','About Section','about','about.png','about.png','about.png','0',1,''),(121,120,'2015-12-29 21:04:15','2015-12-28 20:34:24','zeemoadmin','Add Page','about/add-page','','','','1',2,''),(122,120,'2015-12-29 21:04:25','2015-12-28 20:34:25','zeemoadmin','Manage Pages','about/manage-pages','','','','1',1,''),(123,0,'2016-04-01 15:19:34','2016-04-29 20:29:21','zeemoadmin','Completed Projects','projects','project-home.png','project-top.png','project1.png','1',6,''),(124,123,'2016-04-01 15:21:09','2016-03-31 14:52:45','zeemoadmin','Top Text','projects/toptext','','','','1',1,''),(125,123,'2016-04-01 15:21:40','2016-03-31 14:52:45','zeemoadmin','Add / Edit Project','projects/add-project','','','','1',2,''),(126,123,'2016-04-01 15:21:55','2016-03-31 14:52:45','zeemoadmin','Manage Projects','projects/manage-projects','','','','1',3,''),(127,123,'2016-04-01 15:22:19','2016-03-31 14:52:41','zeemoadmin','Manage Images','projects/manage-images','','','','1',4,''),(128,0,'2016-04-04 21:06:29','2016-06-03 03:46:28','zeemoadmin','Corporate Support','support','company-home.png','company1.png','company-left.png','1',12,''),(129,128,'2016-04-04 21:07:01','2016-04-03 22:45:15','zeemoadmin','Top Text','support/toptext','','','','1',1,''),(130,128,'2016-04-04 21:08:54','2016-04-03 22:45:19','zeemoadmin','Our Support Text','support/support-text','','','','1',2,''),(131,128,'2016-04-04 21:09:13','2016-04-03 22:45:19','zeemoadmin','Add / Edit Item','support/add-item','','','','1',3,''),(132,128,'2016-04-04 21:09:24','2016-04-03 22:45:18','zeemoadmin','Manage Items','support/manage-items','','','','1',4,''),(133,96,'2016-04-05 16:32:13','2016-04-04 18:02:48','zeemoadmin','Completed Projects','cta/project-default-cta','','','','1',5,''),(134,35,'2016-04-05 16:36:53','2016-04-04 18:06:57','zeemoadmin','Completed Projects','metatags/project-default-metas','','','','1',5,''),(135,80,'2016-04-08 14:05:07','2016-04-07 15:35:10','zeemoadmin','Newsletter Subcribers','leads/newsletter-subscribers','','','','1',3,''),(136,83,'2016-04-12 15:09:45','2016-04-11 16:39:45','zeemoadmin','Top Text','blogs/toptext','','','','1',1,''),(137,0,'2016-04-12 19:02:21','2016-06-03 03:46:28','zeemoadmin','In The Media','media','website-live1.png','website-live1.png','website-live1.png','1',11,''),(138,137,'2016-04-12 19:03:01','2016-04-11 20:55:10','zeemoadmin','Add / Edit Item','media/add-item','','','','1',3,''),(139,137,'2016-04-12 19:03:14','2016-04-11 20:55:10','zeemoadmin','Manage Items','media/manage-items','','','','1',4,''),(140,137,'2016-04-12 19:03:56','2016-04-11 20:55:13','zeemoadmin','Top Content','media/toptext','','','','1',1,''),(141,137,'2016-04-12 19:25:10','2016-04-11 20:55:13','zeemoadmin','Bottom Text','media/bottom-text','','','','1',2,''),(142,0,'2016-04-13 20:26:38','2016-06-03 03:46:28','zeemoadmin','Sleepbus Toolbox','toolbox','investor-home.png','investor-top.png','modules-left1.png','1',13,''),(143,142,'2016-04-13 20:26:56','2016-04-12 21:58:40','zeemoadmin','Top Text','toolbox/toptext','','','','1',1,''),(144,142,'2016-04-13 20:27:24','2016-04-12 21:58:43','zeemoadmin','Branding Content','toolbox/branding-content','','','','1',2,''),(145,142,'2016-04-13 20:27:42','2016-04-12 21:58:49','zeemoadmin','Videos','toolbox/videos','','','','1',3,''),(146,142,'2016-04-13 20:28:08','2016-04-12 21:58:49','zeemoadmin','Facebook timeline photos','toolbox/facebook-timeline','','','','1',4,''),(147,142,'2016-04-13 20:28:37','2016-04-12 21:58:48','zeemoadmin','Twitter Backgrounds','toolbox/twitter-backgrounds','','','','1',5,''),(148,0,'2016-04-15 20:04:02','2016-06-03 03:46:28','zeemoadmin','Manage User Accounts','account','friends-home1.png','friends-top1.png','friends-left1.png','1',10,''),(149,148,'2016-04-15 20:04:25','2016-05-05 02:22:01','zeemoadmin','Headings / Subheadings','account/pageheadings','','','','1',1,''),(150,148,'2016-04-15 20:04:42','2016-05-05 02:22:01','zeemoadmin','Account Types','account/account-type','','','','1',2,''),(151,0,'2016-04-15 20:59:06','2016-04-29 20:29:21','zeemoadmin','Campaign','campaign','investor-home1.png','investor-top1.png','modules-left2.png','1',7,''),(152,151,'2016-04-15 20:59:48','2016-04-24 15:48:27','zeemoadmin','Campaign Types','campaign/campaign-type','','','','1',2,''),(153,151,'2016-04-15 21:01:05','2016-04-24 15:48:27','zeemoadmin','Campaign Images','campaign/manage-images','','','','1',3,''),(154,151,'2016-04-15 21:01:16','2016-04-24 15:48:27','zeemoadmin','Headings / Subheadings','campaign/pageheadings','','','','1',1,''),(155,151,'2016-04-22 21:14:25','2016-04-24 15:48:27','zeemoadmin','Pledge Content','campaign/pledge-content','','','','1',4,''),(156,151,'2016-04-25 14:18:24','2016-04-24 16:16:28','zeemoadmin','Common Settings','campaign/setting','','','','1',5,''),(157,0,'2016-04-30 14:24:12','2016-06-03 03:46:28','zeemoadmin','Donation & Reporting','donation','reporting-home1.png','reporting-heading1.jpg','reporting-left-icon1.png','1',8,''),(158,157,'2016-04-30 14:25:31','2016-05-05 22:20:49','zeemoadmin','Donate','donation/donate','','','','1',1,''),(159,157,'2016-04-30 14:27:30','2016-05-05 22:20:49','zeemoadmin','One Year Safe Sleep','donation/one-year-safe-sleep','','','','1',2,''),(160,148,'2016-05-05 20:21:59','2016-05-05 02:22:01','zeemoadmin','Manage Users','account/manageusers','','','','1',3,''),(161,157,'2016-05-06 16:20:12','2016-05-05 22:20:49','zeemoadmin','Donation Report','donation/reporting','','','','1',3,'');
 /*!40000 ALTER TABLE `admin_modules` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,7 +221,7 @@ CREATE TABLE `administrators` (
   `lname` varchar(250) DEFAULT NULL,
   `status` int(2) DEFAULT NULL,
   `level_id` varchar(250) DEFAULT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   `password_recovery` varchar(255) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -235,7 +235,7 @@ CREATE TABLE `administrators` (
 
 LOCK TABLES `administrators` WRITE;
 /*!40000 ALTER TABLE `administrators` DISABLE KEYS */;
-INSERT INTO `administrators` VALUES (1,'zeemoadmin','LMPTKIZGNZGVJNKIPHAXPWWYQSFGRKNOGYZSLFHDUGUASZATHXQAGBITARRTBOAC','berniece@huel.net','Caleb','Harber',1,'1','2017-05-23 17:37:41','zeemoadmin','cc03e747a6afbbcbf8be7668acfebee5','2012-12-26 15:44:31'),(2,'admin','ICGHKGDOXSFTOMMBKUUGHQMVRGWDPEHBFLVVUCSGKOZBWVUGEGHIQVMUNKGXREGP','louie@feeney.net','Charlotte','Hickle',1,'2','2017-05-23 17:37:41','admin','ac47e536d60bc11922e4dfd9b7c78211','2015-12-03 21:59:32');
+INSERT INTO `administrators` VALUES (1,'zeemoadmin','72b302bf297a228a75730123efef7c41','berniece@huel.net','Caleb','Harber',1,'1','2017-05-23 17:37:41','zeemoadmin','cc03e747a6afbbcbf8be7668acfebee5','2012-12-26 15:44:31'),(2,'admin','72b302bf297a228a75730123efef7c41','louie@feeney.net','Charlotte','Hickle',1,'2','2017-05-23 17:37:41','admin','ac47e536d60bc11922e4dfd9b7c78211','2015-12-03 21:59:32');
 /*!40000 ALTER TABLE `administrators` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,7 +253,7 @@ CREATE TABLE `auto_email_notification` (
   `sender_email` varchar(512) NOT NULL,
   `subject` text NOT NULL,
   `message` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
@@ -280,7 +280,7 @@ CREATE TABLE `banner_intervals` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `section` varchar(255) NOT NULL,
   `time_interval` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -315,7 +315,7 @@ CREATE TABLE `banners` (
   `page_name` varchar(255) NOT NULL,
   `page_id` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
@@ -345,7 +345,7 @@ CREATE TABLE `birthday_pledge` (
   `full_name` varchar(555) NOT NULL,
   `email` varchar(555) NOT NULL,
   `date_of_birth` date NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `last_reminder` varchar(228) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
@@ -372,7 +372,7 @@ CREATE TABLE `blog_notifications` (
   `blog_to_emailid` text NOT NULL,
   `blog_cc_emailid` text NOT NULL,
   `blog_bcc_emailid` varchar(255) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -397,11 +397,11 @@ DROP TABLE IF EXISTS `blogger`;
 CREATE TABLE `blogger` (
   `id` int(23) NOT NULL AUTO_INCREMENT,
   `blogger_name` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT '1',
+  `status` int(1) NOT NULL DEFAULT 1,
   `url` varchar(250) NOT NULL,
   `position` int(100) NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
@@ -429,15 +429,15 @@ CREATE TABLE `blogs` (
   `cat_id` int(20) DEFAULT NULL,
   `blog_name` varchar(250) DEFAULT NULL,
   `intro_text` text NOT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `banner_image_text` text NOT NULL,
   `blogger_id` int(20) DEFAULT NULL,
-  `status` int(1) NOT NULL DEFAULT '1',
+  `status` int(1) NOT NULL DEFAULT 1,
   `position` int(100) NOT NULL,
   `url` varchar(250) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_display` varchar(111) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(100) NOT NULL,
   `display_on_home` enum('0','1') NOT NULL,
   PRIMARY KEY (`id`)
@@ -464,11 +464,11 @@ DROP TABLE IF EXISTS `blogs_categories`;
 CREATE TABLE `blogs_categories` (
   `id` int(23) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT '1',
+  `status` int(1) NOT NULL DEFAULT 1,
   `url` varchar(250) NOT NULL,
   `position` int(100) NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
@@ -493,7 +493,7 @@ DROP TABLE IF EXISTS `campaign_comments`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `campaign_comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `dateadded` timestamp NOT NULL DEFAULT current_timestamp(),
   `comments` text NOT NULL,
   `campaign_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
@@ -528,7 +528,7 @@ CREATE TABLE `campaign_images` (
   `image_quality` varchar(20) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
@@ -555,7 +555,7 @@ CREATE TABLE `campaign_settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `common_banner` varchar(255) NOT NULL,
   `campaign_logo` varchar(255) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -585,7 +585,7 @@ CREATE TABLE `campaign_type` (
   `mission_statement` text NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
@@ -621,7 +621,7 @@ CREATE TABLE `categories` (
   `position` int(11) NOT NULL,
   `depth` int(11) NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
@@ -652,7 +652,7 @@ CREATE TABLE `category_to_products` (
   `position` smallint(6) NOT NULL,
   `date_added` datetime DEFAULT NULL,
   `url` varchar(300) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
@@ -678,7 +678,7 @@ DROP TABLE IF EXISTS `ci_sessions`;
 CREATE TABLE `ci_sessions` (
   `id` varchar(128) NOT NULL,
   `ip_address` varchar(45) NOT NULL,
-  `timestamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `timestamp` int(10) unsigned NOT NULL DEFAULT 0,
   `data` blob NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ci_sessions_timestamp` (`timestamp`)
@@ -711,7 +711,7 @@ CREATE TABLE `clients` (
   `url` varchar(250) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -740,7 +740,7 @@ CREATE TABLE `cms_settings` (
   `right_logo_image_title` varchar(255) NOT NULL,
   `right_logo_image_alt_title_text` varchar(512) NOT NULL,
   `right_logo_image_quality` varchar(512) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -773,7 +773,7 @@ CREATE TABLE `common_settings` (
   `icon_url2` text NOT NULL,
   `sender_email` varchar(1024) NOT NULL,
   `sender_name` varchar(1024) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -804,8 +804,8 @@ CREATE TABLE `company` (
   `status` enum('1','0') NOT NULL,
   `image` enum('0','1') NOT NULL,
   `pdf` enum('0','1') NOT NULL,
-  `content` text,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `content` text DEFAULT NULL,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
@@ -836,7 +836,7 @@ CREATE TABLE `company_brochures` (
   `brochure_title` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
@@ -867,7 +867,7 @@ CREATE TABLE `company_images` (
   `image_title` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
@@ -899,7 +899,7 @@ CREATE TABLE `contact` (
   `phone2` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `fax` varchar(25) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -929,7 +929,7 @@ CREATE TABLE `cta` (
   `page_id` varchar(255) NOT NULL,
   `cta` varchar(244) NOT NULL,
   `cta_status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
@@ -1000,7 +1000,7 @@ CREATE TABLE `download_categories` (
   `url` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
@@ -1031,7 +1031,7 @@ CREATE TABLE `downloads` (
   `brochure_title` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1044,41 +1044,6 @@ CREATE TABLE `downloads` (
 LOCK TABLES `downloads` WRITE;
 /*!40000 ALTER TABLE `downloads` DISABLE KEYS */;
 /*!40000 ALTER TABLE `downloads` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `email_messages`
---
-
-DROP TABLE IF EXISTS `email_messages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `email_messages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `page_name` text NOT NULL,
-  `dateadded` datetime NOT NULL,
-  `subject` text NOT NULL,
-  `sender_email` varchar(1024) NOT NULL,
-  `sender_name` varchar(1024) NOT NULL,
-  `receiver_to_emails` text NOT NULL,
-  `receiver_cc_emails` text NOT NULL,
-  `receiver_bcc_emails` text NOT NULL,
-  `receiver` enum('1','0') NOT NULL,
-  `message` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `modified_by_user` varchar(512) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `email_messages`
---
-
-LOCK TABLES `email_messages` WRITE;
-/*!40000 ALTER TABLE `email_messages` DISABLE KEYS */;
-INSERT INTO `email_messages` VALUES (1,'Connect','2014-12-03 00:00:00','Connect | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','edmond.senger@torpkaulke.org','','','1','<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(2,'Speaker Request','2016-04-05 00:00:00','Request | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','marguerite_aufderhar@mosciski.co','','','1','<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(3,'User Signup [Message to Admin]','2016-04-16 11:38:40','Signup | Sleepbus','sendmail@testingsleepbus.org','Sleep Bus','shyann@schambergerkoch.name','','','1','<p>A new user signed up with following informaiton</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(4,'User Signup [Message to User]','2016-04-16 11:38:33','Thank you for signing up to sleepbus','sendmail@testingsleepbus.org','Sleep Bus','dino@robel.info','','','0','<p>Hi&nbsp;<span style=\"line-height: 1.6em;\">[[USER FULL NAME]],</span></p>\r\n\r\n<p>Thanks for signing up to sleepbus. Your login details are listed below. You can sign in to your account at any time <a href=\"https://www.sleepbus.org/signin\">here</a>.</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(5,'Reset Password Message [Forgot Password : Message to User]','2016-04-19 12:17:32','sleepbus: Password Oops','sendmail@testingsleepbus.org','Sleep Bus','mable@kuvalis.net','','','0','<p>Oops, forgot your password? Don&#39;t worry, it happens to us all. Let&#39;s get you a new one.</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(6,'Birthday Pledge [Message to Admin]','2016-04-28 00:00:00','Birthday Pledge | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','georgette_bergstrom@millerturcotte.name','','','1','<p>A new birthday pledge has been created by a user with following information.</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(7,'Birthday Pledge [Message to User]','2016-04-28 00:00:00','Your birthday is about to changes lives. Here\'s how.','sendmail@testingsleepbus.org','Sleep Bus','ian.glover@schinner.com','','','0','<p>You pledged your birthday for safe sleeps! What does that mean, exactly? It means that you&#39;ve decided to celebrate your birthday by raising money to provide safe sleeps for people sleeping rough. Maybe you&#39;ll throw a party and ask for contributions at the door. Or offer to do something outrageous if friends donate. Or simply ask for donations to safe sleeps instead of gifts. We&#39;ll remind you when your birthday is closer, or <a href=\"https://www.sleepbus.org/signin\">start now</a>.</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(8,'Birthday Reminder  Cron Job [Message to User]','2016-04-28 00:00:00','It\'s time for your birthday to change lives. Let\'s Go!','sendmail@testingsleepbus.org','sleepbus','willard@price.org','','','0','<p>It&#39;s time to take action. You pledged your birthday for safe sleeps! What does that mean, exactly? It means that you decided to celebrate your birthday by raising money to provide safe sleeps for people sleeping rough. Have you decided what you are going to do. Maybe throw a party and ask for contributions at the door. Are you doing something outrageous if friends donate?&nbsp;Or, are you simply asking for donations to safe sleeps instead of gifts?&nbsp;Have fun!</p>','2017-05-23 17:37:42','admin'),(9,'Fundraise Form [Message to Admin]\n','2016-04-28 00:00:00','New Campaign | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','dalton_schuster@roob.biz','','','1','<p>A new campaign has been created by a user with following information given below:</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(10,'Fundraise Form [Message to User]\n','2016-04-28 00:00:00','You\'re awesome. Thank you','sendmail@testingsleepbus.org','Sleep Bus','otis@erdman.net','','','0','<p>Hey, thank you so much for starting a campaign for sleepbus. Truly appreciated. We can&#39;t wait to see what you get up to. Make sure you share your campaign with everyone you know and we wish you the best of luck. Have fun&nbsp;:)</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(11,'Message to Donors When User Update And Comments','2016-04-28 00:00:00','sleepbus: News Flash','sendmail@testingsleepbus.org','Sleep Bus','remington_breitenberg@parkergrimes.net','','','0','<p>Hey, new information is now available on the sleepbus campaign you&#39;re supporting. Login in now to see whats happening.</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(12,'One Time Donation [Message to Admin]\n','2016-04-28 00:00:00','New Donation | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','grayson@gusikowskikutch.com','','','1','<p>A new donation is made on website. Please follow the information given below:</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(13,'One Time Donation [Message to User]\n','2016-04-28 00:00:00','Donation | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','vallie@dare.net','','','0','<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(14,'Recurring/Monthly Donation [Message to Admin ]\n','2016-04-28 00:00:00','New Recurring Donation | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','jeika@fay.com','','','1','<p>A new recurring profile has been created on <strong>Paypal</strong> for donation to the Sleep Bus. Profile details are given below.</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(15,'Recurring/Monthly Donation  [Message to User]','2016-04-28 00:00:00','Recurring Donation Profile Created | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','myrtie.lemke@feil.io','','','0','<p>Hi,<br />\r\nA new recurring donation account has been created on <strong>PayPal </strong>with the following information.</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(18,'Campaign Donation [Message to Admin]\n','2016-04-28 00:00:00','Campaign Donation | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','ruel.gibson@stamm.name','','','1','<p>Hi,</p>\r\n\r\n<p>A new donation has been made. Please follow the information below</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(19,'Campaign Donation [Message to Creator]\n\n','2016-04-28 00:00:00','New Donation has been made to your campaign','sendmail@testingsleepbus.org','Sleep Bus','natalia@will.biz','','','0','<p>Hi,<br />\r\nA new donation has been made for your campaign. Please follow the information given below.<br />\r\n&nbsp;</p>\r\n\r\n<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(20,'Campaign Donation [Message to User]\n\n','2016-04-28 00:00:00','Campaign Donation | Sleep Bus','sendmail@testingsleepbus.org','Sleep Bus','sammy_bernhard@schmidt.io','','','0','<p>[[BODY]]</p>','2017-05-23 17:37:42','admin'),(21,'Campaign Expiration Cron Job on End Date [Message to Campaign Creator] ','2016-04-28 00:00:00','Campaign Expired | Sleepbus','sendmail@testingsleepbus.org','sleepbus','alexanne_crist@gerhold.net','','','0','<p>Hi [[CAMPAIGN_CREATER]],</p>\r\n\r\n<p>Your campaign [[CAMPAIGN_NAME]] created on [[CREATION_DATE]] has been expired.</p>\r\n\r\n<p>&nbsp;</p>','2017-05-23 17:37:42','admin');
-/*!40000 ALTER TABLE `email_messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1095,7 +1060,7 @@ CREATE TABLE `faq` (
   `date_entered` date NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -1128,7 +1093,7 @@ CREATE TABLE `homepage_banners` (
   `url` text NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
@@ -1160,7 +1125,7 @@ CREATE TABLE `icon_settings` (
   `intro_text` text NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   `date_entered` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -1194,7 +1159,7 @@ CREATE TABLE `landingpages` (
   `meta_keyword` text NOT NULL,
   `meta_description` text NOT NULL,
   `dateadded` datetime DEFAULT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
@@ -1225,7 +1190,7 @@ CREATE TABLE `lead_sources` (
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
@@ -1257,7 +1222,7 @@ CREATE TABLE `leads` (
   `contact_no` varchar(255) NOT NULL,
   `question` text NOT NULL,
   `message` text NOT NULL,
-  `dateadded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `dateadded` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1313,7 +1278,7 @@ CREATE TABLE `media_items` (
   `date_display` date NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
@@ -1370,7 +1335,7 @@ CREATE TABLE `meta_tags` (
   `meta_keyword` text NOT NULL,
   `json_code` text NOT NULL,
   `meta_description` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
@@ -1402,7 +1367,7 @@ CREATE TABLE `more_info_section` (
   `image_quality` varchar(25) NOT NULL,
   `image_alt_title_text` varchar(250) NOT NULL,
   `url` varchar(250) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
@@ -1436,7 +1401,7 @@ CREATE TABLE `news` (
   `status` enum('1','0') NOT NULL,
   `intro_text` text NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
@@ -1467,7 +1432,7 @@ CREATE TABLE `news_brochures` (
   `brochure_title` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1500,7 +1465,7 @@ CREATE TABLE `news_images` (
   `description` text NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
@@ -1551,8 +1516,8 @@ DROP TABLE IF EXISTS `newsletters_groups`;
 CREATE TABLE `newsletters_groups` (
   `id` int(23) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT '1',
-  `admin_id` int(1) NOT NULL DEFAULT '1',
+  `status` int(1) NOT NULL DEFAULT 1,
+  `admin_id` int(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1635,7 +1600,7 @@ CREATE TABLE `page_brochures` (
   `description` text NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
@@ -1666,7 +1631,7 @@ CREATE TABLE `page_heading` (
   `sub_heading` enum('0','1') NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
@@ -1700,7 +1665,7 @@ CREATE TABLE `page_images` (
   `description` text NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
@@ -1714,42 +1679,6 @@ LOCK TABLES `page_images` WRITE;
 /*!40000 ALTER TABLE `page_images` DISABLE KEYS */;
 INSERT INTO `page_images` VALUES (6,'2013-01-31 08:36:50',2,'97607268-10-jpg_114421.jpg','gads asdfasdf','','','','1',11,'2013-12-01 16:38:31','zeemoadmin'),(7,'2013-02-01 10:20:59',2,'red-rose-amp-lips-HD_wallpapers.jpg','asdfasdf','beautiful','80','','1',10,'2013-12-01 16:38:31','zeemoadmin'),(8,'2013-02-19 09:23:23',2,'11.jpg','Image2','','','','1',8,'2013-12-01 16:38:31','zeemoadmin'),(9,'2013-02-22 07:30:07',2,'sonakshi-sinha-20a.jpg','','','60','','1',9,'2013-12-01 16:38:31','zeemoadmin'),(10,'2013-02-23 04:25:41',2,'sonakshi-sinha-9a.jpg','image345','','70','','1',4,'2013-12-01 16:38:31','zeemoadmin'),(15,'2013-02-28 07:36:40',2,'image2.jpg','','','','','1',7,'2013-12-01 16:38:31','zeemoadmin'),(16,'2013-02-28 07:37:27',2,'2.jpg','','','','','1',6,'2013-12-01 16:38:31','zeemoadmin'),(17,'2013-02-28 07:38:13',2,'lederderg-r-renae-ayres.jpg','','','','','1',5,'2013-12-01 16:38:31','zeemoadmin'),(18,'2013-09-25 10:34:27',2,'sonakshi-sinha-4a.jpg','asdfasdf','349','90','','1',3,'2013-12-01 16:38:31','zeemoadmin'),(19,'2013-10-08 09:24:19',2,'nota8.jpg','asdf','asddfasdf','80','','1',2,'2013-12-01 16:38:31','zeemoadmin'),(20,'2013-12-02 05:08:31',2,'nota81.jpg','fawf','','','','1',1,'2013-12-01 16:38:31','zeemoadmin');
 /*!40000 ALTER TABLE `page_images` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pages`
---
-
-DROP TABLE IF EXISTS `pages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pages` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
-  `parent_id` int(11) NOT NULL,
-  `page_name` varchar(255) NOT NULL,
-  `page_heading` varchar(255) DEFAULT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `image` enum('0','1') NOT NULL,
-  `pdf` enum('0','1') NOT NULL,
-  `text_only` enum('1','0') NOT NULL,
-  `content` text,
-  `intro_text` text NOT NULL,
-  `banner_content` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pages`
---
-
-LOCK TABLES `pages` WRITE;
-/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-INSERT INTO `pages` VALUES (1,0,'Home','Home',1,'1','0','0','1','<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12 row-centered\">\r\n<div class=\"container sleepbushometext\">\r\n<div class=\"col-lg-9 col-md-10 col-sm-12 col-xs-12 col-centered\">\r\n<p><img alt=\"\" src=\"https://www.sleepbus.org/images/sleepbus.png\" /> &nbsp;is a non profit organisation on a mission to end the need for people to sleep rough in Australia. With the support of people like you, we can get people off the street and into a safe bed for the night. With a good nights sleep, we hope that the pathways out of homelessness will be a little easier to find and that&#39;s why we believe that &lsquo;sleep changes everything&rsquo;.</p>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"container\">\r\n<div class=\"row\">\r\n<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12 ideabold\">\r\n<div class=\"ideaboldimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon6.png\" /></div>\r\n\r\n<h2>A Bold idea. Always use 100%</h2>\r\n\r\n<p>100% of your donation is allocated to a sleepbus project; that&rsquo;s our 100% Model promise to you. When you donate or fundraise, every dollar goes to building and maintaining a sleepbus project. Private donors fund our Charity operating costs, so 100% of your money can go towards getting people off the street.</p>\r\n</div>\r\n\r\n<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12 ideabold\">\r\n<div class=\"ideaboldimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon7.png\" /></div>\r\n\r\n<h2>We prove everything</h2>\r\n\r\n<p>We prove exactly where your money goes. Once your donation is allocated to a project, you will receive photos of YOUR bus and its nightly service location, then you can go to see your bus personally if you wish and when you do, you&rsquo;ll see your name on it as one of its supporters.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"containerin\">\r\n<div class=\"row sleepchanges\">\r\n<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12 sleepchangesleft\"><img alt=\"\" src=\"https://www.sleepbus.org/images/img2.jpg\" />\r\n<div class=\"sleepchangeslefttext\">\r\n<h2><img alt=\"\" src=\"https://www.sleepbus.org/images/icon5.png\" /></h2>\r\n\r\n<p>When a person is without a home and forced to spend a night on the street, finding a safe place to sleep changes everything. It can help protect a persons mental and physical health and safety and we believe that with a safe sleep and a clear head, the pathways out of homelessness will be a little easier to see. Sleep changes everything.</p>\r\n<a class=\"btn btn-default\" href=\"https://www.sleepbus.org/why-sleep\">LEARN MORE</a></div>\r\n</div>\r\n\r\n<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12 sleepchangesright\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Mental_Physical_Safety_Icons2(1).jpeg\" /></div>\r\n</div>\r\n</div>\r\n</div>\r\n','<div>This year ask for donations instead of gifts and <a href=\"https://www.sleepbus.org/pledge\">pledge</a> your birthday for safe sleeps!</div>\r\n','<div class=\"dexpothomebanner\">\r\n<div class=\"homebannerbox\">\r\n<h2>Give safe sleeps</h2>\r\n\r\n<h3>You can provide two safe sleeps for just</h3>\r\n[[ONE_TIME_DONATION_FORM]]\r\n\r\n<p><a href=\"https://www.sleepbus.org/donate\">or make a monthly donation</a></p>\r\n</div>\r\n</div>\r\n','2017-03-03 08:44:49','admin'),(2,0,'About Us',NULL,2,'1','0','0','1','<div class=\"innerheaderbox\">\n<div class=\"whyboxbg2\">\n<div class=\"innerheaderboxin\">\n<h1>Here&rsquo;s what we&rsquo;re about</h1>\n\n<div class=\"rwo\">\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n<div class=\"abouthedtext\">\n<h2>our<span>mantra</span></h2>\n\n<p>Sleep changes everything.</p>\n</div>\n</div>\n\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n<div class=\"abouthedtext\">\n<h2>our<span>mission</span></h2>\n\n<p>Is to bring safe overnight accommodation to people sleeping rough in Australia.</p>\n</div>\n</div>\n\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n<div class=\"abouthedtext\">\n<h2>our<span>vision</span></h2>\n\n<p>Is to end the need for people to sleep rough in Australia.</p>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n<div class=\"container\">\n<div class=\"row\">\n<div class=\"aboutbord\">\n<div class=\"projectcolorbox\">To achieve our vision; we will build 319+ buses which will provide more than 2,000,000 safe sleeps per year right around Australia.</div>\n\n<h2>So why provide safe overnight accommodation for those sleeping rough on the street&hellip; on a Bus?</h2>\n\n<div class=\"aboutbordbus\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/WebsiteBus.jpg\" style=\"width: 700px;\" /></div>\n\n<p>It wasn&rsquo;t the first idea raised as a solution to this problem, however after much research and talking with people who are homeless and/or those working with the homeless, our other idea&rsquo;s were either not practical, or required cutting through a lot of red tape and not sustainable.</p>\n\n<p>Our key criteria was&hellip; we need to be where the people we want to help are. Sounds simple enough, but as many Homeless Shelters have found, renting or purchasing real estate to do this is massively prohibitive and expensive to maintain. The cities, in particular the CBD, is where the people who need the help are and like any business, it&#39;s all about location, location, location.</p>\n</div>\n\n<div class=\"programbox\">\n<h2>Pilot Program</h2>\n\n<h3>Suburban Metro Council Pilot - The bus that starts it all.</h3>\n\n<p>To test the sleepbus operations under controlled conditions in a suburban council area with a small homeless persons community. The first bus, that will forever be, a part of sleepbus history.</p>\n\n<h3>C.B.D. Pilot - The buses that test it all.</h3>\n\n<p>To take two buses and test sleepbus operations under semi-controlled conditions in a CBD environment with a large scale homeless persons community.</p>\n\n<h3>The Big Launch - The buses that show them all.</h3>\n\n<p>sleepbus plans to build the required number of buses that will END the need for people sleeping rough in a highly visible location: a full, in the field, launch of sleepbus to show what can be achieved. Like our facebook page to keep posted on this big event.</p>\n\n<div class=\"programfb\"><a href=\"https://www.facebook.com/sleepbusaustralia\" target=\"_blank\"><img alt=\"\" src=\"https://www.sleepbus.org/images/fb2.png\" /></a></div>\n</div>\n</div>\n</div>\n</div>\n\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n<div class=\"container\">\n<div class=\"row donateh2\">\n<h2>Here&rsquo;s three ways you can get involved</h2>\n\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome\">\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon1.png\" style=\"height: 127px; width: 100px;\" /></div>\n\n<p>For $27.50 you can give a good night&rsquo;s sleep.</p>\n<a class=\"btn btn-primary\" href=\"https://www.sleepbus.org/donate\">Donate</a></div>\n\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome\">\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon2.png\" style=\"height: 139px; width: 100px;\" /></div>\n\n<p>Pledge your next Birthday for safe sleeps.</p>\n<a class=\"btn btn-success\" href=\"https://www.sleepbus.org/pledge\">pledge</a></div>\n\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome\">\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/fundraise(1).jpg\" style=\"width: 100px; height: 148px;\" /></div>\n\n<p>Do something crazy or creative to raise money.</p>\n<a class=\"btn btn-info\" href=\"https://www.sleepbus.org/fundraise\">Fundraise</a></div>\n</div>\n</div>\n</div>\n\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n<div class=\"container\">\n<div class=\"findoutmore2\"><a href=\"https://www.sleepbus.org/meet-the-board\">meet our board &nbsp; <img alt=\"\" src=\"https://www.sleepbus.org/images/arrowleft.png\" /></a></div>\n</div>\n</div>','','','2017-02-14 18:40:26','admin'),(3,0,'Why Sleep',NULL,3,'1','1','1','1','<div class=\"innerheaderbox2\">\r\n<div class=\"whyboxbg\">\r\n<div class=\"innerheaderboxin\">\r\n<h1>Why sleep?</h1>\r\n\r\n<div class=\"abouthedtextp\">The facts on homelessness in Australia.</div>\r\n\r\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 mrtop\">\r\n<div class=\"mrtopimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon20.png\" /></div>\r\n\r\n<p>On any given night in Australia <span>105,000</span> people are homeless.</p>\r\n</div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 mrtop\">\r\n<div class=\"mrtopimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon21.png\" /></div>\r\n\r\n<p>Of those, <span>6,314</span> are sleeping rough.</p>\r\n</div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 mrtop\">\r\n<div class=\"mrtopimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon22.png\" /></div>\r\n\r\n<p>And <span>1,073</span> of those are under 12.</p>\r\n</div>\r\n</div>\r\n\r\n<div class=\"abouthedtextp\">Of people who sleep rough:</div>\r\n\r\n<div class=\"abouthedtextp2\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon18.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon18.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon18.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon18.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon18.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon18.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon18.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon19.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon19.png\" /> <img alt=\"\" src=\"https://www.sleepbus.org/images/icon19.png\" /></div>\r\n\r\n<div class=\"abouthedtextp2\">67.6% Male <span>32.4% Female</span></div>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"container\">\r\n<div class=\"row\">\r\n<div class=\"aboutbord\">\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<p>sleepbus is distinct, yet complementary to existing efforts from other organisations supporting Australians experiencing, or at risk of homelessness. Our work aims to fill a &lsquo;gap&rsquo;, rather than overlapping or replicating activities that support the urgent needs of people in Australia.</p>\r\n</div>\r\n\r\n<div class=\"programbox2\">\r\n<h2><img alt=\"\" src=\"https://www.sleepbus.org/images/icon14.png\" /></h2>\r\n\r\n<p>Sleep plays a vital role in good health and wellbeing; and getting enough quality sleep can help protect a person&rsquo;s mental and, physical health, and ultimately their safety. For those sleeping rough, getting a good nights sleep is virtually impossible and can contribute to long-term homelessness and more.</p>\r\n\r\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"row\">\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 changebox\">\r\n<div class=\"changeboximg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon15.png\" /></div>\r\n\r\n<h2>Mental Health</h2>\r\n\r\n<p>Sleep deficiency can harm a person&rsquo;s mental health over time; Low self-esteem, social isolation, and the exacerbation or development of specific mental health disorders including schizophrenia, depression, bipolar disorder and post-traumatic stress disorder.</p>\r\n</div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 changebox\">\r\n<div class=\"changeboximg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon16.png\" /></div>\r\n\r\n<h2>Physical Health</h2>\r\n\r\n<p>Sleep deficiency can harm a person&rsquo;s physical health over time. For example, ongoing sleep deficiency can raise the risk for some chronic health problems such as, Diabetes, Heart Health, Breathing Problems and Breast Cancer.</p>\r\n</div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 changebox\">\r\n<div class=\"changeboximg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon17.png\" /></div>\r\n\r\n<h2>Safety</h2>\r\n\r\n<p>Many sleeping on the street are subjected to terrible weather, harassment, bullying, being robbed and worse. Those sleeping on the street also run a high risk of drug and alcohol abuse, further affecting their safety and wellbeing.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>','','','2017-02-14 18:40:26','admin'),(4,0,'Meet The Board',NULL,4,'1','0','0','1','<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"container\">\r\n<div class=\"row\">\r\n<div class=\"funding\">\r\n<h1>Meet the board</h1>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2>We&rsquo;re a passionate group of determined and creative problem solvers who want to make a difference. Our vision is to end the need for people to sleep rough in Australia.</h2>\r\n</div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our vision; we will build 319+ buses which will provide more than 2,000,000 safe sleeps per year right around Australia.</div>\r\n\r\n<div class=\"aboutus\">\r\n<h2>Get to know us a little&nbsp;bit&nbsp;better.</h2>\r\n\r\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"row aboutusmr\">\r\n<div class=\"col-lg-4 col-md-5 col-sm-6 col-xs-12 aboutboxleft\"><img alt=\"\" src=\"https://www.sleepbus.org/images/img12.jpg\" /></div>\r\n\r\n<div class=\"col-lg-8 col-md-7 col-sm-6 col-xs-12 aboutboxright\">\r\n<h2>Simon Rowe</h2>\r\n\r\n<h3>CEO/Founder</h3>\r\n\r\n<p>Entrepreneurial spirit. Problem solver. Hawthorn supporter. Father. Coach. sleepbus founder.</p>\r\n\r\n<p>Simon has more than 20 year&rsquo;s experience as a business owner (his first business at age 17) and working will various companies in operations roles; solving problems, performance and profitability issues. He&rsquo;s the &ldquo;fix it guy&rdquo;, the guy you call in when your company has a problem and he&rsquo;ll find a solution that gets results. Its this same skill and determined attitude now being used to solve the serious problem of people sleeping rough in Australia.</p>\r\n\r\n<p>Read Simon&rsquo;s story &amp; the birth of sleepbus.</p>\r\n<a class=\"btn btn-primary\" href=\"https://www.sleepbus.org/simon-story\">simon&rsquo;s story</a></div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 aboutboxthree\">\r\n<div class=\"aboutboxthreeimg\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/birgitte.jpg\" style=\"width: 300px;\" /></div>\r\n\r\n<h2>Birgitte Snelson</h2>\r\n\r\n<h3>Chairperson</h3>\r\n\r\n<p>Head of Procurement at Village Roadshow, Birgitte is responsible for the sourcing of all spend categories including marketing, media, print, corporate services, IT&amp;T, food &amp; beverage etc. Birgitte was nominated for Telstra Business Woman of the Year 2013 and has volunteered her procurement skills for organisations such as Kids Under Cover and Ovarian Cancer Australia. Birgitte has an MBA from Copenhagen Business School with studies at both Rensselaer Polytechnic Institute in New York and London School of Economics. &nbsp; <a class=\"SeeMore2\" data-toggle=\"collapse\" href=\"#collapseTwo1\">Read More</a></p>\r\n</div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 aboutboxthree\">\r\n<div class=\"aboutboxthreeimg\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/roger.jpg\" style=\"width: 300px;\" /></div>\r\n\r\n<h2>Roger Simpson</h2>\r\n\r\n<h3>Board Member</h3>\r\n\r\n<p>Roger Simpson, CEO, The Retail Solution, has worked in retail for over 35 years. His company focuses on helping clients to improve their service and sales through better focus on service standards, sales techniques, measurement and follow up.<span class=\"accordion-body collapse\" id=\"collapseTwo2\">&nbsp;Roger is passionate about the customer experience leaving a positive impression. </span>&nbsp; <a class=\"SeeMore2\" data-toggle=\"collapse\" href=\"#collapseTwo2\">Read More</a></p>\r\n</div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 aboutboxthree\">\r\n<div class=\"aboutboxthreeimg\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/alison.jpg\" style=\"width: 300px;\" /></div>\r\n\r\n<h2>Alison Coughlan</h2>\r\n\r\n<h3>Advisor</h3>\r\n\r\n<p>Former CEO of Ovarian Cancer Australia. Alison is an accomplished consultant and leader with over 20 years&#39; experience in the research, health and community sectors. Alison works with individuals and organisations to build their capabilities, grow their reach and optimise their impact.<span class=\"accordion-body collapse\" id=\"collapseTwo\">&nbsp;Alison holds a Master of Public Health in Epidemiology and Biostatistics and an&nbsp;Honours Degree in Science (Immunology). She has deep and rich insights developed from working with over 50 for-purpose organisations in roles from technician, leader and consultant to Board Director. </span>&nbsp; <a class=\"SeeMore2\" data-toggle=\"collapse\" href=\"#collapseTwo\">Read More</a></p>\r\n</div>\r\n</div>\r\n\r\n<div class=\"findoutmore\"><a href=\"https://www.sleepbus.org/about-us\">find out more about our buses</a></div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>','','','2017-03-14 05:26:07','admin'),(5,0,'Connect',NULL,6,'1','0','0','1','<h1>Connect</h1>\r\n\r\n<p>Keep up to date with the latest sleepbus news here</p>\r\n\r\n<div class=\"contactfbbox\"><a href=\"https://www.facebook.com/sleepbusaustralia\" target=\"_blank\"><img alt=\"\" src=\"https://www.sleepbus.org/images/fb-hover.png\" /></a> <a href=\"https://twitter.com/sleepbus\" target=\"_blank\"><img alt=\"\" src=\"https://www.sleepbus.org/images/twitter-hover.png\" /></a></div>\r\n\r\n<p>Or, if you have any queries please get in touch.</p>','','','2017-02-14 18:40:26','admin'),(6,0,'Speaker Request',NULL,7,'1','0','0','1','<h1>Speaker request</h1>\r\n\r\n<p>Would you like sleepbus to visit your school or business?<br />\r\nPlease complete your details below and we will be in touch.</p>\r\n\r\n<div class=\"contactfbbox2\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon13.png\" /></div>','','','2017-02-14 18:40:26','admin'),(7,0,'eNewsletter Signup Form',NULL,8,'1','0','0','1','<h1>Sign up to our eNews</h1>\r\n\r\n<p>Sign up to receive awesome updates from sleepbus.<br />\r\nThey&rsquo;re worthwhile. We&nbsp;promise.</p>\r\n\r\n<div class=\"contactfbbox2\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon12.png\" /></div>','','','2017-02-14 18:40:26','admin'),(8,0,'Sitemap',NULL,9,'1','0','0','1',NULL,'','','2016-04-07 15:49:28','admin'),(9,0,'Oops Page',NULL,11,'1','0','0','1','<div class=\"aboutbordbus\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/WebsiteBus.jpg\" style=\"width: 500px;\" /></div>\r\n\r\n<p>We are really sorry but the page you requested is not available. Let&#39;s bus it&nbsp;back to the <a href=\"https://www.sleepbus.org/\">start</a>.</p>','','','2017-02-14 18:40:26','admin'),(10,0,'Simon Story',NULL,5,'1','0','0','1','<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"container\">\r\n<div class=\"row\">\r\n<div class=\"funding\">\r\n<h1>Simon&rsquo;s story</h1>\r\n\r\n<div class=\"row\">\r\n<div class=\"col-lg-3 col-md-4 col-sm-5 col-xs-12 simonleft\"><img alt=\"\" src=\"https://www.sleepbus.org/images/img16.jpg\" /></div>\r\n\r\n<div class=\"col-lg-9 col-md-8 col-sm-7 col-xs-12 simonright\">\r\n<p><strong>In 1993,</strong> I fell&nbsp;behind in my rent and was evicted. I had a job, but for the next 4 months I&nbsp;lived in my car while I saved up enough money&nbsp;for a monthsbond and a months&nbsp;rent on another place. I would park in a car park near my old place for the&nbsp;night, and in the mornings,&nbsp;drive to a caravan park near by, sneak in, have a&nbsp;shower and go to work.</p>\r\n\r\n<p>Since then, I have&nbsp;made a good living for years as a Chef, and Entrepreneur, for the most part&nbsp;living selfishly and not giving a second&nbsp;thought to homelessness.</p>\r\n\r\n<p>In May 2015, I was&nbsp;walking along Carlisle Street in St. Kilda East, Melbourne, to my local Coles&nbsp;supermarket. As I approached the brand&nbsp;new Bank of Melbourne I see a bright,&nbsp;white doona crumpled up in the tiny alcove of an unused doorway. As I got closer&nbsp;I noticed there&nbsp;was a man curled up in the doona, on the hard concrete floor, trying&nbsp;to get some sleep&hellip; at lunch time.</p>\r\n\r\n<p>So many people were&nbsp;walking past, looking, but moving on with their day, as I have probably done&nbsp;since 1993.</p>\r\n\r\n<h2>This time I couldn&rsquo;t walk&nbsp;past, I stopped and asked&nbsp;him if he was ok&hellip;</h2>\r\n\r\n<p>he said &ldquo;yeah mate, thanks,&nbsp;just trying to get some sleep&rdquo;. He looked so tired. I said, &ldquo;here mate&rdquo; and gave&nbsp;him the $20 I had in my pocket.</p>\r\n\r\n<h2>His eyes&nbsp;lit up, he smiled and was so grateful.&nbsp;</h2>\r\n\r\n<p>He shook my hand, thanked me again with a smile and curled back up under the&nbsp;doona. When I got home, I told my family what&nbsp;had happened and tears rolled&nbsp;down my face.</p>\r\n\r\n<p>That man, trying to&nbsp;sleep on a concrete floor, in the middle of the day, on a busy city street&nbsp;affected me in a profound way. And that&rsquo;s a&nbsp;mild story, for many sleeping on&nbsp;the streets are being subjected to terrible weather, harassment, bullying,&nbsp;being robbed and worse. No&nbsp;one should have to live like that.</p>\r\n\r\n<h3>What is charity?</h3>\r\n\r\n<p>For me, charity is&nbsp;practical. It&#39;s the ability to use one&#39;s position of influence, relative wealth&nbsp;and power to affect lives for the better.</p>\r\n\r\n<p>I&rsquo;m not a religious&nbsp;person, but there&#39;s a story in the bible about a man beaten near death by&nbsp;robbers. He&#39;s stripped naked and lying on&nbsp;the roadside. Most people pass him&nbsp;by, but one man stops. He picks him up and bandages his wounds. He puts him on&nbsp;his horse and&nbsp;walks alongside until they reach an inn. He checks him in and&nbsp;throws down his Amex. &quot;Whatever he needs until he gets better.&rdquo;</p>\r\n\r\n<p>Because he could.</p>\r\n\r\n<p>The dictionary&nbsp;defines charity as simply:</p>\r\n\r\n<h2>The act of giving voluntarily to those in need.</h2>\r\n\r\n<p>Using my 20+ years of&nbsp;business experience, I set about developing a sustainable business model with a&nbsp;simple mission; to provide those&nbsp;sleeping &ldquo;rough&rdquo;, a safe overnight place to&nbsp;sleep. The more I developed and researched a solution, the more I discovered&nbsp;what a good&nbsp;nights sleep can do for a persons physical and mental health.&nbsp;Just being able to sleep through the night,&nbsp;warm and safe can give a person a whole new outlook on life.</p>\r\n\r\n<p><strong style=\"font-size:18px;\">sleep<span>bus</span></strong> is distinct,&nbsp;yet complementary, to existing efforts from other organisations supporting&nbsp;Australians experiencing or at risk of&nbsp;homelessness. Our work aims to fill a&nbsp;&lsquo;gap&rsquo;, rather than overlapping or replicating activities that support the&nbsp;urgent needs of people in&nbsp;Australia.</p>\r\n\r\n<p>No other Australian&nbsp;organisation has this focus.</p>\r\n\r\n<p>The least we can do&nbsp;is&nbsp;bring safe overnight accommodation&nbsp;to people sleeping rough in Australia&nbsp;until they get back on their feet.</p>\r\n\r\n<p><b>Simon Rowe</b><br />\r\n<bdo dir=\"ltr\">Winter&nbsp;2015</bdo></p>\r\n\r\n<p><a href=\"https://www.sleepbus.org/meet-the-board\">&lt; Back to Meet the board</a></p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>','','','2017-02-14 18:40:26','admin'),(11,0,'Privacy Policy','Privacy Policy',11,'1','0','0','1','<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"privacy\">\r\n<h1>Privacy Policy for sleepbus</h1>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Our Commitment to Privacy</h2>\r\n\r\n<p>sleepbus knows that you care how information about you is used and shared, and we appreciate you trusting that we will do so carefully and sensibly. To better protect your privacy, we provide this Privacy Policy explaining our practices and the choices you can make about the way your information is collected and used by sleepbus. The information below explains our policy regarding your privacy, both online and offline. By visiting <a href=\"https://www.sleepbus.org\">www.sleepbus.org</a> or sharing personal information with sleepbus you are accepting the practices described in this Privacy Notice.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">What personally identifiable information is collected by sleepbus?</h2>\r\n\r\n<p>When you visit our website or make a donation online or offline, you may provide us with personal information (such as name, address, email address, telephone numbers and/or credit/debit card information) that you knowingly choose to disclose, which is collected on an individual basis for various purposes. These purposes include registering to receive email newsletters or other materials, requesting further information from us about projects and services, donating to us, ordering merchandise, making requests, submitting a form on our website, or simply asking a question. We receive and store any information you enter on our website or give us in any other way, whether it is online or offline. We ask for personal information so that we can fulfill your request and return your message. This information is retained and used in accordance with existing laws, rules, regulations, and other policies. sleepbus does not collect personal information from you unless you provide it to us. If you choose not to provide any of that information, we may not be able to fulfill your request or complete your order, but you will still be free to browse the other sections of the websites owned and administered by sleepbus. This means that you can visit our site without telling us who you are or revealing any personally identifiable information about yourself.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">The way we use information</h2>\r\n\r\n<p>When you supply information about yourself for a specific purpose, we use the information for only that purpose (such as to provide the service or information you have requested). For example, you may be asked to give us individual information to receive information, to make a donation, to purchase merchandise, or to apply for a job. Similarly, we use information you provide about yourself or someone else when placing a merchandise order only to ship the merchandise and to confirm delivery. We do not share this information with outside parties except to the extent necessary to complete that order.</p>\r\n\r\n<p>You can register with our website if you would like to receive updates on our new projects and services or on our merchandise. Information you submit on our website or over the phone will not be used for this purpose unless a registration form is filled out.</p>\r\n\r\n<p>We use return email addresses to answer the email we receive. Such addresses are not used for any other purpose and are not shared with outside parties.</p>\r\n\r\n<p>sleepbus does not sell, rent, give-away or share its email addresses or other personal contact information with outside sources. sleepbus also does not send mailings on behalf of other organisations.</p>\r\n\r\n<p>Should any material changes be made to the ways in which we use personally identifiable information, sleepbus will take commercially reasonable measures to obtain written or email consent from you. We will also post the changes to our use of personally identifiable information on our website at least 30 days prior to a change.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Our commitment to data security</h2>\r\n\r\n<p>Personally identifiable information is stored on our server and is not publicly accessible. Further, personally identifiable information is only accessed by sleepbus personnel on a &quot;need to know&quot; basis. To prevent unauthorized access, maintain data accuracy, and ensure the correct use of information, we have put in place appropriate physical, electronic, and managerial procedures to safeguard and secure the information we collect online. Additionally, sensitive data such as credit card numbers are encrypted using SSL and other industry standard measures, to provide an additional level of security.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Choice/Opt-out</h2>\r\n\r\n<p>If you have registered to receive communications from us and later change your mind, you may contact us to have your name and contact information removed from our distribution lists. You have the following options to do this:</p>\r\n\r\n<p>You can send an email to: <a href=\"mailto:support@sleepbus.org\" style=\"line-height: 20.8px;\">support@sleepbus.org</a></p>\r\n\r\n<p>You can send mail to the following address:</p>\r\n\r\n<p>sleepbus 22 Gourlay Street, St Kilda East, Victoria, 3183</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Correct/Update</h2>\r\n\r\n<p>If you would like to verify the data we have received from you or to make corrections to it, you may contact us directly at the email and mail addresses provided above.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">What anonymous information is collected by sleepbus?</h2>\r\n\r\n<p>Anonymous information is collected for every donor and visitor to this site. This includes pages viewed, date and time, and browser type. IP numbers are not stored, but are temporarily used to determine domain type and in some cases, geographic region. We do not make any association between this information and a donor or visitor&#39;s identity.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Automatic information</h2>\r\n\r\n<p>When you visit our website, our servers make a log of basic information corresponding to the sites and pages you have visited. This information is stored primarily to track the effectiveness of our website and individual sections and pages within them.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">How does this site use cookies?</h2>\r\n\r\n<p>Cookies are simple text files stored by your web browser that provide a method of distinguishing among donors and visitors to the website. sleepbus uses cookies to identify your browser as you visit pages on the sleepbus website or sites in the sleepbus media network. Cookies created on your computer by using our website do not contain personally identifiable information and do not compromise your privacy or security. Cookies allow sleepbus to gather anonymous information. Cookies also allow sleepbus to provide more relevant, targeted content as you travel through sites in the sleepbus media network as appropriate and are used on our ordering website to keep track of the items in your shopping cart.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Online or offline registration information</h2>\r\n\r\n<p>You will provide us with information about yourself and your organisation when you register for fundraising, donations, and list services or to buy products. This information is not used for any other purpose than to fulfill your request and is not shared with outside parties. However, donors and visitors should be aware that information collected online or offline may be subject to examination and inspection if such information is a public record or not otherwise protected from disclosure.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Links</h2>\r\n\r\n<p>This website may contain links to other websites. Please note that when you click on one of these links, you are entering another site. We encourage you to read the privacy statements of these linked websites as their privacy policy may differ from ours.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Email Links</h2>\r\n\r\n<p>We use email links located on this site to allow you to contact us directly via email. We use the information provided in your email to respond to your questions or comments. We may also store your comments for future reference.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Email communications</h2>\r\n\r\n<p>We publish an e-newsletter that is sent periodically to persons on a listserv. The e-newsletter is distributed by email, although back issues may also be viewed on our website. You may subscribe to or unsubscribe from the email listserv at any time. Occasionally we may send announcements about sleepbus events or merchandise to the mailing listserv. This email address is being protected from spambots. You need JavaScript enabled to view it.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Changes to this privacy statement</h2>\r\n\r\n<p>Changing business practices and circumstances may require that we make changes to this privacy policy from time to time. Any changes will be reflected on this website. sleepbus reserves the right to modify its website and/or this Privacy Policy at any time and donors and visitors are deemed to be apprised of and bound by any such modifications. Our goal is to provide all services to donors or visitors in an accessible, efficient and friendly manner while maintaining their privacy. If you have comments or questions regarding privacy, please contact us.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">Legal Disclaimer</h2>\r\n\r\n<p>We may disclose personal information when required by law or in the good-faith belief that such action is necessary in order to conform to the edicts of the law or comply with legal process served on sleepbus.</p>\r\n\r\n<h2 style=\"text-align: left;padding: 0px;\">For more information</h2>\r\n\r\n<p>If you have any questions, concerns or comments about your privacy, please send us a description of your concern via email to <a href=\"mailto:support@sleepbus.org\">support@sleepbus.org</a></p>\r\n</div>\r\n</div>\r\n\r\n<div class=\"fundingtoptext\">\r\n<p><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/sleepbus%20updated(1).jpg\" style=\"height: 216px; width: 300px;\" /></p>\r\n</div>','','','2017-02-14 18:40:26','zeemoadmin');
-/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1767,7 +1696,7 @@ CREATE TABLE `product_brochures` (
   `brochure_title` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -1800,7 +1729,7 @@ CREATE TABLE `product_images` (
   `image_alt_title_text` varchar(512) NOT NULL,
   `status` enum('1','0') NOT NULL,
   `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   `main_image` enum('0','1') NOT NULL,
   PRIMARY KEY (`id`)
@@ -1830,7 +1759,7 @@ CREATE TABLE `products` (
   `intro_text` text NOT NULL,
   `description` text NOT NULL,
   `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
@@ -1864,7 +1793,7 @@ CREATE TABLE `project_images` (
   `image_quality` varchar(20) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
@@ -1896,7 +1825,7 @@ CREATE TABLE `projects` (
   `url` varchar(555) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
@@ -1930,7 +1859,7 @@ CREATE TABLE `social_media_icons` (
   `hover_image_alt_title_text` varchar(512) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   `alt_title_text` varchar(300) NOT NULL,
   PRIMARY KEY (`id`)
@@ -1981,7 +1910,7 @@ DROP TABLE IF EXISTS `superadmin_password`;
 CREATE TABLE `superadmin_password` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `password` varchar(255) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -2011,7 +1940,7 @@ CREATE TABLE `supports` (
   `intro_text` text NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
@@ -2038,7 +1967,7 @@ CREATE TABLE `testimonials` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `testimonials_title` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   `position` int(11) NOT NULL,
   `status` enum('1','0') NOT NULL,
@@ -2057,34 +1986,6 @@ INSERT INTO `testimonials` VALUES (1,'test 1','','2014-05-18 18:13:57','zeemoadm
 UNLOCK TABLES;
 
 --
--- Table structure for table `thank_messages`
---
-
-DROP TABLE IF EXISTS `thank_messages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `thank_messages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `page_name` varchar(1024) NOT NULL,
-  `message` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `modified_by_user` varchar(1024) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `thank_messages`
---
-
-LOCK TABLES `thank_messages` WRITE;
-/*!40000 ALTER TABLE `thank_messages` DISABLE KEYS */;
-INSERT INTO `thank_messages` VALUES (1,'2014-12-05 00:00:00','Connect','<h1>Thanks!</h1>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2>Thank you for connecting with sleepbus. We will be in touch with you shortly.</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/sleepicon.jpg\" style=\"width: 280px; height: 280px;\" /></p>\r\n</div>','2016-05-10 22:44:07','zeemoadmin'),(2,'2016-04-05 00:00:00','Speaker Request','<h1>Thanks!</h1>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2>Thank you for connecting with sleepbus. We will be in touch with you shortly.</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/sleepicon.jpg\" style=\"width: 280px; height: 280px;\" /></p>\r\n</div>','2016-05-10 22:45:59','zeemoadmin'),(3,'2016-04-06 00:00:00','eNewsletter Signup','<h1>Thank You</h1>\r\n\r\n<h2>You have been successfully subscribed to receive sleepbus emails.</h2>','2016-06-02 12:44:59','admin'),(4,'2016-04-19 12:23:35','Forgot Password','<h1>Forgot Password!</h1>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2>We have sent a reset password link straight to your inbox. Please check your email.</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/sleepicon.jpg\" style=\"width: 280px; height: 280px;\" /></p>\r\n</div>','2016-06-02 12:45:38','admin'),(5,'2016-04-19 00:00:00','Reset Password','<h1>Password changed!</h1>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2>Woohoo, you&#39;ve got yourself a new password. Now you can <a href=\"https://www.sleepbus.org/signin\">sign in</a>.</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/sleepicon.jpg\" style=\"width: 280px; height: 280px;\" /></p>\r\n</div>','2017-02-14 18:40:30','admin'),(6,'2016-04-28 00:00:00','Birthday Pledge','<div>Your birthday pledge has been created successfully. Continue&nbsp;to a create a campaign by filing out this form.&nbsp;</div>','2016-06-02 12:46:35','admin'),(7,'2016-04-28 00:00:00','Create Campaign','<div>Congratulations!&nbsp;You have successfully&nbsp;created a campaign.</div>','2016-06-02 12:46:54','admin'),(8,'2016-04-28 00:00:00','Posting a Comment For a Campaign By User','<p>Your comment has been successfully updated.</p>','2016-06-02 12:47:14','admin'),(9,'2016-04-28 00:00:00','Update Profile','<p>Your profile has been successfully updated.</p>','2016-06-02 12:47:28','admin'),(10,'2016-04-28 00:00:00','Thanks Message For Campaign Donation','<div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12\" id=\"activecampaigns\">\r\n<h2 style=\"text-align: center; color: rgb(0, 201, 251);\">Active Campaigns</h2>\r\n\r\n<ul>\r\n	<li><a href=\"https://www.sleepbus.org/byronshire\" target=\"_blank\">Byron Shire</a></li>\r\n	<li><a href=\"https://www.sleepbus.org/perth\" target=\"_blank\">Perth Community</a></li>\r\n	<li><a href=\"https://www.sleepbus.org/qlik\" target=\"_blank\">Qlik</a></li>\r\n	<li><a href=\"https://www.sleepbus.org/stroll-to-the-shack-for-sleepbus\" target=\"_blank\">Stroll to the shack</a></li>\r\n	<li><a href=\"http://www.sleepbus.org/belinda-jane-staff-friends\" target=\"_blank\">Belinda Jane</a></li>\r\n</ul>\r\n</div>\r\n\r\n<div class=\"col-lg-8 col-md-8 col-sm-8 col-xs-12\">\r\n<p style=\"text-align:center;\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Simon_Bitmoji_Thank_You_no_logo.jpeg\" /></p>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2 style=\"text-align: center;\">Thank you so much for your donation. Truly appreciated. You not only made a decision to help get people off the street and provide safe sleeps, but you took action. You&rsquo;re Awesome!</h2>\r\n</div>\r\n</div>','2017-03-17 00:59:22','admin'),(11,'2016-04-28 00:00:00','One Time Donation','<div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12\" id=\"activecampaigns2\"><a href=\"https://www.sleepbus.org/pledge\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Pledge_advert_for_web_600_button.jpg\" /></a></div>\r\n\r\n<div class=\"col-lg-8 col-md-8 col-sm-8 col-xs-12\">\r\n<div class=\"fundingtoptext\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Simon_Bitmoji_Thank_You_no_logo.jpeg\" />\r\n<h2>Thank you so much for your donation and support. Once your funds have been allocated to a project&nbsp;we will let you know which one so you can follow its progress. Thanks again for your support&nbsp;:)</h2>\r\n</div>\r\n</div>','2017-03-27 19:53:29','admin'),(12,'2016-04-28 00:00:00','Recurring Donation','<h1>Wow!</h1>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2>Thank you so much for your monthly donation and ongoing support. Once your funds have been allocated to a project&nbsp;we will let you know which one so you can follow its progress. Thanks again for your support and for providing safe sleeps to people in need&nbsp;:)</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/sleepicon.jpg\" style=\"width: 280px; height: 280px;\" /></p>\r\n</div>','2016-06-02 12:48:34','admin'),(13,'2016-04-28 00:00:00','Donation Cancel Page','<h1>Donation Cancelled</h1>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2>Sorry!&nbsp;Your donation has been cancelled. Please try again.</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/WebsiteBus.jpg\" style=\"width: 300px; height: 216px;\" /></p>\r\n</div>','2016-06-04 10:53:05','zeemoadmin'),(14,'2016-04-28 00:00:00','Donation Unsuccess Page','<h1>Donation Unsuccessful</h1>\r\n\r\n<div class=\"fundingtoptext\">\r\n<h2>Sorry!&nbsp;Your last transaction was unsuccessful. Please try again.&nbsp;</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/WebsiteBus.jpg\" style=\"width: 300px; height: 216px;\" /></p>\r\n</div>','2016-06-04 10:53:38','zeemoadmin');
-/*!40000 ALTER TABLE `thank_messages` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `top_text`
 --
 
@@ -2095,7 +1996,7 @@ CREATE TABLE `top_text` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `page_name` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
@@ -2130,7 +2031,7 @@ CREATE TABLE `user_campaigns` (
   `url` varchar(555) NOT NULL,
   `statement` text NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -2162,7 +2063,7 @@ CREATE TABLE `users` (
   `other_type` varchar(255) NOT NULL,
   `phone` varchar(24) NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   `'modified_by_user` varchar(225) NOT NULL,
   `reset_link` varchar(1024) NOT NULL,
@@ -2176,8 +2077,82 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'2016-05-26 09:43:43','Mr. Milford McKenzie','ryan.farrell@crooks.name','XQHLKOIGNNDUGSXWLVOKRNTTPTYWMIBQLBKBJJRDBMCFRLBHZDIBLDFGKXNVMQOV','3','','764.044.7382','0','2017-05-23 17:37:40','admin','',''),(2,'2016-05-27 02:11:24','Trevion Beier Sr.','orville@spencer.org','YHMHQGRDODILODIWZOOAHLAJFCOCEEUZRZKRNHPUPQJVPBLYVQUMLXAWIQOVUBBF','3','','510-756-8516 x2186','1','2017-05-23 17:37:40','','',''),(3,'2016-05-27 04:01:07','Keshawn Sawayn DDS','hallie@franecki.info','MBYBSWXRFKICRAAJGTANNHLTPDUCMUSXZZYEZECAKJYLVQFDGBGJGBSDNZWWQZUV','3','','(956) 564-3933','0','2017-05-23 17:37:40','admin','',''),(4,'2016-06-02 09:40:53','Kyleigh Kertzmann','rocky.collins@abshiregraham.io','JDXALGKONONXENKJNDFSGFZMYOYABFUHVQQQSLXTMZXNFWAMGGCYNESPLQKXYLFW','3','','(683) 704-5538 x03411','1','2017-05-23 17:37:40','user','',''),(5,'2016-07-07 02:56:36','Miss Carmella Upton','alisha@gislasonlesch.biz','UNBPNEZUYXCCNEZHTLCFFWXGGRELBPBCYRPMNQVBXPUHRVEAKXGUFGGFDBQJJEAX','4','','370.912.0576 x19282','0','2017-05-23 17:37:40','admin','',''),(6,'2016-07-15 01:24:40','Odell Walker','delilah@leffler.biz','GFUXAGZUEPCKFNMNYITOOMLHQBPIVPROTBEIOOGVTREJOREIVUWSMJFEARYQJMNL','3','','820.448.1372 x76466','1','2017-05-23 17:37:40','','',''),(7,'2016-07-18 10:43:30','Tatum Durgan','cory@gislason.info','WDBISNXJGRHTMOHPDZVOBKTNPMISORIMKMMQFMQILSKVHCAYOPTRTONVEBGXGKAK','other','Not for profit organisation','415.241.8915 x1569','1','2017-05-23 17:37:40','user','',''),(8,'2016-07-18 08:15:15','Bell Little','era@yundthuels.org','CIZMJRQVILQHPEJHAZEJRWIYYSLOZCJOJFYKYABILIPTOUYLWQOHVODKXCWDOMBM','3','','1-241-441-3033 x74291','1','2017-05-23 17:37:40','','',''),(9,'2016-07-19 06:48:13','Mrs. Sydnie Murazik','xander@mraz.com','XLZSTBXMTBKYZLDXTHKFYVHVAZMVULSASKHMJHFBMVDMUWZOBOGGJWXHNQLVRDMV','4','','(541) 939-9806 x453','1','2017-05-23 17:37:40','user','',''),(10,'2016-08-05 09:09:09','Mr. Amya O\'Kon','oma_bartoletti@adamscasper.name','ULHDBWUCDPAWODNMGCZLJUTFFQJKQLMDKETEQPBUYZQPJDAWDJZKCLVRSIXSUDRW','3','','217-152-5043','1','2017-05-23 17:37:40','','',''),(11,'2016-08-12 09:49:52','Mrs. Ed Olson','merle.leuschke@quitzon.biz','ROXWLRSGDWKLNCAYJJMMRWNLDIWVTUIBAZQEVITLLNUOJXNBWUUTQARDYFMXFNCX','3','','963.152.8396 x1240','1','2017-05-23 17:37:41','','',''),(12,'2016-08-18 10:46:14','Rosetta Langworth','marina@mcclurewaelchi.biz','EHHCLKTORZWCTVHFJNLRTVXJGJBLSFGDEDGPOXXSKFIRWIGTGDVSDQPSVIXOGHSQ','3','','1-860-268-9758','1','2017-05-23 17:37:41','user','',''),(13,'2016-09-03 04:58:20','Mr. Rosemarie Jones','dedrick@mcglynn.info','NGYTFFWINMVSDKXIOKFHIQRGFYCATDBPGGBIOWLTVMRSHEEHPCXGWDCZBECLFJJV','3','','1-494-318-1639','1','2017-05-23 17:37:41','','',''),(14,'2016-09-08 12:16:29','Maximilian Goodwin','devyn@herzog.co','UUAILDBSPKWQAJIKBEIRSUXGXVJZHUJUWUXQOXGLQINXUNGNEMYDBBDKMRXIRXDT','3','','(391) 972-2401','1','2017-05-23 17:37:41','','',''),(15,'2016-09-09 12:32:13','Miss Sally Brekke','janelle.friesen@luettgen.info','AMAGZVWVNGADHAWWQNAOZEGJUDCLAGVSILFJXRBUJXYNFJMYFFRABACAHYQHQTAH','3','','331-484-6512 x2643','1','2017-05-23 17:37:41','','',''),(16,'2016-09-14 01:39:54','Marilie Becker','bernadine.pouros@baileywaelchi.name','QSXDGYLQWCTDUKWERWLVDOAQSLRFQYJEAFSGWNYNBWGRICVLYOCASGJJTKNDEOXF','3','','230-758-1370 x0924','1','2017-05-23 17:37:41','','',''),(17,'2016-09-16 04:12:53','Elsie McKenzie DDS','jamey_connelly@boehm.co','KCJYRPNUKKWTWTVBHIYXWFCXBBUMUYBMMQBUONPGCKQQUBSTBXOHFHZVWGVBTZOP','3','','749-276-1301','1','2017-05-23 17:37:41','','',''),(18,'2016-09-23 12:49:51','Mr. Samanta Kilback','jairo_friesen@glovercollins.biz','MXYKPJLINRKGPWDCGOIXJVZDCCZGNXBZVOJCNALSMTZKCBCFBRKVOJJKUQRUSEVZ','3','','268-437-0403 x28575','1','2017-05-23 17:37:41','','',''),(19,'2016-09-25 01:56:56','Nestor Gerhold Jr.','shanna_champlin@prosacco.info','IRPYXJNEFWSENJIHYBVXKTXTSPMAZOIFEPNZDLBVTPSLFWHZXLPKEZIKOAIAAWHJ','3','','1-781-832-8157','1','2017-05-23 17:37:41','','',''),(20,'2016-09-28 03:39:39','Rex Ryan','anita_carroll@johnsonhand.name','RYYIPRLSALZJSKMADMMRXIYYECFAKRXXPERYLZPLCURNZNKEHEXZVZYAQNJHLDVX','3','','1-326-794-0489','1','2017-05-23 17:37:41','','',''),(21,'2016-09-29 12:05:36','Patsy Watsica','reed.swaniawski@wolffspencer.info','MPNABLSSSSJOGXVMVWGDOVYXKNVPMEPUPUSTZBWOKPGJQEOMJTOUPPKRJKHBRICO','3','','1-650-296-5700 x417','1','2017-05-23 17:37:41','','',''),(22,'2016-10-14 01:47:48','Mrs. Myrtice Metz','ruby.heathcote@kertzmann.com','ZEBGBXYQOGUOUIRXGODPMGTTUKAKHQRXRTEKRBVCVEPQBFUTOKKTKVOYXBUFDEAN','3','','906.628.8298','1','2017-05-23 17:37:41','','',''),(23,'2016-10-24 09:57:57','Ernestine Ullrich','karine@kuhlmansimonis.net','XOBCWAFZIJZCZDCMUJKGCHEOTVKFPPZIALBLATXHIEMHYGSEOVQTVAFETBLUBMDU','3','','163-575-9650','1','2017-05-23 17:37:41','user','',''),(24,'2016-10-24 11:04:47','Charles Gusikowski','darius.strosin@hamillschmidt.co','BUREDPAYRYADNZHXMEXTUUSSTBWSJKFALWJEDCPPGMAPPPYVTHXQUQBJUMMRXYEZ','3','','1-935-100-6335 x237','1','2017-05-23 17:37:41','','',''),(25,'2016-10-26 09:31:23','Dr. Rashawn Ebert','darrion.spinka@bayerturcotte.com','ZROYOGFUOAFGKRNYYEJGRTUIYTGVJLCGSDKZOLGRJYCTMFPEWXQZBHEIGVYPKDQG','3','','788-982-5708','1','2017-05-23 17:37:41','','',''),(26,'2016-10-27 10:24:51','Shania Dietrich','blake@bashirian.info','PIBTXISABANVVVTIVTJYEOLSUKONYAJBPXZEHJVTWDSXQSUCUOQPIBUWQWTPFPMC','4','','1-567-179-8093 x8600','1','2017-05-23 17:37:41','','',''),(27,'2016-11-01 09:13:59','Genesis Waters DDS','maybell_herman@bode.co','LUXAYQZSLHFOFBXTCYNILWAUVVONWMNHZMTGYTBMOLVNPAOAEOUNODHIOWSCFBKL','3','','(372) 261-7926 x92116','1','2017-05-23 17:37:41','','',''),(28,'2016-11-06 05:08:58','Alia Pouros','walter@roberts.biz','PTNLHQHBBHRVLCMKNUOGBYRUNFRFZSQKTGWBQXDKGBERFBHFXYPZNXKNFDTFPGPZ','3','','419.027.1479 x34216','1','2017-05-23 17:37:41','','',''),(29,'2016-11-09 03:48:31','Willy Kuvalis IV','giovanny@skiles.info','FBUZQXPUAKQDHHHHZWOBQAJLHBQATCLVVWUSECVCTNCKBEDWDMBNTBGDBYJFXWNM','3','','394-776-0647 x63553','1','2017-05-23 17:37:41','user','',''),(30,'2016-11-20 06:40:17','Ken Stehr V','trudie@olson.io','AQHZOFCLWGNJGWQOWQIBBUTYQJZLEEBIRGQWETFPWFGBVYYRTYFSVYIHMPMMHXCA','3','','541.252.0109 x82021','1','2017-05-23 17:37:41','','',''),(31,'2016-11-26 02:22:56','Geo Boehm','aaron.nader@gerhold.io','PGZMGSBCGEOCWKCIIKUUZPQZYYBUMYZWKZZTYMCLMJIAHLKHKFXLRUEFLWVXEVPA','3','','1-525-919-6813','1','2017-05-23 17:37:41','','',''),(32,'2016-11-28 06:35:27','Cody Howell','rosalind@durganortiz.co','COTJWQDGZXTQFXVGOYURAUEYDOBESQFPANHHNRMYXJZQDPGSJGBWFAVABPLFWFYX','3','','549-073-5258','1','2017-05-23 17:37:41','','',''),(33,'2016-11-28 08:22:53','Foster Metz','joanny_ruel@pacocha.io','BRDRUCXSKQQUSRNZWYNHZAVXNZSTJJRILOKRSBNPAATRZYBMASXYWTAVXHPLEHUM','3','','(172) 274-7668','1','2017-05-23 17:37:41','','',''),(34,'2016-11-30 08:53:35','Mr. Grover Little','jonatan@luettgenfeest.info','RYXOTABPILAFJSSLEMAGIKBPCEBZEXJWKMWKWVAYVSBAIEQVQADLSIQAFKIGURBO','3','','(953) 372-5388 x7279','1','2017-05-23 17:37:41','','',''),(35,'2016-12-01 12:14:24','Rosie Medhurst','mara.medhurst@kulasledner.io','FUXHWDAAWWVPJGXZDLPAPAHUECXKHJKNDIVFTEKQDOSETYBZHDODKJQXMDOWLKYG','other','Community Group','190-380-6508 x20566','1','2017-05-23 17:37:41','','',''),(36,'2016-12-19 08:21:59','Jodie Reynolds','patience@mertz.org','GNPCOCIJEYPDTPVMCTTTDTGHTMTSVSXJQAXGBCHTYPNBQWIOURIMQQHBIECGTSJI','3','','1-837-828-9565 x99135','1','2017-05-23 17:37:41','','',''),(37,'2016-12-20 10:45:53','Kyra Kerluke','jordon_barrows@murphy.com','PBDAZMPUAEKVHCLJHROSCDAAWSFEXSCNSQFTIMAXSERFZVKQZMZFNZLEGNYWZVAZ','3','','684.554.4974 x14348','1','2017-05-23 17:37:41','','',''),(38,'2016-12-24 04:44:44','Paige Gerlach IV','justina@murphy.co','HEFODLEKHBDTWNUEUPQYUQSXMNZIUYANRXCNEMKNAEQFRRQGPTOMVXXEQAKALIGO','4','','357-782-1707 x4266','1','2017-05-23 17:37:41','','',''),(39,'2016-12-29 10:36:00','Marta Zemlak','tracy@sipes.info','NRNTPHAUHIBNXBLNLWVTOBRVUKDWWWELHBCCZZIFBPBCQATNXKGYYBLXSTWORSXQ','5','','(517) 650-9409 x79711','1','2017-05-23 17:37:41','','',''),(40,'2017-01-14 05:20:38','Mrs. Olin Krajcik','ernestine_walter@kertzmann.com','CWHKAKISYZRHUOZMXDPIEJFWCJYJVBVNDYSSTIKSOEAFCUHONKDZASGQGYLPZUGI','3','','1-790-154-2401','1','2017-05-23 17:37:41','','',''),(41,'2017-01-19 10:10:56','Filomena Tromp','alysa.weinat@gloverrenner.com','HFOUUNXUKVKRZCTITHGAHNIOPPBZZJMMSKWSSBZVEHMQMKNGLUJFPGJMIFEWYMVH','3','','1-761-258-3373','1','2017-05-23 17:37:41','','',''),(42,'2017-01-20 02:13:49','Eileen Schulist MD','elia_kirlin@kovacekking.co','ZTXBNNUFXBPOKRAZRFEHMMSKYURGQJRMKAUXGPEBMRIBLATIUJYBWWTMLMTALQUX','3','','(608) 386-1533','1','2017-05-23 17:37:41','','',''),(43,'2017-01-20 02:15:30','Dr. Kyler Veum','hershel.gibson@kertzmann.io','XVAXSKHBQEBHIHEWZNEBLORVQJQOBDMKQDUYBUVEYVCRFLSMJQLLBMYIBBHONPTU','3','','(917) 465-3314 x215','1','2017-05-23 17:37:41','','',''),(44,'2017-02-09 08:53:24','Leopold Shields','merle.hane@bartell.co','CARMWYZFNEYNCCBEEKTQTHQIRLQMWCAOZPFQRCKDSBQVZOOOXBBZMHNUSZOGOXWP','4','','148-000-5379 x17758','1','2017-05-23 17:37:41','','',''),(45,'2017-02-12 08:01:10','Stan Senger','hallie_weber@brakus.co','NQCJIJDSJSFCXSNKYKXLYKUWRQZGXFZSXGERYCJVBKWDMZODFOMHGSRTJEJSPOER','3','','594.212.4999 x06491','1','2017-05-23 17:37:41','','',''),(46,'2017-02-12 05:08:23','Mckenna Steuber MD','marge@thompson.info','LZOGTMIAZZOQEBFCCPAZEHTRWGAFMJKQOZFWZAFWFCPAVXIDWENGTKHEJUMJHJZL','3','','(665) 260-9331','1','2017-05-23 17:37:41','','',''),(47,'2017-02-27 02:54:29','Miss Zachary Kunze','daron@mullereichmann.biz','OIAVBTQKCASHUNKUKQOHACZZPZOCCQKVRGEXAVIDYIHCKICTKZBDEMBOPPBHOEXU','other','Workplace','519-084-1265 x027','1','2017-05-23 17:37:41','','',''),(48,'2017-03-02 02:02:17','Malika Barrows','austin.walker@borer.com','UWLHYNPSBBQKPFWHOXNZENBAQQSPIGKMXZACZUOLKISZVUSFPAKCYUYWVAXLJCER','3','','1-963-685-5128','1','2017-05-23 17:37:41','','',''),(49,'2017-03-08 06:26:27','Kayli Hauck','andres@kuvalis.co','BKUNNPVKOSSOLEIDRUKDKILZUIGKQOZLYHYFGCPNHGHRWKKCIKZJASLMFHYDICJR','3','','1-920-161-9777','1','2017-05-23 17:37:41','','',''),(50,'2017-03-13 04:55:22','Hester Fahey MD','jennings.corkery@bailey.biz','RIDDFPMDLDIFSXICLZGQPFNDYKALTSNBVCIBLWDEYZUBSWSXHLANJKKWYBWQFTHN','3','','462.487.8531 x191','1','2017-05-23 17:37:41','','',''),(51,'2017-04-01 04:25:15','Felicity Kuvalis','janea@wiegand.io','IEITEBKWAOMNOMBXCXWDHFSMIEMBDGUPZOPZIZNAKUFEKUHKKLDHNMXKJUOEQUYY','3','','1-911-234-8146','1','2017-05-23 17:37:41','','',''),(52,'2017-04-02 07:15:48','Emma Kub','oran.waters@cruickshank.biz','MAOKJLDZJUXCPZJKOHFMGEPJDWIQRSWTZCHWVGRBLFSWACXNAHSDUQQVBYRJQXWD','3','','442.382.9061 x45043','1','2017-05-23 17:37:41','','',''),(53,'2017-04-18 07:40:32','Elda Mayert IV','violette@hoeger.net','CGXURONKCFUOZYCBUZQWDTSKZPTCDBGUYGDNZETGDJGFLQVAQADKDFRZVAFAUVEB','3','','(240) 856-2043','1','2017-05-23 17:37:41','','',''),(54,'2017-04-21 01:05:54','Shayna Goldner','mariah@weimannhowell.net','UEUCHOUENGJZKCSZHFGHKJBCSFKUENWGIBXXTJZPDWOGWACRXXFRYNJFAUIHCNFH','4','','1-575-728-2606 x3293','1','2017-05-23 17:37:41','','',''),(55,'2017-05-02 11:57:15','Ron Schiller Jr.','katelynn@schaden.name','RVCBVYWGQFLHIGLBJNIMHGWPXHKYYESIPQLAHAUFRKNEDWXEMQNJLJPSVKJZMGQG','3','','616-266-2229 x005','1','2017-05-23 17:37:41','user','',''),(56,'2017-05-18 02:01:31','Dorcas Zulauf','anthony_bauch@huelsmcclure.info','ZHOJDPCCTDFCZKYGRGXCYKZOIONRBKECHAFCSHXCNKXDPVHTVXIQFJLUOMUHRXIN','other','Idk','218.460.3500','1','2017-05-23 17:37:41','','',''),(57,'2017-05-19 02:25:41','Talon Predovic','otho.schultz@shanahan.info','YNYMYONPEWOECDFWVLUGXSXNPAIJIAAOSCCUAIBUHYFADUTCYORGKEYBBLVOHZXJ','3','','1-765-034-7787 x6283','1','2017-05-23 17:37:41','','',''),(58,'2017-05-19 03:39:09','Cara MacGyver','louie_kuvalis@nitzschenicolas.info','DICJAMJYUFUBGBXZUYUEICPGJYIBMGBCCVRJXJPWXSZNIXAZFPZSTXSDVPXXAUHE','4','','244.916.3743 x03824','1','2017-05-23 17:37:41','','','');
+INSERT INTO `users` VALUES (1,'2016-05-26 09:43:43','Mr. Milford McKenzie','ryan.farrell@crooks.name','72b302bf297a228a75730123efef7c41','3','','764.044.7382','0','2017-08-05 07:33:48','admin','',''),(2,'2016-05-27 02:11:24','Trevion Beier Sr.','orville@spencer.org','72b302bf297a228a75730123efef7c41','3','','510-756-8516 x2186','1','2017-08-05 07:33:48','','',''),(3,'2016-05-27 04:01:07','Keshawn Sawayn DDS','hallie@franecki.info','72b302bf297a228a75730123efef7c41','3','','(956) 564-3933','0','2017-08-05 07:33:48','admin','',''),(4,'2016-06-02 09:40:53','Kyleigh Kertzmann','rocky.collins@abshiregraham.io','72b302bf297a228a75730123efef7c41','3','','(683) 704-5538 x03411','1','2017-08-05 07:33:48','user','',''),(5,'2016-07-07 02:56:36','Miss Carmella Upton','alisha@gislasonlesch.biz','72b302bf297a228a75730123efef7c41','4','','370.912.0576 x19282','0','2017-08-05 07:33:48','admin','',''),(6,'2016-07-15 01:24:40','Odell Walker','delilah@leffler.biz','72b302bf297a228a75730123efef7c41','3','','820.448.1372 x76466','1','2017-08-05 07:33:48','','',''),(7,'2016-07-18 10:43:30','Tatum Durgan','cory@gislason.info','72b302bf297a228a75730123efef7c41','other','Not for profit organisation','415.241.8915 x1569','1','2017-08-05 07:33:48','user','',''),(8,'2016-07-18 08:15:15','Bell Little','era@yundthuels.org','72b302bf297a228a75730123efef7c41','3','','1-241-441-3033 x74291','1','2017-08-05 07:33:48','','',''),(9,'2016-07-19 06:48:13','Mrs. Sydnie Murazik','xander@mraz.com','72b302bf297a228a75730123efef7c41','4','','(541) 939-9806 x453','1','2017-08-05 07:33:48','user','',''),(10,'2016-08-05 09:09:09','Mr. Amya O\'Kon','oma_bartoletti@adamscasper.name','72b302bf297a228a75730123efef7c41','3','','217-152-5043','1','2017-08-05 07:33:48','','',''),(11,'2016-08-12 09:49:52','Mrs. Ed Olson','merle.leuschke@quitzon.biz','72b302bf297a228a75730123efef7c41','3','','963.152.8396 x1240','1','2017-08-05 07:33:48','','',''),(12,'2016-08-18 10:46:14','Rosetta Langworth','marina@mcclurewaelchi.biz','72b302bf297a228a75730123efef7c41','3','','1-860-268-9758','1','2017-08-05 07:33:48','user','',''),(13,'2016-09-03 04:58:20','Mr. Rosemarie Jones','dedrick@mcglynn.info','72b302bf297a228a75730123efef7c41','3','','1-494-318-1639','1','2017-08-05 07:33:48','','',''),(14,'2016-09-08 12:16:29','Maximilian Goodwin','devyn@herzog.co','72b302bf297a228a75730123efef7c41','3','','(391) 972-2401','1','2017-08-05 07:33:48','','',''),(15,'2016-09-09 12:32:13','Miss Sally Brekke','janelle.friesen@luettgen.info','72b302bf297a228a75730123efef7c41','3','','331-484-6512 x2643','1','2017-08-05 07:33:48','','',''),(16,'2016-09-14 01:39:54','Marilie Becker','bernadine.pouros@baileywaelchi.name','72b302bf297a228a75730123efef7c41','3','','230-758-1370 x0924','1','2017-08-05 07:33:48','','',''),(17,'2016-09-16 04:12:53','Elsie McKenzie DDS','jamey_connelly@boehm.co','72b302bf297a228a75730123efef7c41','3','','749-276-1301','1','2017-08-05 07:33:48','','',''),(18,'2016-09-23 12:49:51','Mr. Samanta Kilback','jairo_friesen@glovercollins.biz','72b302bf297a228a75730123efef7c41','3','','268-437-0403 x28575','1','2017-08-05 07:33:48','','',''),(19,'2016-09-25 01:56:56','Nestor Gerhold Jr.','shanna_champlin@prosacco.info','72b302bf297a228a75730123efef7c41','3','','1-781-832-8157','1','2017-08-05 07:33:48','','',''),(20,'2016-09-28 03:39:39','Rex Ryan','anita_carroll@johnsonhand.name','72b302bf297a228a75730123efef7c41','3','','1-326-794-0489','1','2017-08-05 07:33:48','','',''),(21,'2016-09-29 12:05:36','Patsy Watsica','reed.swaniawski@wolffspencer.info','72b302bf297a228a75730123efef7c41','3','','1-650-296-5700 x417','1','2017-08-05 07:33:48','','',''),(22,'2016-10-14 01:47:48','Mrs. Myrtice Metz','ruby.heathcote@kertzmann.com','72b302bf297a228a75730123efef7c41','3','','906.628.8298','1','2017-08-05 07:33:48','','',''),(23,'2016-10-24 09:57:57','Ernestine Ullrich','karine@kuhlmansimonis.net','72b302bf297a228a75730123efef7c41','3','','163-575-9650','1','2017-08-05 07:33:48','user','',''),(24,'2016-10-24 11:04:47','Charles Gusikowski','darius.strosin@hamillschmidt.co','72b302bf297a228a75730123efef7c41','3','','1-935-100-6335 x237','1','2017-08-05 07:33:48','','',''),(25,'2016-10-26 09:31:23','Dr. Rashawn Ebert','darrion.spinka@bayerturcotte.com','72b302bf297a228a75730123efef7c41','3','','788-982-5708','1','2017-08-05 07:33:48','','',''),(26,'2016-10-27 10:24:51','Shania Dietrich','blake@bashirian.info','72b302bf297a228a75730123efef7c41','4','','1-567-179-8093 x8600','1','2017-08-05 07:33:48','','',''),(27,'2016-11-01 09:13:59','Genesis Waters DDS','maybell_herman@bode.co','72b302bf297a228a75730123efef7c41','3','','(372) 261-7926 x92116','1','2017-08-05 07:33:48','','',''),(28,'2016-11-06 05:08:58','Alia Pouros','walter@roberts.biz','72b302bf297a228a75730123efef7c41','3','','419.027.1479 x34216','1','2017-08-05 07:33:48','','',''),(29,'2016-11-09 03:48:31','Willy Kuvalis IV','giovanny@skiles.info','72b302bf297a228a75730123efef7c41','3','','394-776-0647 x63553','1','2017-08-05 07:33:48','user','',''),(30,'2016-11-20 06:40:17','Ken Stehr V','trudie@olson.io','72b302bf297a228a75730123efef7c41','3','','541.252.0109 x82021','1','2017-08-05 07:33:48','','',''),(31,'2016-11-26 02:22:56','Geo Boehm','aaron.nader@gerhold.io','72b302bf297a228a75730123efef7c41','3','','1-525-919-6813','1','2017-08-05 07:33:48','','',''),(32,'2016-11-28 06:35:27','Cody Howell','rosalind@durganortiz.co','72b302bf297a228a75730123efef7c41','3','','549-073-5258','1','2017-08-05 07:33:48','','',''),(33,'2016-11-28 08:22:53','Foster Metz','joanny_ruel@pacocha.io','72b302bf297a228a75730123efef7c41','3','','(172) 274-7668','1','2017-08-05 07:33:48','','',''),(34,'2016-11-30 08:53:35','Mr. Grover Little','jonatan@luettgenfeest.info','72b302bf297a228a75730123efef7c41','3','','(953) 372-5388 x7279','1','2017-08-05 07:33:48','','',''),(35,'2016-12-01 12:14:24','Rosie Medhurst','mara.medhurst@kulasledner.io','72b302bf297a228a75730123efef7c41','other','Community Group','190-380-6508 x20566','1','2017-08-05 07:33:48','','',''),(36,'2016-12-19 08:21:59','Jodie Reynolds','patience@mertz.org','72b302bf297a228a75730123efef7c41','3','','1-837-828-9565 x99135','1','2017-08-05 07:33:48','','',''),(37,'2016-12-20 10:45:53','Kyra Kerluke','jordon_barrows@murphy.com','72b302bf297a228a75730123efef7c41','3','','684.554.4974 x14348','1','2017-08-05 07:33:48','','',''),(38,'2016-12-24 04:44:44','Paige Gerlach IV','justina@murphy.co','72b302bf297a228a75730123efef7c41','4','','357-782-1707 x4266','1','2017-08-05 07:33:48','','',''),(39,'2016-12-29 10:36:00','Marta Zemlak','tracy@sipes.info','72b302bf297a228a75730123efef7c41','5','','(517) 650-9409 x79711','1','2017-08-05 07:33:48','','',''),(40,'2017-01-14 05:20:38','Mrs. Olin Krajcik','ernestine_walter@kertzmann.com','72b302bf297a228a75730123efef7c41','3','','1-790-154-2401','1','2017-08-05 07:33:48','','',''),(41,'2017-01-19 10:10:56','Filomena Tromp','alysa.weinat@gloverrenner.com','72b302bf297a228a75730123efef7c41','3','','1-761-258-3373','1','2017-08-05 07:33:48','','',''),(42,'2017-01-20 02:13:49','Eileen Schulist MD','elia_kirlin@kovacekking.co','72b302bf297a228a75730123efef7c41','3','','(608) 386-1533','1','2017-08-05 07:33:48','','',''),(43,'2017-01-20 02:15:30','Dr. Kyler Veum','hershel.gibson@kertzmann.io','72b302bf297a228a75730123efef7c41','3','','(917) 465-3314 x215','1','2017-08-05 07:33:48','','',''),(44,'2017-02-09 08:53:24','Leopold Shields','merle.hane@bartell.co','72b302bf297a228a75730123efef7c41','4','','148-000-5379 x17758','1','2017-08-05 07:33:48','','',''),(45,'2017-02-12 08:01:10','Stan Senger','hallie_weber@brakus.co','72b302bf297a228a75730123efef7c41','3','','594.212.4999 x06491','1','2017-08-05 07:33:48','','',''),(46,'2017-02-12 05:08:23','Mckenna Steuber MD','marge@thompson.info','72b302bf297a228a75730123efef7c41','3','','(665) 260-9331','1','2017-08-05 07:33:48','','',''),(47,'2017-02-27 02:54:29','Miss Zachary Kunze','daron@mullereichmann.biz','72b302bf297a228a75730123efef7c41','other','Workplace','519-084-1265 x027','1','2017-08-05 07:33:48','','',''),(48,'2017-03-02 02:02:17','Malika Barrows','austin.walker@borer.com','72b302bf297a228a75730123efef7c41','3','','1-963-685-5128','1','2017-08-05 07:33:48','','',''),(49,'2017-03-08 06:26:27','Kayli Hauck','andres@kuvalis.co','72b302bf297a228a75730123efef7c41','3','','1-920-161-9777','1','2017-08-05 07:33:48','','',''),(50,'2017-03-13 04:55:22','Hester Fahey MD','jennings.corkery@bailey.biz','72b302bf297a228a75730123efef7c41','3','','462.487.8531 x191','1','2017-08-05 07:33:48','','',''),(51,'2017-04-01 04:25:15','Felicity Kuvalis','janea@wiegand.io','72b302bf297a228a75730123efef7c41','3','','1-911-234-8146','1','2017-08-05 07:33:48','','',''),(52,'2017-04-02 07:15:48','Emma Kub','oran.waters@cruickshank.biz','72b302bf297a228a75730123efef7c41','3','','442.382.9061 x45043','1','2017-08-05 07:33:48','','',''),(53,'2017-04-18 07:40:32','Elda Mayert IV','violette@hoeger.net','72b302bf297a228a75730123efef7c41','3','','(240) 856-2043','1','2017-08-05 07:33:48','','',''),(54,'2017-04-21 01:05:54','Shayna Goldner','mariah@weimannhowell.net','72b302bf297a228a75730123efef7c41','4','','1-575-728-2606 x3293','1','2017-08-05 07:33:48','','',''),(55,'2017-05-02 11:57:15','Ron Schiller Jr.','katelynn@schaden.name','72b302bf297a228a75730123efef7c41','3','','616-266-2229 x005','1','2017-08-05 07:33:48','user','',''),(56,'2017-05-18 02:01:31','Dorcas Zulauf','anthony_bauch@huelsmcclure.info','72b302bf297a228a75730123efef7c41','other','Idk','218.460.3500','1','2017-08-05 07:33:48','','',''),(57,'2017-05-19 02:25:41','Talon Predovic','otho.schultz@shanahan.info','72b302bf297a228a75730123efef7c41','3','','1-765-034-7787 x6283','1','2017-08-05 07:33:48','','',''),(58,'2017-05-19 03:39:09','Cara MacGyver','louie_kuvalis@nitzschenicolas.info','72b302bf297a228a75730123efef7c41','4','','244.916.3743 x03824','1','2017-08-05 07:33:48','','','');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `volunteers`
+--
+
+DROP TABLE IF EXISTS `volunteers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `volunteers` (
+  `id` int(20) NOT NULL DEFAULT 0,
+  `title` varchar(250) DEFAULT NULL,
+  `fname` varchar(250) DEFAULT NULL,
+  `mname` varchar(250) DEFAULT NULL,
+  `lname` varchar(250) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `email1` varchar(250) DEFAULT NULL,
+  `email2` varchar(250) DEFAULT NULL,
+  `address` varchar(250) DEFAULT NULL,
+  `city` varchar(250) DEFAULT NULL,
+  `state` varchar(250) DEFAULT NULL,
+  `zip` varchar(250) DEFAULT NULL,
+  `country` varchar(250) DEFAULT NULL,
+  `phone` varchar(250) DEFAULT NULL,
+  `fax` varchar(250) DEFAULT NULL,
+  `cell_phone` varchar(250) DEFAULT NULL,
+  `company_name` varchar(250) DEFAULT NULL,
+  `job_title` varchar(250) DEFAULT NULL,
+  `business_phone` varchar(250) DEFAULT NULL,
+  `business_fax` varchar(250) DEFAULT NULL,
+  `business_address` varchar(250) DEFAULT NULL,
+  `business_city` varchar(250) DEFAULT NULL,
+  `business_state` varchar(250) DEFAULT NULL,
+  `business_zip` varchar(250) DEFAULT NULL,
+  `business_country` varchar(250) DEFAULT NULL,
+  `notes` varchar(250) DEFAULT NULL,
+  `extra1` varchar(250) DEFAULT NULL,
+  `extra2` varchar(250) DEFAULT NULL,
+  `extra3` varchar(250) DEFAULT NULL,
+  `unsubscribed` enum('No','Yes') NOT NULL,
+  `unsubscribed_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `volunteers`
+--
+
+LOCK TABLES `volunteers` WRITE;
+/*!40000 ALTER TABLE `volunteers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `volunteers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `volunteers_groups`
+--
+
+DROP TABLE IF EXISTS `volunteers_groups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `volunteers_groups` (
+  `id` int(20) NOT NULL DEFAULT 0,
+  `subscriber_id` int(20) NOT NULL,
+  `group_id` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `volunteers_groups`
+--
+
+LOCK TABLES `volunteers_groups` WRITE;
+/*!40000 ALTER TABLE `volunteers_groups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `volunteers_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -2196,7 +2171,7 @@ CREATE TABLE `zeemo_resource` (
   `meta_description` text NOT NULL,
   `json_code` text NOT NULL,
   `content` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -2224,7 +2199,7 @@ CREATE TABLE `zeemo_settings` (
   `google_analytics_code` text NOT NULL,
   `canonical_link` text NOT NULL,
   `modified_by_user` varchar(555) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -2248,4 +2223,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-24  5:39:30
+-- Dump completed on 2017-08-05  7:46:59
