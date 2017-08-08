@@ -34,6 +34,17 @@ The first run will take a while, as it downloads the base Docker images.
 
 If successful, you should be able to see the sleepbus website in all it's glory at [http://localhost:8080](http://localhost:8080). If not, don't worry, just contact Leon or even create an issue here in the repo and another dev may be able to help you troubleshoot things.
 
+### Local test users/seed data
+
+Seed data creates a bunch of production-like users, campaigns and donations.
+
+All seed users have the password `banana` and you can find their email addresses via querying the `users` table in the database. 
+
+To jump straight in, here is a user with some campaigns:
+
+User: `orville@spencer.org`
+Password: `banana`
+
 *Note: if something does not seem right, there may have been a change in the provisioning script to support other changes. Running `./destroy_rebuild.sh` again will give you the latest expected environment*
 
 ### Local email deliverability
