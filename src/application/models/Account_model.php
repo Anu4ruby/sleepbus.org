@@ -143,7 +143,7 @@
 	 return $this->db_query->FetchSingleInformation(USERS, "", "binary email='$username' and status='1'");
    }
    
-   return $user_info;
+   return array();
   } 
 
   
