@@ -234,6 +234,11 @@
       return false;
     }
 
+    if ($this->session->userdata('site_password') == $password) {
+        $this->form_validation->set_message('_validate_password', 'Only enter a new password if you want to change it from your current password');
+        return false;
+    }
+    
     return true;
   }
 
@@ -256,7 +261,7 @@
 
     return true;
   }
-
+  
   public function _validatePhone($message) {
     if ($message!='') {
       $pattern = '/^[0-9\)\(\+\s]+$/';
