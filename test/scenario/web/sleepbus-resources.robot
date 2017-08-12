@@ -2,7 +2,7 @@
 Resource          resource.robot
 
 *** Variables ***
-${BASE}      http://localhost:8080
+${BASE}      http://testbusweb:8090
 
 *** Keywords ***
 Prepare Scenario
