@@ -30,7 +30,7 @@ function ValidateProfileForm()
  else if((new_email !="") && (new_email != retype_email))
  {
   focus_field="retype_email";
-  error_value="new email and confirm email id do not match";
+  error_value="New email address and the confirmation address does not match";
  }
 
  if(error_value != "")
