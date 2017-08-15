@@ -1,7 +1,7 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 row-centered">
 <div class="container sleepbushometext">
 <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12 col-centered">
-<p><img alt="" src="/images/sleepbus.png" /> &nbsp;is a non profit organisation on a mission to end the need for people to sleep rough in Australia. With the support of people like you, we can get people off the street and into a safe bed for the night. With a good nights sleep, we hope that the pathways out of homelessness will be a little easier to find and that&#39;s why we believe that &lsquo;sleep changes everything&rsquo;.</p>
+<p><img alt="" src="/images/sleepbus.png" /> &nbsp; is an Australian registered charity ending the need for people to sleep rough in Australia within 6 years. We convert buses into safe, temporary overnight accommodation to get people off the street and keep them safe and healthy until they can get back on their feet. Our motto is "sleep changes everything'; we believe that with a good nights sleep, the pathways out of homelessness will be a little easier to see.</p>
 </div>
 </div>
 </div>

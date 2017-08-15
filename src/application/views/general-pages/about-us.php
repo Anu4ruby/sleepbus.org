@@ -16,7 +16,7 @@
 <div class="abouthedtext">
 <h2>our<span>mission</span></h2>
 
-<p>Is to bring safe overnight accommodation to people sleeping rough in Australia.</p>
+<p>Our mission - Is to bring safe, temporary overnight accommodation to people sleeping rough in Australia.</p>
 </div>
 </div>
 
@@ -38,32 +38,21 @@
 <div class="aboutbord">
 <div class="projectcolorbox">To achieve our vision; we will build 319+ buses which will provide more than 2,000,000 safe sleeps per year right around Australia.</div>
 
-<h2>So why provide safe overnight accommodation for those sleeping rough on the street&hellip; on a Bus?</h2>
+<h2>
+So why provide safe, temporary overnight accommodation for those sleeping rough on the street... on a Bus?
+</h2>
 
 <div class="aboutbordbus"><img alt="" src="/application/third_party/ckfinder/userfiles/images/WebsiteBus.jpg" style="width: 700px;" /></div>
 
-<p>It wasn&rsquo;t the first idea raised as a solution to this problem, however after much research and talking with people who are homeless and/or those working with the homeless, our other idea&rsquo;s were either not practical, or required cutting through a lot of red tape and not sustainable.</p>
+<p>
+Following 12 months of research with people within and supporting the homeless community, the idea of sleepbus was developed by Simon Rowe, sleepbus Founder.  From that research, the issue that kept coming up was, not enough safe places to sleep while working on pathways out of homelessness. What was worse, was allowing people to fall deeper into the cycle of homelessness, rather than catching them early, keeping them safe and healthy until they get back on their feet.
+</p>
 
-<p>Our key criteria was&hellip; we need to be where the people we want to help are. Sounds simple enough, but as many Homeless Shelters have found, renting or purchasing real estate to do this is massively prohibitive and expensive to maintain. The cities, in particular the CBD, is where the people who need the help are and like any business, it&#39;s all about location, location, location.</p>
+<p>
+That's what sleepbus does; we go where the people in need are; we get them off the street, keep them safe and it's our belief that with a good nights sleep, the pathways out of homelessness will be a little easier to see.
+</p>
 </div>
 
-<div class="programbox">
-<h2>Pilot Program</h2>
-
-<h3>Suburban Metro Council Pilot - The bus that starts it all.</h3>
-
-<p>To test the sleepbus operations under controlled conditions in a suburban council area with a small homeless persons community. The first bus, that will forever be, a part of sleepbus history.</p>
-
-<h3>C.B.D. Pilot - The buses that test it all.</h3>
-
-<p>To take two buses and test sleepbus operations under semi-controlled conditions in a CBD environment with a large scale homeless persons community.</p>
-
-<h3>The Big Launch - The buses that show them all.</h3>
-
-<p>sleepbus plans to build the required number of buses that will END the need for people sleeping rough in a highly visible location: a full, in the field, launch of sleepbus to show what can be achieved. Like our facebook page to keep posted on this big event.</p>
-
-<div class="programfb"><a href="https://www.facebook.com/sleepbusaustralia" target="_blank"><img alt="" src="/images/fb2.png" /></a></div>
-</div>
 </div>
 </div>
 </div>

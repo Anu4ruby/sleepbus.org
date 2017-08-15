@@ -38,11 +38,17 @@
 <div class="container">
 <div class="row">
 <div class="aboutbord">
-<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>
+<p>
+At sleepbus we have a simple focus; provide safe, temporary overnight accommodation to those sleeping rough in Australia. Our aim is to get people off the street and keep them safe and healthy until they can get back on their feet.
+</p>
 
-<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>
+<p>
+Our accommodation is not a long term solution. What we do provide is a safe, temporary and comfortable place to sleep for the night.
+</p>
 
-<p>sleepbus is distinct, yet complementary to existing efforts from other organisations supporting Australians experiencing, or at risk of homelessness. Our work aims to fill a &lsquo;gap&rsquo;, rather than overlapping or replicating activities that support the urgent needs of people in Australia.</p>
+<p>
+sleepbus is distinct, yet complementary to existing efforts from other organisations supporting Australians experiencing, or at risk of homelessness. Our work aims to fill a 'gap', rather than overlapping or replicating activities that support the urgent needs of people in Australia.
+</p>
 </div>
 
 <div class="programbox2">

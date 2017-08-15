@@ -42,17 +42,11 @@ class Generalpages extends MY_Controller {
   }
 
   public function media() {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',20,'In The Media');
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',20);
-    $this->data['top_text']=$this->Website_model->GetTopText(6);
-    $this->data['bottom_text']=$this->Website_model->GetTopText(7);
-    $this->data['media_items']=array();
-    $this->data['media_items']=$this->Website_model->MediaItems();
-    $this->data['total_item']=count($this->data['media_items']);
-    $this->data['show_item']=10;
+    $this->data['meta']['page_title'] = "In the Media";
+
     $this->websitejavascript->include_footer_js=array('MediaFooterJs');
-    $this->load->view('templates/header',$this->data);
-    $this->load->view('general-pages/in-the-media',$this->data);
+    $this->load->view('templates/header', $this->data);
+    $this->load->view('general-pages/in-the-media', $this->data);
     $this->load->view('templates/footer');
   }
 

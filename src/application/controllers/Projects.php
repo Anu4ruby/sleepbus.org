@@ -9,10 +9,8 @@ class Projects extends MY_Controller
   }
   public function index()
   {
-   $this->data['meta']=$this->Metatags_model->GetMetaTags('PROJECTS',0,'Completed Projects');
-   $this->data['cta']=$this->Website_model->GetCTAButtons('PROJECTS',0);
-   $this->data['top_text']=$this->Website_model->GetTopText(2);
-   $this->data['all_projects']=$this->Project_model->GetAllProjects();
+   $this->data['meta']['page_title'] = "Projects";
+
    $this->load->view('templates/header',$this->data);
    $this->load->view('projects/completed-project',$this->data);
    $this->load->view('templates/footer');
