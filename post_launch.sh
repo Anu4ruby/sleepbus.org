@@ -3,16 +3,14 @@
 cd /var/www/html
 
 # wait for mysql container
-# * wordpress image's default entrypoint will also take some time
 echo 'awaiting mysql to be reachable'
 
-while ! mysqladmin ping -h testbussql --silent; do
+while ! mysqladmin ping -h sleepbussql --silent; do
     printf "."
     sleep 1
 done
 
-printf "X"
-echo 'foudn sql'
+echo 'found sql, waiting 5 secs'
 
 # still requires buffer before accessible for wp cli
 sleep 5

@@ -21,5 +21,5 @@ RUN mv /tmp/geckodriver /usr/bin/geckodriver
 RUN chmod u+x /usr/bin/geckodriver
 
 # copy across scenario tests and run them with headless display
-COPY scenario/ /scenario
+COPY /scenario/ /scenario
 CMD (xvfb-run robot /scenario)
