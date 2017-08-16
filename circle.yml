@@ -1,4 +1,6 @@
-version: 2
+machine:
+  services:
+    - docker
 dependencies:
   pre:
     - sudo apt-get update -qq; DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -qq rsync
