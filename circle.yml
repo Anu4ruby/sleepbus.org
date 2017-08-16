@@ -8,8 +8,7 @@ dependencies:
     - composer install -d src/application/
 test:
   override:
-    - ./destroy_rebuild.sh
-    - ./run_scenarios.sh
+    - ./run_tests_ci.sh
 deployment:
   development:
     branch: dev
