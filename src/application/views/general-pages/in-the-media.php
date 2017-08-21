@@ -88,8 +88,8 @@
         <td>25 Jun 2016</td>
         <td>Sydney Morning Herald</td>
         <td>
-          <a href="Impact Journalism Day: Sleepbus project takes beds to the homeless" target="_blank">
-            http://www.smh.com.au/national/impact-journalism-day-sleepbus-project-takes-beds-to-the-homeless-20160511-goszu6.html
+          <a href="http://www.smh.com.au/national/impact-journalism-day-sleepbus-project-takes-beds-to-the-homeless-20160511-goszu6.html" target="_blank">
+            Impact Journalism Day: Sleepbus project takes beds to the homeless
           </a>
         </td>
       </tr>
