@@ -18,7 +18,7 @@ Navigate To Sign Up Page
     Go To    ${BASE}/signup
 
 Home Page Should Be Open
-    Title Should Be    Home - Sleepbus
+    Title Should Be    Homer - Sleepbus
 
 User Home Page Should Be Open
     Title Should Be    Welcome to Sleepbus - Sleepbus

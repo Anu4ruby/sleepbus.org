@@ -15,13 +15,6 @@ echo 'found sql, waiting 5 secs'
 # still requires buffer before accessible for wp cli
 sleep 5
 
-echo 'outputting env grep'
-
-env | grep SLEEP
-
-sleep 3
-
-
 # import seed data
 mysql -u $SLEEPBUS_DB_USER -h $SLEEPBUS_DB_HOST -p$SLEEPBUS_DB_PASSWORD -e "create database $SLEEPBUS_DB_NAME"
 mysql -u $SLEEPBUS_DB_USER -h $SLEEPBUS_DB_HOST -p$SLEEPBUS_DB_PASSWORD $SLEEPBUS_DB_NAME < /seed_data/sleepbus_sample_data.sql

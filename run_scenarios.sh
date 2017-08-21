@@ -34,4 +34,4 @@ sudo docker rm -f testbus
 sudo docker run --net=testbusnet --name testbus --env-file ./.env-SAMPLE-test sleepbus/test
 
 # cleanup
-sudo docker rm -f testbus
+#sudo docker rm -f {testbussql,testbusweb,testbus}
