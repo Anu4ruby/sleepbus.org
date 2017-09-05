@@ -222,9 +222,14 @@
                     </div>
                     <div class="icon-expand"><button type="button" class="btn btn-success collapsed" data-toggle="collapse" data-target="#expand-donate-9"></button></div>
                     <div class="faq-item-expand collapse" id="expand-donate-9">
-                        <div class="faq-expand-holder">If you have made an error in the amount of your donation or made a duplicate donation, please contact us as soon as possible. All requests for refunds must be made in writing via email and forwarded to <a href="mailto:info@sleepbus.org">info@sleepbus.org</a>.
+                        <div class="faq-expand-holder">
+<p>If you have made an error in the amount of your donation or made a duplicate donation, please contact us as soon as possible.</p>
 
-Should the refund be approved, any original receipt issued for the incorrect amount immediately becomes void and invalid. sleepbus will issue a new receipt where applicable. See our <a href="/refund-policy">refund policy</a> for full details.</div>
+<p>All requests for refunds must be made in writing via email and forwarded to <a href="mailto:info@sleepbus.org">info@sleepbus.org</a>.</p>
+
+<p>Should the refund be approved, any original receipt issued for the incorrect amount immediately becomes void and invalid. sleepbus will issue a new receipt where applicable. See our <a href="/refund-policy">refund policy</a> for full details.</p>
+
+</div>
                     </div>
                 </div>
               </div>
