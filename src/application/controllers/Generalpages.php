@@ -95,4 +95,12 @@ class Generalpages extends MY_Controller {
     $this->load->view('general-pages/refund-policy',$this->data);
     $this->load->view('templates/footer');
   }
+
+  public function social_feeds() {
+    $this->data['meta']['page_title'] = "Social media feeds";
+
+    $this->load->view('templates/header',$this->data);
+    $this->load->view('general-pages/social-feeds',$this->data);
+    $this->load->view('templates/footer');
+  }
 }
