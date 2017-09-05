@@ -81,9 +81,18 @@ class Generalpages extends MY_Controller {
   }
 
   public function faq() {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',18,'Frequently Asked Questions');
+    $this->data['meta']['page_title'] = "Frequently asked questions";
+
     $this->load->view('templates/header',$this->data);
     $this->load->view('general-pages/faq',$this->data);
+    $this->load->view('templates/footer');
+  }
+
+  public function refund_policy() {
+    $this->data['meta']['page_title'] = "Refund policy";
+
+    $this->load->view('templates/header',$this->data);
+    $this->load->view('general-pages/refund-policy',$this->data);
     $this->load->view('templates/footer');
   }
 }

@@ -212,6 +212,21 @@
                         <div class="faq-expand-holder">No, sleepbus are in the business of safe sleeps and do not accept donations of items such as clothes and homewares.</div>
                     </div>
                 </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="faq-item">
+                        <div class="faq-icon">
+                            <img src="/images/faq_donate.png">
+                        </div>
+                        <strong>What happens if I make a mistake when donating?</strong>
+                    </div>
+                    <div class="icon-expand"><button type="button" class="btn btn-success collapsed" data-toggle="collapse" data-target="#expand-donate-9"></button></div>
+                    <div class="faq-item-expand collapse" id="expand-donate-9">
+                        <div class="faq-expand-holder">If you have made an error in the amount of your donation or made a duplicate donation, please contact us as soon as possible. All requests for refunds must be made in writing via email and forwarded to <a href="mailto:info@sleepbus.org">info@sleepbus.org</a>.
+
+Should the refund be approved, any original receipt issued for the incorrect amount immediately becomes void and invalid. sleepbus will issue a new receipt where applicable. See our <a href="/refund-policy">refund policy</a> for full details.</div>
+                    </div>
+                </div>
               </div>
           </div>
       </div>
