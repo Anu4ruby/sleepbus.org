@@ -13,14 +13,6 @@
   {
    return $this->db_query->FetchSingleInformation(PAGES,"","id='$page_id'");
   }
-  public function GetContactPageContent()
-  {
-   return $this->db_query->FetchSingleInformation(CONTACT,"","id='1'");
-  }
-  public function GetBannerInterval()
-  {
-   return $this->db_query->FetchSingleInformation(BANNER_INTERVALS,"","id='1'");
-  }
   public function GetResourceContent()
   {
    return $this->db_query->FetchSingleInformation(ZEEMO_RESOURCE,"","id='1'");

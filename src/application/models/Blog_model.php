@@ -7,11 +7,10 @@
   }  
   public function GetAllBlog($limit='')
   {
-   $sql="select blogs.*,date_format(blogs.date_display,'%d %M %Y') as blog_date, blogger.blogger_name as blogger, blogs_categories.category_name as category,
+   $sql="select blogs.*,date_format(blogs.date_display,'%d %M %Y') as blog_date, blogs_categories.category_name as category,
 		 blogs_categories.url as cat_url from blogs 
-		 inner join blogger on blogger.id=blogs.blogger_id 
 		 inner join blogs_categories on blogs_categories.id=blogs.cat_id 
-		 where blogs.`status`=1 and blogs_categories.status='1' and blogs_categories.`status`=1 and blogger.`status`=1 order by blogs.position $limit";
+		 where blogs.`status`=1 and blogs_categories.status='1' and blogs_categories.`status`=1 order by blogs.position $limit";
    $query=$this->db->query($sql);
    $blog=array();
    if($query->num_rows()>0)
@@ -22,7 +21,6 @@
      $blog[$i]['id']=$row->id;
      $blog[$i]['blog_title']=$row->blog_name;
 	 $blog[$i]['category']=$row->category;
-	 $blog[$i]['blogger']=$row->blogger;
 	 $blog[$i]['cat_url']=$row->cat_url;
      $blog[$i]['description']=$row->description;
      $blog[$i]['intro_text']=$row->intro_text;	 
@@ -37,7 +35,7 @@
   }
   public function GetCategoryBlog($cat_id,$limit="")
   {
-   $sql="select blogs.*,DATE_FORMAT(blogs.date_display,'%d %M %Y') as blog_date, blogger.blogger_name as blogger, blogs_categories.category_name as category,blogs_categories.url as cat_url from blogs inner join blogger on blogger.id=blogs.blogger_id inner join blogs_categories on blogs_categories.id=blogs.cat_id where blogs.`status`=1 and blogs_categories.id='".$cat_id."' and blogs_categories.status='1' and blogger.status='1' order by blogs.position  $limit";
+   $sql="select blogs.*,DATE_FORMAT(blogs.date_display,'%d %M %Y') as blog_date, blogs_categories.category_name as category,blogs_categories.url as cat_url from blogs  inner join blogs_categories on blogs_categories.id=blogs.cat_id where blogs.`status`=1 and blogs_categories.id='".$cat_id."' and blogs_categories.status='1' order by blogs.position  $limit";
    $query=$this->db->query($sql);
    $blog=array();
    if($query->num_rows()>0)
@@ -48,7 +46,6 @@
      $blog[$i]['id']=$row->id;
      $blog[$i]['blog_title']=$row->blog_name;
 	 $blog[$i]['category']=$row->category;
-	 $blog[$i]['blogger']=$row->blogger;
 	 $blog[$i]['cat_url']=$row->cat_url;
      $blog[$i]['description']=$row->description;
      $blog[$i]['intro_text']=$row->intro_text;	 
@@ -74,7 +71,7 @@
  public function BlogLeftCategories()
  {
   $categories=array();
-  $sqlCategory="SELECT * , (SELECT count( * ) FROM blogs, blogger WHERE cat_id = blogs_categories.id AND blogger_id = blogger.id AND blogger.status = '1' AND blogs.status = '1') AS cnt FROM `blogs_categories` WHERE `status` ='1' ORDER BY position";
+  $sqlCategory="SELECT * , (SELECT count( * ) FROM blogs WHERE cat_id = blogs_categories.id AND blogs.status = '1') AS cnt FROM `blogs_categories` WHERE `status` ='1' ORDER BY position";
 
   $resCategory=$this->db->query($sqlCategory);
  // $totalCategories = mysql_num_rows($resCategory);
@@ -97,7 +94,7 @@
  public function BlogLeftArchives()
  {
   $archives=array();
-  $sqlArchives="SELECT distinct DATE_FORMAT(date_display,'%M-%Y') as month,DATE_FORMAT(date_display,'%b') as mm, DATE_FORMAT(date_display,'%M') as month_name,DATE_FORMAT(date_display,'%Y') as year_name,DATE_FORMAT(date_display,'%Y') as yy FROM `blogs`, blogger, blogs_categories where cat_id = blogs_categories.id AND blogger_id = blogger.id and blogs.status='1' and blogger.status='1' and blogs_categories.status='1' order by date_display desc"; 
+  $sqlArchives="SELECT distinct DATE_FORMAT(date_display,'%M-%Y') as month,DATE_FORMAT(date_display,'%b') as mm, DATE_FORMAT(date_display,'%M') as month_name,DATE_FORMAT(date_display,'%Y') as year_name,DATE_FORMAT(date_display,'%Y') as yy FROM `blogs`, blogs_categories where cat_id = blogs_categories.id and blogs.status='1'  and blogs_categories.status='1' order by date_display desc"; 
  
   $resArchives=$this->db->query($sqlArchives);
   $totalArchive = $resArchives->result();
@@ -176,7 +173,7 @@
   $res_cate=$this->db->query($sql_cate);
   $numCats=$res_cate->num_rows();
   
-  $sqlBlogs="select blogs.*,blogs.blog_name as blog_title,DATE_FORMAT(blogs.date_display,'%d %M %Y') as real_date, blogger.blogger_name as blogger, blogs_categories.category_name as category,blogs_categories.url as category_url from blogs inner join blogger on blogger.id=blogs.blogger_id inner join blogs_categories on blogs_categories.id=blogs.cat_id where blogs.url = '".$blog_url."' and blogs_categories.url='".$cat_url."' and blogs.`status`=1 order by blogs.id desc";
+  $sqlBlogs="select blogs.*,blogs.blog_name as blog_title,DATE_FORMAT(blogs.date_display,'%d %M %Y') as real_date, blogs_categories.category_name as category,blogs_categories.url as category_url from blogs  inner join blogs_categories on blogs_categories.id=blogs.cat_id where blogs.url = '".$blog_url."' and blogs_categories.url='".$cat_url."' and blogs.`status`=1 order by blogs.id desc";
   $resBlogs=$this->db->query($sqlBlogs);
   $blog =array(); 
   $numBlogs=$resBlogs->num_rows();
@@ -194,7 +191,6 @@
      $blog['id']=$row->id;
      $blog['blog_title']=$row->blog_title;
 	 $blog['category']=$row->category;
-	 $blog['blogger']=$row->blogger;
      $blog['description']=$row->description;
      $blog['banner_image_text']=$row->banner_image_text;
      $blog['intro_text']=$row->intro_text;	 
@@ -210,7 +206,7 @@
  
  public function GetArchiveBlog($month,$year,$limit='')
  {
-  $sqlblogs="select blogs.*,DATE_FORMAT(blogs.date_display,'%d %M %Y') as real_date, blogger.blogger_name as blogger, blogs_categories.category_name as category,blogs_categories.url as category_url from blogs inner join blogger on blogger.id=blogs.blogger_id inner join blogs_categories on blogs_categories.id=blogs.cat_id where DATE_FORMAT(date_display,'%M')='".ucfirst($month)."' and DATE_FORMAT(date_display,'%Y')='".$year."' and blogs.`status`='1' and blogs_categories.status='1'and blogger.status='1' order by blogs.position $limit ";
+  $sqlblogs="select blogs.*,DATE_FORMAT(blogs.date_display,'%d %M %Y') as real_date,  blogs_categories.category_name as category,blogs_categories.url as category_url from blogs  inner join blogs_categories on blogs_categories.id=blogs.cat_id where DATE_FORMAT(date_display,'%M')='".ucfirst($month)."' and DATE_FORMAT(date_display,'%Y')='".$year."' and blogs.`status`='1' and blogs_categories.status='1' order by blogs.position $limit ";
 
   $query=$this->db->query($sqlblogs);
    $blog=array();
@@ -226,7 +222,6 @@
 	 $blog[$i]['blog_date']=$row->real_date;
 	 $blog[$i]['url']=$row->url;
 	 $blog[$i]['cat_url']=$row->category_url;
-	 $blog[$i]['blogger']=$row->blogger;
 	 $blog[$i]['category']=$row->category;
   
      $i++;
@@ -237,11 +232,10 @@
 }
 public function DisplayBlogOnFoter()
 {
- $sql="select blogs.*,date_format(blogs.date_display,'%d %M %Y') as blog_date, blogger.blogger_name as blogger, blogs_categories.category_name as category,
+ $sql="select blogs.*,date_format(blogs.date_display,'%d %M %Y') as blog_date, blogs_categories.category_name as category,
 		 blogs_categories.url as cat_url from blogs 
-		 inner join blogger on blogger.id=blogs.blogger_id 
 		 inner join blogs_categories on blogs_categories.id=blogs.cat_id 
-		 where blogs.`status`=1 and blogs_categories.status='1' and blogs.display_on_home='1' and blogs_categories.`status`=1 and blogger.`status`=1 order by blogs.date_display desc ";
+		 where blogs.`status`=1 and blogs_categories.status='1' and blogs.display_on_home='1' and blogs_categories.`status`=1  order by blogs.date_display desc ";
    $query=$this->db->query($sql);
    $blog=$query->result();
   //print_r($blog);

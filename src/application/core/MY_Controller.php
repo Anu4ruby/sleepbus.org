@@ -84,7 +84,6 @@ class MY_Controller extends CI_Controller {
 
 		 $this->load->Model(admin.'/Metatags_model');
 		 $this->data['common_settings']=$this->Website_model->GetCommonSettingValues();
-		 $this->data['contact_info']=$this->Website_model->GetContactPageContent();
 		 // Required for Search Form exists in all pages
 		 // Required for google analytics and cannonical link
          $this->data['zeemosettings']=$this->Website_model->GetZeemoSettingsContent(); 		 		 

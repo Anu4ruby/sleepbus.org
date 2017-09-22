@@ -16,101 +16,70 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `about_section`
+-- Table structure for table `blogs`
 --
 
-DROP TABLE IF EXISTS `about_section`;
+DROP TABLE IF EXISTS `blogs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `about_section` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `item_title` varchar(255) NOT NULL,
-  `page_heading` varchar(300) NOT NULL,
+CREATE TABLE `blogs` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `cat_id` int(20) DEFAULT NULL,
+  `blog_name` varchar(250) DEFAULT NULL,
   `intro_text` text NOT NULL,
-  `description` text NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_quality` varchar(25) NOT NULL,
-  `image_alt_title_text` varchar(250) NOT NULL,
+  `description` text DEFAULT NULL,
+  `banner_image_text` text NOT NULL,
+  `blogger_id` int(20) DEFAULT NULL,
+  `status` int(1) NOT NULL DEFAULT 1,
+  `position` int(100) NOT NULL,
   `url` varchar(250) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_display` varchar(111) NOT NULL,
   `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `page_type` enum('1','2') NOT NULL COMMENT 'Page type 1 stands for a separate page will be created and its content will be taken from this table and page type 2 stands for page will be sent to internal or external ulr',
+  `modified_by_user` varchar(100) NOT NULL,
+  `display_on_home` enum('0','1') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `about_section`
+-- Dumping data for table `blogs`
 --
 
-LOCK TABLES `about_section` WRITE;
-/*!40000 ALTER TABLE `about_section` DISABLE KEYS */;
-INSERT INTO `about_section` VALUES (1,'2015-12-29 21:10:00','Page1','page heading','<p>asfas</p>','','','','','page1','2015-12-28 20:40:17','zeemoadmin',1,'1','1');
-/*!40000 ALTER TABLE `about_section` ENABLE KEYS */;
+LOCK TABLES `blogs` WRITE;
+/*!40000 ALTER TABLE `blogs` DISABLE KEYS */;
+INSERT INTO `blogs` VALUES (52,33,'Dear sleepbus family','<div class=\"blogboxhover\">\r\n<p><span>an update</span></p>\r\n\r\n<h2>Dear sleepbus family.</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img22.jpg\" /></figure>\r\n\r\n<div class=\"redmore\">\r\n<p>&nbsp;</p>\r\n</div>','<p>Dear sleepbus Family,</p>\r\n\r\n<p>Here are some stats;</p>\r\n\r\n<p>- Sleepbus reached its first $20,000 goal in only 7 days (on March 4). Funds raised were used to purchase the first ever Sleepbus.</p>\r\n\r\n<p>- Sleepbus reached its second $50,000 goal in 47 days (on April 13). Funds raised are being used to pay for the fit-out of the bus.</p>\r\n\r\n<p>- Sleepbus reached its third $85,000 goal in 63 days (on April 29). Funds raised will be used to to cover part of the operating costs for the 90 day pilot program to test the sleepbus operational procedures and gain feedback from guests.</p>\r\n\r\n<p>I am amazed at the support received so far, this coming from a guy that has just 78 Facebook friends. Hahaha. It just goes to show what is truly possible if we come together. The people and businesses that have contacted me over the past 63 days have been so moved by sleepbus and so compelled to help; it is this help and support that has made our first bus possible.</p>\r\n\r\n<p>It truly will be the first bus of many, of this I have no doubt.</p>\r\n\r\n<p>I could never have imagined that this idea would resonate so strongly with you all, but I&#39;m so proud and happy that it has. This bus will change lives. That&rsquo;s so powerful. Nothing seems impossible with the support of the best family a little charity could ever hope for.</p>\r\n\r\n<p>Money that is not used for the pilot program will go towards our second bus, which we have waiting to be purchased. This bus and a third will be used for our second phase pilot program in Melbourne CBD. 100% of public donations go to sleepbus projects. I rely on corporate and future government support to fund the &quot;business&quot; of running sleepbus. 3 buses on the road will provide 24,090 safe sleeps per year...now that&rsquo;s a big number.</p>\r\n\r\n<p>Thank you again for your support. Couldn&#39;t do it without you.</p>\r\n\r\n<p>Simon</p>','<div class=\"blogdetailbox\" style=\"background:url(https://www.sleepbus.org/images/img25.jpg) no-repeat center top;\">\r\n<div class=\"container\">\r\n<p>Did you know?</p>\r\n\r\n<h1>100% of your donation gets people off the street and provides safe sleeps.</h1>\r\n</div>\r\n</div>',35,1,2,'blog2','2016-03-31 00:00:00','2016-06-10 11:00:29','2017-02-27 00:00:29','admin','0'),(53,33,'100% funds sleepbus projects and gets people off the street 2','<div class=\"blogboxhover\">\r\n<p><span>latest campaign</span></p>\r\n\r\n<h2>100% funds sleepbus projects and gets people off the street.</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img3.jpg\" /></figure>\r\n\r\n<div class=\"redmore\">Read more</div>','<p>asdf af sad</p>','<p>banner content</p>',35,0,3,'blog3','2016-03-31 00:00:00','2016-03-31 03:28:24','2017-02-14 18:40:11','admin','0'),(54,33,'100% funds sleepbus projects and gets people off the street 3','<div class=\"blogboxhover\">\r\n<p><span>latest campaign</span></p>\r\n\r\n<h2>100% funds sleepbus projects and gets people off the street.</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img23.jpg\" /></figure>\r\n\r\n<div class=\"redmore\">Read more</div>','<p>De</p>','<p>Banner Content</p>',35,0,4,'100-funds-sleepbus-projects-and-gets-people-off-the-street-3','2016-04-12 00:00:00','2016-04-12 03:29:32','2017-02-14 18:40:11','admin','0'),(55,33,'100% funds sleepbus projects and gets people off the street 4','<div class=\"blogboxhover\">\r\n<p><span>latest campaign</span></p>\r\n\r\n<h2>100% funds sleepbus projects and gets people off the street.</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img24.jpg\" /></figure>\r\n\r\n<div class=\"redmore\">Read more</div>','<p>Des</p>','<p>Banner Content</p>',35,0,5,'100-funds-sleepbus-projects-and-gets-people-off-the-street','2016-04-12 00:00:00','2016-04-12 03:32:45','2017-02-14 18:40:11','admin','0');
+/*!40000 ALTER TABLE `blogs` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `accessories`
+-- Table structure for table `blogs_categories`
 --
 
-DROP TABLE IF EXISTS `accessories`;
+DROP TABLE IF EXISTS `blogs_categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `accessories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `accessories_title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `image_file` varchar(255) NOT NULL,
+CREATE TABLE `blogs_categories` (
+  `id` int(23) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(255) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT 1,
+  `url` varchar(250) NOT NULL,
+  `position` int(100) NOT NULL,
+  `date_added` datetime NOT NULL,
   `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
+  `modified_by_user` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `accessories`
+-- Dumping data for table `blogs_categories`
 --
 
-LOCK TABLES `accessories` WRITE;
-/*!40000 ALTER TABLE `accessories` DISABLE KEYS */;
-INSERT INTO `accessories` VALUES (1,'Accessories 2 is displayed now','<p>&nbsp;asdfa asdf asdf</p>','','2013-03-07 17:36:00','zeemoadmin',2,'1'),(2,'adf as fasfdasdf','<p>&nbsp;asdf asdf asd f</p>','','2013-03-07 17:36:00','zeemoadmin',1,'1');
-/*!40000 ALTER TABLE `accessories` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `accessories_brochures`
---
-
-DROP TABLE IF EXISTS `accessories_brochures`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `accessories_brochures` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `accessories_id` int(11) NOT NULL,
-  `brochure_file` varchar(255) NOT NULL,
-  `brochure_title` varchar(255) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `accessories_brochures`
---
-
-LOCK TABLES `accessories_brochures` WRITE;
-/*!40000 ALTER TABLE `accessories_brochures` DISABLE KEYS */;
-INSERT INTO `accessories_brochures` VALUES (1,'2013-03-08 06:06:59',2,'Rajesh_Ranjan.docx','Brochure1','1',1,'2013-03-07 17:38:38','zeemoadmin'),(2,'2013-03-08 06:07:35',1,'Rajesh_Ranjan1.docx','asdf asdfasdfasdf','1',1,'2013-03-07 17:38:32','zeemoadmin'),(3,'2013-03-08 06:08:12',1,'test.pdf',' asdfasdfasdf','1',2,'2013-03-07 17:38:31','zeemoadmin');
-/*!40000 ALTER TABLE `accessories_brochures` ENABLE KEYS */;
+LOCK TABLES `blogs_categories` WRITE;
+/*!40000 ALTER TABLE `blogs_categories` DISABLE KEYS */;
+INSERT INTO `blogs_categories` VALUES (33,'Sleep Bus Blog',1,'category',1,'2016-03-31 20:49:48','2016-04-28 01:24:30','admin');
+/*!40000 ALTER TABLE `blogs_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -240,98 +209,6 @@ INSERT INTO `administrators` VALUES (1,'zeemoadmin','72b302bf297a228a75730123efe
 UNLOCK TABLES;
 
 --
--- Table structure for table `auto_email_notification`
---
-
-DROP TABLE IF EXISTS `auto_email_notification`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `auto_email_notification` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `remaining_days` text NOT NULL,
-  `sender_email` varchar(512) NOT NULL,
-  `subject` text NOT NULL,
-  `message` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `auto_email_notification`
---
-
-LOCK TABLES `auto_email_notification` WRITE;
-/*!40000 ALTER TABLE `auto_email_notification` DISABLE KEYS */;
-INSERT INTO `auto_email_notification` VALUES (1,'2014-10-10 12:53:27','30 Days Before','asdf@asdf.sdf','sdfsdafasd','<p>asf sadfasdf</p>','2014-12-03 17:44:23','zeemoadmin'),(2,'2014-10-10 12:53:41','15 Days Before','','','','2014-12-02 20:44:33','admin'),(3,'2014-10-10 12:54:38','7 Days Before','','','','2014-12-02 20:44:33','admin'),(4,'2014-10-10 12:54:45','2 Days Before','','','','2014-10-09 12:27:04','zeemoadmin'),(5,'2014-10-10 12:55:04','1 Day Before','','','','2014-10-09 12:27:04','zeemoadmin'),(6,'2014-10-10 12:55:29','Subscription Expired','','','','2014-12-02 20:44:33','admin');
-/*!40000 ALTER TABLE `auto_email_notification` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `banner_intervals`
---
-
-DROP TABLE IF EXISTS `banner_intervals`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `banner_intervals` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `section` varchar(255) NOT NULL,
-  `time_interval` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `banner_intervals`
---
-
-LOCK TABLES `banner_intervals` WRITE;
-/*!40000 ALTER TABLE `banner_intervals` DISABLE KEYS */;
-INSERT INTO `banner_intervals` VALUES (1,'Home Page',5,'2013-03-06 16:15:43','zeemoadmin');
-/*!40000 ALTER TABLE `banner_intervals` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `banners`
---
-
-DROP TABLE IF EXISTS `banners`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `banners` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_alt_title_text` varchar(512) NOT NULL,
-  `image_quality` varchar(25) NOT NULL,
-  `details` text NOT NULL,
-  `url` text NOT NULL,
-  `page_type` varchar(255) NOT NULL,
-  `page_name` varchar(255) NOT NULL,
-  `page_id` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `banners`
---
-
-LOCK TABLES `banners` WRITE;
-/*!40000 ALTER TABLE `banners` DISABLE KEYS */;
-INSERT INTO `banners` VALUES (1,'2013-02-05 14:18:05','banner.jpg','','','<h2>Park and Smile</h2>\r\n<p><br />\r\nAre you still searching, or do you already park in a KLAUS Multiparking system?</p>\r\n<p>KLAUS Multiparking has been one of the leading manufacturers of parking systems in Germany for almost 50 years. We have representations in over 65 countries worldwide. Our headquarters is in the south of Germany close to the Lake of Constance.</p>','http://www.google.com','default','Default Banner',0,'1','2013-02-21 21:06:56','zeemoadmin'),(3,'2013-02-05 14:30:25','toputk7.jpg','asdfasf','80','<p>&nbsp;asfasfd</p>','http://asdfasd','page','Builders',2,'1','2014-12-03 17:04:25','zeemoadmin'),(4,'2013-02-05 14:36:26','','88 KB','50','<p>asdfafasf</p>','','page','Architects',3,'1','2014-12-02 22:13:46','zeemoadmin'),(5,'2013-02-05 14:46:18','banner214.jpg','','','<h2><span style=\"color: rgb(255, 102, 0);\"><big><strong>Contact Us</strong></big></span></h2>','','contact','Contact',0,'1','2013-02-21 21:41:42','zeemoadmin'),(6,'2013-02-05 14:47:17','','','','<p>dafa</p>','','testimonials','Testimonials',0,'1','2015-09-17 23:06:54','zeemoadmin'),(7,'2013-02-05 14:48:32','banner26.jpg','','','<h1 style=\"text-align: right;\"><strong><span style=\"font-family: Arial;\"><span style=\"color: rgb(255, 102, 0);\"><big>Park and Smile</big></span></span></strong></h1>','','news','',0,'1','2013-02-06 16:30:46','zeemoadmin'),(8,'2013-02-05 14:59:04','','','','','','downloads','Downloads',0,'0','2014-12-02 22:24:24','zeemoadmin'),(10,'2013-02-05 15:04:38','','','','','','company','Company Profile',2,'1','2013-02-04 21:34:38','zeemoadmin'),(11,'2013-02-05 15:13:18','banner13.jpg','','','<h1><big><strong><span style=\"color: rgb(255, 102, 0);\"><span style=\"font-family: Arial;\">&nbsp;Blog Page</span></span></strong></big></h1>','','blog','Blog',3,'1','2013-05-05 18:24:47','zeemoadmin'),(12,'2013-02-05 15:14:41','','','','','','company','Quality',4,'1','2013-02-04 20:15:19','zeemoadmin'),(13,'2013-02-05 15:15:28','','','','','','company','Press',5,'1','2013-02-04 21:34:30','zeemoadmin'),(18,'2013-02-06 11:08:11','banner42.jpeg','','','<h1><span style=\"color: rgb(255, 153, 0);\"><span style=\"font-family: Arial;\"><strong><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </big><span style=\"color: rgb(255, 102, 0);\"><big>Park and Smile</big></span></strong></span></span></h1>\r\n<h2 style=\"margin-top: 0px; padding-top: 0px; color: rgb(112, 112, 112); font-size: 19px; line-height: 23px; width: 460px; font-family: Arial,Helvetica,Geneva,sans-serif; font-style: normal; font-variant: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: rgb(255, 255, 255);\"><font><font>More space on the same grounds with intelligent parking solutions for the client.</font></font></h2>','','services','',0,'0','2013-02-11 15:55:23','zeemoadmin'),(19,'2013-02-06 11:25:14','banner43.jpeg','','','<h1 style=\"text-align: right;\"><big><strong><span style=\"color: rgb(255, 153, 0);\"><span style=\"color: rgb(255, 102, 0);\"><span style=\"font-family: Arial;\">Park and Smile</span></span></span></strong></big></h1>\r\n<h2 style=\"margin-top: 0px; padding-top: 0px; color: rgb(112, 112, 112); font-size: 19px; line-height: 23px; width: 460px; font-family: Arial,Helvetica,Geneva,sans-serif; text-align: right;\">Still looking for, or you just park on a KLAUS Multiparker?</h2>\r\n<p style=\"margin-top: 0px; padding-top: 0px; width: 460px; color: rgb(112, 112, 112); font-family: Arial,Helvetica,Geneva,sans-serif; line-height: 19px; text-align: right;\"><font><font>KLAUS Multiparking is a leading manufacturer of parking systems and&nbsp;</font></font><br />\r\n<font><font>double parkers in Germany and has been for nearly 50 years.&nbsp;</font></font><br />\r\n<font><font>We are represented in more than 65 countries.&nbsp;</font><font>Our headquarters is located in&nbsp;</font></font></p>\r\n<p style=\"text-align: right;\">&nbsp;</p>','','services','',10,'1','2013-02-06 18:59:31','zeemoadmin'),(20,'2013-02-07 03:48:31','banner25.jpg','','','<h1 style=\"text-align: right;\"><span style=\"color: rgb(255, 153, 0);\"><span style=\"font-family: Arial;\"><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </big><span style=\"color: rgb(255, 102, 0);\"><big>Berlin. London. Sydney.</big></span></span></span></h1>\r\n<h2 style=\"color: rgb(112, 112, 112); text-align: right;\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;KLAUS Multiparking solves parking space<br />\r\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;problems for customers all over the world</h2>','','services','',13,'1','2013-02-06 16:31:25','zeemoadmin'),(21,'2013-02-07 04:11:19','banner44.jpeg','','','<h1 style=\"text-align: right;\"><span style=\"color: rgb(255, 102, 0);\"><span style=\"font-family: Arial;\"><big><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Park and Smile</strong></big></span></span></h1>','','references','',0,'1','2013-02-06 16:31:08','zeemoadmin'),(23,'2013-02-07 04:53:26','banner1.jpg','','','<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<big><strong><span style=\"color: rgb(255, 102, 0);\"><span style=\"font-family: Arial;\">Park and Smile</span></span></strong></big></h1>\r\n<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;News page</p>','','news','',0,'0','2014-12-03 15:08:41','zeemoadmin'),(24,'2013-02-08 07:33:17','banner27.jpg','','','<p>&nbsp;asdfasdf</p>','','services','',12,'1','2013-02-07 19:03:17','zeemoadmin'),(27,'2013-02-19 05:03:06','banner47.jpeg','','','<p style=\"text-align: right;\">&nbsp;Product Default Banner</p>','','products','',0,'1','2013-04-07 20:15:03','zeemoadmin'),(37,'2013-02-20 04:10:42','banner212.jpg','','','<p style=\"text-align: right;\">ZdAS</p>','','news','',7,'1','2013-02-19 15:40:52','zeemoadmin'),(38,'2013-02-22 10:09:35','banner210.jpg','','','<h2><big><span style=\"color: rgb(255, 153, 0);\">&nbsp;Contact Us</span></big></h2>','','contact','',1,'1','2013-02-21 21:39:35','zeemoadmin'),(40,'2013-03-06 12:48:11','','','','','','search','Search',0,'1','2013-03-05 17:48:43','zeemoadmin');
-/*!40000 ALTER TABLE `banners` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `birthday_pledge`
 --
 
@@ -359,129 +236,6 @@ LOCK TABLES `birthday_pledge` WRITE;
 /*!40000 ALTER TABLE `birthday_pledge` DISABLE KEYS */;
 INSERT INTO `birthday_pledge` VALUES (1,'2016-04-29 19:08:16',8,'Rajeev Kumar','rajeev@infinitewebsolutions.in','1980-01-31','2016-06-06 11:07:11',''),(2,'2016-04-30 18:01:11',2,'Neet','nitinkulshreshtha30@gmail.com','1987-08-11','2016-06-06 11:07:18',''),(3,'2016-04-30 19:09:49',2,'Rakesh','suprit@infinitewebsolutions.in','1984-11-08','2016-06-06 11:07:24',''),(4,'2016-05-03 18:39:36',2,'Rajeev','rajeev@infinitewebsolutions.in','1987-11-08','2016-06-06 11:07:31',''),(5,'2016-05-05 19:26:01',2,'Suprit','suprit@infinitewebsolutions.in','1987-11-08','2016-06-06 11:07:38',''),(6,'2016-05-06 16:55:34',11,'Rakesh','design@infinitewebsolutions.in','1987-11-08','2016-06-06 11:06:50',''),(7,'2016-05-11 18:31:00',2,'vijay','design@infinitewebsolutions.in','1987-11-08','2016-06-06 11:06:50',''),(8,'2016-05-25 14:30:12',2,'Anoop','anoop@infinitewebsolutions.in','1987-11-08','2016-06-06 11:06:50',''),(9,'2016-05-25 14:38:21',2,'nitin','nitinkulshreshtha30@gmail.com','1987-05-26','2016-06-06 11:06:50',''),(10,'2016-05-26 09:43:45',1,'Simon Rowe','simon@sleepbus.org','1973-02-20','2016-06-06 11:06:50',''),(11,'2016-05-27 14:11:26',2,'Anne Mehla','annemehla@me.com','1981-09-07','2016-06-06 11:06:50',''),(12,'2016-05-27 16:00:21',1,'Ethan Rowe','ethanrowe12@gmail.com','2000-01-07','2016-06-06 11:06:50',''),(13,'2016-05-27 16:03:03',3,'Ethan Rowe','ethanrowe12@gmail.com','2000-01-07','2016-06-06 11:06:50',''),(14,'2016-06-02 21:40:55',4,'Annie McCutcheon','annemehla@me.com','1980-09-07','2016-06-06 11:06:50',''),(15,'2016-07-07 15:18:35',5,'Nitin','nitinkulshreshtha30@gmail.com','1987-08-11','2016-07-07 05:18:35',''),(16,'2016-07-15 13:24:42',6,'James Wright','hello@ejameswright.com','1982-09-01','2016-07-15 03:24:42',''),(17,'2016-08-18 22:46:16',12,'Sarah','creative@sleepbus.org','1984-08-07','2016-08-18 12:46:16',''),(18,'2016-09-14 13:39:55',16,'Andrew Peel','dotandpixel@gmail.com','1978-01-19','2016-09-14 03:39:55',''),(19,'2016-09-29 12:05:37',21,'Pedita van Hees','pedita.vanhees@bendigoadelaide.com.au','1987-05-25','2016-09-29 02:05:37',''),(20,'2016-10-24 21:57:59',23,'Christian Brown','cmbrown7@hotmail.com','1971-02-02','2016-10-24 10:57:59',''),(21,'2016-11-30 08:53:37',34,'Dianne Sheridan','fishiesbeach@gmail.com','1951-10-28','2016-11-29 21:53:37',''),(22,'2016-12-24 04:44:47',38,'Lina Mbirkou','Lina.mbirkou@gmail.com','1975-12-25','2016-12-23 17:44:47','');
 /*!40000 ALTER TABLE `birthday_pledge` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `blog_notifications`
---
-
-DROP TABLE IF EXISTS `blog_notifications`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `blog_notifications` (
-  `blog_to_emailid` text NOT NULL,
-  `blog_cc_emailid` text NOT NULL,
-  `blog_bcc_emailid` varchar(255) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `blog_notifications`
---
-
-LOCK TABLES `blog_notifications` WRITE;
-/*!40000 ALTER TABLE `blog_notifications` DISABLE KEYS */;
-INSERT INTO `blog_notifications` VALUES ('rajeev@infinitewebsolutions.in','rajeev@infinitewebsolutions.in','rajeev@infinitewebsolutions.in','2013-05-05 18:17:28','zeemoadmin');
-/*!40000 ALTER TABLE `blog_notifications` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `blogger`
---
-
-DROP TABLE IF EXISTS `blogger`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `blogger` (
-  `id` int(23) NOT NULL AUTO_INCREMENT,
-  `blogger_name` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 1,
-  `url` varchar(250) NOT NULL,
-  `position` int(100) NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `blogger`
---
-
-LOCK TABLES `blogger` WRITE;
-/*!40000 ALTER TABLE `blogger` DISABLE KEYS */;
-INSERT INTO `blogger` VALUES (35,'Simon',1,'rajeev',1,'2016-03-31 20:50:36','2016-08-04 23:18:26','admin');
-/*!40000 ALTER TABLE `blogger` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `blogs`
---
-
-DROP TABLE IF EXISTS `blogs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `blogs` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
-  `cat_id` int(20) DEFAULT NULL,
-  `blog_name` varchar(250) DEFAULT NULL,
-  `intro_text` text NOT NULL,
-  `description` text DEFAULT NULL,
-  `banner_image_text` text NOT NULL,
-  `blogger_id` int(20) DEFAULT NULL,
-  `status` int(1) NOT NULL DEFAULT 1,
-  `position` int(100) NOT NULL,
-  `url` varchar(250) NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_display` varchar(111) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(100) NOT NULL,
-  `display_on_home` enum('0','1') NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `blogs`
---
-
-LOCK TABLES `blogs` WRITE;
-/*!40000 ALTER TABLE `blogs` DISABLE KEYS */;
-INSERT INTO `blogs` VALUES (52,33,'Dear sleepbus family','<div class=\"blogboxhover\">\r\n<p><span>an update</span></p>\r\n\r\n<h2>Dear sleepbus family.</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img22.jpg\" /></figure>\r\n\r\n<div class=\"redmore\">\r\n<p>&nbsp;</p>\r\n</div>','<p>Dear sleepbus Family,</p>\r\n\r\n<p>Here are some stats;</p>\r\n\r\n<p>- Sleepbus reached its first $20,000 goal in only 7 days (on March 4). Funds raised were used to purchase the first ever Sleepbus.</p>\r\n\r\n<p>- Sleepbus reached its second $50,000 goal in 47 days (on April 13). Funds raised are being used to pay for the fit-out of the bus.</p>\r\n\r\n<p>- Sleepbus reached its third $85,000 goal in 63 days (on April 29). Funds raised will be used to to cover part of the operating costs for the 90 day pilot program to test the sleepbus operational procedures and gain feedback from guests.</p>\r\n\r\n<p>I am amazed at the support received so far, this coming from a guy that has just 78 Facebook friends. Hahaha. It just goes to show what is truly possible if we come together. The people and businesses that have contacted me over the past 63 days have been so moved by sleepbus and so compelled to help; it is this help and support that has made our first bus possible.</p>\r\n\r\n<p>It truly will be the first bus of many, of this I have no doubt.</p>\r\n\r\n<p>I could never have imagined that this idea would resonate so strongly with you all, but I&#39;m so proud and happy that it has. This bus will change lives. That&rsquo;s so powerful. Nothing seems impossible with the support of the best family a little charity could ever hope for.</p>\r\n\r\n<p>Money that is not used for the pilot program will go towards our second bus, which we have waiting to be purchased. This bus and a third will be used for our second phase pilot program in Melbourne CBD. 100% of public donations go to sleepbus projects. I rely on corporate and future government support to fund the &quot;business&quot; of running sleepbus. 3 buses on the road will provide 24,090 safe sleeps per year...now that&rsquo;s a big number.</p>\r\n\r\n<p>Thank you again for your support. Couldn&#39;t do it without you.</p>\r\n\r\n<p>Simon</p>','<div class=\"blogdetailbox\" style=\"background:url(https://www.sleepbus.org/images/img25.jpg) no-repeat center top;\">\r\n<div class=\"container\">\r\n<p>Did you know?</p>\r\n\r\n<h1>100% of your donation gets people off the street and provides safe sleeps.</h1>\r\n</div>\r\n</div>',35,1,2,'blog2','2016-03-31 00:00:00','2016-06-10 11:00:29','2017-02-27 00:00:29','admin','0'),(53,33,'100% funds sleepbus projects and gets people off the street 2','<div class=\"blogboxhover\">\r\n<p><span>latest campaign</span></p>\r\n\r\n<h2>100% funds sleepbus projects and gets people off the street.</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img3.jpg\" /></figure>\r\n\r\n<div class=\"redmore\">Read more</div>','<p>asdf af sad</p>','<p>banner content</p>',35,0,3,'blog3','2016-03-31 00:00:00','2016-03-31 03:28:24','2017-02-14 18:40:11','admin','0'),(54,33,'100% funds sleepbus projects and gets people off the street 3','<div class=\"blogboxhover\">\r\n<p><span>latest campaign</span></p>\r\n\r\n<h2>100% funds sleepbus projects and gets people off the street.</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img23.jpg\" /></figure>\r\n\r\n<div class=\"redmore\">Read more</div>','<p>De</p>','<p>Banner Content</p>',35,0,4,'100-funds-sleepbus-projects-and-gets-people-off-the-street-3','2016-04-12 00:00:00','2016-04-12 03:29:32','2017-02-14 18:40:11','admin','0'),(55,33,'100% funds sleepbus projects and gets people off the street 4','<div class=\"blogboxhover\">\r\n<p><span>latest campaign</span></p>\r\n\r\n<h2>100% funds sleepbus projects and gets people off the street.</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img24.jpg\" /></figure>\r\n\r\n<div class=\"redmore\">Read more</div>','<p>Des</p>','<p>Banner Content</p>',35,0,5,'100-funds-sleepbus-projects-and-gets-people-off-the-street','2016-04-12 00:00:00','2016-04-12 03:32:45','2017-02-14 18:40:11','admin','0');
-/*!40000 ALTER TABLE `blogs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `blogs_categories`
---
-
-DROP TABLE IF EXISTS `blogs_categories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `blogs_categories` (
-  `id` int(23) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 1,
-  `url` varchar(250) NOT NULL,
-  `position` int(100) NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `blogs_categories`
---
-
-LOCK TABLES `blogs_categories` WRITE;
-/*!40000 ALTER TABLE `blogs_categories` DISABLE KEYS */;
-INSERT INTO `blogs_categories` VALUES (33,'Sleep Bus Blog',1,'category',1,'2016-03-31 20:49:48','2016-04-28 01:24:30','admin');
-/*!40000 ALTER TABLE `blogs_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -602,73 +356,6 @@ INSERT INTO `campaign_type` VALUES (1,'2016-04-23 00:00:00','Birthday Pledge','M
 UNLOCK TABLES;
 
 --
--- Table structure for table `categories`
---
-
-DROP TABLE IF EXISTS `categories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `parent_id` int(11) NOT NULL,
-  `category_name` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_alt_title_text` varchar(512) NOT NULL,
-  `image_quality` varchar(25) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `depth` int(11) NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `categories`
---
-
-LOCK TABLES `categories` WRITE;
-/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (4,0,'category2','asdfasd','now-showing-left.png','','','category2','1',5,0,'2013-05-09 21:09:48','2014-12-02 21:40:47','zeemoadmin'),(5,4,'cat22','asdf','12086081318NGci5.jpg','','','cat22','1',4,1,'2013-07-04 20:03:06','2014-12-02 21:40:47','zeemoadmin'),(6,5,'cat221','asdf','Black-forest-1680x1050.jpg','','','cat221','1',3,2,'2013-07-04 20:03:24','2014-12-02 21:40:47','zeemoadmin'),(7,6,'cat222','assadf','toputk8.jpg','','','cat222','1',2,3,'2013-08-08 21:37:11','2014-12-02 21:40:47','zeemoadmin'),(8,0,'category1','asdfasdf','','','','category1','1',1,0,'2014-12-03 22:10:47','2014-12-02 21:40:47','zeemoadmin');
-/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `category_to_products`
---
-
-DROP TABLE IF EXISTS `category_to_products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `category_to_products` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `cat_id` int(11) DEFAULT NULL,
-  `product_id` int(11) DEFAULT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` smallint(6) NOT NULL,
-  `date_added` datetime DEFAULT NULL,
-  `url` varchar(300) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `category_to_products`
---
-
-LOCK TABLES `category_to_products` WRITE;
-/*!40000 ALTER TABLE `category_to_products` DISABLE KEYS */;
-INSERT INTO `category_to_products` VALUES (58,4,5,'1',3,'2013-05-09 17:21:13','asdfas-1','2014-12-30 19:45:25','zeemoadmin'),(62,4,7,'1',2,'2013-10-04 15:44:47','saddfasfd','2013-10-07 20:48:38','zeemoadmin'),(63,4,8,'1',1,'2013-10-08 21:18:38','dwe','2013-10-07 20:48:38','zeemoadmin'),(64,5,6,'1',1,'2013-12-11 16:48:14','asfasdf-1','2013-12-10 21:48:14','zeemoadmin');
-/*!40000 ALTER TABLE `category_to_products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `ci_sessions`
 --
 
@@ -692,39 +379,6 @@ CREATE TABLE `ci_sessions` (
 LOCK TABLES `ci_sessions` WRITE;
 /*!40000 ALTER TABLE `ci_sessions` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ci_sessions` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `clients`
---
-
-DROP TABLE IF EXISTS `clients`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `clients` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_alt_title_text` varchar(512) NOT NULL,
-  `image_quality` varchar(25) NOT NULL,
-  `clients_title` varchar(255) NOT NULL,
-  `url` varchar(250) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `clients`
---
-
-LOCK TABLES `clients` WRITE;
-/*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (1,'2014-12-04 03:42:02','button.png','','','asdasd','','1',0,'2014-12-03 15:12:02','zeemoadmin');
-/*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -788,43 +442,7 @@ INSERT INTO `common_settings` VALUES ('logo.png','55','sleepbus.svg','member-11.
 /*!40000 ALTER TABLE `common_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `company`
---
-
-DROP TABLE IF EXISTS `company`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `company` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
-  `parent_id` int(11) NOT NULL,
-  `page_name` varchar(255) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `image` enum('0','1') NOT NULL,
-  `pdf` enum('0','1') NOT NULL,
-  `content` text DEFAULT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `company`
---
-
-LOCK TABLES `company` WRITE;
-/*!40000 ALTER TABLE `company` DISABLE KEYS */;
-INSERT INTO `company` VALUES (1,0,'Company','company',1,'0','0','0','<p>&nbsp;Company</p>','2013-03-10 21:48:52','zeemoadmin'),(2,0,'Profile','company-profile',2,'1','1','1','<p>&nbsp;Company Profile</p>','2013-03-10 22:23:22','zeemoadmin'),(3,0,'Philosophy','philosophy',3,'1','1','1','<p>&nbsp;Philosophy</p>','2013-02-24 20:32:42','zeemoadmin'),(4,0,'Quality','quality',4,'1','1','1','<p>&nbsp;Quality</p>','2013-02-24 20:32:42','zeemoadmin'),(5,0,'Press','press',5,'1','0','0',NULL,'2013-02-24 20:32:42',''),(6,0,'Here we are !','here-we-are',6,'1','0','0','http://www.google.com','2013-02-24 21:07:43','zeemoadmin'),(7,0,'PSG Architects','psg-architects',7,'1','0','0','http://www.doodle.com','2013-02-24 21:07:59','zeemoadmin');
-/*!40000 ALTER TABLE `company` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `company_brochures`
---
-
+-- -- Table structure for table `company` -- DROP TABLE IF EXISTS `company`; /*!40101 SET @saved_cs_client     = @@character_set_client */; /*!40101 SET character_set_client = utf8 */; CREATE TABLE `company` ( `id` int(20) NOT NULL AUTO_INCREMENT, `parent_id` int(11) NOT NULL, `page_name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `position` int(11) NOT NULL, `status` enum('1','0') NOT NULL, `image` enum('0','1') NOT NULL, `pdf` enum('0','1') NOT NULL, `content` text DEFAULT NULL, `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(), `modified_by_user` varchar(25) NOT NULL, PRIMARY KEY (`id`)) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1; /*!40101 SET character_set_client = @saved_cs_client */; -- -- Dumping data for table `company` -- LOCK TABLES `company` WRITE; /*!40000 ALTER TABLE `company` DISABLE KEYS */; INSERT INTO `company` VALUES (1,0,'Company','company',1,'0','0','0','<p>&nbsp;Company</p>','2013-03-10 21:48:52','zeemoadmin'),(2,0,'Profile','company-profile',2,'1','1','1','<p>&nbsp;Company Profile</p>','2013-03-10 22:23:22','zeemoadmin'),(3,0,'Philosophy','philosophy',3,'1','1','1','<p>&nbsp;Philosophy</p>','2013-02-24 20:32:42','zeemoadmin'),(4,0,'Quality','quality',4,'1','1','1','<p>&nbsp;Quality</p>','2013-02-24 20:32:42','zeemoadmin'),(5,0,'Press','press',5,'1','0','0',NULL,'2013-02-24 20:32:42',''),(6,0,'Here we are !','here-we-are',6,'1','0','0','http://www.google.com','2013-02-24 21:07:43','zeemoadmin'),(7,0,'PSG Architects','psg-architects',7,'1','0','0','http://www.doodle.com','2013-02-24 21:07:59','zeemoadmin'); /*!40000 ALTER TABLE `company` ENABLE KEYS */; UNLOCK TABLES; -- -- Table structure for table `company_brochures` -- 
 DROP TABLE IF EXISTS `company_brochures`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -841,79 +459,6 @@ CREATE TABLE `company_brochures` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `company_brochures`
---
-
-LOCK TABLES `company_brochures` WRITE;
-/*!40000 ALTER TABLE `company_brochures` DISABLE KEYS */;
-INSERT INTO `company_brochures` VALUES (1,'2013-02-01 10:14:34',3,'Rajesh_Ranjan4.docx','356etdsfasdf','1',1,'2013-03-07 15:06:36','zeemoadmin'),(3,'2013-02-01 10:25:47',3,'Rajesh_Ranjan1.docx','aerfwe','1',1,'2013-03-07 15:06:47','zeemoadmin');
-/*!40000 ALTER TABLE `company_brochures` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `company_images`
---
-
-DROP TABLE IF EXISTS `company_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `company_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `company_id` int(11) NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_title` varchar(255) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `company_images`
---
-
-LOCK TABLES `company_images` WRITE;
-/*!40000 ALTER TABLE `company_images` DISABLE KEYS */;
-INSERT INTO `company_images` VALUES (1,'2013-02-04 03:04:34',1,'pic2.jpg','asdasasdf','1',7,'2013-03-07 14:33:51','zeemoadmin'),(2,'2013-03-08 03:03:10',1,'grey-3d-apple-wallpaper-1280-800-6496.jpg','afdadfas','1',6,'2013-03-07 14:33:51','zeemoadmin'),(3,'2013-03-08 03:03:17',1,'IMG_3071ps1_1280x800.jpg','sgsfsdf','1',5,'2013-03-07 14:33:51','zeemoadmin'),(4,'2013-03-08 03:03:25',1,'2302.jpg','tuiy]uiyui','1',4,'2013-03-07 14:33:51','zeemoadmin'),(5,'2013-03-08 03:03:32',1,'Wallpapers-room_com___MofC_wallpaper_by_alexiuss_1280x800.jpg','hjktyuty','1',3,'2013-03-07 14:33:51','zeemoadmin'),(6,'2013-03-08 03:03:41',1,'Wallpapers-room_com___MofC_wallpaper_by_alexiuss_1280x8001.jpg','ou;oipiop','1',2,'2013-03-07 14:33:51','zeemoadmin'),(7,'2013-03-08 03:03:51',1,'Wallpapers-room_com___Vortex_blackapple_purple_by_mgilchuk_1920x1200.jpg','8697=98789','1',1,'2013-03-07 14:33:51','zeemoadmin');
-/*!40000 ALTER TABLE `company_images` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `contact`
---
-
-DROP TABLE IF EXISTS `contact`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `contact` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text NOT NULL,
-  `address` text NOT NULL,
-  `other_details` text NOT NULL,
-  `phone` varchar(25) NOT NULL,
-  `phone2` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `fax` varchar(25) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `contact`
---
-
-LOCK TABLES `contact` WRITE;
-/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (1,'Got any question? please don\'t hestitate to contact us by filling this form and our staff will get in touch with you','Klaus Multiparking','648 Glenhuntly Road\r\nSouth Caulfield\r\nVIC 3162','03 9505 3085','1800MULTIPARK 1800685847','','03 9532 9690','2015-07-06 13:01:15','zeemoadmin');
-/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `cta`
@@ -984,197 +529,6 @@ LOCK TABLES `donations` WRITE;
 /*!40000 ALTER TABLE `donations` DISABLE KEYS */;
 INSERT INTO `donations` VALUES (1,'2016-05-30','campaign',1,'2016-05-30 09:25:25','GTWUGTJLFWXDCLKVH','2.06','Mr. Giles Welch','heidi@leannon.name','Completed','','','1','GHYZXHMQHXHBIY','','','',''),(2,'2016-06-07','one-time-donation',0,'2016-06-07 20:50:05','WAKMODTZDHFMOPLAM','12.67','Laurence Lakin','lillie@kuphal.org','Completed','','','','IFMIULQSPPDPQP','','','',''),(3,'2016-07-07','one-time-donation',0,'2016-07-07 19:19:21','LQTMPMSOMUVMBSCYC','59.84','Beryl Fritsch','omari@bechtelar.org','Completed','','','','GLRMTNPFGLAABB','','','',''),(4,'2016-07-10','one-time-donation',0,'2016-07-10 15:55:54','DDLKUSOUJZGTGQGAA','94.66','Mrs. Alexzander Berge','burley.olson@sauer.info','Completed','','','','WSPKPQBZBGTBLD','','','',''),(5,'2016-07-14','one-time-donation',0,'2016-07-14 07:06:36','UYFOPODYYWBKVDLUI','15.33','Ryann Gutkowski I','rowena@mcdermott.org','completed','','','','LRXJZCSBTMULCJ','','','',''),(6,'2016-07-18','campaign',16,'2016-07-18 23:04:22','BZMVGPQCWBXBOYSXB','67.63','Margaret Conn','abe@mosciski.org','completed','','','7','KCBHJOJIXGOFWD','','','',''),(7,'2016-07-18','campaign',0,'2016-07-18 23:04:29','GJJFBAFTKUDGHZLBN','99.58','Isac Gerhold','paige.lind@corkerymcglynn.io','','','','7','SCIKMJIBVGJMSC','','','',''),(8,'2016-07-19','campaign',17,'2016-07-19 18:51:40','NFVOVXOJSDNUIAUEZ','1.05','Nathen Emard I','marlene@balistreri.net','completed','','','9','HSBMUKMYEBHIRE','','','',''),(9,'2016-07-19','campaign',16,'2016-07-19 19:57:02','YBHHOXBYOZXUYDBLX','57.53','Willow Farrell','kennedy@walker.com','completed','','yes','','IIPDIHEGSCUGZR','','','',''),(10,'2016-07-24','monthly',0,'2016-07-23 19:58:04','USDFOAHNEEEEMRYUX','71.6','Evans Kreiger','grayson@mccullough.com','Completed','','','','EIAGLFLPCYOMUK','ActiveProfile','a2d1dfc092c15','64','22386173'),(11,'2016-07-24','one-time-donation',0,'2016-07-24 16:27:22','PUBKXQDTLIKYCCITL','6.36','Damaris Goldner','emile@fisherratke.co','completed','','','','WXBHOZQFKKPYJU','','','',''),(12,'2016-07-27','campaign',17,'2016-07-27 23:51:14','MISXUCFFIAJQENROH','64.05','Dr. Julia Hayes','erik.lueilwitz@parisian.co','completed','','','','JHUHUNELTRBFAD','','','',''),(13,'2016-08-03','one-time-donation',0,'2016-08-03 15:49:22','WDRWRTFGNKJIWWEIU','98.31','Mrs. Damian Beatty','sienna_bins@roberts.co','Completed','','','','DUBMIODKKRITTE','','','',''),(14,'2016-08-19','campaign',17,'2016-08-19 10:14:36','NJDGQOVBTDJZSEEGW','34.74','Dr. Anthony Dooley','zola_sawayn@purdy.biz','Completed','','','','PJGHLTOZXUQUBP','','','',''),(15,'2016-08-29','campaign',18,'2016-08-29 22:36:00','CJGLVWGYEFFJREILC','48.38','Luella Medhurst','agustin@rathankunding.co','Completed','','yes','12','OZVRPVQRIKOHLU','','','',''),(16,'2016-08-30','campaign',17,'2016-08-30 08:42:16','WFIZEWDCDVREHKSKB','37.3','Nelda Lindgren','liza@runolfsdottir.net','Completed','','','','NMODRQFBCGBFMO','','','',''),(17,'2016-08-31','campaign',16,'2016-08-31 22:04:51','ORPLZXZWIBFNMNYKE','37.55','Anahi O\'Reilly','constantin@sengerwalker.info','Completed','','','','YYVMQVYCWMDASI','','','',''),(18,'2016-09-07','campaign',17,'2016-09-07 07:52:11','ODPNFNXSQDLYRQMCH','49.22','Miracle Kuhlman','yolanda_bechtelar@grahamrosenbaum.com','Completed','','','','PKPSXQYRDYQHGK','','','',''),(19,'2016-09-09','monthly',0,'2016-09-09 02:40:23','VJADJLDJLDYQHICEU','12.73','Mrs. Faye Ward','constantin@graham.net','Completed','','','','VSOZDZZPFVOFAC','ActiveProfile','b5cd296859900','64','000000'),(20,'2016-09-12','campaign',17,'2016-09-12 17:45:06','GDUNSUKLOMHUXBGWM','12.72','Dr. Tressie Halvorson','haie@vandervort.io','Completed','','','','KCHZOESXFQQGYY','','','',''),(21,'2016-09-14','monthly',0,'2016-09-14 03:51:24','QIUMKOLCAUPDOGBVB','32.75','Mr. Dion Stiedemann','aida.mcglynn@dubuque.net','Completed','','','','AQVRBRRARCQZPM','ActiveProfile','aa0ff4dfed6d5','64','000000'),(22,'2016-09-16','monthly',0,'2016-09-16 06:31:02','VIZJFDHWHYWDBHYWK','63.2','Rebeka Denesik','dovie@bayersteuber.org','Completed','','','','CTODYWZYBDNYKD','ActiveProfile','66bbdabd113d6','64','000000'),(23,'2016-09-19','one-time-donation',0,'2016-09-19 18:12:44','INIOBIWBHWNGWHSQH','33.55','Mr. Hermina Bins','demario@walsh.name','','','','','CAOASPTCKHCBVY','','','',''),(24,'2016-09-21','campaign',17,'2016-09-21 17:41:55','DZGRTVBDRHIZEFFGB','23.47','Chelsie Keeling','bettye@bartolettihomenick.biz','Completed','','','','RMIKZRWOSBTXHX','','','',''),(25,'2016-09-27','monthly',0,'2016-09-27 04:20:08','XNTKVSVOTSKPEURDY','11.25','Theo Emmerich','magdalena@stiedemanntorp.net','Completed','','','','XLAPSSOGAAZUSQ','ActiveProfile','7ca22c3a731a3','64','000000'),(26,'2016-09-29','one-time-donation',0,'2016-09-29 13:14:00','BUPOZRTYUTJXRRGXN','77.67','Lauretta Pagac','dashawn@collier.com','','','','','ASCKWXMLUTQOLN','','','',''),(27,'2016-09-29','one-time-donation',0,'2016-09-29 15:39:35','GWKEPSEVTAOBSMOWX','21.48','Luna Graham PhD','arden_ortiz@hamillschowalter.name','','','','','BRUWEMIIDJMULL','','','',''),(28,'2016-09-29','one-time-donation',0,'2016-09-29 15:41:37','SYMBQFSUQRFRPAOHG','29.33','Orie Hilll','camron_beer@kuhicmitchell.co','Completed','','','','ANWLHHTHRCJJBU','','','',''),(29,'2016-09-30','one-time-donation',0,'2016-09-30 16:51:00','SBESUBAGYZIMRDIXU','39.8','Davion Brekke MD','ibrahim@faycorwin.com','','','','','RNHFVVMXQFPQCD','','','',''),(30,'2016-09-30','one-time-donation',0,'2016-09-30 16:54:17','EJUODVMBHCRUKBEQF','11.48','Mr. Ronaldo Parisian','karli@lockman.biz','Completed','','','','HSGHTVLKTCSNXH','','','',''),(31,'2016-09-30','one-time-donation',0,'2016-09-30 16:54:37','DKJTFEEIOFHWXADJF','57.92','Agustina Kshlerin II','amari_jakubowski@okon.co','','','','','SKKEYRKBTDJMBD','','','',''),(32,'2016-10-03','campaign',17,'2016-10-03 18:06:36','XTOEOZXQIHHBSSHGU','27.16','Amparo Pagac','magdalena@okongoyette.name','Completed','','','','ZEKUYJXUFMJZZL','','','',''),(33,'2016-10-12','campaign',16,'2016-10-12 05:11:12','IRTQLCBMHNJTMBJZW','76.65','Marco Keebler IV','garrett@hoeger.biz','Completed','','yes','','WZRKAPVNPWXPJA','','','',''),(34,'2016-10-13','campaign',17,'2016-10-13 14:53:17','YHZYEDTNSLFABEFXI','71.15','Dr. Tina Sanford','vaughn.damore@kilback.net','Completed','','','','REGSDUUNONMTZQ','','','',''),(35,'2016-10-19','one-time-donation',0,'2016-10-19 06:34:40','VHNIQCOVFJZAGRENE','96.55','Dr. Zetta Thiel','pearlie@moendooley.net','Completed','','','','TMUUOYJNFWBDSM','','','',''),(36,'2016-10-21','campaign',17,'2016-10-21 18:00:47','PDWKEJTMTOIWFIQSZ','78.04','Cristopher Mraz','brandt.barrows@fritschcollins.co','Completed','','','','KOYIHTHHIOSXTH','','','',''),(37,'2016-10-24','one-time-donation',0,'2016-10-24 23:06:29','MLLJZMKLJUUULSJGA','44.56','Marlin Reichel','abraham_heel@dickens.biz','Completed','','','24','MWJTOUZSMZAPAE','','','',''),(38,'2016-10-26','monthly',0,'2016-10-26 10:50:06','QREHDUPBEGIAOKCAL','92.04','Alice Bode','nathen@wyman.name','Completed','','','','JLSNPBPZLEHCZF','ActiveProfile','b3e21094c6e17','64','24616352'),(39,'2016-10-26','monthly',0,'2016-10-26 11:35:06','UTZZNHHYVMUAXSUOB','56.3','Lavonne Bechtelar','schuyler.ruecker@mraz.info','Completed','','','','CJXJNKSXZJBEKZ','ActiveProfile','f169c860e79fa','64','24616352'),(40,'2016-10-26','monthly',0,'2016-10-26 11:58:57','MPVWTDNHDOKWDJDOF','58.25','Lea Bosco','johanna@lowe.biz','Completed','','','','MLCMOHEGTTYMLZ','ActiveProfile','ef1eee70bb8c4','64','24616352'),(41,'2016-10-28','campaign',17,'2016-10-28 22:50:45','VDCVMZIRDKMKABSYT','13.24','Jamarcus Toy','ludie.lockman@abernathy.io','Completed','','','','DRUXPVARYVPHCP','','','',''),(42,'2016-10-29','monthly',0,'2016-10-29 03:34:34','TKWEASZTGMKRDHWKL','28.93','Torrey Beer','noble@johns.net','Completed','','','','RSYQISYBGDHINA','ActiveProfile','455474c77133b','64','24616352'),(43,'2016-10-29','campaign',17,'2016-10-29 16:14:53','XIMBLBTTZAZKWPJAH','44.31','Pietro Lakin','cale.okon@robel.name','Completed','','','','WETYJUSAIDXBHN','','','',''),(44,'2016-11-09','one-time-donation',0,'2016-11-09 04:19:46','XJIIRVWXZEHZFRRXO','15.58','Lily Wilkinson','graciela@kohlerkrajcik.org','Completed','','','','OPPNNNGVJHSMRL','','','',''),(45,'2016-11-10','campaign',17,'2016-11-10 14:24:27','TKHYJORBKVKDURUGH','25.96','Kristopher Mann','kaylie.harvey@heel.co','Completed','','','','ZHFWEQIGHJIGGL','','','',''),(46,'2016-11-11','campaign',24,'2016-11-11 10:18:31','CBOSXWHCSOVAFIZXS','34.94','Jeramy Bosco','antonetta@dickinson.biz','Completed','','','','BAQWWXHPLKTDIN','','','',''),(47,'2016-11-11','campaign',24,'2016-11-11 11:15:22','PODSUFPHOIPKULLLU','84.64','Mrs. Hester Greenholt','ari@jacobson.net','Completed','','','','AZEJGJGBREJBQR','','','',''),(48,'2016-11-11','campaign',24,'2016-11-11 19:11:17','WMEXQFCORHDQOMQOY','22.99','Eileen Rau II','jimmy_ortiz@stiedemann.name','','','','','IZUHKYOPAGFUWO','','','',''),(49,'2016-11-13','campaign',24,'2016-11-13 10:33:35','BRZTGJKXYUFKGRAGP','7.05','Citlalli Raynor','wiley@nicolasjenkins.net','Completed','','','','WGMZTMXVAXQCEY','','','',''),(50,'2016-11-15','campaign',24,'2016-11-15 09:47:50','KGCMWCWKGXPXSNYTR','97.06','Lelah Lubowitz','kaylee_ratke@eichmann.com','Completed','','','','KGYPXLOQVYFYTV','','','',''),(51,'2016-11-25','campaign',24,'2016-11-25 12:41:43','ASLXVEQOVOHDLZHXC','83.53','Cora Rempel','dawn.welch@daniel.name','Completed','','','','PIQDJUADPEICBF','','','',''),(52,'2016-11-25','campaign',24,'2016-11-25 12:45:55','AELCGTAXQKUYNIBWQ','44.68','Cicero VonRueden','abdul.muller@okuneva.name','Completed','','','','MHIWFGEUCWLLPP','','','',''),(53,'2016-11-26','one-time-donation',0,'2016-11-26 14:26:50','KLUYMYYRDXOWNTXTO','99.38','Elias Douglas','kenyon@bins.co','Completed','','','31','WMRXUKIANROVPO','','','',''),(54,'2016-11-28','campaign',17,'2016-11-28 13:31:40','FOXHZZPQVZODZYJIU','72.15','Kiera Block','deonte_west@feil.info','Completed','','','','ACBHJFPSJDWGFT','','','',''),(55,'2016-12-02','campaign',27,'2016-12-02 16:21:35','MBAGFQJDBBVWVHFMT','16.52','Shany Lang','adriel@erdman.net','Completed','','','12','BLFZDTTNZIOCZJ','','','',''),(56,'2016-12-04','campaign',25,'2016-12-04 09:47:44','JBRHEAVWCEDFVREEN','16.18','Ottis Schaefer','austen_wolff@little.co','Completed','','','','MDTDHBNKCPDEBM','','','',''),(57,'2016-12-06','one-time-donation',0,'2016-12-06 17:01:04','LSECUBXZMEZNPZVSB','95.11','Bettye Fay','maximo@corwin.info','Completed','','','','OZNDOJJBIUBHNK','','','',''),(58,'2016-12-06','campaign',27,'2016-12-06 22:00:13','XNEHOJPZKBNJTQZDC','25.36','Kristin Zieme','fredy@fadel.org','Completed','','','','VTECNRDNBLYWVF','','','',''),(59,'2016-12-08','campaign',27,'2016-12-08 01:22:45','UGIIJNXLORYHXLWAF','39.14','Colten Roberts DDS','izaiah_smitham@lockmanohara.net','Completed','','','','IKTXJDNSSNZKMX','','','',''),(60,'2016-12-12','campaign',17,'2016-12-12 13:53:41','YJLMUAELKVZIJGRUN','74.23','Ms. Kayden Ondricka','hosea_nader@rennerweimann.io','Completed','','','','ONSHMTZOEDQSPS','','','',''),(61,'2016-12-12','one-time-donation',0,'2016-12-12 20:43:31','POERGKHNSYGEZIVCL','50.24','Antonetta Tremblay','jairo.upton@becker.co','Completed','','','','PJJQOJLWDBRYFA','','','',''),(62,'2016-12-13','one-time-donation',0,'2016-12-13 12:47:30','UYCGNIPGTYLVEJAHN','24.53','Royal Price','johnnie@boyerflatley.io','Completed','','','','ELZNDTNLUAULXZ','','','',''),(63,'2016-12-14','one-time-donation',0,'2016-12-14 17:54:05','SPXTLXATCXSRJUMYH','26.02','Janet Conroy','ronny@ebert.name','Completed','','','','QBVIOVVBPVYXAE','','','',''),(64,'2016-12-15','monthly',0,'2016-12-14 23:18:13','ZKHRXGGTQEPVINHQS','88.41','Dr. Karlie Denesik','shakira@stanton.net','Completed','','','','SDZFHEFOOGNWZT','ActiveProfile','98c307baef6f8','64','24616352'),(65,'2016-12-17','one-time-donation',0,'2016-12-17 10:19:29','PNPNQBANJOVRFWIFA','90.73','Barbara Fay','damien@carroll.info','Completed','','','','BXOWAJVDCCXQLA','','','',''),(66,'2016-12-17','campaign',27,'2016-12-17 21:31:31','EDCNZMHGTVZEWQHPY','83.83','Hank Hilpert','wendell@price.org','Completed','','yes','','ZPOMGZLABSWZZK','','','',''),(67,'2016-12-18','campaign',27,'2016-12-18 14:11:59','GLGRHIDYGRRERKOOF','97.21','Vern Stiedemann PhD','osvaldo@donnellystamm.org','Completed','','yes','','SMLRAOWTNSNAVR','','','',''),(68,'2016-12-18','campaign',25,'2016-12-18 20:23:11','LQXPGZLGNODYCPDXM','23.1','Bessie Wolff','kiana@ruelbarton.com','Completed','','','33','CHHMSPQKRTBAUO','','','',''),(69,'2016-12-19','campaign',27,'2016-12-19 13:33:59','MFVPDPAORICQGEROI','47.6','Shawna Abbott V','helga@keeling.io','Completed','','','','VZGRFTEFNIRZIE','','','',''),(70,'2016-12-19','campaign',27,'2016-12-19 23:50:00','HBUGOWSEWKYCQIAGK','39.0','Wendell Bosco','telly@donnelly.info','Completed','','','','LJPBKATCFWNISA','','','',''),(71,'2016-12-20','monthly',0,'2016-12-19 23:45:12','TBFPGACQLXDHIAJFX','10.94','Boyd Langosh','newell_cain@spinka.io','Completed','','','','PFSBIPLBGHMKYG','ActiveProfile','d93cf9cec54d','64','24616352'),(72,'2016-12-20','campaign',27,'2016-12-20 23:54:54','DTEOTVPXASAFMCMIM','39.25','Cooper Baumbach','margarita.wuckert@christiansen.biz','Completed','','','','GNLUYDWPQOOLYH','','','',''),(73,'2016-12-22','one-time-donation',0,'2016-12-22 00:59:53','EYNGDNEQWSXXMZPIH','45.8','August Bergstrom','katherine.okuneva@purdy.org','Completed','','','','MAYCXMEAISFWKV','','','',''),(74,'2016-12-22','one-time-donation',0,'2016-12-22 00:59:53','QCWNCIUPMLUYOSURJ','7.1','Ericka Roberts','gabriella@nicolasfeeney.io','Completed','','','','GRTFMWZEGQLLAI','','','',''),(75,'2016-12-22','one-time-donation',0,'2016-12-22 08:36:04','MNXACFFLCJCOROQGW','23.44','Eloy Sawayn','alyon.hirthe@konopelski.biz','Completed','','','','FLFIBDMQHVOWZF','','','',''),(76,'2016-12-22','one-time-donation',0,'2016-12-22 18:08:35','ZAGELCRGOFPJGUJSD','40.58','Clemens Stokes','kristofer@nicolasbins.io','Completed','','','','AZDPZEAZRXONLR','','','',''),(77,'2016-12-24','one-time-donation',0,'2016-12-24 20:05:32','GGUJVAAGHCSRJSOHP','20.44','Agustina Williamson','lennie@bodelindgren.name','Completed','','','','LGFOAKJDNTFQMX','','','',''),(78,'2016-12-24','one-time-donation',0,'2016-12-24 20:15:29','RXVQTPGTEKUBHBBIU','57.42','Giovani Greenfelder','edna@keebler.info','Completed','','','','FNYQGXHDARJGWK','','','',''),(79,'2016-12-25','campaign',17,'2016-12-25 12:07:00','ZSOYVUBYUPHPOSXXH','55.71','Blanche Pacocha','dayana_botsford@runolfsdottirheidenreich.co','Completed','','','','UZPRGVCTZZUYKQ','','','',''),(80,'2016-12-25','one-time-donation',0,'2016-12-25 12:52:51','OWOCKJFLRSQVIOYEM','25.79','Ena Bode','marina@bergekreiger.org','Completed','','','','LWIHBHZUFGHSFP','','','',''),(81,'2016-12-26','campaign',17,'2016-12-26 21:03:05','IUQIXDDLCRDWTBGDD','58.85','Willis Herzog','cecile@adams.io','Completed','','','','NABYJOJMMBRDBG','','','',''),(82,'2016-12-27','one-time-donation',0,'2016-12-27 10:41:23','KSRJECRFFPNNTWIMU','5.13','Julius Mills','brooklyn_oreilly@collierhaley.name','Completed','','','','MOZSXORXPQCZBF','','','',''),(83,'2016-12-28','campaign',17,'2016-12-28 13:33:54','YTJRYPYBMAXVEREZD','51.37','Misael Beier','shakira@windler.com','Completed','','','','SPPONXCXQIBEPT','','','',''),(84,'2016-12-29','one-time-donation',0,'2016-12-29 18:11:33','NDGIVPQKWJEKXRDPG','66.51','Kelton Lebsack','keyon@wilderman.org','Completed','','','','ZRPRDCTVJPUMDQ','','','',''),(85,'2016-12-30','one-time-donation',0,'2016-12-30 15:18:59','TXXGJPDGMRQWQXJAO','79.83','Chad Hartmann','lola.vandervort@hahn.com','Completed','','','','HPLMFZZYTEMHSC','','','',''),(86,'2017-01-07','campaign',17,'2017-01-07 12:51:25','BZLPYXPMVEMMOFQYB','31.83','Barney Halvorson','taya.schmeler@dachhaag.co','Completed','','','','DINQGENOGGDSCO','','','',''),(87,'2017-01-07','campaign',17,'2017-01-07 12:52:18','XBGPYVGXZKMKDLQAF','39.09','Leif Murazik IV','dawson.bosco@runolfon.com','Completed','','','','YSDCBKELTYLFBR','','','',''),(88,'2017-01-09','campaign',27,'2017-01-09 18:13:04','RMEXRHVVSUKJFWARB','11.86','Antonio Koepp Jr.','hester@champlin.name','Completed','','yes','','WBSJWIESGBEPGE','','','',''),(89,'2017-01-09','campaign',0,'2017-01-09 18:13:04','EKTJUTJOQDMLJXKZK','59.08','Chaim Murray','mark@wolff.biz','Completed','','','','WIBPSCNGSYRLOM','','','',''),(90,'2017-01-09','campaign',27,'2017-01-09 20:26:33','TCSOVMZTEZMXLDJXD','11.77','Lorna Veum','ed.funk@bechtelar.com','Completed','','yes','','CFOSRFDCPUGIJZ','','','',''),(91,'2017-01-09','campaign',0,'2017-01-09 20:26:33','KZENXNDCYYONSQEIA','92.77','Idell Gleichner','andre_nolan@mitchell.name','Completed','','','','OKABVPHURNBZCS','','','',''),(92,'2017-01-09','campaign',27,'2017-01-09 22:22:16','WXLVNSFLDRRGICGVC','61.72','Norma Hoppe','caandre@monahan.info','Completed','','yes','','QYZPNAAYMZCCTO','','','',''),(93,'2017-01-09','campaign',27,'2017-01-09 23:42:48','YAJMMSNOOEENFLEDP','51.73','Eleonore Flatley','adolfo.fadel@ward.net','Completed','','','','LCPAKWREKWPHMD','','','',''),(94,'2017-01-10','one-time-donation',0,'2017-01-10 02:33:25','FEYFSAHCFORLDYBNK','80.69','Jan Altenwerth','ruthe@ziemannnader.name','Completed','','','','CJQPELJMQRCWXI','','','',''),(95,'2017-01-20','campaign',17,'2017-01-20 10:48:17','RZUAKBROJYRGJEQOD','40.54','Drew Hermiston V','hester@schulist.name','Completed','','','','WHDZNZZQNVYBGO','','','',''),(96,'2017-01-24','one-time-donation',0,'2017-01-24 19:33:49','DLTOWRDUYGYFODHJB','45.0','Arden Sanford II','brianne.tillman@mcculloughtoy.info','Completed','','','','DYNYEYZJQCAADS','','','',''),(97,'2017-01-26','campaign',27,'2017-01-26 11:31:31','CBGHWDZFSXNQKGOZG','62.47','Bert Smith PhD','ryder@legros.com','Completed','','','','VZXSGIGWITMCYM','','','',''),(98,'2017-02-08','one-time-donation',0,'2017-02-08 09:37:22','XAPKQNIMTVXFFTBCY','25.91','Winston Little','neva@auer.co','Completed','','','','ARVJXBYJNXTCJD','','','',''),(99,'2017-02-11','one-time-donation',0,'2017-02-11 09:11:56','XTSGNHQRGGNDYNJNU','13.24','Eulalia Greenfelder III','layne@wuckertfay.io','Completed','','','','IWJAUJHUQETLKL','','','',''),(100,'2017-02-11','one-time-donation',0,'2017-02-11 11:01:27','USKSRSMTFANRQIBWT','12.0','Jimmie Schneider','lorna@ratke.biz','Completed','','','','FAMPJBTITAFZUX','','','',''),(101,'2017-02-12','one-time-donation',0,'2017-02-12 13:16:33','WWBAJGRSWTMDZJRRA','64.45','Sasha Wisoky','elza@langoshprohaska.net','Completed','','','','DUVQRTKOWJKCAC','','','',''),(102,'2017-02-21','one-time-donation',0,'2017-02-21 20:06:01','JILYTAPSWBDGYOANX','15.66','Miss Santina Friesen','maynard@sawayn.biz','Completed','','','','JPJWFVCGFITCFB','','','',''),(103,'2017-02-24','one-time-donation',0,'2017-02-24 23:39:44','OSVGULVCOXHMMZHBV','50.05','Malvina Kutch','lindsey@daughertyharber.io','Completed','','','','WQUKCBLMMPASVE','','','',''),(104,'2017-02-25','one-time-donation',0,'2017-02-25 10:38:54','HABTQYIHNKWZQSHZD','5.64','Dane Wolff','eleazar.weinat@sengerarmstrong.net','Completed','','','','JVHVHHEFVWMJIU','','','',''),(105,'2017-02-26','campaign',24,'2017-02-26 21:00:49','JQODJBKSEMTLYNPSS','34.98','Mark Wolff','corrine@bednardicki.io','Completed','','yes','','WBBNAMWGAJFMNB','','','',''),(106,'2017-02-27','one-time-donation',0,'2017-02-27 21:58:07','PCYQGPOJQPCQFVJTC','96.71','Maya Marvin','vida@connellysimonis.com','Completed','','','','WJOGZBOCVUHVKS','','','',''),(107,'2017-03-02','one-time-donation',0,'2017-03-02 14:17:55','NPDLFSACVATOZVKJT','62.05','Hailie Stracke','coby@bosco.co','Completed','','','','MLUDNZLACZNEQV','','','',''),(108,'2017-03-03','campaign',33,'2017-03-03 19:05:16','NUVPPNDEJNZBRMNQO','37.82','Tillman Daniel','elenor_feeney@murray.info','Completed','','','','QHROWCZUTLIJUY','','','',''),(109,'2017-03-03','monthly',0,'2017-03-03 09:25:58','DQLLSEVMVITBWJNAS','52.08','Beatrice Tremblay','luciano@lindjohnston.org','Completed','','','','XSSYAYHQGOTYCM','ActiveProfile','7811138995bfa','64','25237094'),(110,'2017-03-03','campaign',24,'2017-03-03 08:25:58','YLYQCLCQBPDHOKFKB','86.31','Abdiel Runolfsson','francis.rippin@hammes.info','Completed','','','','GFKPDRRPTXAFPF','ActiveProfile','','',''),(111,'2017-03-05','campaign',17,'2017-03-05 21:45:02','KVKAVEUZMZLQWAJON','14.38','Adele Kohler','cole@ortizquigley.org','Completed','','','','ZSSHQEHOYSIGJT','','','',''),(112,'2017-03-05','campaign',17,'2017-03-03 08:25:58','GDJNPJFBJIWIHGFYB','71.01','Florian Erdman','jonathan_stanton@zemlak.io','Completed','','','','TIROYSWSETTIJL','','','',''),(113,'2017-03-05','campaign',17,'2017-03-03 08:25:58','FELDCDAWRNLGENWYD','67.56','Dane Wintheiser','guido@fisher.co','Completed','','','','UFVDKLKQFFWGYH','','','',''),(114,'2017-03-10','campaign',27,'2017-03-10 09:27:35','NQZEGQJDTRUBJTRND','22.33','Ophelia Kling','camille_pagac@pouros.org','Completed','','','','BGFJQTMRHQKKUC','','','',''),(115,'2017-03-14','one-time-donation',0,'2017-03-14 01:35:50','KPKXETACVWKUWUVIC','31.15','Ms. Kian O\'Hara','shana_dare@baumbachturner.co','Completed','','','','WVBFQQAUGPYFYG','','','',''),(116,'2017-03-14','campaign',34,'2017-03-14 15:52:14','CVXGEAOUGNYNNIBOD','54.8','Lola Abshire','freddie@sporerblick.io','Completed','','','12','YJVGZHGSLHFXUF','','','',''),(117,'2017-03-14','campaign',34,'2017-03-14 15:56:27','GHNXSEEYKDHSMVFZL','97.74','Nickolas Harber DVM','angelo@uptonstehr.com','Completed','','','','VLOGTPWSXHHHDH','','','',''),(118,'2016-08-06','campaign',17,'2016-08-06 08:25:58','NZBGPPUEMBBLACCLA','43.63','Kayla Braun','dorian_lubowitz@windler.io','Completed','','','','CFXEJGNEHDIFOP','','','',''),(119,'2016-10-09','campaign',17,'2016-10-09 08:25:58','VCUHFTCKZHCHNUOPL','75.2','Khalid Boyle','juvenal_dickinson@krajcikheel.name','Completed','','','','XYAVMCEOYEPZRT','','','',''),(120,'2017-03-15','campaign',17,'2017-03-15 17:11:03','XYVWRRMVDSUZFGFUU','50.04','Anastacio Hoppe','elenora.larkin@mueller.info','Completed','','','','CHHYLPBUQSYGLR','','','',''),(121,'2017-03-15','campaign',34,'2017-03-15 21:20:13','XFMGIZODBKWSARVJR','82.75','Linnea Mills','albertha@simonis.info','Completed','','yes','','VEBFSPJJINTQPP','','','',''),(122,'2017-03-16','campaign',34,'2017-03-16 00:00:00','QRMMWTYPCXBMWTTQP','69.35','Eula O\'Hara','robyn@torphyboyer.net','Completed','','','','GPFUZTVIMDKDZR','','','',''),(123,'2017-03-17','one-time-donation',0,'2017-03-17 13:04:51','QDNMZKAIOBKGSIVDM','44.44','Miss Nyasia Hickle','shawna@veumstoltenberg.net','Completed','','','','JFTEUZZMVKLFCI','','','',''),(124,'2017-03-18','one-time-donation',0,'2017-03-18 17:49:03','YLXERHHWZUDDKHJUB','35.14','Christ Nitzsche','karianne.schuppe@strosin.org','Completed','','','','MILKNAWAVYVRJQ','','','',''),(125,'2017-03-19','campaign',34,'2017-03-19 20:07:46','GYMVEUZMUJEPHEKRR','9.78','Twila O\'Conner II','berry@schmidt.name','Completed','','','','QXIQGDRUXYYMXC','','','',''),(126,'2017-03-19','campaign',34,'2017-03-19 20:12:22','DPFZDHTTGCZWANHMJ','41.82','Jed VonRueden','lizzie@doyle.biz','Completed','','','','VWSWCGJDSBJQWE','','','',''),(127,'2017-03-21','one-time-donation',0,'2017-03-21 17:06:31','DLFOLKFIKADOAFXNL','19.99','Dr. Camden Green','gia.davis@quitzon.org','Completed','','','','FFQNKSSKQADUAS','','','',''),(128,'2017-03-24','one-time-donation',0,'2017-03-24 13:52:08','TNMBMRIBHXLFLCBEJ','31.54','Rylan Walker','vicente@deckowharvey.info','Completed','','','','CLNOILHOXBDJSU','','','',''),(129,'2017-03-29','campaign',33,'2017-03-29 19:48:01','KLPEFXIKWGPQCGDSV','35.38','Ian Dooley','maddison.koch@thiel.biz','Completed','','','','PYFVPUJGASFCAT','','','',''),(130,'2017-03-30','campaign',24,'2017-03-30 07:51:27','TNZKGYNRWTCGXDBYL','99.14','Ali Romaguera','percival_kerluke@damorepollich.net','Completed','','yes','','ZYGVMWPYWGMQSK','','','',''),(131,'2017-03-31','one-time-donation',0,'2017-03-31 15:58:30','JOQDLKFFRESHWLQQC','50.97','Karelle Kessler Sr.','golda_bahringer@bartell.io','Completed','','','','DGCCJBKZDGHEBL','','','',''),(132,'2017-04-01','one-time-donation',0,'2017-04-01 10:57:50','YRABYMSGVPCFJWVAU','53.03','Reina Nienow','connie_ruel@krajcikwaelchi.biz','Completed','','','','OERMIWBTJDQSFJ','','','',''),(133,'2017-04-01','one-time-donation',0,'2017-04-01 10:57:54','AFTGZHNUUQPGAEJQG','75.48','Bella Kub','tabitha@fisherfarrell.name','Completed','','','','QZLUWRNVKDUFJU','','','',''),(134,'2017-04-01','one-time-donation',0,'2017-04-01 11:12:22','XDDDOIWSQLYQXLDTQ','33.15','Miss Dominique Hintz','myrtle@schroeder.co','Completed','','','','FTETTBFOZDLTED','','','',''),(135,'2017-04-01','one-time-donation',0,'2017-04-01 11:24:38','DKOBZAMHANVSYEXRK','84.66','Miss Minerva Collier','bennett@robel.io','Completed','','','','OKNVUSDATKNABK','','','',''),(136,'2017-04-01','one-time-donation',0,'2017-04-01 11:28:46','UPFTBKLEEFAFYVMDU','74.73','Melisa Kiehn','savion_kutch@gibson.info','Completed','','','','JSTGPWQWWDXVDS','','','',''),(137,'2017-04-01','one-time-donation',0,'2017-04-01 11:32:58','ENVAWTYEUMOVQGPTQ','22.7','Mr. Eddie Friesen','bo.barton@hirthedonnelly.org','Completed','','','','DLWQUJTOZLZPNW','','','',''),(138,'2017-04-01','one-time-donation',0,'2017-04-01 11:43:52','MZFPHKFNVXKOCDLGT','61.17','Schuyler Bartoletti','lolita.reilly@wisozk.co','Completed','','','','TXWDHLAFCLPCVC','','','',''),(139,'2017-04-01','one-time-donation',0,'2017-04-01 11:51:00','RZHCJZOQMIPVUOUTU','21.24','Britney Koss','aubrey@konopelskideckow.io','Completed','','','','BCJRVAEWDCFYVS','','','',''),(140,'2017-04-01','one-time-donation',0,'2017-04-01 12:12:25','FDNFWTUNCXAWWGPGG','20.36','Karli Howe Sr.','lula_schmidt@walter.io','Completed','','','','QTXNIEKGAAVTTC','','','',''),(141,'2017-04-01','one-time-donation',0,'2017-04-01 12:17:28','ZNOAINVTLHYRFRIFP','94.82','Meta Marquardt','kale@bergnaumjacobs.biz','Completed','','','','YJRUHXONATKBDQ','','','',''),(142,'2017-04-01','one-time-donation',0,'2017-04-01 12:27:36','MGEDDMXTZAJLWHWIC','20.77','Omer Olson','tavares.volkman@hoppe.org','Completed','','','','WNFDZZUMRNEIRV','','','',''),(143,'2017-04-01','one-time-donation',0,'2017-04-01 12:46:51','LPYQSUDATTNEMHCDK','50.44','Rosetta Hilpert','vallie@upton.co','Completed','','','','PVWNMLKAGFNAMW','','','',''),(144,'2017-04-01','one-time-donation',0,'2017-04-01 13:13:02','UOHRQJDRKPJMJUOOE','15.4','Leta Gleason','tavares_steuber@willmspfannerstill.com','Completed','','','','KPIDWEWLTGFASJ','','','',''),(145,'2017-04-01','one-time-donation',0,'2017-04-01 17:18:15','RNXNKSZPMFVMMXHFR','10.59','Ms. Ursula Kuhic','buford_beer@bodedare.biz','Completed','','','','BGLPCBHWZLBWWF','','','',''),(146,'2017-04-01','one-time-donation',0,'2017-04-01 18:35:42','KKQRZSAHBWMXUSRQI','64.48','Jocelyn Gaylord','lamont.jones@hoegerdubuque.info','Completed','','','','TPUAJNFPJOYTPU','','','',''),(147,'2017-04-01','one-time-donation',0,'2017-04-01 23:13:43','CEZTHJHPSPYSVQXXZ','17.43','Norene Hand','max.koch@treutel.org','Completed','','','','VYQRHTPQGWRRDJ','','','',''),(148,'2017-04-02','one-time-donation',0,'2017-04-02 14:07:56','RMONPNROGWKWWDSFW','42.48','Beau Dibbert','leonie@heidenreichbogisich.com','Completed','','','','EDBFNSZQOFQJHT','','','',''),(149,'2017-04-03','one-time-donation',0,'2017-04-03 10:31:14','HMMNVKLEXSBHYDUOM','63.74','Mrs. Ettie Koss','trevor.pagac@wizaemard.net','Completed','','','','ZBQRTEEZATHJOR','','','',''),(150,'2017-04-03','campaign',33,'2017-04-03 11:31:08','EFWWLPKBKMVHRIUUZ','71.51','Katlyn Nikolaus','anastasia.reynolds@okunevaokon.info','Completed','','','','DZLGXDDMOTAOOD','','','',''),(151,'2017-04-03','campaign',33,'2017-04-03 14:31:08','XUKYWCCZCJBQXODZN','58.41','Kaleb Kemmer I','ludie@harveyhoeger.com','Completed','','','','QSPQAMEZTAOEPL','','','',''),(152,'2017-04-03','campaign',17,'2017-04-03 13:38:11','VUZUYAWTWFOIXLVIQ','98.39','Emanuel Lynch Jr.','reanna@olson.net','Completed','','','','UNVAVQAORIICIZ','','','',''),(153,'2017-04-04','campaign',34,'2017-04-04 18:31:59','ANGWVFADVZZWCFSHX','27.92','Lelah Mann','addie@huel.biz','Completed','','','','YPLUKFMTGMEOHZ','','','',''),(154,'2017-04-07','campaign',24,'2017-04-07 07:51:27','PWIRMYNAWAJYSNAHE','37.77','Tianna Ziemann Sr.','vincenzo_weber@zulauf.com','Completed','','','','KCEHLSZAKGVTPK','','','',''),(156,'2017-04-08','one-time-donation',0,'2017-04-08 14:11:04','QEVQFZLMARWCXGUWJ','79.26','Henriette Gerlach III','emory@wisozk.com','Completed','','','','EQXMZOWHVBKROG','','','',''),(157,'2017-04-13','campaign',34,'2017-04-13 17:25:25','TFLRXKNAKCJHBBQHV','45.14','Buster Miller','raegan.pacocha@wuckert.org','Completed','','','','ODMWNCHGIEKLXB','','','',''),(158,'2017-04-13','campaign',34,'2017-04-13 17:26:27','NQKMVURNCBTVSKSXU','57.97','Trenton Emmerich','alba@towne.io','Completed','','','','KEAQUVNRHYUJIT','','','',''),(159,'2017-04-13','campaign',34,'2017-04-13 18:14:18','ZPCXIZSDZVTVPFPRG','37.17','Maximilian Farrell','kristy@williamson.net','Completed','','','','NCXKHBLOBEEZTS','','','',''),(160,'2017-04-13','campaign',34,'2017-04-13 18:59:27','ZERXMZNGLAVNCLRER','55.29','Rozella Franecki','lia.jerde@strosindach.com','Completed','','','','RFMTKCTYIIVGWQ','','','',''),(161,'2017-04-13','campaign',34,'2017-04-13 19:00:56','GRFIONTEGRNKPJQWI','45.79','Miss Raven Mann','margarita_graham@reilly.com','Completed','','','','ZZEXNUOMHJVXXD','','','',''),(162,'2017-04-13','campaign',34,'2017-04-13 20:01:28','PAJVRJZZCANWCYEOZ','20.42','Geovanny Jacobi I','frederik@konopelski.info','Completed','','','','EQAHOUUNVJEIAO','','','',''),(163,'2017-04-14','one-time-donation',0,'2017-04-14 10:00:53','CWUBKAJUVGNZBOOIP','49.75','Fernando Hartmann','timmy_adams@brakus.info','Completed','','','','CNBXMOJWMFZGWM','','','',''),(164,'2017-04-14','campaign',34,'2017-04-14 22:23:45','CKISFQSAFHAJETXSH','88.22','Rowena Schulist','dariana_welch@ryan.net','Completed','','','','PKKCMFDDMKRKLE','','','',''),(165,'2017-04-18','campaign',34,'2017-04-18 20:57:56','QGKNFDFVZKBCXCRUQ','18.09','Miss Macey Fahey','jaren@bahringer.co','Completed','','','','ZAWGSKFCGPEFKL','','','',''),(166,'2017-04-19','campaign',34,'2017-04-19 09:52:55','RAEYPARZDTBSZCICF','77.78','Dr. Destini Schumm','vincenza.wolf@lakin.info','Completed','','','','NYWJMWDYGVVFHN','','','',''),(167,'2017-04-19','campaign',34,'2017-04-19 09:58:32','YXFZEEJJDASDUGWRG','38.23','Margie Gutkowski','lane.lesch@feeney.co','Completed','','','','ISJFMJRVMYSXOE','','','',''),(168,'2017-04-19','campaign',34,'2017-04-19 10:05:56','UAWIOQVKYTUDFNFDH','9.73','Mrs. Alexanne Buckridge','tina@botsfordcasper.org','Completed','','','','OVMKDNCDYCLPYO','','','',''),(169,'2017-04-19','campaign',34,'2017-04-19 10:08:26','XJWCQERJOJKVDRGEW','40.82','Mrs. Oswald Denesik','greyson_bechtelar@schuppe.org','Completed','','yes','','XVTWNGTVNLSANE','','','',''),(170,'2017-04-20','campaign',24,'2017-04-20 07:39:53','YBULSORWWRRKPZUHR','46.64','Madyson Welch','friedrich_wisozk@rice.io','Completed','','','','PGHFSZQQPFYIVN','','','',''),(171,'2017-04-20','campaign',33,'2017-04-20 18:15:35','NVMDPOJHPVGONENNI','7.98','Amely Mitchell','karli@wehner.net','Completed','','','','QCYZOMAJHQXKCT','','','',''),(172,'2017-04-20','campaign',33,'2017-04-20 22:19:09','OXBRFKZGBAXTKZSCA','26.77','Norene Waters MD','alexane_heathcote@hodkiewiczdubuque.info','Completed','','','','SUQAKFSKKZHTYL','','','',''),(173,'2017-04-20','campaign',33,'2017-04-20 22:19:07','QBVUJIDMFGYHCBMRX','27.32','Megane Bechtelar II','trey@lowe.org','Completed','','','','JIEFHANZEANJOI','','','',''),(174,'2017-04-21','campaign',33,'2017-04-21 09:07:50','YMFKNFPPTJCDOPJSO','77.16','Erin Dibbert','edythe.hilll@blickstoltenberg.net','Completed','','','','LVQPBPFBNKHOGU','','','',''),(175,'2017-04-21','campaign',34,'2017-04-21 19:02:35','TSXDLDKABOTYABXOX','71.93','Evan Ziemann PhD','greta@homenick.biz','Completed','','','','UKUJLBDQTZGFFN','','','',''),(176,'2017-04-21','campaign',34,'2017-04-21 19:03:36','GVHWMPJGMXJAYRDWZ','84.2','Dr. Alex Hermiston','lavada.mcglynn@ondricka.org','Completed','','','','ITTMABRSDHTNUF','','','',''),(177,'2017-04-21','campaign',34,'2017-04-21 19:04:31','MTFZAMQBPMIZCBRUX','41.73','Chanelle Swift','ralph.ebert@walshrohan.org','Completed','','','','VTSCTTUWTKOSGQ','','','',''),(178,'2017-04-21','campaign',34,'2017-04-21 19:05:22','MSMLXIJDQKCSKWQEN','33.93','Clementina Bernhard','gielle@starkdibbert.com','Completed','','','','QBNKIXOAUHGQNB','','','',''),(179,'2017-04-24','campaign',33,'2017-04-24 15:08:00','MSUBLBBSDPEOMSIZZ','68.19','Miss Avis Carroll','nakia_fisher@ruelschaden.biz','Completed','','','','GPJVBIPFFZJVRD','','','',''),(180,'2017-04-26','campaign',33,'2017-04-26 09:59:46','OYCUCKSMFATBKTJSX','1.56','Zella Torphy V','sandy@reichert.io','Completed','','','','RJGVUCZWHPPRGV','','','',''),(181,'2017-04-28','campaign',17,'2017-04-28 15:06:46','KZQJDWTSAKNMSHHTI','49.53','Percy Hoeger','tre.hettinger@klocko.co','Completed','','','','CXTVPAKDMQYXJX','','','',''),(182,'2017-04-28','campaign',17,'2017-04-28 15:31:00','SJHHZRRIMSQFYIHKP','39.86','Dr. Henri Eichmann','rodrick@haley.name','Completed','','','','JPUSPHSVJFHNYT','','','',''),(183,'2017-05-04','campaign',33,'2017-05-04 15:39:41','SOPKBSGRTOQEXDTYW','14.12','Dr. Zion Moore','winnifred.feil@rathwelch.co','Completed','','yes','','CSDLXYWPQRBTBL','','','',''),(184,'2017-05-08','one-time-donation',0,'2017-05-08 10:07:50','ODORAQGERUKKBRUYJ','67.88','Durward Kohler','dortha_satterfield@boyle.io','Completed','','','','TSMBQCMIYLQYPQ','','','',''),(185,'2017-05-09','campaign',0,'2017-05-09 20:46:21','VUCOQZKYGEFJJXLMN','27.29','Mr. Sylvan Franecki','jakayla_nicolas@stokesconn.name','Completed','','','','HHRKCMCJOGYAZB','','','',''),(186,'2017-05-11','one-time-donation',0,'2017-05-11 16:03:15','KKQNWRVYHBHJCSPQC','2.48','Omer Klocko MD','cary.torphy@metzlittel.io','Completed','','','','HHRYROPQLMWFWV','','','',''),(187,'2017-05-14','one-time-donation',0,'2017-05-14 16:03:47','YQPWTILARASHOPZSG','22.22','Kelli Rau IV','lester_ruel@kutch.biz','Completed','','','','WFTHSBNTRMSFRA','','','',''),(188,'2017-05-15','one-time-donation',0,'2017-05-15 15:22:00','OKMJWZSHKEDZOJCLA','28.16','Coleman Wisoky','aurelia_harber@lynchkerluke.io','Completed','','','','OAWBUVYQTKXOPP','','','',''),(189,'2017-05-16','one-time-donation',0,'2017-05-16 10:06:15','YDMPTATFPJIDAWTHG','46.86','Junius Leffler','lysanne_tremblay@trompschaden.biz','Completed','','','','LJTHKIJLXBCEBG','','','',''),(190,'2017-05-18','campaign',33,'2017-05-18 11:57:57','WWHPMODPOYCWOVGBA','88.39','Clint Larkin','devyn@cormiernicolas.com','Completed','','','','USCNJGWKLZLGJN','','','',''),(191,'2017-05-22','one-time-donation',0,'2017-05-22 12:43:50','CMKJUFOYQPEROQMQR','70.04','Marilie Cassin','zoila@heller.io','Completed','','','','IHZFMVCSGWCETK','','','',''),(192,'2017-05-22','campaign',33,'2017-05-22 14:33:05','GLFMAEZXRZBGTMOJP','96.8','Marjorie Reichel','cloyd.goldner@kozey.biz','Completed','\'It works on my machine\' always holds true for Chuck Norris.','','','ZXDPZWFEHCLJDG','','','','');
 /*!40000 ALTER TABLE `donations` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `download_categories`
---
-
-DROP TABLE IF EXISTS `download_categories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `download_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` date NOT NULL,
-  `category_name` varchar(255) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `download_categories`
---
-
-LOCK TABLES `download_categories` WRITE;
-/*!40000 ALTER TABLE `download_categories` DISABLE KEYS */;
-INSERT INTO `download_categories` VALUES (5,'2013-02-22','Brochure Park & Smile','','1',1,'2013-03-11 22:41:45','zeemoadmin');
-/*!40000 ALTER TABLE `download_categories` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `downloads`
---
-
-DROP TABLE IF EXISTS `downloads`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `downloads` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `cat_id` int(11) NOT NULL,
-  `brochure_file` varchar(255) NOT NULL,
-  `brochure_title` varchar(255) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `downloads`
---
-
-LOCK TABLES `downloads` WRITE;
-/*!40000 ALTER TABLE `downloads` DISABLE KEYS */;
-/*!40000 ALTER TABLE `downloads` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `faq`
---
-
-DROP TABLE IF EXISTS `faq`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `faq` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `question` text NOT NULL,
-  `answer` text NOT NULL,
-  `date_entered` date NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `faq`
---
-
-LOCK TABLES `faq` WRITE;
-/*!40000 ALTER TABLE `faq` DISABLE KEYS */;
-INSERT INTO `faq` VALUES (1,'How a website improve your marketting values?','<p>Website not only advertise but also saw the relevant information about our business to our customer</p>','2014-05-23','1',1,'2014-12-03 14:34:38','zeemoadmin');
-/*!40000 ALTER TABLE `faq` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `homepage_banners`
---
-
-DROP TABLE IF EXISTS `homepage_banners`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `homepage_banners` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_quality` varchar(25) NOT NULL,
-  `image_alt_title_text` varchar(512) NOT NULL,
-  `details` text NOT NULL,
-  `url` text NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `homepage_banners`
---
-
-LOCK TABLES `homepage_banners` WRITE;
-/*!40000 ALTER TABLE `homepage_banners` DISABLE KEYS */;
-INSERT INTO `homepage_banners` VALUES (2,'0000-00-00 00:00:00','banner51.jpg','','','<h2><a href=\"#\">Park and Smile</a><br />\r\nAre you still searching, or do you already park in a KLAUS Multiparking system?</h2>\r\n\r\n<p>KLAUS Multiparking has been one of the leading manufacturers of parking systems in Germany for almost 50 years. We have representations in over 65 countries worldwide. Our headquarters is in the south of Germany close to the Lake of Constance.</p>\r\n','','1',10,'2015-09-17 23:47:41','zeemoadmin'),(12,'0000-00-00 00:00:00','Screen_Shot_2015-09-12_at_10_29_33_am.png','','','<p>asdfasdf</p>\r\n','','1',9,'2015-09-17 23:47:41','zeemoadmin'),(13,'0000-00-00 00:00:00','Screen_Shot_2015-09-12_at_10_38_34_am_-_Copy.png','','','<p>asdfasdf</p>\r\n','','1',8,'2015-09-17 23:47:41','zeemoadmin'),(14,'0000-00-00 00:00:00','fitout3.jpg','','','<p>asdfasfd</p>\r\n','','1',6,'2015-09-17 23:47:41','zeemoadmin'),(15,'0000-00-00 00:00:00','404_65.png','','','<p>asdfasdf</p>\r\n','','1',2,'2015-09-17 23:47:41','zeemoadmin'),(16,'0000-00-00 00:00:00','404_611.png','','','<p>asdfasdf</p>\r\n','','1',1,'2015-09-17 23:47:41','zeemoadmin');
-/*!40000 ALTER TABLE `homepage_banners` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `icon_settings`
---
-
-DROP TABLE IF EXISTS `icon_settings`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `icon_settings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `section_icon_name` varchar(255) NOT NULL,
-  `url` text NOT NULL,
-  `main_image` varchar(255) NOT NULL,
-  `hover_image` varchar(512) NOT NULL,
-  `intro_text` text NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  `date_entered` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `icon_settings`
---
-
-LOCK TABLES `icon_settings` WRITE;
-/*!40000 ALTER TABLE `icon_settings` DISABLE KEYS */;
-INSERT INTO `icon_settings` VALUES (4,'Why Us','http://devs/ci-application/','img4.png','img5.png','<p>CTA content including icon, title and intro text</p>\r\n',6,'1','2016-05-25 06:26:03','zeemoadmin','2014-05-22 00:00:00'),(5,'Expertise','http://devs/ci-application/','img51.png','img6.png','<p>CTA main content</p>\r\n',5,'1','2016-05-25 06:26:03','zeemoadmin','2014-05-22 00:00:00'),(7,'Donate page CTA','','','','<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"container\">\r\n<div class=\"row donateh2\">\r\n<h2>Other ways you can get involved</h2>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home\">\r\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon2.png\" /></div>\r\n\r\n<p>Pledge your next Birthday for safe sleeps.</p>\r\n<a class=\"btn btn-success\" href=\"https://www.sleepbus.org/pledge\">PLEDGE</a></div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home\">\r\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon3.png\" /></div>\r\n\r\n<p>Do something crazy or creative to raise money.</p>\r\n<a class=\"btn btn-info\" href=\"https://www.sleepbus.org/fundraise\">FUNDRAISE</a></div>\r\n</div>\r\n</div>\r\n</div>',4,'1','2017-02-14 18:40:18','zeemoadmin','2016-04-05 00:00:00'),(8,'Three ways you can get involved','','','','<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n<div class=\"container\">\n<div class=\"row donateh2\">\n<h2>Here are three ways you can get involved</h2>\n\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home\">\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon1.png\" /></div>\n\n<p>For $27.50 you can give a good night&rsquo;s sleep.</p>\n<a class=\"btn btn-primary\" href=\"https://www.sleepbus.org/donate\">Donate</a></div>\n\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home\">\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon2.png\" /></div>\n\n<p>Pledge your next Birthday for safe sleeps.</p>\n<a class=\"btn btn-success\" href=\"https://www.sleepbus.org/pledge\">PLEDGE</a></div>\n\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home\">\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon3.png\" /></div>\n\n<p>Do something crazy or creative to raise money.</p>\n<a class=\"btn btn-info\" href=\"https://www.sleepbus.org/fundraise\">FUNDRAISE</a></div>\n</div>\n</div>\n</div>',3,'1','2017-02-14 18:40:18','zeemoadmin','2016-04-05 00:00:00'),(9,'Mission','','','','<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n',2,'1','2016-05-25 06:26:03','admin','2016-04-27 00:00:00'),(10,'LIke what you see','','','','<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\r\n<div class=\"container\">\r\n<div class=\"row donateh2\">\r\n<h2>Like what you see?<br />\r\nHere&#39;s three ways you can get involved</h2>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home\">\r\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon1.png\" /></div>\r\n\r\n<p>For $27.50 you can give a good night&rsquo;s sleep.</p>\r\n<a class=\"btn btn-primary\" href=\"#\">Donate</a></div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home\">\r\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon2.png\" /></div>\r\n\r\n<p>Pledge your next Birthday for safe sleeps.</p>\r\n<a class=\"btn btn-success\" href=\"#\">PLEDGE</a></div>\r\n\r\n<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome cta4home\">\r\n<div class=\"donatehomeimg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon3.png\" /></div>\r\n\r\n<p>Do something crazy or creative to raise money.</p>\r\n<a class=\"btn btn-info\" href=\"#\">FUNDRAISE</a></div>\r\n</div>\r\n</div>\r\n</div>',1,'1','2017-02-14 18:40:18','zeemoadmin','2016-04-27 00:00:00');
-/*!40000 ALTER TABLE `icon_settings` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `landingpages`
---
-
-DROP TABLE IF EXISTS `landingpages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `landingpages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `page_heading` varchar(300) DEFAULT NULL,
-  `url` varchar(255) DEFAULT NULL,
-  `description` text NOT NULL,
-  `meta_title` text NOT NULL,
-  `meta_keyword` text NOT NULL,
-  `meta_description` text NOT NULL,
-  `dateadded` datetime DEFAULT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `landingpages`
---
-
-LOCK TABLES `landingpages` WRITE;
-/*!40000 ALTER TABLE `landingpages` DISABLE KEYS */;
-INSERT INTO `landingpages` VALUES (4,'Competition','page heading2','competition','<p>Landing page content</p>','','','',NULL,'2017-03-21 10:14:14','admin',1,'1'),(5,'Landing page2','this is landing page1 heading2','landing-page2','<p>adf</p>','','','','2015-12-29 09:18:39','2016-08-03 04:47:41','admin',2,'0');
-/*!40000 ALTER TABLE `landingpages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1263,38 +617,6 @@ INSERT INTO `level_to_modules` VALUES (1006,6,2),(1007,114,2),(1008,123,2),(1009
 UNLOCK TABLES;
 
 --
--- Table structure for table `media_items`
---
-
-DROP TABLE IF EXISTS `media_items`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `media_items` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `media_title` varchar(555) NOT NULL,
-  `publication` varchar(555) NOT NULL,
-  `url` text NOT NULL,
-  `date_display` date NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `media_items`
---
-
-LOCK TABLES `media_items` WRITE;
-/*!40000 ALTER TABLE `media_items` DISABLE KEYS */;
-INSERT INTO `media_items` VALUES (3,'2016-04-13 14:29:27','This Australian guy is buying 300 charter buses for an incredible reason.','Upworthy','http://www.upworthy.com/this-australian-guy-is-buying-300-charter-buses-for-an-incredible-reason','2016-04-29',1,'1','2016-07-07 05:31:16','zeemoadmin'),(4,'2016-04-13 16:11:38','Former homeless man raises $58,000 to buy a \'Sleep Bus\'','The Age','http://www.theage.com.au/victoria/former-homeless-mans-sleep-bus-dream-coming-true-20160421-gobwj8.html','2016-04-22',2,'1','2016-07-07 05:31:16','zeemoadmin'),(5,'2016-04-13 16:11:57','Sleepbus: Entrepreneur to convert old buses into shelters for homeless people','The Independent','http://www.independent.co.uk/news/world/australasia/sleepbus-entrepreneur-to-convert-old-buses-into-shelters-for-homeless-people-a6921006.html','2016-03-10',4,'1','2016-07-07 05:31:16','zeemoadmin'),(6,'2016-04-13 16:12:50','Melbourne Entrepreneur to Launch SleepBus','Pro bono Australia','http://probonoaustralia.com.au/news/2016/03/melbourne-entrepreneur-to-launch-sleepbus/','2016-03-03',5,'1','2016-07-07 05:31:16','zeemoadmin'),(8,'2016-04-27 16:18:27','Sleepbus – The Bus Providing Shelter For The Homeless (And Their Pooches)','The Vocal','http://www.thevocal.com.au/sleepbus-bus-providing-shelter-homeless-pooches/','2016-04-23',3,'1','2016-07-07 05:31:16','zeemoadmin');
-/*!40000 ALTER TABLE `media_items` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `meta_single_pages`
 --
 
@@ -1349,136 +671,6 @@ LOCK TABLES `meta_tags` WRITE;
 /*!40000 ALTER TABLE `meta_tags` DISABLE KEYS */;
 INSERT INTO `meta_tags` VALUES (1,'2014-05-22 08:06:19','BLOGS_ARCHIVE','May 2013','May 2013 - Demo Site','','','','2014-05-21 21:36:19','zeemoadmin'),(2,'2014-12-29 11:04:14','NEWS','10','New news - Demo Site','','','','2014-12-28 22:34:14','zeemoadmin'),(3,'2015-12-04 09:55:02','ABOUT_SECTION','0','About Section - Demo Site','about section keyword','about section json code','about section description','2015-12-03 21:25:02','zeemoadmin'),(4,'2015-12-04 09:55:28','ABOUT_SECTION','2','Blog - Demo Site--updated','about blog keyword','about blog json','about blog desc','2015-12-03 21:25:28','zeemoadmin'),(5,'2016-04-05 04:33:43','BLOGS_CATEGORIES','33','Category - sleepbus','','','','2016-06-28 04:17:53','zeemoadmin'),(6,'2016-04-05 04:43:41','PROJECTS','0','Project - Sleep Bus','','','','2016-04-04 18:13:41','zeemoadmin'),(7,'2016-04-05 04:43:45','PROJECTS','2','Project 1 - Sleep Bus','','','','2016-04-04 18:13:45','zeemoadmin');
 /*!40000 ALTER TABLE `meta_tags` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `more_info_section`
---
-
-DROP TABLE IF EXISTS `more_info_section`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `more_info_section` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `info_title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_quality` varchar(25) NOT NULL,
-  `image_alt_title_text` varchar(250) NOT NULL,
-  `url` varchar(250) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `more_info_section`
---
-
-LOCK TABLES `more_info_section` WRITE;
-/*!40000 ALTER TABLE `more_info_section` DISABLE KEYS */;
-/*!40000 ALTER TABLE `more_info_section` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news`
---
-
-DROP TABLE IF EXISTS `news`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `news_title` varchar(255) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `date_entered` date NOT NULL,
-  `date_display` varchar(111) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `intro_text` text NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news`
---
-
-LOCK TABLES `news` WRITE;
-/*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (7,'Panasonic to hire 3500 people for its Haryana plant by 2018','panasonic-to-hire-3500-people-for-its-haryana-plant-by-2018','<p>&nbsp;asdfasdf</p>','2013-02-04','2013-02-04 10:53:21','1','asdfasdf',5,'2014-05-21 23:14:22','zeemoadmin'),(8,'df','df','<p>fdf</p>','2013-02-19','2013-02-19 05:45:42','1','sd',3,'2014-05-21 23:14:22','zeemoadmin'),(9,'Live Blog: No hike in railway passenger fares, Bansal says','live-blog-no-hike-in-railway-passenger-fares-bansal-says','<p>&nbsp;<span style=\"font-family: Arial; font-size: 13px;\">Railways will introduce 67 new express trains, 27 new passenger trains and run of 58 trains will be extended, Pawan Bansal said.</span></p>\r\n<div><span style=\"font-family: Arial; font-size: 13px;\">Railways will introduce 67 new express trains, 27 new passenger trains and run of 58 trains will be extended, Pawan Bansal said.</span></div>','2013-02-26','2013-02-26 07:31:27','1','Railways will introduce 67 new express trains, 27 new passenger trains and run of 58 trains will be extended, Pawan Bansal said.',4,'2014-05-21 23:14:22','zeemoadmin'),(10,'New news','new-news','<p>asdf aasdfsad</p>','2013-02-26','2014-03-14 10:23:52','1','asdfasdf',1,'2014-05-21 23:14:22','zeemoadmin'),(11,'Watch This Space! ','asdfas-asdfasdf','<p>asdf asdfasdf</p>\r\n<p><style type=\"text/css\">            img.imageResizerActiveClass{cursor:nw-resize !important;outline:1px dashed black !important;}            img.imageResizerChangedClass{z-index:300 !important;max-width:none !important;max-height:none !important;}            img.imageResizerBoxClass{margin:auto; z-index:99999 !important; position:fixed; top:0; left:0; right:0; bottom:0; border:1px solid white; outline:1px solid black;}        </style></p>','2013-02-26','2013-01-18 08:23:50','1','asdf sadf',2,'2014-05-21 23:14:22','zeemoadmin');
-/*!40000 ALTER TABLE `news` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_brochures`
---
-
-DROP TABLE IF EXISTS `news_brochures`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_brochures` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `news_id` int(11) NOT NULL,
-  `brochure_file` varchar(255) NOT NULL,
-  `brochure_title` varchar(255) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_brochures`
---
-
-LOCK TABLES `news_brochures` WRITE;
-/*!40000 ALTER TABLE `news_brochures` DISABLE KEYS */;
-/*!40000 ALTER TABLE `news_brochures` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `news_images`
---
-
-DROP TABLE IF EXISTS `news_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `news_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `news_id` int(11) NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_title` varchar(255) NOT NULL,
-  `image_alt_title_text` varchar(512) NOT NULL,
-  `image_quality` varchar(25) NOT NULL,
-  `description` text NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `news_images`
---
-
-LOCK TABLES `news_images` WRITE;
-/*!40000 ALTER TABLE `news_images` DISABLE KEYS */;
-INSERT INTO `news_images` VALUES (20,'2013-02-19 09:07:10',8,'8.jpg','','','','','1',4,'2013-02-26 19:58:21','zeemoadmin'),(21,'2013-02-19 09:22:33',8,'81.jpg','','','','Description11','1',3,'2013-02-26 19:58:21','zeemoadmin'),(23,'2013-02-27 08:28:05',8,'9.jpg','df images','','','this is df images. this is df images. this is df images. this is df images. this is df images. this is df images. this is df images. this is df images. this is df images.this is df images. this is df.','1',2,'2013-02-26 19:58:21','zeemoadmin'),(24,'2013-02-27 08:28:22',8,'10.jpg','dfsshgsdf','','','this is df images. this is df images. this is df images. this is df images. this is df images. this is df images. this is df images. this is df images. this is df images.this is df images. this is df.','1',1,'2013-02-26 19:58:22','zeemoadmin'),(25,'2014-05-22 10:01:58',10,'product1.jpg','Image 1','','','asdf asf asdf','1',2,'2014-05-21 23:47:26','zeemoadmin'),(26,'2014-05-22 10:05:50',10,'logo1.png','afasdfasfd','asdfasdfasf','','asdfasfd','1',1,'2014-05-21 23:47:26','zeemoadmin');
-/*!40000 ALTER TABLE `news_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1585,38 +777,6 @@ LOCK TABLES `newsletters_subscribers` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `page_brochures`
---
-
-DROP TABLE IF EXISTS `page_brochures`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `page_brochures` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `page_id` int(11) NOT NULL,
-  `brochure_file` varchar(255) NOT NULL,
-  `brochure_title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `page_brochures`
---
-
-LOCK TABLES `page_brochures` WRITE;
-/*!40000 ALTER TABLE `page_brochures` DISABLE KEYS */;
-INSERT INTO `page_brochures` VALUES (4,'2013-01-31 08:38:21',2,'test.pdf','sfdadsfasdf','','1',1,'2013-01-31 21:51:23','zeemoadmin');
-/*!40000 ALTER TABLE `page_brochures` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `page_heading`
 --
 
@@ -1645,168 +805,6 @@ LOCK TABLES `page_heading` WRITE;
 /*!40000 ALTER TABLE `page_heading` DISABLE KEYS */;
 INSERT INTO `page_heading` VALUES (1,0,'Signup','Signup','0',1,'1','2016-04-14 21:40:21','admin'),(2,1,'Signup','Sign up','0',1,'1','2016-04-18 15:54:49','admin'),(3,0,'Signin','Signin','0',2,'1','2016-04-14 21:42:50','admin'),(4,3,'Signin','Sign in','0',1,'1','2016-04-18 15:53:47','admin'),(5,0,'Forgot Password','Forgot Password','0',3,'1','2016-04-18 15:56:03','admin'),(6,5,'Forgot Password','<h1>It happens to the best of us.</h1>\r\n\r\n<h2>We&rsquo;ll email you a reset link.</h2>','1',1,'1','2016-04-18 15:57:05','admin'),(7,0,'Reset Password','Reset Password','0',4,'1','2016-04-18 22:12:00','admin'),(8,7,'Reset Password','Reset Password','0',1,'1','2016-04-18 22:12:00','admin'),(9,0,'Fundraise','Fundraise','0',5,'1','2016-04-21 22:38:00','admin'),(10,9,'Compaign form [Heading]','<h1>Let&rsquo;s go!</h1>\r\n\r\n<div class=\"fundraise-subheading\">Start a fundraising campaign of your own for safe sleeps. You can do anything from hosting&nbsp;a dinner party&nbsp;to doing something crazy. Just have fun!</div>','1',1,'1','2016-06-08 00:54:09','admin'),(11,0,'Birthday Pledge','Birthday Pledge','0',6,'1','2016-04-21 22:39:26','admin'),(12,11,'Birthday pledge [Form Heading]','<h1>Birthday pledge</h1>\r\n\r\n<div class=\"birthdayboximg\"><img alt=\"\" src=\"https://www.sleepbus.org/images/icon26.png\" /></div>\r\n\r\n<p>This year ask for donations instead of gifts</p>','1',1,'1','2017-02-14 18:40:26','admin'),(13,9,'Edit Campaign Form','Edit Campaign','0',2,'1','2016-04-27 19:37:48','admin'),(14,9,'Donate for campaign [Form]','You\'re giving to','0',3,'1','2016-04-27 19:37:48','admin');
 /*!40000 ALTER TABLE `page_heading` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `page_images`
---
-
-DROP TABLE IF EXISTS `page_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `page_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `page_id` int(11) NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_title` varchar(255) NOT NULL,
-  `image_alt_title_text` varchar(512) NOT NULL,
-  `image_quality` varchar(512) NOT NULL,
-  `description` text NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `page_images`
---
-
-LOCK TABLES `page_images` WRITE;
-/*!40000 ALTER TABLE `page_images` DISABLE KEYS */;
-INSERT INTO `page_images` VALUES (6,'2013-01-31 08:36:50',2,'97607268-10-jpg_114421.jpg','gads asdfasdf','','','','1',11,'2013-12-01 16:38:31','zeemoadmin'),(7,'2013-02-01 10:20:59',2,'red-rose-amp-lips-HD_wallpapers.jpg','asdfasdf','beautiful','80','','1',10,'2013-12-01 16:38:31','zeemoadmin'),(8,'2013-02-19 09:23:23',2,'11.jpg','Image2','','','','1',8,'2013-12-01 16:38:31','zeemoadmin'),(9,'2013-02-22 07:30:07',2,'sonakshi-sinha-20a.jpg','','','60','','1',9,'2013-12-01 16:38:31','zeemoadmin'),(10,'2013-02-23 04:25:41',2,'sonakshi-sinha-9a.jpg','image345','','70','','1',4,'2013-12-01 16:38:31','zeemoadmin'),(15,'2013-02-28 07:36:40',2,'image2.jpg','','','','','1',7,'2013-12-01 16:38:31','zeemoadmin'),(16,'2013-02-28 07:37:27',2,'2.jpg','','','','','1',6,'2013-12-01 16:38:31','zeemoadmin'),(17,'2013-02-28 07:38:13',2,'lederderg-r-renae-ayres.jpg','','','','','1',5,'2013-12-01 16:38:31','zeemoadmin'),(18,'2013-09-25 10:34:27',2,'sonakshi-sinha-4a.jpg','asdfasdf','349','90','','1',3,'2013-12-01 16:38:31','zeemoadmin'),(19,'2013-10-08 09:24:19',2,'nota8.jpg','asdf','asddfasdf','80','','1',2,'2013-12-01 16:38:31','zeemoadmin'),(20,'2013-12-02 05:08:31',2,'nota81.jpg','fawf','','','','1',1,'2013-12-01 16:38:31','zeemoadmin');
-/*!40000 ALTER TABLE `page_images` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `product_brochures`
---
-
-DROP TABLE IF EXISTS `product_brochures`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `product_brochures` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `brochure_file` varchar(255) NOT NULL,
-  `brochure_title` varchar(255) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product_brochures`
---
-
-LOCK TABLES `product_brochures` WRITE;
-/*!40000 ALTER TABLE `product_brochures` DISABLE KEYS */;
-INSERT INTO `product_brochures` VALUES (1,'2013-10-08 09:33:02',8,'Decoration_Options.xls','eaaer','1',1,'2013-10-07 21:03:02','zeemoadmin');
-/*!40000 ALTER TABLE `product_brochures` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `product_images`
---
-
-DROP TABLE IF EXISTS `product_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `product_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `image_file` varchar(255) NOT NULL,
-  `image_title` varchar(255) NOT NULL,
-  `image_quality` varchar(25) NOT NULL,
-  `image_alt_title_text` varchar(512) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  `main_image` enum('0','1') NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product_images`
---
-
-LOCK TABLES `product_images` WRITE;
-/*!40000 ALTER TABLE `product_images` DISABLE KEYS */;
-INSERT INTO `product_images` VALUES (2,'2013-10-03 03:00:22',6,'7.jpg','','','','1',1,'2013-10-02 16:30:22','zeemoadmin','1');
-/*!40000 ALTER TABLE `product_images` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `products`
---
-
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(255) NOT NULL,
-  `intro_text` text NOT NULL,
-  `description` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products`
---
-
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (5,'asdfas','asdfa\'asdf','<p>&nbsp;asdfasfd</p>\r\n','2013-05-09 09:51:13','2013-10-07 20:49:24','zeemoadmin'),(6,'asfasdf','asdfas','<p>asdfasdf</p>\r\n','2013-09-26 20:34:43','2013-09-25 22:04:43','zeemoadmin'),(7,'saddfasfd','asdf','<p>asddf</p>\r\n','2013-10-04 15:44:47','2013-10-03 17:14:47','zeemoadmin'),(8,'dWE','wSD','<p>asdASD</p>\r\n','2013-10-08 21:18:38','2013-10-07 20:48:38','zeemoadmin');
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `project_images`
---
-
-DROP TABLE IF EXISTS `project_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `project_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `project_id` int(11) NOT NULL,
-  `image_title` varchar(555) NOT NULL,
-  `image_file` varchar(555) NOT NULL,
-  `description` text NOT NULL,
-  `image_alt_title_text` varchar(555) NOT NULL,
-  `image_quality` varchar(20) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `project_images`
---
-
-LOCK TABLES `project_images` WRITE;
-/*!40000 ALTER TABLE `project_images` DISABLE KEYS */;
-INSERT INTO `project_images` VALUES (2,'2016-04-04 04:08:54',1,'','growth-project.png','','','',4,'1','2016-04-03 22:13:01','admin'),(3,'2016-04-04 04:08:54',1,'','feasability-study-b.png','','','',2,'1','2016-04-04 15:41:31','admin'),(5,'2016-04-04 04:49:16',1,'','environment-b.png','','','',1,'1','2016-04-03 22:13:01','admin'),(9,'2016-04-04 07:58:28',1,'','our-vision.png','','','',3,'1','2016-04-04 15:41:31','admin'),(10,'2016-04-08 09:21:14',3,'','satyam.jpg','','','',2,'0','2016-07-07 05:42:09','admin'),(11,'2016-04-08 09:21:25',3,'','satyam1.jpg','','','',1,'1','2016-07-07 05:42:09','admin'),(12,'2016-04-28 03:12:18',4,'','satyam11.jpg','','','',1,'1','2016-04-27 21:21:27','admin');
-/*!40000 ALTER TABLE `project_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1839,41 +837,6 @@ LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
 INSERT INTO `projects` VALUES (2,'2016-04-05 14:58:28','Our first sleepbus launches in Melbourne CBD 2','<div class=\"completedboxhover\">\r\n<p><span>31 may 2016</span></p>\r\n\r\n<h2>Our first sleepbus launches in Melbourne CBD</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img4.jpg\" /></figure>','<div class=\"row project-detail\">\r\n<div class=\"projectdate\">17 March 2016</div>\r\n\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<h2>Subheading</h2>\r\n\r\n<ul>\r\n	<li>Proin vel enim a leo auctor convallis sed ut enim.</li>\r\n	<li>Phasellus aliquam felis eu urna aliquam, nec iaculis nulla fermentum.</li>\r\n	<li>Vivamus molestie leo eu erat elementum, sed tristique tortor elementum.</li>\r\n	<li>Aenean vehicula nisl at turpis sagittis, nec bibendum ante cursus.</li>\r\n	<li>Praesent auctor mauris eget condimentum euismod.</li>\r\n</ul>\r\n<img align=\"right\" src=\"https://www.sleepbus.org/images/img7.jpg\" />\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<div class=\"completeback\"><a href=\"[[BACK_URL]]\">&lt; Back to completed projects </a></div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n</div>','project-1',2,'0','2017-02-14 18:40:29','admin'),(3,'2016-04-08 20:27:52','Our first sleepbus launches in Melbourne CBD','<div class=\"completedboxhover\">\r\n<p><span>31 may 2016</span></p>\r\n\r\n<h2>Our first sleepbus launches in Melbourne CBD</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img3.jpg\" /></figure>','<div class=\"row project-detail\">\r\n<div class=\"projectdate\">17 March 2016</div>\r\n\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<h2>Subheading</h2>\r\n\r\n<ul>\r\n	<li>Proin vel enim a leo auctor convallis sed ut enim.</li>\r\n	<li>Phasellus aliquam felis eu urna aliquam, nec iaculis nulla fermentum.</li>\r\n	<li>Vivamus molestie leo eu erat elementum, sed tristique tortor elementum.</li>\r\n	<li>Aenean vehicula nisl at turpis sagittis, nec bibendum ante cursus.</li>\r\n	<li>Praesent auctor mauris eget condimentum euismod.</li>\r\n</ul>\r\n<img align=\"right\" src=\"https://www.sleepbus.org/images/img7.jpg\" />\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<div class=\"completeback\"><a href=\"[[BACK_URL]]\">&lt; Back to completed projects </a></div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n</div>','our-first-sleepbus-launches-in-melbourne-cbd',1,'0','2017-02-14 18:40:29','admin'),(4,'2016-04-08 20:30:18','Our first sleepbus launches in Melbourne CBD 3','<div class=\"completedboxhover\">\r\n<p><span>31 may 2016</span></p>\r\n\r\n<h2>Our first sleepbus launches in Melbourne CBD</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img5.jpg\" /></figure>','<div class=\"row project-detail\">\r\n<div class=\"projectdate\">17 March 2016</div>\r\n\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<h2>Subheading</h2>\r\n\r\n<ul>\r\n	<li>Proin vel enim a leo auctor convallis sed ut enim.</li>\r\n	<li>Phasellus aliquam felis eu urna aliquam, nec iaculis nulla fermentum.</li>\r\n	<li>Vivamus molestie leo eu erat elementum, sed tristique tortor elementum.</li>\r\n	<li>Aenean vehicula nisl at turpis sagittis, nec bibendum ante cursus.</li>\r\n	<li>Praesent auctor mauris eget condimentum euismod.</li>\r\n</ul>\r\n<img align=\"right\" src=\"https://www.sleepbus.org/images/img7.jpg\" />\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<div class=\"completeback\"><a href=\"[[BACK_URL]]\">&lt; Back to completed projects </a></div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n</div>','our-first-sleepbus-launches-in-melbourne-cbd-3',3,'0','2017-02-14 18:40:29','admin'),(5,'2016-04-08 20:31:02','Our first sleepbus launches in Melbourne CBD 4','<div class=\"completedboxhover\">\r\n<p><span>31 may 2016</span></p>\r\n\r\n<h2>Our first sleepbus launches in Melbourne CBD</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img6.jpg\" /></figure>','<div class=\"row project-detail\">\r\n<div class=\"projectdate\">17 March 2016</div>\r\n\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<h2>Subheading</h2>\r\n\r\n<ul>\r\n	<li>Proin vel enim a leo auctor convallis sed ut enim.</li>\r\n	<li>Phasellus aliquam felis eu urna aliquam, nec iaculis nulla fermentum.</li>\r\n	<li>Vivamus molestie leo eu erat elementum, sed tristique tortor elementum.</li>\r\n	<li>Aenean vehicula nisl at turpis sagittis, nec bibendum ante cursus.</li>\r\n	<li>Praesent auctor mauris eget condimentum euismod.</li>\r\n</ul>\r\n<img align=\"right\" src=\"https://www.sleepbus.org/images/img7.jpg\" />\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<div class=\"completeback\"><a href=\"[[BACK_URL]]\">&lt; Back to completed projects </a></div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n</div>','our-first-sleepbus-launches-in-melbourne-cbd-4',4,'0','2017-02-14 18:40:29','admin');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `social_media_icons`
---
-
-DROP TABLE IF EXISTS `social_media_icons`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `social_media_icons` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `icon_title` varchar(512) NOT NULL,
-  `url` text NOT NULL,
-  `image_file` varchar(512) NOT NULL,
-  `hover_image` varchar(255) NOT NULL,
-  `dateadded` datetime NOT NULL,
-  `image_alt_title_text` varchar(512) NOT NULL,
-  `hover_image_alt_title_text` varchar(512) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  `alt_title_text` varchar(300) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `social_media_icons`
---
-
-LOCK TABLES `social_media_icons` WRITE;
-/*!40000 ALTER TABLE `social_media_icons` DISABLE KEYS */;
-INSERT INTO `social_media_icons` VALUES (1,'qweqew','http://asdfsadf','close-uploader.png','img42.jpg','2015-08-18 15:57:58','asfsadf','',1,'1','2015-08-17 17:53:16','zeemoadmin','');
-/*!40000 ALTER TABLE `social_media_icons` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1954,35 +917,6 @@ LOCK TABLES `supports` WRITE;
 /*!40000 ALTER TABLE `supports` DISABLE KEYS */;
 INSERT INTO `supports` VALUES (1,'2016-04-13 16:28:18','Zeemo','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"https://www.sleepbus.org/images/zeemologo.png\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Zeemo<sup>TM</sup> was the first corporate to come onboard. They custom built our entire website from scratch. Amazing!</p>\r\n\r\n			<p><a href=\"https://www.zeemo.com.au/\" target=\"_blank\">www.zeemo.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',14,'1','2017-02-14 18:40:30','admin'),(2,'2016-04-13 16:31:47','Ultimate Shutter','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Ultimate_Shutters_Logo_Final_2.jpg\" style=\"width: 200px; height: 187px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Ultimate specialises in manufacturing &amp; installation of Window Roller Shutters &amp; donated all the roller shutters for the first bus &amp; safe sleeps.</p>\r\n\r\n			<p><a href=\"http://www.ultimateshutter.com.au\" rel=\"nofollow\" target=\"_blank\">www.ultimateshutter.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',9,'1','2016-12-29 10:18:51','admin'),(4,'2016-04-27 15:13:25','Ecosa','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/ecosa.jpg\" style=\"width: 200px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Ecosa was born to help people sleep better, and they generously provide sleepbus with all our mattresses.</p>\r\n\r\n			<p><a href=\"http://www.ecosa.com.au/\" rel=\"nofollow\" target=\"_blank\">www.ecosa.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',4,'1','2016-12-29 10:18:51','admin'),(5,'2016-04-27 15:14:09','Truck & Bus Sales','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/truck-bus-sales.jpg\" style=\"width: 300px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Bill sells used buses and coaches around Australia and kindly donated a welder &amp; bus work platform/ladder..</p>\r\n\r\n			<p><a href=\"http://www.truckandbussales.com.au/\" rel=\"nofollow\" target=\"_blank\">www.truckandbussales.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',15,'0','2016-12-29 10:19:24','admin'),(6,'2016-05-05 16:02:47','Tontine','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/tontine.jpg\" style=\"width: 300px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Tontine is Australia&#39;s leading manufacturer and wholesaler of bedding accessories and provided us with comfy pillows, sheets, pillow cases, quilts and quilt covers for the very first sleepbus.</p>\r\n\r\n			<p><a href=\"http://www.tontine.com.au/\" rel=\"nofollow\" target=\"_blank\">www.tontine.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',5,'1','2016-12-29 10:18:51','admin'),(7,'2016-05-05 16:04:18','Westernport Road Lines','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/westernport.jpg\" style=\"width: 300px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Westernport Road Lines supplied sleepbus&reg; with our very first bus &amp; continues to service &amp; maintain it for us.</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',6,'1','2016-12-29 10:18:51','admin'),(8,'2016-08-24 13:37:38','The Blind Factory','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/tbflogosm.jpg\" style=\"width: 300px; height: 150px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>The Blind Factory, along with Citi-Con, generously cover our founders wages each month so he can continue the work of getting more sleepbus on the road to provide safe sleeps across Australia.&nbsp;Amazing!</p>\r\n\r\n			<p><a href=\"http://www.theblindfactory.com.au\" rel=\"nofollow\" target=\"_blank\">www.theblindfactory.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',3,'1','2016-12-29 10:18:51','admin'),(9,'2016-08-24 13:52:33','Citi-Con','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Citi-Con.PNG\" style=\"width: 280px; height: 180px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Ivan from Citi-Con contacted our founder (Simon) as he wanted to find a way he could help sleepbus. Simon was self funded, so Ivan and his business partner Brendon rang Brett from The Blind Factory, and all decided to generously cover Simon&#39;s wage each month so he can carry on without worry. How cool is that?</p>\r\n\r\n			<p><a href=\"http://www.citicon.com.au\" rel=\"nofollow\" target=\"_blank\">www.citicon.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',2,'1','2016-12-29 10:18:51','admin'),(11,'2016-12-24 17:24:25','Ribgy Cooke Lawyers','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/RigbyCookLawyers.jpg\" style=\"width: 400px; height: 60px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>The pro bono team that made it all possible.</p>\r\n\r\n			<p><a href=\"https://www.rigbycooke.com.au/\" target=\"_blank\">www.rigbycooke.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',1,'1','2016-12-29 10:18:51','admin'),(12,'2016-12-24 17:32:53','Kayden Electrical','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Kayden%20Electrical%20logo.jpeg\" style=\"width: 300px; height: 70px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>The passionate electrician!</p>\r\n\r\n			<p>&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',7,'1','2016-12-29 10:18:51','admin'),(13,'2016-12-24 17:36:52','DES Electrical','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/des%20logo.jpg\" style=\"width: 300px; height: 199px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>The passionate electrician&#39;s mate that turned the lights on.</p>\r\n\r\n			<p>&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',8,'1','2016-12-29 10:18:51','admin'),(14,'2016-12-24 17:40:18','Bendigo Bank','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/bendigoBankLogo.jpg\" style=\"width: 300px; height: 161px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Proud supporters of &#39;community&#39;.</p>\r\n\r\n			<p><a href=\"https://www.bendigobank.com.au/\" target=\"_blank\">www.bendigobank.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',12,'1','2016-12-29 10:18:51','admin'),(15,'2016-12-24 17:49:54','GoFundMe','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/gofundme.jpg\" style=\"width: 285px; height: 91px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>Loved sleepbus&reg; so much that they paid for a PR Agency to help. Noice!</p>\r\n\r\n			<p><a href=\"https://www.gofundme.com/sleepbus\" target=\"_blank\">www.gofundme.com/sleepbus</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',10,'1','2016-12-29 10:18:51','admin'),(16,'2016-12-24 17:52:06','Illumin8 Accounting','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Illumin8logo1.png\" style=\"width: 300px; height: 86px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>The ones that make the transparent books make sense.</p>\r\n\r\n			<p><a href=\"https://www.illumin8.com.au/\" target=\"_blank\">www.illumin8.com.au</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',11,'1','2016-12-29 10:18:51','admin'),(17,'2016-12-29 21:18:44','Action Bookkeeping','<div class=\"crclogo\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\"><img alt=\"\" src=\"/application/third_party/ckfinder/userfiles/images/Action%20Bookkeeping%20for%20web(1).jpg\" style=\"width: 250px; height: 105px;\" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>\r\n\r\n<div class=\"crclogotext\">\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\">\r\n	<tbody>\r\n		<tr>\r\n			<td valign=\"middle\">\r\n			<p>The backbone of a transparent organisation&#39;s books.</p>\r\n\r\n			<p>&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>',13,'1','2016-12-29 10:18:51','admin');
 /*!40000 ALTER TABLE `supports` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `testimonials`
---
-
-DROP TABLE IF EXISTS `testimonials`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `testimonials` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `testimonials_title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `testimonials`
---
-
-LOCK TABLES `testimonials` WRITE;
-/*!40000 ALTER TABLE `testimonials` DISABLE KEYS */;
-INSERT INTO `testimonials` VALUES (1,'test 1','','2014-05-18 18:13:57','zeemoadmin',1,'1');
-/*!40000 ALTER TABLE `testimonials` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
