@@ -318,24 +318,6 @@ INSERT INTO `common_settings` VALUES ('logo.png','55','sleepbus.svg','member-11.
 /*!40000 ALTER TABLE `common_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
--- -- Table structure for table `company` -- DROP TABLE IF EXISTS `company`; /*!40101 SET @saved_cs_client     = @@character_set_client */; /*!40101 SET character_set_client = utf8 */; CREATE TABLE `company` ( `id` int(20) NOT NULL AUTO_INCREMENT, `parent_id` int(11) NOT NULL, `page_name` varchar(255) NOT NULL, `url` varchar(255) NOT NULL, `position` int(11) NOT NULL, `status` enum('1','0') NOT NULL, `image` enum('0','1') NOT NULL, `pdf` enum('0','1') NOT NULL, `content` text DEFAULT NULL, `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(), `modified_by_user` varchar(25) NOT NULL, PRIMARY KEY (`id`)) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1; /*!40101 SET character_set_client = @saved_cs_client */; -- -- Dumping data for table `company` -- LOCK TABLES `company` WRITE; /*!40000 ALTER TABLE `company` DISABLE KEYS */; INSERT INTO `company` VALUES (1,0,'Company','company',1,'0','0','0','<p>&nbsp;Company</p>','2013-03-10 21:48:52','zeemoadmin'),(2,0,'Profile','company-profile',2,'1','1','1','<p>&nbsp;Company Profile</p>','2013-03-10 22:23:22','zeemoadmin'),(3,0,'Philosophy','philosophy',3,'1','1','1','<p>&nbsp;Philosophy</p>','2013-02-24 20:32:42','zeemoadmin'),(4,0,'Quality','quality',4,'1','1','1','<p>&nbsp;Quality</p>','2013-02-24 20:32:42','zeemoadmin'),(5,0,'Press','press',5,'1','0','0',NULL,'2013-02-24 20:32:42',''),(6,0,'Here we are !','here-we-are',6,'1','0','0','http://www.google.com','2013-02-24 21:07:43','zeemoadmin'),(7,0,'PSG Architects','psg-architects',7,'1','0','0','http://www.doodle.com','2013-02-24 21:07:59','zeemoadmin'); /*!40000 ALTER TABLE `company` ENABLE KEYS */; UNLOCK TABLES; -- -- Table structure for table `company_brochures` -- 
-DROP TABLE IF EXISTS `company_brochures`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `company_brochures` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `company_id` int(11) NOT NULL,
-  `brochure_file` varchar(255) NOT NULL,
-  `brochure_title` varchar(255) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `position` int(11) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
 --
 -- Table structure for table `cta`
 --
@@ -713,32 +695,6 @@ LOCK TABLES `static_page_urls` WRITE;
 /*!40000 ALTER TABLE `static_page_urls` DISABLE KEYS */;
 INSERT INTO `static_page_urls` VALUES (1,'Aboutus'),(2,'meet-the-board'),(3,'downloads'),(4,'builders'),(5,'architects'),(6,'products'),(7,'services'),(8,'accessories'),(9,'references'),(10,'connect'),(11,'search'),(12,'home');
 /*!40000 ALTER TABLE `static_page_urls` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `superadmin_password`
---
-
-DROP TABLE IF EXISTS `superadmin_password`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `superadmin_password` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `password` varchar(255) NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `superadmin_password`
---
-
-LOCK TABLES `superadmin_password` WRITE;
-/*!40000 ALTER TABLE `superadmin_password` DISABLE KEYS */;
-INSERT INTO `superadmin_password` VALUES (1,'GKXAPNHOHAJOGJUNCLSYMBYCLZBGCIQMHJGTUUEQEILCFEGWCVIBQBPOJKGQRZGJ','2017-05-23 17:37:41','admin'),(2,'ZNALCFWFGNEOBQBHOXXMNPZSMOXLSGNTNWTSMJSQDPEKSXKLRPVSKJJABWLVFPDK','2017-05-23 17:37:41','zeemoadmin');
-/*!40000 ALTER TABLE `superadmin_password` ENABLE KEYS */;
 UNLOCK TABLES;
 
 -- Manually added superusers
