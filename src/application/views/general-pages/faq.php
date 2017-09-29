@@ -335,11 +335,16 @@
                         <div class="faq-icon">
                             <img src="/images/faq_distribution.png">
                         </div>
-                        <strong>What is the 100% Model?</strong>
+                        <strong>How are my donations distributed?</strong>
                     </div>
                     <div class="icon-expand"><button type="button" class="btn btn-success collapsed" data-toggle="collapse" data-target="#expand-distribution-1"></button></div>
                     <div class="faq-item-expand collapse" id="expand-distribution-1">
-                        <div class="faq-expand-holder">100% of all donations are allocated to a sleepbus project; that’s our 100% Model promise to you. When you donate or fundraise, every dollar goes to building and maintaining a sleepbus project. Private donors fund our Charity operating costs, so 100% of your money can go towards getting people off the street.</div>
+                        <div class="faq-expand-holder">
+100% of your donation is allocated to a sleepbus project; that's our 100% Model promise to you. When you donate or fundraise, every dollar goes to building and maintaining a sleepbus project. Private donors fund our Charity operating costs, so 100% of your money can go towards getting people off the street.
+<br />
+<br />
+Donations are non refundable. Should a specific location campaign not meet its target amount within a twelve month period all donations may be allocated to another sleepbus project or held until such time as the original project location eventuates. Donors can continue to track the allocation of their donation via their sleepbus account page.
+</div>
                     </div>
                 </div>
                 
