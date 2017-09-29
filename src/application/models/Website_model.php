@@ -29,10 +29,7 @@
   {
    return $this->db_query->FetchInformation(HOMEPAGE_BANNERS,"","status='1' order by position");
   }
-  public function GetPageHeading($parent_id)
-  {
-   return $this->db_query->FetchInformation(PAGE_HEADING,"page_name~page_heading","parent_id='$parent_id' order by position");
-  }
+
   public function GetLeadSources()
   {
    return $this->db_query->FetchInformation(LEAD_SOURCES,"","status='1' order by position"); 
@@ -165,20 +162,6 @@
    return $map;
   }
 
-  public function GetCTAButtons($page_type,$page_id)
-  {
-   $cta_buttons=array();
-   $cta_ids=$this->db->select('cta')->from(CTA)->where('page_type',$page_type)->where('page_id',$page_id)->get()->row_array();
-   if(!empty($cta_ids['cta']))
-   {
-    $cta_buttons=$this->db->select('section_icon_name,url,main_image,intro_text')->from(ICON_SETTINGS)->where_in('id',explode(",",$cta_ids['cta']))->where('status','1')->order_by('position','asc')->get()->result_array();
-   }
-    return $cta_buttons;
-  }
-  
-  /* All the above functions are common to all websites so if you want to delete any of them please keep caution */
-  
-  
   public function SearchFormAttributes()
   {
    $attribute['form']=array('id'=>'search_frm','name'=>'search_frm','onSubmit'=>'return ValidateSearchForm();');

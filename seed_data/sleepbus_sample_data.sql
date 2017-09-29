@@ -82,35 +82,6 @@ INSERT INTO `blogs_categories` VALUES (33,'Sleep Bus Blog',1,'category',1,'2016-
 /*!40000 ALTER TABLE `blogs_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `account_type`
---
-
-DROP TABLE IF EXISTS `account_type`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `account_type` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dateadded` datetime NOT NULL,
-  `type_name` varchar(255) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
-  `modified_by_user` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `account_type`
---
-
-LOCK TABLES `account_type` WRITE;
-/*!40000 ALTER TABLE `account_type` DISABLE KEYS */;
-INSERT INTO `account_type` VALUES (3,'2016-04-15 00:00:00','Individual',1,'1','2016-06-09 05:05:49','admin'),(4,'2016-06-04 00:00:00','Company',2,'1','2016-06-04 10:42:06','zeemoadmin'),(5,'2016-06-04 00:00:00','School',3,'1','2016-06-04 10:42:10','zeemoadmin');
-/*!40000 ALTER TABLE `account_type` ENABLE KEYS */;
-UNLOCK TABLES;
-
 
 --
 -- Table structure for table `birthday_pledge`
@@ -615,29 +586,6 @@ INSERT INTO `projects` VALUES (2,'2016-04-05 14:58:28','Our first sleepbus launc
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `static_page_urls`
---
-
-DROP TABLE IF EXISTS `static_page_urls`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `static_page_urls` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `url` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `static_page_urls`
---
-
-LOCK TABLES `static_page_urls` WRITE;
-/*!40000 ALTER TABLE `static_page_urls` DISABLE KEYS */;
-INSERT INTO `static_page_urls` VALUES (1,'Aboutus'),(2,'meet-the-board'),(3,'downloads'),(4,'builders'),(5,'architects'),(6,'products'),(7,'services'),(8,'accessories'),(9,'references'),(10,'connect'),(11,'search'),(12,'home');
-/*!40000 ALTER TABLE `static_page_urls` ENABLE KEYS */;
-UNLOCK TABLES;
 
 -- Manually added superusers
 
@@ -780,6 +728,7 @@ CREATE TABLE `users` (
   `status` enum('1','0') NOT NULL,
   `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
+  `throwaway_column_only_local` varchar(255) NOT NULL,
   `reset_link` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;

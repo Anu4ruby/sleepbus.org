@@ -59,9 +59,8 @@ class MY_Controller extends CI_Controller {
 		   
 		   /************************
 		   // Assigning all the table name for checking unique urls through out the site i.e globally 
-		   // STATIC_PAGE_URLS are by default included, no need to assign here it to global_access_table_list array
 		   ************************/
-  		   $this->Login_model->global_access_table_list=array(CATEGORIES,CATEGORY_TO_PRODUCTS,LANDINGPAGE,STATIC_PAGE_URLS,ABOUT_SECTION);
+  		   $this->Login_model->global_access_table_list=array(CATEGORIES,CATEGORY_TO_PRODUCTS,LANDINGPAGE,ABOUT_SECTION);
 
  		   /********************* 
 		   * Assigning all the table name for checking unique urls in same table i.e locally
@@ -416,7 +415,6 @@ class MY_Controller extends CI_Controller {
    public function error()
    {
     $this->data['meta']['page_title'] = "Page not found";
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',12);   
 
     $this->load->view('templates/header',$this->data);
     $this->load->view('general-pages/error',$this->data);

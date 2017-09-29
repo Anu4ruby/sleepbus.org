@@ -3,7 +3,7 @@
 </style>
 <div class="sign-up">
   <div class="container">
-  <h1><?php echo $page_heading[0]['page_heading'];?></h1>
+  <h1>Sign up</h1>
   
   <div class="sign-up-box">
 		<?php
@@ -28,13 +28,6 @@
        <label for="newsletter_subscription"><span></span>Keep me updated on email</label> 
        </div>
        </div>
-<?php /*?>       <div class="birthdayinputname">
-       <div class="singupcheckbox">
-       <?php echo form_checkbox($attributes['agree']);?>
-       <label for="agree"><span></span>I’m over 13 or have parental consent to join</label> 
-       </div>
-       </div>
-<?php */?>
      <div class="birthdayinputname2"><?php echo form_submit($attributes['submit']);?></div>
            </div> 
            

@@ -39,7 +39,6 @@ class Home extends MY_Controller {
 			$this->session->set_userdata('form_token','donation');
 		}
 
-		$this->data['page_heading']=$this->Website_model->GetPageHeading(1);
 		$this->data['attribute_monthly']=$this->Website_model->GetMonthlyDonateFormAttributes($values_monthly,$this->data['common_settings']['unit_fund']);
 		$this->data['attribute']=$this->Website_model->GetDonateFormForOneTimeAttributes($values,$this->data['common_settings']['unit_fund']);
 		$this->data['section_id']=1;

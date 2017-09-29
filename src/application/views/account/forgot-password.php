@@ -1,6 +1,10 @@
 <div class="sign-up">
   <div class="container">
-   <?php echo $page_heading[0]['page_heading'];?>
+
+<h1>It happens to the best of us.</h1>
+
+<h2>We&rsquo;ll email you a reset link.</h2>
+
     <div class="sign-up-box">
       <div class="sign-up-box-in" id="forgotfrom">  
       

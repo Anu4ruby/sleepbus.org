@@ -5,7 +5,7 @@
 ?>
  <input type="hidden" name="unit_fund" value="<?php echo $common_settings['unit_fund'];?>" id="unit_fund"  />
   <div class="letgo">
-    <h1><?php echo $page_heading[1]['page_heading'];?></h1>
+    <h1>Edit campaign</h1>
     
 <div id="errorDiv" style="height:30px; <?php $errors=validation_errors(); if(empty($errors)){?>display:none;<?php } else{?> display:inline; <?php }?>"><?php echo validation_errors("<p style='color:#e60000;height:0px;'>","</p>"); ?></div>    
         <div class="form-group" id="campaignfrom">

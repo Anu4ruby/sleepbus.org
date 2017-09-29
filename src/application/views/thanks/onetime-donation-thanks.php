@@ -10,7 +10,7 @@
 </div>
 
 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-<div class="fundingtoptext"><img alt="" src="/application/third_party/ckfinder/userfiles/images/Simon_Bitmoji_Thank_You_no_logo.jpeg" />
+<div class="fundingtoptext"><img alt="" src="/images/userfiles/images/Simon_Bitmoji_Thank_You_no_logo.jpeg" />
 <h2>Thank you so much for your donation and support. Once your funds have been allocated to a project&nbsp;we will let you know which one so you can follow its progress. Thanks again for your support&nbsp;:)</h2>
 </div>
 </div>

@@ -24,7 +24,7 @@
 
 <p>Entrepreneurial spirit. Problem solver. Hawthorn supporter. Father. Coach. sleepbus founder.</p>
 
-<p>Simon has more than 20 year&rsquo;s experience as a business owner (his first business at age 17) and working will various companies in operations roles; solving problems, performance and profitability issues. He&rsquo;s the &ldquo;fix it guy&rdquo;, the guy you call in when your company has a problem and he&rsquo;ll find a solution that gets results. Its this same skill and determined attitude now being used to solve the serious problem of people sleeping rough in Australia.</p>
+<p>Simon has more than 20 year&rsquo;s experience as a business owner (his first business at age 17) and working with various companies in operations roles; solving problems, performance and profitability issues. He&rsquo;s the &ldquo;fix it guy&rdquo;, the guy you call in when your company has a problem and he&rsquo;ll find a solution that gets results. Its this same skill and determined attitude now being used to solve the serious problem of people sleeping rough in Australia.</p>
 
 <p>Read Simon&rsquo;s story &amp; the birth of sleepbus.</p>
 <a class="btn btn-primary" href="/simon-story">simon&rsquo;s story</a></div>
@@ -33,7 +33,7 @@
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 aboutboxthree">
-<div class="aboutboxthreeimg"><img alt="" src="/application/third_party/ckfinder/userfiles/images/birgitte.jpg" style="width: 300px;" /></div>
+<div class="aboutboxthreeimg"><img alt="" src="/images/userfiles/images/birgitte.jpg" style="width: 300px;" /></div>
 
 <h2>Birgitte Snelson</h2>
 
@@ -43,7 +43,7 @@
 </div>
 
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 aboutboxthree">
-<div class="aboutboxthreeimg"><img alt="" src="/application/third_party/ckfinder/userfiles/images/roger.jpg" style="width: 300px;" /></div>
+<div class="aboutboxthreeimg"><img alt="" src="/images/userfiles/images/roger.jpg" style="width: 300px;" /></div>
 
 <h2>Roger Simpson</h2>
 

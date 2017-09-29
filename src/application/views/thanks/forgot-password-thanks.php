@@ -5,6 +5,6 @@
 
 <p>&nbsp;</p>
 
-<p><img alt="" src="/application/third_party/ckfinder/userfiles/images/sleepicon.jpg" style="width: 280px; height: 280px;" /></p>
+<p><img alt="" src="/images/userfiles/images/sleepicon.jpg" style="width: 280px; height: 280px;" /></p>
 </div>
 

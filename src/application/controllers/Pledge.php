@@ -63,8 +63,6 @@ class Pledge extends MY_Controller {
 			} else $this->session->set_userdata('form_token','pledge');
 
       $this->data['meta']['page_title'] = "Birthday pledge";
-			$this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',29);
-			$this->data['page_heading']=$this->Website_model->GetPageHeading(11);
 			$this->websitejavascript->include_footer_js=array('PledgeJs');
 			$this->data['attributes']=$this->Pledge_model->GetPledgeFormAttributes($values);
 			$this->load->view('templates/header',$this->data);

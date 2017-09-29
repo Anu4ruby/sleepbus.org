@@ -1,6 +1,6 @@
 <div class="sign-up">
   <div class="container">
-  <h1><?php echo $page_heading[0]['page_heading'];?></h1>
+  <h1>Reset password</h1>
   
   <div class="sign-up-box">
      <div class="sign-up-box-in" id="signinfrom">

@@ -8,7 +8,6 @@ class Error extends MY_Controller
   public function index()
   {
 	 $this->data['meta']['page_title'] = "Page not found";
-   $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',12);   
 
    $this->load->view('templates/header',$this->data);
    $this->load->view('general-pages/error',$this->data);

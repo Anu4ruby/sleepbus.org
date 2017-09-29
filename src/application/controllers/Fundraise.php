@@ -71,10 +71,7 @@ class Fundraise extends MY_Controller {
     } $this->session->set_userdata('form_token','fundraise');
 
     $this->data['meta']['page_title'] = "Fundraise";
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',30);
 
-    // getting Fundraise form 'Let's Go! Start your fundraising...'
-    $this->data['page_heading']=$this->Website_model->GetPageHeading(9);
     $birthday_records=$this->session->userdata('birthday_pledge');
 
     if(count($birthday_records)> 0) $this->data['campign_type']=1;else  $this->data['campign_type']='';
@@ -165,8 +162,6 @@ class Fundraise extends MY_Controller {
       $values['campaign_type']=$this->data['campaign_details']['campaign_type'];
       $values['campaign_image']=$this->data['campaign_details']['campaign_image'];
       $this->data['meta']['page_title'] = "Fundraise";
-      $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',30);
-      $this->data['page_heading']=$this->Website_model->GetPageHeading(9);
       $this->data['attributes']=$this->Fundraise_model->GetEditFundraiseFormAttributes($values,$this->data['common_settings']['unit_fund']);
       $this->websitejavascript->include_footer_js=array('UpdateFundraiseJs');
       $this->load->view('templates/header',$this->data);

@@ -1,7 +1,11 @@
 <div class="birthdaybox">
 
   <div class="container">
-  <?php echo $page_heading[0]['page_heading'];?>
+<h1>Birthday pledge</h1>
+
+<div class="birthdayboximg"><img alt="" src="/images/icon26.png" /></div>
+
+<p>This year ask for donations instead of gifts</p>
 
   <div class="birthdayinputbox" id="pledgefrom">
 		<?php

@@ -42,7 +42,7 @@
 So why provide safe, temporary overnight accommodation for those sleeping rough on the street... on a Bus?
 </h2>
 
-<div class="aboutbordbus"><img alt="" src="/application/third_party/ckfinder/userfiles/images/WebsiteBus.jpg" style="width: 700px;" /></div>
+<div class="aboutbordbus"><img alt="" src="/images/userfiles/images/WebsiteBus.jpg" style="width: 700px;" /></div>
 
 <p>
 Following 12 months of research with people within and supporting the homeless community, the idea of sleepbus was developed by Simon Rowe, sleepbus Founder.  From that research, the issue that kept coming up was, not enough safe places to sleep while working on pathways out of homelessness. What was worse, was allowing people to fall deeper into the cycle of homelessness, rather than catching them early, keeping them safe and healthy until they get back on their feet.
@@ -75,7 +75,7 @@ That's what sleepbus does; we go where the people in need are; we get them off t
 <a class="btn btn-primary btn-pledge" href="/pledge">pledge</a></div>
 
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 donatehome">
-<div class="donatehomeimg"><img alt="" src="/application/third_party/ckfinder/userfiles/images/fundraise(1).jpg" style="width: 100px; height: 148px;" /></div>
+<div class="donatehomeimg"><img alt="" src="/images/userfiles/images/fundraise(1).jpg" style="width: 100px; height: 148px;" /></div>
 
 <p>Do something crazy or creative to raise money.</p>
 <a class="btn btn-info" href="/fundraise">Fundraise</a></div>

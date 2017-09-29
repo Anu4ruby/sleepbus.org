@@ -61,12 +61,10 @@ class Account extends MY_Controller
 
 
         $this->data['meta']['page_title'] = "Sign in";
-        $this->data['cta'] = $this->Website_model->GetCTAButtons('SINGLE_PAGE', '22');
 
         $this->websitejavascript->include_footer_js = array('AccountSignInJs');
 
         $this->data['attributes'] = $this->Account_model->GetSignInFormAttributes($values);
-        $this->data['page_heading'] = $this->Website_model->GetPageHeading(3);
 
         $this->load->view('templates/header', $this->data);
         $this->load->view('account/signin', $this->data);
@@ -198,9 +196,7 @@ class Account extends MY_Controller
 					$this->session->set_userdata('form_token', 'signup');
     		}
 
-    $this->data['page_heading'] = $this->Website_model->GetPageHeading(1);
     $this->data['meta']['page_title'] = "Sign up";
-    $this->data['cta'] = $this->Website_model->GetCTAButtons('SINGLE_PAGE', '23');
     $this->websitejavascript->include_footer_js = array('AccountSignUpJs');
     $this->data['attributes'] = $this->Account_model->GetSignUpFormAttributes($values);
     $this->load->view('templates/header', $this->data);
@@ -266,11 +262,9 @@ public function reset_password($reset_link) {
         }
 
         $this->data['meta']['page_title'] = "Reset password";
-        $this->data['cta'] = $this->Website_model->GetCTAButtons('SINGLE_PAGE', '27');
 
         $this->websitejavascript->include_footer_js = array('AccountSignInJs');
         $this->data['attributes'] = $this->Account_model->GetResetPasswordFormAttributes($values);
-        $this->data['page_heading'] = $this->Website_model->GetPageHeading(7);
 
         $this->load->view('templates/header', $this->data);
         $this->load->view('account/reset-password', $this->data);
@@ -366,9 +360,6 @@ public function forgot_password() {
 
     $this->data['meta']['page_title'] = "Forgot password";
 
-    $this->data['cta'] = $this->Website_model->GetCTAButtons('SINGLE_PAGE', '24');
-
-    $this->data['page_heading'] = $this->Website_model->GetPageHeading(5);
 
     $this->websitejavascript->include_footer_js = array('AccountSigninJs');
 

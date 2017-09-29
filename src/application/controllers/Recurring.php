@@ -10,7 +10,6 @@ class Recurring extends MY_Controller {
 
   public function expresscheckout() {
     $this->data['meta']['page_title'] = "eNewsletter thanks";
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',13);
 
     $paymentAmount=$this->session->userdata('monthly_amount');
     if (empty($paymentAmount)) {
@@ -162,7 +161,6 @@ class Recurring extends MY_Controller {
         $this->data['ErrorSeverityCode'] = urldecode($resArray["L_SEVERITYCODE0"]);
         $this->session->unset_userdata('shipping_details');
         $this->data['meta']['page_title'] = 'Sorry !!! Monthly Donation Setup Unsuccessful';
-        $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',37);
         $this->load->view('templates/header',$this->data);
         $this->load->view('recurring/unsuccess-message',$this->data);
         $this->load->view('templates/footer');
@@ -173,7 +171,6 @@ class Recurring extends MY_Controller {
   public function success() {
     $this->session->unset_userdata('shipping_details');
     $this->data['meta']['page_title'] = 'Monthly Donation Setup Successful';
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',35);
     $this->load->view('templates/header',$this->data);
     $this->load->view('recurring/success-message');
     $this->load->view('templates/footer');
@@ -182,7 +179,6 @@ class Recurring extends MY_Controller {
   public function cancel() {
     $this->session->unset_userdata('shipping_details');	  
     $this->data['meta']['page_title'] = "Donation cancelled";
-    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',36);
     $this->load->view('templates/header',$this->data);
     $this->load->view('recurring/cancel');
     $this->load->view('templates/footer');

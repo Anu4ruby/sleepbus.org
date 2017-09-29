@@ -29,7 +29,6 @@
    }
    else
    {
-    $this->data['page_heading']=$this->Website_model->GetPageHeading(53);
    
     $this->data['ppr']=$this->data['blog_ppr'];
 	//$this->data['ppr']=$this->data['total_records'];
@@ -38,7 +37,6 @@
 
     $this->data['pagination']=$this->commonfunctions->Pagenation($this->data['cp'], $this->data['ppr'],$this->data['total_records']);
 	$this->data['meta']['page_title'] = "Blog";
-	$this->data['cta']=$this->Website_model->GetCTAButtons('BLOGS','0');
     $this->data['all_blogs']=$this->Blog_model->GetAllBlog("limit ".$this->data['pagination']['start_limit'].",".   $this->data['pagination']['end_limit']);
 	 
     $this->data['top_text']=$this->Website_model->GetTopText(5);
@@ -68,7 +66,6 @@
     $this->data['category_details']=$this->Blog_model->GetCategoryDetails($this->data['cat_id']['id']);
     $this->data['total_records']=count($this->data['blog_list']);  
      
-    $this->data['page_heading']=$this->Website_model->GetPageHeading(53);
    
     $this->data['ppr']=$this->data['blog_ppr'];
 	$cp=$this->data['cp'];
@@ -76,7 +73,6 @@
 
     $this->data['pagination']=$this->commonfunctions->Pagenation($this->data['cp'], $this->data['ppr'],$this->data['total_records']);
 	$this->data['meta']['page_title'] = "Blog";
-	$this->data['cta']=$this->Website_model->GetCTAButtons('BLOGS_CATEGORIES',$this->data['cat_id']['id']);
 	
 	
     $this->data['all_blogs']=$this->Blog_model->GetCategoryBlog($this->data['cat_id']['id'],"limit ".$this->data['pagination']['start_limit'].",".   $this->data['pagination']['end_limit']);
@@ -112,7 +108,6 @@
    }
    else
    {
-    $this->data['page_heading']=$this->Website_model->GetPageHeading(53);
    
     $this->data['ppr']=$this->data['blog_ppr'];
 	$cp=$this->data['cp'];
@@ -142,7 +137,6 @@
    }
    else
    {
-    $this->data['page_heading']=$this->Website_model->GetPageHeading(53);
 		$this->data['meta']['page_title'] = "Blog";
     $this->data['right_blogs']=$this->Blog_model->GetCategoryBlog($this->data['blog_details']['cat_id'],"limit 0,5");
 

@@ -3,7 +3,7 @@
   <div class="sign-up-box">
  
      <div class="sign-up-box-in donatefrom">
-        <div class="toptext2"><?php echo $page_heading[2]['page_heading'];?></div>
+        <div class="toptext2">You're giving to</div>
         <h1><?php echo $campaign_details['campaign_name'];?></h1>
 	<?php
  	 echo form_open(base_url().'donation',$attribute['form']);

@@ -8,7 +8,7 @@
           <div class="fundingtoptext">
           <h2>sleepbus One has been completed and we are currently in discussion with local councils to finalise our first service location.</h2>
 
-          <div class="aboutbordbus" style="margin-top:-60px; margin-bottom:10px;"><img alt="" src="/application/third_party/ckfinder/userfiles/images/sleepbus-project-under-construction.jpg" /></div>
+          <div class="aboutbordbus" style="margin-top:-60px; margin-bottom:10px;"><img alt="" src="/images/userfiles/images/sleepbus-project-under-construction.jpg" /></div>
           </div>
 
         

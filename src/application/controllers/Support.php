@@ -10,7 +10,6 @@ class Support extends MY_Controller
   public function index()
   {
 	 $this->data['meta']['page_title'] = "Corporate support";
-   $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',17);
    $this->data['all_supports']=$this->Support_model->GetAllSupports();
    $this->data['top_text']=$this->Website_model->GetTopText(3);
    $this->data['our_support']=$this->Website_model->GetTopText(4);

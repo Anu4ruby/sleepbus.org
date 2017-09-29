@@ -11,7 +11,7 @@
 
     <p>&nbsp;</p>
 
-    <p><img alt="" src="/application/third_party/ckfinder/userfiles/images/WebsiteBus.jpg" style="width: 300px; height: 216px;" /></p>
+    <p><img alt="" src="/images/userfiles/images/WebsiteBus.jpg" style="width: 300px; height: 216px;" /></p>
     </div>
 
 

@@ -68,7 +68,7 @@ If you have any queries about the sleepbus Donation Refund Policy, please email 
 </div>
 
 <div class="fundingtoptext">
-<p><img alt="" src="/application/third_party/ckfinder/userfiles/images/sleepbus%20updated(1).jpg" style="height: 216px; width: 300px;" /></p>
+<p><img alt="" src="/images/userfiles/images/sleepbus%20updated(1).jpg" style="height: 216px; width: 300px;" /></p>
 </div>
 
 
