@@ -1,11 +1,5 @@
 <?php
 //define table name
-define('ADMINISTRATORS',"administrators");
-define('SUPERADMIN_PASSWORD','superadmin_password');
-define('ADMIN_LEVELS',"admin_levels"); 
-define('ADMIN_MODULES',"admin_modules"); 
-define('LEVEL_TO_MODULES',"level_to_modules");
-define('ZEEMO_RESOURCE','zeemo_resource');
 define('PAGES',"pages");
 define('COMMON_SETTINGS',"common_settings");
 define('PAGE_HEADING',"page_heading");
@@ -20,7 +14,6 @@ define('BLOG_NOTIFICATIONS',"blog_notifications");
 define('CMS_SETTINGS','cms_settings');
 define('EMAIL_MESSAGES',"email_messages");
 define('AUTO_EMAIL_NOTIFICATION',"auto_email_notification");
-define('ZEEMO_SETTINGS','zeemo_settings');
 define('PROJECTS','projects');
 define('SUPPORTS','supports');
 define('ACCOUNT_TYPE','account_type');

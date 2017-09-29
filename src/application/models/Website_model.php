@@ -13,10 +13,7 @@
   {
    return $this->db_query->FetchSingleInformation(PAGES,"","id='$page_id'");
   }
-  public function GetResourceContent()
-  {
-   return $this->db_query->FetchSingleInformation(ZEEMO_RESOURCE,"","id='1'");
-  }
+
   public function GetResourceMeta($content)
   {
    $meta=array();  
@@ -26,10 +23,6 @@
    $meta['meta_description']=$content['meta_description'];
    $meta['json_code']=$content['json_code'];
    return $meta;   
-  }
-  public function GetZeemoSettingsContent()
-  {
-   return $this->db_query->FetchSingleInformation(ZEEMO_SETTINGS,"","id='1'");
   }
   
   public function GetHomePageBanners()

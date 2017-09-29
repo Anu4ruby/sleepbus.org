@@ -86,7 +86,6 @@ class MY_Controller extends CI_Controller {
 		 $this->data['common_settings']=$this->Website_model->GetCommonSettingValues();
 		 // Required for Search Form exists in all pages
 		 // Required for google analytics and cannonical link
-         $this->data['zeemosettings']=$this->Website_model->GetZeemoSettingsContent(); 		 		 
 		 
 		 $this->load->helper('form');
 		 $this->data['footer_text']=$this->Website_model->GetTopText(1);
