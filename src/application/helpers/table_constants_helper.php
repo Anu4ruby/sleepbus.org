@@ -4,8 +4,6 @@ define('PAGES',"pages");
 define('COMMON_SETTINGS',"common_settings");
 define('PAGE_HEADING',"page_heading");
 define('TOP_TEXT','top_text');
-define('META_TAGS','meta_tags');
-define('META_SINGLE_PAGES','meta_single_pages');
 define('LEAD_SOURCES','lead_sources');
 define('STATIC_PAGE_URLS','static_page_urls');
 define('LEADS','leads');

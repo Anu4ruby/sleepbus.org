@@ -7,7 +7,7 @@ class Error extends MY_Controller
   }
   public function index()
   {
-   $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','12','Page Not Found');
+	 $this->data['meta']['page_title'] = "Page not found";
    $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',12);   
 
    $this->load->view('templates/header',$this->data);

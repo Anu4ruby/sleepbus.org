@@ -19,7 +19,7 @@ class Projects extends MY_Controller
   {
    $this->data['project_id']=$project_id;
    $this->data['project_details']=$this->Project_model->GetProjectDetails($this->data['project_id']);  
-   $this->data['meta']=$this->Metatags_model->GetMetaTags('PROJECTS',$this->data['project_id'],$this->data['project_details']['project_title']);
+	 $this->data['meta']['page_title'] = "Projects";
    $this->data['cta']=$this->Website_model->GetCTAButtons('PROJECTS',$this->data['project_id']);
    
    $this->data['project_images']=$this->Project_model->GetProjectImages($this->data['project_id']);  

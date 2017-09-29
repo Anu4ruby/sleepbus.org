@@ -43,7 +43,7 @@ class Home extends MY_Controller {
 		$this->data['attribute_monthly']=$this->Website_model->GetMonthlyDonateFormAttributes($values_monthly,$this->data['common_settings']['unit_fund']);
 		$this->data['attribute']=$this->Website_model->GetDonateFormForOneTimeAttributes($values,$this->data['common_settings']['unit_fund']);
 		$this->data['section_id']=1;
-		$this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',$this->data['section_id'],'Home');
+    $this->data['meta']['page_title'] = "Home";
 		$this->websitejavascript->include_footer_js=array('RecurringDonationJs');
 
 		$this->data['monthly_donation_form']=$this->load->view('home/monthly-donation-form',$this->data,true);

@@ -37,7 +37,7 @@
     if(!empty($cp)){$this->data['cp']=$cp;}else{$this->data['cp']=1;}
 
     $this->data['pagination']=$this->commonfunctions->Pagenation($this->data['cp'], $this->data['ppr'],$this->data['total_records']);
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('BLOGS','0','Blog');
+	$this->data['meta']['page_title'] = "Blog";
 	$this->data['cta']=$this->Website_model->GetCTAButtons('BLOGS','0');
     $this->data['all_blogs']=$this->Blog_model->GetAllBlog("limit ".$this->data['pagination']['start_limit'].",".   $this->data['pagination']['end_limit']);
 	 
@@ -75,7 +75,7 @@
     if(!empty($cp)){$this->data['cp']=$cp;}else{$this->data['cp']=1;}
 
     $this->data['pagination']=$this->commonfunctions->Pagenation($this->data['cp'], $this->data['ppr'],$this->data['total_records']);
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('BLOGS_CATEGORIES',$this->data['cat_id']['id'],$this->data['category_details']['category_name']);
+	$this->data['meta']['page_title'] = "Blog";
 	$this->data['cta']=$this->Website_model->GetCTAButtons('BLOGS_CATEGORIES',$this->data['cat_id']['id']);
 	
 	
@@ -119,7 +119,7 @@
     if(!empty($cp)){$this->data['cp']=$cp;}else{$this->data['cp']=1;}
 
     $this->data['pagination']=$this->commonfunctions->Pagenation($this->data['cp'], $this->data['ppr'],$this->data['total_records']);
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('BLOGS_ARCHIVE',$month." ".$year,$month." ".$year);
+		$this->data['meta']['page_title'] = "Archive";
     $this->data['blog_list']=$this->Blog_model->GetArchiveBlog($this->data['month'],$this->data['year'],"limit ".$this->data['pagination']['start_limit'].",".   $this->data['pagination']['end_limit']);
 	 
   
@@ -143,7 +143,7 @@
    else
    {
     $this->data['page_heading']=$this->Website_model->GetPageHeading(53);
-	$this->data['meta']=$this->Metatags_model->GetMetaTags('BLOGS',$this->data['blog_details']['id'],$this->data['blog_details']['blog_title']);
+		$this->data['meta']['page_title'] = "Blog";
     $this->data['right_blogs']=$this->Blog_model->GetCategoryBlog($this->data['blog_details']['cat_id'],"limit 0,5");
 
     $this->load->view('templates/header',$this->data);

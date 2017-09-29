@@ -14,7 +14,6 @@
     case  "blog" : $route['blog']="blog/blog_list";	break;
     case  "about-us" : $route['about-us']="generalpages/about-us";	break;
     case  "faq" : $route['faq']="generalpages/faq";	break;
-    case  "testnewheader" : $route['testnewheader']="testnewheader";	break;
     case  "why-sleep" : $route['why-sleep']="generalpages/why-sleep";	break;
     case  "speaker-request" : $route['speaker-request']="speaker/request";	break;
     case  "speaker-request-thanks" : $route['speaker-request-thanks']="thanks/speaker-request-thanks";	break;

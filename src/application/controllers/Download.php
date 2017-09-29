@@ -10,7 +10,7 @@ class Download extends MY_Controller
   {
    $values=array(); 
    $this->data['page_heading']=$this->Website_model->GetPageHeading(10);
-   $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','6','Download');
+   $this->data['meta']['page_title'] = "Donation";
    $this->data['banner']=$this->Website_model->GetBanner('downloads','0');
    $this->data['brochures']=$this->Website_model->GetDownloadBrochures();
    $this->load->view('templates/header',$this->data);

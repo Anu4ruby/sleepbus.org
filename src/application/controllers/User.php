@@ -14,7 +14,7 @@
 
   public function home() {
     $this->data['active_menu']="user-home";	  
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','25','Welcome to Sleepbus');
+    $this->data['meta']['page_title'] = "Welcome to sleepbus";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE','25'); 
     $this->data['user_campaigns']=$this->User_model->GetUserCampaigns($this->data['user_info']['id']);
     $this->data['total_raised']=$this->User_model->GetTotalRaisedAmount($this->data['user_info']['id']);
@@ -217,7 +217,7 @@
       $values['retype_email']='';
     }
 
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','28','Update Profile');
+    $this->data['meta']['page_title'] = "Update profile";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE','28'); 
     $this->websitejavascript->include_footer_js=array('UserProfileJs','SuccessMessageJs');
     $this->data['total_raised']=$this->User_model->GetTotalRaisedAmount($this->data['user_info']['id']);

@@ -70,7 +70,7 @@ class Fundraise extends MY_Controller {
 
     } $this->session->set_userdata('form_token','fundraise');
 
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',30,'Fundraise');
+    $this->data['meta']['page_title'] = "Fundraise";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',30);
 
     // getting Fundraise form 'Let's Go! Start your fundraising...'
@@ -164,7 +164,7 @@ class Fundraise extends MY_Controller {
       $values['campaign_id']=$this->data['campaign_id'];
       $values['campaign_type']=$this->data['campaign_details']['campaign_type'];
       $values['campaign_image']=$this->data['campaign_details']['campaign_image'];
-      $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',30,'Fundraise');
+      $this->data['meta']['page_title'] = "Fundraise";
       $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',30);
       $this->data['page_heading']=$this->Website_model->GetPageHeading(9);
       $this->data['attributes']=$this->Fundraise_model->GetEditFundraiseFormAttributes($values,$this->data['common_settings']['unit_fund']);

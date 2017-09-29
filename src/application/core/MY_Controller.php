@@ -82,7 +82,6 @@ class MY_Controller extends CI_Controller {
 		 $this->data['ip_country']=$this->GetIpLocation();		 
 		/* $this->data['ip_location']=$this->GetIpLocation();		 */
 
-		 $this->load->Model(admin.'/Metatags_model');
 		 $this->data['common_settings']=$this->Website_model->GetCommonSettingValues();
 		 // Required for Search Form exists in all pages
 		 // Required for google analytics and cannonical link
@@ -416,7 +415,7 @@ class MY_Controller extends CI_Controller {
    }
    public function error()
    {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','12','Page Not Found');
+    $this->data['meta']['page_title'] = "Page not found";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',12);   
 
     $this->load->view('templates/header',$this->data);

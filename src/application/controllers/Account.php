@@ -60,7 +60,7 @@ class Account extends MY_Controller
 
 
 
-        $this->data['meta'] = $this->Metatags_model->GetMetaTags('SINGLE_PAGE', '22', 'Sign In');
+        $this->data['meta']['page_title'] = "Sign in";
         $this->data['cta'] = $this->Website_model->GetCTAButtons('SINGLE_PAGE', '22');
 
         $this->websitejavascript->include_footer_js = array('AccountSignInJs');
@@ -199,7 +199,7 @@ class Account extends MY_Controller
     		}
 
     $this->data['page_heading'] = $this->Website_model->GetPageHeading(1);
-    $this->data['meta'] = $this->Metatags_model->GetMetaTags('SINGLE_PAGE', '23', 'Sign Up');
+    $this->data['meta']['page_title'] = "Sign up";
     $this->data['cta'] = $this->Website_model->GetCTAButtons('SINGLE_PAGE', '23');
     $this->websitejavascript->include_footer_js = array('AccountSignUpJs');
     $this->data['attributes'] = $this->Account_model->GetSignUpFormAttributes($values);
@@ -265,7 +265,7 @@ public function reset_password($reset_link) {
             }
         }
 
-        $this->data['meta'] = $this->Metatags_model->GetMetaTags('SINGLE_PAGE', '27', 'Reset Password');
+        $this->data['meta']['page_title'] = "Reset password";
         $this->data['cta'] = $this->Website_model->GetCTAButtons('SINGLE_PAGE', '27');
 
         $this->websitejavascript->include_footer_js = array('AccountSignInJs');
@@ -364,7 +364,7 @@ public function forgot_password() {
     }
 
 
-    $this->data['meta'] = $this->Metatags_model->GetMetaTags('SINGLE_PAGE', '24', 'Forgot Password');
+    $this->data['meta']['page_title'] = "Forgot password";
 
     $this->data['cta'] = $this->Website_model->GetCTAButtons('SINGLE_PAGE', '24');
 

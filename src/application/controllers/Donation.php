@@ -64,7 +64,7 @@ class Donation extends MY_Controller {
         $this->session->set_userdata('form_token','donation');
       }
 
-      $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',32,'Donate : '.$this->data['campaign_details']['campaign_name']);
+      $this->data['meta']['page_title'] = 'Donate : '. $this->data['campaign_details']['campaign_name'];
       $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',32);
       $this->data['page_heading']=$this->Website_model->GetPageHeading(9);
       $this->data['attribute']=$this->Donation_model->GetDonateFormAttributes($values,$this->data['common_settings']['unit_fund']);
@@ -85,7 +85,7 @@ class Donation extends MY_Controller {
     if((count($donation) == 0) or empty($this->data['campaign_id'])) {
       $this->RedirectPage();
     } else {
-      $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',32,'Redirect to paypal : Please wait...');
+      $this->data['meta']['page_title'] = 'Redirect to paypal : Please wait...';
       $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',32);
       $this->websitejavascript->include_footer_js=array('DonationProcessJs');
       $this->data['payable_amount']=$donation['amount']; 
@@ -204,7 +204,7 @@ class Donation extends MY_Controller {
       $this->session->unset_userdata('donate_campaign_id');
     }
 
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','33','Donation Successful');
+    $this->data['meta']['page_title'] = "Donation successful";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',33);
     $this->load->view('templates/header',$this->data);
     $this->load->view('donation/success-message',$this->data);
@@ -214,7 +214,7 @@ class Donation extends MY_Controller {
   public function cancel() {
     $this->session->unset_userdata('donation');
     $this->session->unset_userdata('donate_campaign_id');
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','36','Donation Cancelled!');
+    $this->data['meta']['page_title'] = "Donation cancelled";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',36);
     $this->load->view('templates/header',$this->data);
     $this->load->view('donation/cancel');
@@ -224,7 +224,7 @@ class Donation extends MY_Controller {
   public function unsuccess() {
     $this->session->unset_userdata('donation');
     $this->session->unset_userdata('donate_campaign_id');
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','37','Donation Unsuccessful!');
+    $this->data['meta']['page_title'] = "Donation unsuccessful";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',37);
     $this->load->view('templates/header',$this->data);
     $this->load->view('donation/unsuccess-message');
@@ -326,7 +326,7 @@ class Donation extends MY_Controller {
     if((count($donation) == 0)) {
       $this->RedirectPage();
     } else {
-      $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',33,'Redirect to paypal : Please wait...');
+      $this->data['meta']['page_title'] = 'Redirect to paypal : Please wait...';
       $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',33);
 
       $this->websitejavascript->include_footer_js=array('DonationProcessJs');
@@ -379,7 +379,7 @@ class Donation extends MY_Controller {
     $this->data['attribute']['amount']['placeholder'] = '10,037.50';
 
     $this->websitejavascript->include_footer_js=array('DonationJs');
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',39,'Provide one year of safe sleeps');
+    $this->data['meta']['page_title'] = 'Provide one year of safe sleeps';
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',39);
     $this->data['one_time_donation_form']=$this->load->view('donation/one-year-safe-sleep-form',$this->data,true);
     $this->load->view('templates/header',$this->data);
@@ -468,7 +468,7 @@ class Donation extends MY_Controller {
       $this->session->unset_userdata('donation');
     }
 
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','34','Donation Successful');
+    $this->data['meta']['page_title'] = "Donation successful";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',34);
     $this->load->view('templates/header',$this->data);
     $this->load->view('thanks/onetime-donation-thanks');

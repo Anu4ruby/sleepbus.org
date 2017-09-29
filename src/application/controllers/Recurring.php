@@ -9,7 +9,7 @@ class Recurring extends MY_Controller {
   }  
 
   public function expresscheckout() {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','13','eNewsletter Thanks');
+    $this->data['meta']['page_title'] = "eNewsletter thanks";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',13);
 
     $paymentAmount=$this->session->userdata('monthly_amount');
@@ -161,7 +161,7 @@ class Recurring extends MY_Controller {
         $this->data['ErrorLongMsg'] = urldecode($resArray["L_LONGMESSAGE0"]);
         $this->data['ErrorSeverityCode'] = urldecode($resArray["L_SEVERITYCODE0"]);
         $this->session->unset_userdata('shipping_details');
-        $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','37','Sorry !!! Monthly Donation Setup Unsuccessful');
+        $this->data['meta']['page_title'] = 'Sorry !!! Monthly Donation Setup Unsuccessful';
         $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',37);
         $this->load->view('templates/header',$this->data);
         $this->load->view('recurring/unsuccess-message',$this->data);
@@ -172,7 +172,7 @@ class Recurring extends MY_Controller {
 
   public function success() {
     $this->session->unset_userdata('shipping_details');
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','35','Monthly Donation Setup Successful');
+    $this->data['meta']['page_title'] = 'Monthly Donation Setup Successful';
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',35);
     $this->load->view('templates/header',$this->data);
     $this->load->view('recurring/success-message');
@@ -181,7 +181,7 @@ class Recurring extends MY_Controller {
 
   public function cancel() {
     $this->session->unset_userdata('shipping_details');	  
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','36','Donation Cancelled!');
+    $this->data['meta']['page_title'] = "Donation cancelled";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',36);
     $this->load->view('templates/header',$this->data);
     $this->load->view('recurring/cancel');

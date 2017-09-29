@@ -79,7 +79,7 @@ class Campaign extends MY_Controller {
     }
 
     $this->websitejavascript->include_footer_js=array('CampaignJs','SuccessMessageJs');
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE','31',$this->data['campaign_details']['campaign_name']);
+    $this->data['meta']['page_title'] = $this->data['campaign_details']['campaign_name'];
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE','31'); 
     $this->data['active_menu']="campaign";  
     $this->load->view('templates/header',$this->data);

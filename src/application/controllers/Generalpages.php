@@ -51,7 +51,7 @@ class Generalpages extends MY_Controller {
   }
 
   public function toolbox() {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',21,'Sleepbus Toolbox');
+    $this->data['meta']['page_title'] = "sleepbus toolbox";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',21);
     $this->data['top_text']=$this->Website_model->GetTopText(8);
     $this->data['branding_content']=$this->Website_model->GetTopText(9);
@@ -64,7 +64,7 @@ class Generalpages extends MY_Controller {
   }
 
   public function sitemap() {
-    $this->data['meta']=$this->Metatags_model->GetMetaTags('SINGLE_PAGE',18,'Sitemap');
+    $this->data['meta']['page_title'] = "Sitemap";
     $this->data['cta']=$this->Website_model->GetCTAButtons('SINGLE_PAGE',18);
     $this->data['contents']=$this->Website_model->GetPageContent(8);
     $this->load->view('templates/header',$this->data);
