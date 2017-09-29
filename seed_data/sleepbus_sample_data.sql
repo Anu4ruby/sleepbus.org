@@ -838,7 +838,6 @@ CREATE TABLE `users` (
   `status` enum('1','0') NOT NULL,
   `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `modified_by_user` varchar(255) NOT NULL,
-  `'modified_by_user` varchar(225) NOT NULL,
   `reset_link` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
