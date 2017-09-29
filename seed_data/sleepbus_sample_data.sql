@@ -889,6 +889,37 @@ INSERT INTO `superadmin_password` VALUES (1,'GKXAPNHOHAJOGJUNCLSYMBYCLZBGCIQMHJG
 /*!40000 ALTER TABLE `superadmin_password` ENABLE KEYS */;
 UNLOCK TABLES;
 
+-- Manually added superusers
+
+CREATE TABLE `superusers` (
+  `id` bigint(20) NOT NULL,
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `encrypted_password` varchar(255) NOT NULL DEFAULT '',
+  `reset_password_token` varchar(255) DEFAULT NULL,
+  `reset_password_sent_at` datetime DEFAULT NULL,
+  `remember_created_at` datetime DEFAULT NULL,
+  `sign_in_count` int(11) NOT NULL DEFAULT '0',
+  `current_sign_in_at` datetime DEFAULT NULL,
+  `last_sign_in_at` datetime DEFAULT NULL,
+  `current_sign_in_ip` varchar(255) DEFAULT NULL,
+  `last_sign_in_ip` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `superusers` (`id`, `email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`) VALUES
+(1, 'mytester@localdev.com', '$2a$11$RvHoxtQf/w3mp1SVqOqPiOe2qV1ktdTutR4hFBCrM70z52xzSHkny', NULL, NULL, NULL, 1, '2017-09-29 05:25:53', '2017-09-29 05:25:53', '127.0.0.1', '127.0.0.1', '2017-09-29 05:24:34', '2017-09-29 05:25:53');
+
+
+ALTER TABLE `superusers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `index_superusers_on_email` (`email`),
+  ADD UNIQUE KEY `index_superusers_on_reset_password_token` (`reset_password_token`);
+
+
+ALTER TABLE `superusers`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+
 --
 -- Table structure for table `supports`
 --
