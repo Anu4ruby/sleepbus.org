@@ -563,35 +563,6 @@ CREATE TABLE `newsletters_subscribers` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projects`
---
-
-CREATE TABLE `projects` (
-  `id` int(11) NOT NULL,
-  `dateadded` datetime NOT NULL,
-  `project_title` varchar(555) NOT NULL,
-  `intro_text` text NOT NULL,
-  `description` text NOT NULL,
-  `url` varchar(555) NOT NULL,
-  `position` int(11) NOT NULL,
-  `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `modified_by_user` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `projects`
---
-
-INSERT INTO `projects` (`id`, `dateadded`, `project_title`, `intro_text`, `description`, `url`, `position`, `status`, `date_modified`, `modified_by_user`) VALUES
-(2, '2016-04-05 14:58:28', 'Our first sleepbus launches in Melbourne CBD 2', '<div class=\"completedboxhover\">\r\n<p><span>31 may 2016</span></p>\r\n\r\n<h2>Our first sleepbus launches in Melbourne CBD</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img4.jpg\" /></figure>', '<div class=\"row project-detail\">\r\n<div class=\"projectdate\">17 March 2016</div>\r\n\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<h2>Subheading</h2>\r\n\r\n<ul>\r\n	<li>Proin vel enim a leo auctor convallis sed ut enim.</li>\r\n	<li>Phasellus aliquam felis eu urna aliquam, nec iaculis nulla fermentum.</li>\r\n	<li>Vivamus molestie leo eu erat elementum, sed tristique tortor elementum.</li>\r\n	<li>Aenean vehicula nisl at turpis sagittis, nec bibendum ante cursus.</li>\r\n	<li>Praesent auctor mauris eget condimentum euismod.</li>\r\n</ul>\r\n<img align=\"right\" src=\"https://www.sleepbus.org/images/img7.jpg\" />\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<div class=\"completeback\"><a href=\"[[BACK_URL]]\">&lt; Back to completed projects </a></div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n</div>', 'project-1', 2, '0', '2017-02-14 18:40:29', 'admin'),
-(3, '2016-04-08 20:27:52', 'Our first sleepbus launches in Melbourne CBD', '<div class=\"completedboxhover\">\r\n<p><span>31 may 2016</span></p>\r\n\r\n<h2>Our first sleepbus launches in Melbourne CBD</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img3.jpg\" /></figure>', '<div class=\"row project-detail\">\r\n<div class=\"projectdate\">17 March 2016</div>\r\n\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<h2>Subheading</h2>\r\n\r\n<ul>\r\n	<li>Proin vel enim a leo auctor convallis sed ut enim.</li>\r\n	<li>Phasellus aliquam felis eu urna aliquam, nec iaculis nulla fermentum.</li>\r\n	<li>Vivamus molestie leo eu erat elementum, sed tristique tortor elementum.</li>\r\n	<li>Aenean vehicula nisl at turpis sagittis, nec bibendum ante cursus.</li>\r\n	<li>Praesent auctor mauris eget condimentum euismod.</li>\r\n</ul>\r\n<img align=\"right\" src=\"https://www.sleepbus.org/images/img7.jpg\" />\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<div class=\"completeback\"><a href=\"[[BACK_URL]]\">&lt; Back to completed projects </a></div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n</div>', 'our-first-sleepbus-launches-in-melbourne-cbd', 1, '0', '2017-02-14 18:40:29', 'admin'),
-(4, '2016-04-08 20:30:18', 'Our first sleepbus launches in Melbourne CBD 3', '<div class=\"completedboxhover\">\r\n<p><span>31 may 2016</span></p>\r\n\r\n<h2>Our first sleepbus launches in Melbourne CBD</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img5.jpg\" /></figure>', '<div class=\"row project-detail\">\r\n<div class=\"projectdate\">17 March 2016</div>\r\n\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<h2>Subheading</h2>\r\n\r\n<ul>\r\n	<li>Proin vel enim a leo auctor convallis sed ut enim.</li>\r\n	<li>Phasellus aliquam felis eu urna aliquam, nec iaculis nulla fermentum.</li>\r\n	<li>Vivamus molestie leo eu erat elementum, sed tristique tortor elementum.</li>\r\n	<li>Aenean vehicula nisl at turpis sagittis, nec bibendum ante cursus.</li>\r\n	<li>Praesent auctor mauris eget condimentum euismod.</li>\r\n</ul>\r\n<img align=\"right\" src=\"https://www.sleepbus.org/images/img7.jpg\" />\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<div class=\"completeback\"><a href=\"[[BACK_URL]]\">&lt; Back to completed projects </a></div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n</div>', 'our-first-sleepbus-launches-in-melbourne-cbd-3', 3, '0', '2017-02-14 18:40:29', 'admin'),
-(5, '2016-04-08 20:31:02', 'Our first sleepbus launches in Melbourne CBD 4', '<div class=\"completedboxhover\">\r\n<p><span>31 may 2016</span></p>\r\n\r\n<h2>Our first sleepbus launches in Melbourne CBD</h2>\r\n</div>\r\n\r\n<figure><img alt=\"\" src=\"https://www.sleepbus.org/images/img6.jpg\" /></figure>', '<div class=\"row project-detail\">\r\n<div class=\"projectdate\">17 March 2016</div>\r\n\r\n<p>At sleepbus we have a simple focus; provide safe overnight accommodation to those sleeping rough in Australia. Our accommodation is not a long term solution; we don&rsquo;t offer counseling; we don&rsquo;t provide money; we don&rsquo;t provide the Ritz.</p>\r\n\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<h2>Subheading</h2>\r\n\r\n<ul>\r\n	<li>Proin vel enim a leo auctor convallis sed ut enim.</li>\r\n	<li>Phasellus aliquam felis eu urna aliquam, nec iaculis nulla fermentum.</li>\r\n	<li>Vivamus molestie leo eu erat elementum, sed tristique tortor elementum.</li>\r\n	<li>Aenean vehicula nisl at turpis sagittis, nec bibendum ante cursus.</li>\r\n	<li>Praesent auctor mauris eget condimentum euismod.</li>\r\n</ul>\r\n<img align=\"right\" src=\"https://www.sleepbus.org/images/img7.jpg\" />\r\n<p>What we do provide is a comfortable and safe place to sleep for the night. We leave the long term solutions and counseling to the many other organisations already doing this vital work. We just want people off the street, where they can enjoy a long nights sleep in safety; we believe, that a safe nights sleep is vital to finding pathways out of homelessness.</p>\r\n\r\n<div class=\"completeback\"><a href=\"[[BACK_URL]]\">&lt; Back to completed projects </a></div>\r\n\r\n<div class=\"projectcolorbox\">To achieve our mission we need 300+ buses providing 2,000,000 safe sleeps per year in Australia.</div>\r\n</div>', 'our-first-sleepbus-launches-in-melbourne-cbd-4', 4, '0', '2017-02-14 18:40:29', 'admin');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `superusers`
 --
 
@@ -776,6 +747,17 @@ CREATE TABLE `volunteers` (
   `email1` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+-- Manual create for projects
+
+CREATE TABLE projects ( id VARCHAR(36) NOT NULL , name VARCHAR(200) NOT NULL , type VARCHAR(100) NOT NULL , PRIMARY KEY (id)) ENGINE = InnoDB;
+
+INSERT INTO projects (id, name, type) VALUES ('a70951fe-e0cd-480e-88ef-16777ef226cc', 'First sleepbus', 'bus');
+INSERT INTO projects (id, name, type) VALUES ('836e38dc-b94b-4599-a2fd-63c50ba14330', 'Second sleepbus', 'bus');
+
+-- End projects
+
+
 --
 -- Indexes for dumped tables
 --
@@ -830,11 +812,6 @@ ALTER TABLE `leads`
 ALTER TABLE `newsletters_subscribers`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `projects`
---
-ALTER TABLE `projects`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `superusers`
@@ -895,11 +872,6 @@ ALTER TABLE `leads`
 --
 ALTER TABLE `newsletters_subscribers`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `projects`
---
-ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `superusers`
 --
