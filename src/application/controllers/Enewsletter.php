@@ -33,8 +33,6 @@ class Enewsletter extends MY_Controller
  	  $name=$this->commonfunctions->ReplaceSpecialChars($values['name']);   
       $data=array('fname'=>$values['name'],'email1'=>$values['email']);
       $subscribe=$this->Website_model->InsertSubscribe($data);
-      $data1=array('subscriber_id'=>$subscribe,'group_id'=>1);
-      $subscribe=$this->Website_model->InsertSubscribeGroup($data1);
      }
      $this->RedirectPage('enewsletter-thanks');
     }

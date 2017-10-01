@@ -302,57 +302,6 @@ INSERT INTO `leads` VALUES (1,'Contact-Enquiry','Madalyn Carter','Joesph Kilback
 UNLOCK TABLES;
 
 --
--- Table structure for table `newsletter_subscribers_groups`
---
-
-DROP TABLE IF EXISTS `newsletter_subscribers_groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `newsletter_subscribers_groups` (
-  `id` int(20) NOT NULL AUTO_INCREMENT,
-  `subscriber_id` int(20) NOT NULL,
-  `group_id` int(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `newsletter_subscribers_groups`
---
-
-LOCK TABLES `newsletter_subscribers_groups` WRITE;
-/*!40000 ALTER TABLE `newsletter_subscribers_groups` DISABLE KEYS */;
-INSERT INTO `newsletter_subscribers_groups` VALUES (1,1,1),(2,2,1),(3,3,1),(4,4,1),(5,5,1),(6,6,1),(7,7,1),(8,8,1),(9,9,1),(10,10,1),(11,11,1),(12,12,1),(13,13,1),(14,14,1),(15,15,1),(16,16,1),(17,17,1),(18,18,1),(19,19,1),(20,20,1),(21,21,1),(22,22,1),(23,23,1),(24,24,1),(25,25,1),(26,26,1),(27,27,1),(28,28,1),(29,29,1),(30,30,1),(31,31,1),(32,32,1),(33,33,1),(34,34,1),(35,35,1),(36,36,1),(37,37,1),(38,38,1),(39,39,1),(40,40,1),(41,41,1),(42,42,1),(43,43,1),(44,44,1),(45,45,1),(46,46,1),(47,47,1),(48,48,1),(49,49,1),(50,50,1),(51,51,1),(52,52,1),(53,53,1),(54,54,1),(55,55,1),(56,56,1),(57,57,1),(58,58,1),(59,59,1),(60,60,1),(61,61,1),(62,62,1),(63,63,1),(64,64,1),(65,65,1),(66,66,1),(67,67,1),(68,68,1),(69,69,1),(70,70,1),(71,71,1),(72,72,1),(73,73,1),(74,74,1),(75,75,1),(76,76,1),(77,77,1),(78,78,1),(79,79,1),(80,80,1),(81,81,1),(82,82,1),(83,83,1),(84,84,1),(85,85,1),(86,86,1),(87,87,1),(88,88,1),(89,89,1),(90,90,1),(91,91,1),(92,92,1),(93,93,1),(94,94,1),(95,95,1),(96,96,1),(97,97,1),(98,98,1),(99,99,1),(100,100,1),(101,101,1),(102,102,1),(103,103,1),(104,104,1),(105,105,1),(106,106,1),(107,107,1);
-/*!40000 ALTER TABLE `newsletter_subscribers_groups` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `newsletters_groups`
---
-
-DROP TABLE IF EXISTS `newsletters_groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `newsletters_groups` (
-  `id` int(23) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 1,
-  `admin_id` int(1) NOT NULL DEFAULT 1,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `newsletters_groups`
---
-
-LOCK TABLES `newsletters_groups` WRITE;
-/*!40000 ALTER TABLE `newsletters_groups` DISABLE KEYS */;
-INSERT INTO `newsletters_groups` VALUES (1,'Website Contact',1,1);
-/*!40000 ALTER TABLE `newsletters_groups` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `newsletters_subscribers`
 --
 
@@ -587,29 +536,6 @@ CREATE TABLE `volunteers` (
 LOCK TABLES `volunteers` WRITE;
 /*!40000 ALTER TABLE `volunteers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `volunteers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `volunteers_groups`
---
-
-DROP TABLE IF EXISTS `volunteers_groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `volunteers_groups` (
-  `id` int(20) NOT NULL DEFAULT 0,
-  `subscriber_id` int(20) NOT NULL,
-  `group_id` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `volunteers_groups`
---
-
-LOCK TABLES `volunteers_groups` WRITE;
-/*!40000 ALTER TABLE `volunteers_groups` DISABLE KEYS */;
-/*!40000 ALTER TABLE `volunteers_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

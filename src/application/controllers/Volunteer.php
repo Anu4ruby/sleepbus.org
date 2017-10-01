@@ -31,8 +31,6 @@ class Volunteer extends MY_Controller
         $name=$this->commonfunctions->ReplaceSpecialChars($values['name']);   
         $data=array('fname'=>$values['name'],'email1'=>$values['email']);
         $subscribe=$this->Website_model->InsertVolunteer($data);
-        $data1=array('subscriber_id'=>$subscribe,'group_id'=>1);
-        $subscribe=$this->Website_model->InsertVolunteerGroup($data1);
       }
 
       $this->RedirectPage('volunteer-signup-thanks');

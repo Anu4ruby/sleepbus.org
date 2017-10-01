@@ -292,27 +292,16 @@
    $this->db->insert('newsletters_subscribers',$data);
    return $lastid=$this->db->insert_id();
   }
-  public function InsertSubscribeGroup($data1)
-  {
-   $this->db->insert('newsletter_subscribers_groups',$data1);
-   return $lastid=$this->db->insert_id();
-  }
 
   public function InsertVolunteer($data) {
     $this->db->insert('volunteers', $data);
 
     return $lastid = $this->db->insert_id();
   }
-
-  public function InsertVolunteerGroup($data1) {
-    $this->db->insert('volunteers_groups', $data1);
-
-    return $lastid = $this->db->insert_id();
-  }
   
   public function getIsSubscribed($email)
   {
-   $sql="select * from newsletters_subscribers where email1 like '$email' or email2 like '$email'";
+   $sql="select * from newsletters_subscribers where email1 like '$email'";
    $query=$this->db->query($sql);
    $clientimage=array();
    if($query->num_rows()>0)
@@ -326,7 +315,7 @@
   }
 
   public function getIsVolunteer($email) {
-    $sql = "select * from volunteers where email1 like '$email' or email2 like '$email'";
+    $sql = "select * from volunteers where email1 like '$email'";
     $query = $this->db->query($sql);
     $clientimage = array();
 
