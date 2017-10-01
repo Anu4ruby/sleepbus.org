@@ -52,11 +52,6 @@ class Generalpages extends MY_Controller {
 
   public function toolbox() {
     $this->data['meta']['page_title'] = "sleepbus toolbox";
-    $this->data['top_text']=$this->Website_model->GetTopText(8);
-    $this->data['branding_content']=$this->Website_model->GetTopText(9);
-    $this->data['video']=$this->Website_model->GetTopText(10);
-    $this->data['facebook_timeline']=$this->Website_model->GetTopText(11);
-    $this->data['twitter_background']=$this->Website_model->GetTopText(12);
     $this->load->view('templates/header',$this->data);
     $this->load->view('general-pages/toolbox',$this->data);
     $this->load->view('templates/footer');

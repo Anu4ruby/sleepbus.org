@@ -8,7 +8,6 @@
 
 ?>
 
-<!-- <input type="hidden" name="unit_fund" value="<?php echo $common_settings['unit_fund'];?>" id="unit_fund"  />-->
 <input type="hidden" name="unit_fund" value="27.50" id="unit_fund"  />
 
   <div class="letgo">

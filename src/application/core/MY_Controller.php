@@ -79,14 +79,8 @@ class MY_Controller extends CI_Controller {
  	     $this->load->Model('Website_model');
 		 $this->data['ip_address']=$this->GetIPAddress();		 
 		 $this->data['ip_country']=$this->GetIpLocation();		 
-		/* $this->data['ip_location']=$this->GetIpLocation();		 */
 
-		 $this->data['common_settings']=$this->Website_model->GetCommonSettingValues();
-		 // Required for Search Form exists in all pages
-		 // Required for google analytics and cannonical link
-		 
 		 $this->load->helper('form');
-		 $this->data['footer_text']=$this->Website_model->GetTopText(1);
    	     $this->load->model('Account_model'); 
     	 $this->user_info=$this->Account_model->CheckUser($this->session->userdata('site_username'),$this->session->userdata('site_password'));
 		 

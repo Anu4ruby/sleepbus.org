@@ -5,10 +5,7 @@
   {
    parent ::__construct();	
   }  
-  public function GetCommonSettingValues()
-  {
-   return $this->db_query->FetchSingleInformation(COMMON_SETTINGS,"","1='1'");
-  }
+
   public function GetPageContent($page_id)
   {
    return $this->db_query->FetchSingleInformation(PAGES,"","id='$page_id'");
@@ -32,7 +29,39 @@
 
   public function GetLeadSources()
   {
-   return $this->db_query->FetchInformation(LEAD_SOURCES,"","status='1' order by position"); 
+    $lead_sources = array(
+                      array(
+                        'id' => '2',
+                        'name' => 'In the news'
+                      ),
+                      array(
+                        'id' => '7',
+                        'name' => 'On "The Project"'
+                      ),
+                      array(
+                        'id' => '4',
+                        'name' => 'From a friend'
+                      ),
+                      array(
+                        'id' => '5',
+                        'name' => 'Facebook'
+                      ),
+                      array(
+                        'id' => '6',
+                        'name' => 'Twitter'
+                      ),
+                      array(
+                        'id' => '1',
+                        'name' => 'Google'
+                      ),
+                      array(
+                        'id' => '3',
+                        'name' => 'Other'
+                      )
+                    );
+
+
+   return $lead_sources;
   }
   
   public function ContactFormAttribute($values=array())
@@ -187,10 +216,6 @@
 	}
    }
    return $all_downloads;
-  }
-  public function GetTopText($id)
-  {
-   return $this->db_query->FetchSingleInformation(TOP_TEXT,"","id='$id'");
   }
   public function GetHomePageContent()
   {

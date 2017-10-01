@@ -121,7 +121,7 @@
 <!-- MAIN HEADER: LOGO -->      
 <div class="logo">
   <a href="<?php echo base_url();?>">
-    <img src="<?php echo base_url();?>images/common-settings/<?php echo $common_settings['website_svg_logo'];?>" alt="Sleepbus" />
+    <img src="<?php echo base_url();?>images/common-settings/sleepbus.svg" alt="Sleepbus" />
   </a>
 </div>
   

@@ -76,7 +76,7 @@ class Fundraise extends MY_Controller {
 
     if(count($birthday_records)> 0) $this->data['campign_type']=1;else  $this->data['campign_type']='';
 
-    $this->data['attributes']=$this->Fundraise_model->GetFundraiseFormAttributes($values,$this->data['common_settings']['unit_fund'],$this->data['campign_type']);
+    $this->data['attributes']=$this->Fundraise_model->GetFundraiseFormAttributes($values,55,$this->data['campign_type']);
 
     $this->websitejavascript->include_footer_js=array('FundraiseJs','SuccessMessageJs');
     $this->load->view('templates/header',$this->data);
@@ -162,7 +162,7 @@ class Fundraise extends MY_Controller {
       $values['campaign_type']=$this->data['campaign_details']['campaign_type'];
       $values['campaign_image']=$this->data['campaign_details']['campaign_image'];
       $this->data['meta']['page_title'] = "Fundraise";
-      $this->data['attributes']=$this->Fundraise_model->GetEditFundraiseFormAttributes($values,$this->data['common_settings']['unit_fund']);
+      $this->data['attributes']=$this->Fundraise_model->GetEditFundraiseFormAttributes($values,55);
       $this->websitejavascript->include_footer_js=array('UpdateFundraiseJs');
       $this->load->view('templates/header',$this->data);
       $this->load->view('fundraise/edit-fundraise',$this->data);

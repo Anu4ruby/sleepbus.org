@@ -10,10 +10,6 @@ class Support extends MY_Controller
   public function index()
   {
 	 $this->data['meta']['page_title'] = "Corporate support";
-   $this->data['all_supports']=$this->Support_model->GetAllSupports();
-   $this->data['top_text']=$this->Website_model->GetTopText(3);
-   $this->data['our_support']=$this->Website_model->GetTopText(4);
-   $this->data['support_items']=$this->load->view('corporate-support/support-item',$this->data,true);
    $this->load->view('templates/header',$this->data);
    $this->load->view('corporate-support/corporate-support',$this->data);
    $this->load->view('templates/footer');

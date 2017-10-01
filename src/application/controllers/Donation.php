@@ -65,7 +65,7 @@ class Donation extends MY_Controller {
       }
 
       $this->data['meta']['page_title'] = 'Donate : '. $this->data['campaign_details']['campaign_name'];
-      $this->data['attribute']=$this->Donation_model->GetDonateFormAttributes($values,$this->data['common_settings']['unit_fund']);
+      $this->data['attribute']=$this->Donation_model->GetDonateFormAttributes($values,55);
 
       $this->websitejavascript->include_footer_js=array('DonationJs');
       $this->load->view('templates/header',$this->data);
@@ -303,8 +303,8 @@ class Donation extends MY_Controller {
       $this->session->set_userdata('form_token','donation');
     }
 
-    $this->data['attribute']=$this->Donation_model->GetDonateFormForOneTimeAttributes($values,$this->data['common_settings']['unit_fund']);
-    $this->data['attribute_monthly']=$this->Website_model->GetMonthlyDonateFormAttributes($values_monthly,$this->data['common_settings']['unit_fund']);
+    $this->data['attribute']=$this->Donation_model->GetDonateFormForOneTimeAttributes($values,55);
+    $this->data['attribute_monthly']=$this->Website_model->GetMonthlyDonateFormAttributes($values_monthly,55);
     $this->websitejavascript->include_footer_js=array('DonationJs','RecurringDonationJs');
     $this->data['meta']['page_title'] = "Donate";
 
@@ -366,7 +366,7 @@ class Donation extends MY_Controller {
       $this->session->set_userdata('form_token','one-time-donation');
     }
 
-    $this->data['attribute']=$this->Donation_model->GetDonateFormForOneTimeAttributes($values,$this->data['common_settings']['unit_fund'],365);
+    $this->data['attribute']=$this->Donation_model->GetDonateFormForOneTimeAttributes($values,55,365);
 
     $this->data['attribute']['amount']['value'] = '10,037.50';
     $this->data['attribute']['amount']['placeholder'] = '10,037.50';

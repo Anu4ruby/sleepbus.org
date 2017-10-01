@@ -1,4 +1,4 @@
-<div class="campaignbox positionrelative"  style="background:url(<?php echo base_url();?>images/campaign/<?php if(!empty($campaign_details['image_file'])){ echo $campaign_details['image_file']; }else{ echo $campaign_settings['common_banner']; } ?>) no-repeat center top;">
+<div class="campaignbox positionrelative"  style="background:url(<?php echo base_url();?>images/campaign/<?php if(!empty($campaign_details['image_file'])){ echo $campaign_details['image_file']; }else{ echo 'img457.jpg'; } ?>) no-repeat center top;">
   <div class="container">
   <div class="campaignboxin">
   
@@ -103,7 +103,7 @@
 			  
 			  ?>  
         </div>
-         <div class="raisedimgbox" id="startoflist"><img src="<?php echo base_url();?>images/campaign/<?php echo $campaign_settings['campaign_logo']; ?>" alt="100% Public Donation Fund SleepBus Projects"></div>
+         <div class="raisedimgbox" id="startoflist"><img src="/images/campaign/campaign_default_icon2.jpg" alt="100% Public Donation Fund SleepBus Projects"></div>
          
         <?php
         if(isset($total_donations) and ($total_donations > 0))

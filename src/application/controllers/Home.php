@@ -39,8 +39,8 @@ class Home extends MY_Controller {
 			$this->session->set_userdata('form_token','donation');
 		}
 
-		$this->data['attribute_monthly']=$this->Website_model->GetMonthlyDonateFormAttributes($values_monthly,$this->data['common_settings']['unit_fund']);
-		$this->data['attribute']=$this->Website_model->GetDonateFormForOneTimeAttributes($values,$this->data['common_settings']['unit_fund']);
+		$this->data['attribute_monthly']=$this->Website_model->GetMonthlyDonateFormAttributes($values_monthly,55);
+		$this->data['attribute']=$this->Website_model->GetDonateFormForOneTimeAttributes($values,55);
 		$this->data['section_id']=1;
     $this->data['meta']['page_title'] = "Home";
 		$this->websitejavascript->include_footer_js=array('RecurringDonationJs');

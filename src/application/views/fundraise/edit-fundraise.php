@@ -3,7 +3,7 @@
  echo form_open(base_url().'fundraise/'.$campaign_details['url'],$attributes['form']);
  echo form_hidden('caller','Send');
 ?>
- <input type="hidden" name="unit_fund" value="<?php echo $common_settings['unit_fund'];?>" id="unit_fund"  />
+ <input type="hidden" name="unit_fund" value="55" id="unit_fund"  />
   <div class="letgo">
     <h1>Edit campaign</h1>
     

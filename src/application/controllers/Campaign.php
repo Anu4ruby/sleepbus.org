@@ -20,7 +20,6 @@ class Campaign extends MY_Controller {
     $this->data['campaign_comments']=$this->User_model->GetCampaignComments($this->data['campaign_id']);
     $this->UserSessionCheckOnIndividualPage();
     $this->data['loggedin_user']=$this->session->userdata('site_username');
-    $this->data['campaign_settings']=$this->User_model->getDefaultCampaignBanner();
 
     if($this->data['loggedin_user'] == $this->data['campaign_details']['username']) {
       $values=array();

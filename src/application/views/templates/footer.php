@@ -1,6 +1,3 @@
-<?php
- $this->load->view('templates/cta'); 
- ?>
  <footer <?php if(($active_menu =="signin") || ($active_menu =="account") || ($active_menu =="user") || ($active_menu =="pledge") || ($active_menu =="fundraise" )|| ($active_menu =="donation")){?> class="mrtopnone" <?php }?>>
 
 

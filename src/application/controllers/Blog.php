@@ -39,9 +39,6 @@
 	$this->data['meta']['page_title'] = "Blog";
     $this->data['all_blogs']=$this->Blog_model->GetAllBlog("limit ".$this->data['pagination']['start_limit'].",".   $this->data['pagination']['end_limit']);
 	 
-    $this->data['top_text']=$this->Website_model->GetTopText(5);
-	 
-  
     $this->load->view('templates/header',$this->data);
     $this->load->view('blog/blog-list',$this->data);
     $this->load->view('templates/footer');
@@ -77,8 +74,6 @@
 	
     $this->data['all_blogs']=$this->Blog_model->GetCategoryBlog($this->data['cat_id']['id'],"limit ".$this->data['pagination']['start_limit'].",".   $this->data['pagination']['end_limit']);
 	 
-    $this->data['top_text']=$this->Website_model->GetTopText(5);
-  
   
     $this->load->view('templates/header',$this->data);
     $this->load->view('blog/blog-list',$this->data);

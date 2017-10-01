@@ -5,10 +5,7 @@
   {
    parent ::__construct();	
   }  
-  public function GetPageContents($id)
-  {
-   return $this->db->select("content")->from(TOP_TEXT)->where('id',$id)->get()->row_array();
-  }
+
   public function GetProfileFormAttribute($values)
   {
    if(count($values) == 0)
@@ -129,10 +126,6 @@
 	$campaign_details['campaign_image']=$row['campaign_image'];	
    }  
    return $campaign_details;
-  }
-  public function getDefaultCampaignBanner()
-  {
-   return $this->db->select('common_banner,campaign_logo')->from(CAMPAIGN_SETTINGS)->get()->row_array();
   }
   public function getUserCommentFormAttributes($values)
   {

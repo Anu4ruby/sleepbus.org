@@ -1,8 +1,6 @@
 <?php
 //define table name
 define('PAGES',"pages");
-define('COMMON_SETTINGS',"common_settings");
-define('TOP_TEXT','top_text');
 define('LEADS','leads');
 define('BLOG_NOTIFICATIONS',"blog_notifications");
 define('CMS_SETTINGS','cms_settings');
@@ -19,11 +17,7 @@ define('CAMPAIGN_COMMENTS','campaign_comments');
 
 // TODO: rm these
 
-define('ACCOUNT_TYPE','account_type');
-define('CAMPAIGN_SETTINGS','campaign_settings');
-define('SUPPORTS','supports');
-define('LEAD_SOURCES','lead_sources');
 
-// ckeditor & ckfinder references now userfiles is in /images/userfiles/
+// todo blogs, blog categories, add manual routes for 2 existing
 
 ?>
