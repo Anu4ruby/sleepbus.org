@@ -22,7 +22,7 @@
   <div class="row">
   
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 blogbox" style="margin-bottom:10px;">
-        <a href="<?php echo base_url().'blog/july_2017_news';?>"> 
+        <a href="/blog/july_2017_news"> 
 
           <div class="blogboxhover">
           </div>
@@ -39,7 +39,7 @@
 
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 blogbox">
-        <a href="<?php echo base_url().'blog/category/blog2';?>"> 
+        <a href="/blog/category/blog2"> 
 
           <div class="blogboxhover">
             <p><span>an update</span></p>

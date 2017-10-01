@@ -84,24 +84,9 @@
     $route['testing-campaign-after-migration'] = 'campaign/show/testing-campaign-after-migration';
     $route['qlik'] = 'campaign/show/qlik';
     $route['stroll-to-the-shack-for-sleepbus'] = 'campaign/show/stroll-to-the-shack-for-sleepbus';
-
-     if((preg_match("/\/blog\//i", $_SERVER['REQUEST_URI'])))
-     {
-     //blog
-/*     $months=array("january","february","march","april","may","june","july","august","september","october","november","december"); 
-     foreach($months as $month)
-     {
-      $route["blog/$month-(:num)"]="blog/BlogArchive/$month/$1";
-      $route["blog/$month-(:num)/page/(:num)"]="blog/BlogArchive/$month/$1/$2";
-     }
-     $route['blog/(:any)/page/(:num)']="blog/BlogCategory/$1/$2";
-     $route['blog/page/(:num)']="blog/blog_list/$1";
-*/   $route['blog/july_2017_news']="blog/GetBlogByURL/july_2017_news";
-     $route['blog/(:any)/(:any)']="blog/BlogDetails/$1/$2";
-     $route['blog/(:any)']="blog/BlogCategory/$1";
-    }
-    else
-	{
+    $route['blog/july_2017_news']="blog/GetBlogByURL/july_2017_news";
+    $route['blog/category/blog2']="blog/GetBlogByURL/blog2";
+	
      include_once("database.php");
 	 $linkdb=mysqli_connect($db['default']['hostname'],$db['default']['username'],$db['default']['password']);
 	 $seldblink=mysqli_select_db($linkdb,$db['default']['database']);
@@ -147,7 +132,6 @@
 	     }
 	     else $get_url=false;
 	    }
-       } 
       }
      }
     }
