@@ -92,18 +92,6 @@
 	 $seldblink=mysqli_select_db($linkdb,$db['default']['database']);
 	 $get_url=false;
 	 
-	 if($get_url == false)
-	 {
-	  $sql="select url,id from projects where status='1' and url='".$requested_url."'";
-      $res=mysqli_query($linkdb,$sql);
-      if(mysqli_num_rows($res) > 0)
-      {
-       $row=mysqli_fetch_array($res);	   
-       $route[$row['url']]="projects/details/".$row['id'];
-	   $get_url=true;
-	  }
-	  else $get_url=false;
-	 }
 	 // for campaign edit page
 	    if(($get_url == false) && (preg_match("/\/fundraise\//i", $_SERVER['REQUEST_URI'])))
 	    {	
