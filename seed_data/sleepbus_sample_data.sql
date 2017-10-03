@@ -750,10 +750,10 @@ CREATE TABLE `volunteers` (
 
 -- Manual create for projects
 
-CREATE TABLE projects ( id VARCHAR(36) NOT NULL , name VARCHAR(200) NOT NULL , type VARCHAR(100) NOT NULL , PRIMARY KEY (id)) ENGINE = InnoDB;
+CREATE TABLE projects ( id VARCHAR(36) NOT NULL , name VARCHAR(200) NOT NULL , project_type VARCHAR(100) NOT NULL , PRIMARY KEY (id)) ENGINE = InnoDB;
 
-INSERT INTO projects (id, name, type) VALUES ('a70951fe-e0cd-480e-88ef-16777ef226cc', 'First sleepbus', 'bus');
-INSERT INTO projects (id, name, type) VALUES ('836e38dc-b94b-4599-a2fd-63c50ba14330', 'Second sleepbus', 'bus');
+INSERT INTO projects (id, name, project_type) VALUES ('a70951fe-e0cd-480e-88ef-16777ef226cc', 'First sleepbus', 'bus');
+INSERT INTO projects (id, name, project_type) VALUES ('836e38dc-b94b-4599-a2fd-63c50ba14330', 'Second sleepbus', 'bus');
 
 -- End projects
 
