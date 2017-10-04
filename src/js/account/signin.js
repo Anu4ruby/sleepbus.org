@@ -139,7 +139,7 @@ ValidateResetPasswordForm = function()
  })
  if((reset_password !='') && (retype_password != "") && (reset_password !=retype_password)) 
  {
-  if(error_count == 0){ error_value="Please new password and retype password don't match"; focus_field='retype_password';}
+  if(error_count == 0){ error_value="New password and retype password don't match"; focus_field='retype_password';}
   error_count++;
  }
  else
