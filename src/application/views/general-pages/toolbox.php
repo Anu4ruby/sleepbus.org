@@ -262,24 +262,6 @@ For guidelines on everything from logos to language, take a look at our <a href=
 </div>
 </div>
 
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 toolboxvideoimg">
-<div class="modalimgbox"><a data-target="#twitter4" data-toggle="modal" href="#"><img alt="" src="/images/userfiles/images/Twitter-04.jpg" /></a>
-
-<div class="modalimgboxsearch"><img alt="" src="https://www.sleepbus.org/images/icon32.png" /></div>
-</div>
-
-<p><a href="/images/userfiles/files/Twitter-04.zip">Download</a></p>
-
-<div class="modal fade" id="twitter4" role="dialog">
-<div class="modal-dialog"><!-- Modal content-->
-<div class="modal-content">
-<div class="modal-header"><button class="close" data-dismiss="modal" type="button">&times;</button></div>
-
-<div class="modal-body"><img alt="" src="/images/userfiles/images/Twitter-04.jpg" /></div>
-</div>
-</div>
-</div>
-</div>
 
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 toolboxvideoimg">
 <div class="modalimgbox"><a data-target="#twitter5" data-toggle="modal" href="#"><img alt="" src="/images/userfiles/images/Twitter-05.jpg" /></a>
@@ -380,24 +362,6 @@ For guidelines on everything from logos to language, take a look at our <a href=
 </div>
 </div>
 
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 toolboxvideoimg">
-<div class="modalimgbox"><a data-target="#insta5" data-toggle="modal" href="#"><img alt="" src="/images/userfiles/images/Instagram-05.jpg" /></a>
-
-<div class="modalimgboxsearch"><img alt="" src="https://www.sleepbus.org/images/icon32.png" /></div>
-</div>
-
-<p><a href="/images/userfiles/files/Instagram-05.zip">Download</a></p>
-
-<div class="modal fade" id="insta5" role="dialog">
-<div class="modal-dialog"><!-- Modal content-->
-<div class="modal-content">
-<div class="modal-header"><button class="close" data-dismiss="modal" type="button">&times;</button></div>
-
-<div class="modal-body"><img alt="" src="/images/userfiles/images/Instagram-05.jpg" /></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 
 
