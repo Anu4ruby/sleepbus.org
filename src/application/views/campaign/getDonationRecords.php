@@ -3,7 +3,7 @@
  {
   ?>
   <div class="donationbox">
-   <h2><sup>$</sup><?php echo $donation['paid_amount'];?></h2>
+   <h2><sup>$</sup><?php echo number_format(($donation['paid_amount']),2);?></h2>
    <h3><?php if($donation['anonymous'] == "yes"){ echo "Anonymous";}else{ echo $donation['donor_name']; }?></h3>
    <p><?php echo $donation['time_ago'];?> ago</p>
    <h4><?php echo $donation['comment'];?></h4>
