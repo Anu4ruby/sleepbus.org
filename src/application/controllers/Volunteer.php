@@ -33,6 +33,18 @@ class Volunteer extends MY_Controller
         $subscribe=$this->Website_model->InsertVolunteer($data);
       }
 
+      // to admin
+      $email = array(
+        'layout' => 'email/layouts/transactional',
+        'body' => $this->load->view('email/new_volunteer_signup', $data, TRUE),
+        'subject' => 'A new person wants to volunteer with us!',
+        'from' => getenv('EMAIL_SEND_FROM'),
+        'to' => getenv('ADMIN_EMAIL'),
+        'reply-to' => '<' . $values['email'] . '> ' . $values['name']
+      );
+
+      $this->SendEmail($email);
+
       $this->RedirectPage('volunteer-signup-thanks');
    }
     
