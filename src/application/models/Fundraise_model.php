@@ -15,9 +15,7 @@
     $attribute['campaign_name'] = array('name'=>'campaign_name', 'id'=> 'campaign_name', 'value'=>$values['campaign_name'],'class'=>'form-control','placeholder'=>'Give your campaign a name',"onKeyUp"=>"return CountCharacters('campaign_name','limit2','80')");
    $attribute['limit2']=array('name'=> 'limit2','id'=> 'limit2','value' => strlen($values['campaign_name']),'readonly'=>'readonly','size'=>'2','tabindex'=>'-1');
 	
-    $attribute['campaign_goal'] = array('name'=>'campaign_goal', 'id'=> 'campaign_goal', 'value'=>$values['campaign_goal'],'placeholder'=>number_format(($unit_fund)*10,2),'class'=>'form-control');
-
-   // $attribute['campaign_end_date'] = array('name'=>'campaign_end_date', 'id'=> 'campaign_end_date', 'value'=>$values['campaign_end_date'],'placeholder'=>'DD/MM/YYYY','class'=>'form-control');
+    $attribute['campaign_goal'] = array('name'=>'campaign_goal', 'type' => 'number', 'min' => '1', 'id'=> 'campaign_goal', 'value'=>$values['campaign_goal'],'placeholder'=>number_format(($unit_fund)*10,2),'class'=>'form-control');
 
 
     $attribute['month'] = array('name'=>'month', 'id'=> 'month', 'value'=>$values['month'],'placeholder'=>'MM','class'=>'form-control','maxlength'=>'2');
