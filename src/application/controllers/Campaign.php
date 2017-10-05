@@ -80,6 +80,10 @@ class Campaign extends MY_Controller {
     $this->websitejavascript->include_footer_js=array('CampaignJs','SuccessMessageJs');
     $this->data['meta']['page_title'] = $this->data['campaign_details']['campaign_name'];
     $this->data['active_menu']="campaign";  
+    $this->data['meta']['og_campaign_name'] = $this->data['campaign_details']['campaign_name']; 
+    $this->data['meta']['og_campaign_url'] = $this->data['campaign_details']['url']; 
+    $this->data['meta']['og_campaign_description'] = $this->data['campaign_details']['statement']; 
+    $this->data['meta']['og_campaign_image'] = $this->data['campaign_details']['image_file']; 
     $this->load->view('templates/header',$this->data);
     $this->load->view('campaign/campaign-details',$this->data);
     $this->load->view('templates/footer');

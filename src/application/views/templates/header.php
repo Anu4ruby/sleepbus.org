@@ -12,10 +12,19 @@
 <?php else: ?>
     <meta property="GTM_placeholder_head" content="wootwoot" />
 <?php endif; ?>
+
+<?php if (isset($meta['og_campaign_name'])): ?>
+  <meta property="og:url" content="<?php echo base_url();?>donation/<?php echo $meta['og_campaign_url'];?>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="<?php echo $meta['og_campaign_name'];?>" />
+  <meta property="og:description" content="<?php echo ltrim(str_replace('***NOTE: PLEASE CLICK "RETURN TO MERCHANT" AFTER YOUR DONATION TO HAVE IT ALLOCATED TO THIS CAMPAIGN.***', '', $meta['og_campaign_description']));?>" />
+  <meta property="og:image" content="<?php echo base_url();?>images/campaign/<?php if(!empty($meta['og_campaign_image'])){ echo $meta['og_campaign_image']; }else{ echo 'img457.jpg'; } ?>" />
+<?php else: ?>
 	<meta property="og:title" content="Sleepbus.org" />
 	<meta property="og:image" content="http://www.sleepbus.org/application/images/share-site-fb-image.jpeg"/>
-	<meta property="og:description" 
-  content="is a non profit organisation on a mission to end the need for people to sleep rough" />
+	<meta property="og:description" content="is a non profit organisation on a mission to end the need for people to sleep rough" />
+<?php endif; ?>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
