@@ -24,6 +24,7 @@
 	<meta property="og:image" content="http://www.sleepbus.org/application/images/share-site-fb-image.jpeg"/>
 	<meta property="og:description" content="is a non profit organisation on a mission to end the need for people to sleep rough" />
 <?php endif; ?>
+	<meta property="fb:profile_id" content="sleepbusaustralia" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- favicons -->
