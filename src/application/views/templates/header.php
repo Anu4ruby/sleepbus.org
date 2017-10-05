@@ -14,7 +14,7 @@
 <?php endif; ?>
 
 <?php if (isset($meta['og_campaign_name'])): ?>
-  <meta property="og:url" content="<?php echo base_url();?>donation/<?php echo $meta['og_campaign_url'];?>" />
+  <meta property="og:url" content="<?php echo base_url();?>campaign/<?php echo $meta['og_campaign_url'];?>" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="<?php echo $meta['og_campaign_name'];?>" />
   <meta property="og:description" content="<?php echo ltrim(str_replace('***NOTE: PLEASE CLICK "RETURN TO MERCHANT" AFTER YOUR DONATION TO HAVE IT ALLOCATED TO THIS CAMPAIGN.***', '', $meta['og_campaign_description']));?>" />
