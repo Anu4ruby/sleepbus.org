@@ -23,7 +23,7 @@ Give people safe sleeps and get them off our streets.</h2>
 <div class="dontebox dontecolorone">
 <h2>Give safe sleeps</h2>
 
-<h3>One safe sleep is just $55.00</h3>
+<h3>One safe sleep is just $27.50</h3>
 
 <p>100% funds sleepbus projects.</p>
 
