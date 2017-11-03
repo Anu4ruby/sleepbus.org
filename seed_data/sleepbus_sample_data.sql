@@ -693,7 +693,8 @@ CREATE TABLE `user_campaigns` (
   `url` varchar(555) NOT NULL,
   `statement` text NOT NULL,
   `status` enum('1','0') NOT NULL,
-  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `project` varchar(36) 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -748,6 +749,19 @@ CREATE TABLE `volunteers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+CREATE TABLE `questionnaires` (
+  `id` varchar(36) NOT NULL,
+  `question` text,
+  `answer` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for table `questionnaires`
+--
+ALTER TABLE `questionnaires`
+  ADD PRIMARY KEY (`id`);
+COMMIT;
+
 -- Manual create for projects
 
 CREATE TABLE projects ( id VARCHAR(36) NOT NULL , name VARCHAR(200) NOT NULL , project_type VARCHAR(100) NOT NULL , PRIMARY KEY (id)) ENGINE = InnoDB;
@@ -755,8 +769,26 @@ CREATE TABLE projects ( id VARCHAR(36) NOT NULL , name VARCHAR(200) NOT NULL , p
 INSERT INTO projects (id, name, project_type) VALUES ('a70951fe-e0cd-480e-88ef-16777ef226cc', 'First sleepbus', 'bus');
 INSERT INTO projects (id, name, project_type) VALUES ('836e38dc-b94b-4599-a2fd-63c50ba14330', 'Second sleepbus', 'bus');
 
+ALTER TABLE `projects` ADD `status` VARCHAR(100) NULL AFTER `project_type`, ADD `location` VARCHAR(255) NULL AFTER `status`, ADD `geo_coordinates` VARCHAR(100) NULL AFTER `location`;
+
 -- End projects
 
+CREATE TABLE `sleeps` (
+  `id` varchar(36) NOT NULL,
+  `dateofsleep` date DEFAULT NULL,
+  `bus` varchar(36) DEFAULT NULL,
+  `gender` varchar(15) DEFAULT NULL,
+  `age` varchar(8) DEFAULT NULL,
+  `companions` varchar(255) DEFAULT NULL,
+  `questionnaire` varchar(36) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for table `sleeps`
+--
+ALTER TABLE `sleeps`
+  ADD PRIMARY KEY (`id`);
+COMMIT;
 
 --
 -- Indexes for dumped tables
