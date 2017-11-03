@@ -218,6 +218,26 @@
                         <div class="faq-icon">
                             <img src="/images/faq_donate.png">
                         </div>
+                        <strong>How do I cancel an automatic payment I have with sleepbus?</strong>
+                    </div>
+                    <div class="icon-expand"><button type="button" class="btn btn-success collapsed" data-toggle="collapse" data-target="#expand-donate-8a"></button></div>
+                    <div class="faq-item-expand collapse" id="expand-donate-8a">
+                        <div class="faq-expand-holder"> 
+													<ol>
+														<li>Login to PayPal</li>
+														<li>Click the Settings icon next to "Log out."</li>
+														<li>Click the Payments tab, then click Manage pre-approved payments under "Pre-approved payments."</li>
+														<li>Select the payment you'd like to cancel, then click Cancel.</li>
+													</ol>
+												</div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="faq-item">
+                        <div class="faq-icon">
+                            <img src="/images/faq_donate.png">
+                        </div>
                         <strong>What happens if I make a mistake when donating?</strong>
                     </div>
                     <div class="icon-expand"><button type="button" class="btn btn-success collapsed" data-toggle="collapse" data-target="#expand-donate-9"></button></div>
