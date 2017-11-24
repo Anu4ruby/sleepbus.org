@@ -95,6 +95,10 @@ Currently nothing in place - offer suggestions.
 
 Just Docker, really. You may also need to start the Docker daemon, depending on your OS and method of installing Docker. 
 
+#### Reclaiming disk space
+
+If you find your disk space running out from Docker not cleaning up volumes or such, run this command `sudo docker volume ls -qf dangling=true | xargs -r sudo docker volume rm` (with or without the `sudo`'s, per your setup). [More info](https://lebkowski.name/docker-volumes/)
+
 ### The sleepbus domain
 
 In order to develop better solutions, we should have an understanding of the domain we are working in.

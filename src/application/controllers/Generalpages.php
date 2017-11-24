@@ -33,6 +33,22 @@ class Generalpages extends MY_Controller {
     $this->load->view('templates/footer');
   }
 
+  public function bus_criteria() {
+    $this->data['meta']['page_title'] = "Bus Criteria";
+
+    $this->load->view('templates/header-unresponsive', $this->data);
+    $this->load->view('general-pages/bus-criteria', $this->data);
+    $this->load->view('templates/footer-unresponsive');
+  }
+
+  public function sleepbuslive() {
+    $this->data['meta']['page_title'] = "sleepbusLIVE";
+
+    $this->load->view('templates/header-unresponsive', $this->data);
+    $this->load->view('general-pages/sleepbuslive', $this->data);
+    $this->load->view('templates/footer-unresponsive');
+  }
+
   public function simon_story() {
     $this->data['meta']['page_title'] = "Simon's Story";
 

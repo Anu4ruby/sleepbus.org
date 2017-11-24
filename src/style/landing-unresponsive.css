@@ -1,0 +1,687 @@
+.headerVolunteersNeeded {
+    overflow: hidden;
+    font-family: 'AvenirNextLTPro-Demi';
+    font-weight: bold;
+    background-color: #FFC000;
+    position: relative;
+    padding: 0px 20px 0px 20px;
+    height: 80px;
+    max-height: 80px;
+	margin: auto;
+	width: 1326px;
+}
+
+.headerVolunteersNeeded::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0px;
+}
+.headerVolunteersNeeded__sleepBusIcon, .headerVolunteersNeeded__simonIcon {
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.headerVolunteersNeeded__simonIcon {
+    background-image: url(/images/newcampaign/simonIcon.png);
+    width: 77px;
+    height: 80px;
+    margin-top: -40px;
+    left: 5px;
+}
+.headerVolunteersNeeded__container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1320px;
+    text-align: center;
+    font-size: 16pt;
+}
+.headerVolunteersNeeded {
+    font-family: 'AvenirNextLTPro-Demi';
+    font-weight: bold;
+}
+
+.headerVolunteersNeeded__sleepBusIcon {
+    background-image: url(/images/newcampaign/sleepBusIcon.png);
+    width: 124px;
+    height: 70px;
+    margin-top: -35px;
+    right: 5px;
+}
+.headerVolunteersNeeded__details a{
+	font-size: 14pt;
+	color: #000;
+}
+.headerVolunteersNeeded__sleepBusIcon, .headerVolunteersNeeded__simonIcon {
+    position: absolute;
+    top: 50%;
+}
+#headerbanner{
+	background: #FFC100;
+}
+#landingbody {
+    width: 1366px;
+}
+#landingbanner .fullwidth{
+	background:url('/images/newcampaign/BusBannerImage.jpg') no-repeat;
+	height: 575px;
+	background-size: cover;
+	width: 1366px;
+}
+#sleepbusstats .onefourth {
+    width: 287px;
+    float: left;
+    padding: 30px 0px;
+}
+#sleepbusstats p {
+	font-size: 23px;
+	text-align: center;
+}
+.onehalf {
+    width: 583px;
+    float: left;
+    padding:50px;
+}
+#whatissleepbus p {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 32px;
+	font-weight: normal;
+}
+#whatissleepbus h3,#sleepbuslive h3 {
+    color: #2DBFE8;
+    font-size: 31px;
+    margin-bottom: 20px;
+	font-weight: normal;
+}
+#whatsinsleepbus h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+    color: #2DBFE8;
+	font-weight: normal;
+}
+#whatsinsleepbus p, #sleepbuslive p,#sleepbusfeatures p, #aboutsimon p{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#sleepbuslive p{
+    font-size: 25px;
+    margin-bottom: 20px;
+	position:relative;
+	z-index:1;
+}
+
+#sleepbuslive a{
+    color: #2DBFE8;
+    font-weight: normal;
+    margin-top: 10px;
+    float: left;
+    text-decoration: underline;
+}
+#insideimage img {
+    padding: 65px 0px;
+    margin-right: 30px;
+}
+#insideimage {
+    float: left;
+}
+#insidetext {
+    float: left;
+}
+#whatsinsleepbus h2{
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+#whatsinsleepbus p {
+    font-size: 25px;
+}
+#whatsinsleepbus .fullwidth {
+    margin: auto;
+    width: 750px;
+}
+#whatissleepbusimage {
+    text-align: center;
+}
+#sleepbusliveimage {
+    text-align: center;
+    margin: 20px 0px;
+}
+#sleepbuslive .onehalf.last {
+    padding: 0px;
+    position: relative;
+    left: -73px;
+    top: -70px;
+}
+#sleepbusfeatures #insideimage img{
+	padding: 0px;
+}
+#sleepbusfeatures .fullwidth {
+    width: 1010px;
+    margin: auto;
+    clear: both;
+}
+#sleepbusfeatures #insidetext{
+	margin-bottom: 50px;
+}
+
+#aboutsimon .onehalf {
+    padding: 0px;
+}
+#aboutsimon .onehalf.last {
+    padding: 0px;
+}
+#aboutsimon p{
+	margin-bottom: 20px;
+}
+#aboutsimon span {
+    color: #2BC4F5;
+}
+#aboutsimon a{
+	color: #6BC526;
+}
+#aboutsimon {
+    float: left;
+    margin-top: 80px;
+}
+#socialmedia {
+    background: #F6F4F0;
+    float: left;
+    width: 1366px;
+    margin-top: -4px;
+}
+#socialmedia li {
+    float: left;
+    list-style: none;
+    padding:20px 20px 10px;
+    width: 233px;
+    text-align: center;
+}
+#facebook {
+    margin-top: 6px;
+}
+#mail {
+    margin-top: 13px;
+}
+#corporatepartners h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+    color: #2DBFE8;
+    float: left;
+    margin-right: 40px;
+	font-weight: normal;
+}
+
+#corporatepartners .fullwidth {
+    float: left;
+    padding: 40px 60px;
+}
+#corporatepartnerslogo .onehalf{
+	padding: 0px;
+	width: 603px;
+}
+#partners3 {
+	left: 12px;
+    position: relative;
+    top: -13px;
+}
+#partners4 {
+    left: 34px;
+    position: relative;
+    top: -13px;
+}
+#partners5 {
+    position: relative;
+    top: -56px;
+    left: 18px;
+}
+#partners6 {
+    position: relative;
+    top: -56px;
+    left: 18px;
+}
+#partners7 {
+    position: relative;
+    top: -2px;
+}
+#partners9 {
+    left: 81px;
+    position: relative;
+    top: -19px;
+}
+#partners10 {
+    position: relative;
+    top: -19px;
+    left: 45px;
+}
+footer {
+    background: #000;
+    float: left;
+    width: 1366px;
+}
+#leftfooter ul {
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    float: left;
+    list-style: none;
+}
+#leftfooter ul li {
+    font-size: 15px;
+    padding: 5px 0;
+    color: #fff;
+}
+#leftfooter ul li a:hover {
+    text-decoration: none;
+    color: #2fc5f4;
+}
+#leftfooter ul li a {
+    color: #fff;
+	text-decoration: none;
+}
+#listtitle{
+	font-weight: bold;
+}
+#leftfooter {
+    padding: 50px 0px 50px 50px;
+}
+.awesomeemails a:hover {
+    background: #2fc5f4 url(/images/newcampaign/email.png) no-repeat 15px 50%;
+    border: #2fc5f4 1px solid;
+}
+.awesomeemails a {
+    display: inline-block;
+    color: #fff;
+    font-family: 'AvenirNextLTPro-Regular';
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: #fff 1px solid;
+    padding: 13px 20px 13px 40px;
+    background: url(/images/newcampaign/email.png) no-repeat 15px 50%;
+    border-radius: 5px;
+}
+#charitylogo img {
+    width: 200px;
+}
+#charitylogo {
+    float: left;
+    width: 200px;
+    padding-top: 30px;
+}
+#footer .onethird {
+    padding: 50px 0px 25px 0px;
+    width: 520px;
+    text-align: right;
+}
+.footerfbbox {
+    width: 512px;
+    float: left;
+    text-align: right;
+    padding: 25px 0px 25px 0px;
+}
+.fb {
+    background: url(/images/newcampaign/fb.png) no-repeat left top;
+    height: 49px;
+    width: 49px;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.fb:hover {
+    background: url(/images/newcampaign/fb-hover.png) no-repeat left top;
+}
+.fb span {
+    visibility: hidden;
+}
+
+.twitter {
+    background: url(/images/newcampaign/twitter.png) no-repeat left top;
+    height: 49px;
+    width: 49px;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.twitter:hover {
+    background: url(/images/newcampaign/twitter-hover.png) no-repeat left top;
+}
+.twitter span {
+    visibility: hidden;
+}
+.youtube {
+    background: url(/images/newcampaign/youtube.png) no-repeat left top;
+    height: 49px;
+    width: 49px;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.youtube:hover {
+    background: url(/images/newcampaign/youtube-hover.png) no-repeat left top;
+}
+.youtube span {
+    visibility: hidden;
+}
+#rightfooter p{
+	font-size: 13px;
+	text-align: right;
+}
+#rightfooter p a {
+    color: #666666;
+    text-decoration: none;
+    float: right;
+}
+#footer{
+	background: #000;
+	margin: auto;
+	clear: both;
+}
+#footer .pagewidth {
+    background: #000;
+	height: 250px;
+	width: 1366px;
+}
+#divider {
+    float: left;
+    padding: 110px 0px;
+}
+#definition {
+    background: url(/images/newcampaign/dashedcircle.png)no-repeat;
+    padding: 184px 20px 184px 80px;
+}
+#whatsinsleepbus {
+    width: 1366px;
+    float: left;
+    margin-top: 80px;
+}
+#safesleeptop li {
+    font-size: 20px;
+    margin-top: 15px;
+}
+#safesleeptop ul {
+    list-style: none;
+    text-align: center;
+}
+#safesleeptop h4 {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+}
+#safesleeptop {
+    float: left;
+    border-radius: 15px 15px 0px 0px;
+    border: 3px solid;
+    width: 130px;
+    padding: 15px;
+}
+#safesleep {
+	float: left;	
+    position: relative;
+    top: 50px;
+    left: 30px;
+    color: #fff;
+    background: #000;
+    border-radius: 20px;
+    padding: 12px;
+    width: 165px;
+}
+#safesleepbottom {
+    background: #fff;
+    float: left;
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    line-height: 35px;
+    border-radius: 0px 0px 15px 10px;
+    width: 166px;
+    padding:10px 0px;
+}
+#providesafesleep {
+    float: left;
+    background: #000;
+    color: #fff;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    border-radius: 20px;
+    padding: 20px 23px;
+    width: 303px;
+	height: 403px;
+}
+#providesafesleep h2 {
+    font-size: 37px;
+    font-family: 'AvenirNextLTPro-Medium';
+}
+#providesafesleep p {
+    margin: 20px 0px;
+}
+#providesafesleep input {
+    border-radius: 5px;
+    height: 40px;
+    width: 271px;
+    font-size: 20px;
+    padding: 6px 2px 6px 27px;
+    color: #2fc5f4;
+    margin-bottom: 15px;
+}
+#onlinedonation {
+    background: #2DBFE8;
+    border-radius: 10px;
+    color: #000;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    float: left;
+    width: 271px;
+    margin: 32px 0px;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+/* added for new landing page */
+
+
+.buttonlink.blue{
+	background: #2DBFE8;
+	text-align: center;
+}
+
+.buttonlink.dark a{
+  color: black;
+}
+
+.buttonlink.medium {
+    padding: 15px 15px;
+    font-size: 18px !important;
+    border-radius: 10px;
+}
+
+/* new updates */
+
+
+#sleepbusstats .fullwidth {
+	padding-top:  30px;
+    float: left;
+    width: 1366px;
+    margin-bottom: 80px;
+}
+#whatissleepbus .onehalf.last {
+    padding-top: 90px;
+}
+#sleepbusliveleft {
+    margin-top: 200px;
+}
+#sleepbuslive h3 {
+    color: #2DBFE8;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+#sleepbusliveleft img {
+    margin-bottom: 20px;
+    padding-right: 58px;
+    float: right;
+}
+
+#sleepbusimagewide{
+	position: relative;
+	top: -114px;
+}
+#aboutsimon .onehalf {
+    width: 645px;
+}
+#aboutsimon a{
+	text-decoration: underline;
+	}
+#sleepbusstats .onefourth.last{
+	width: 312px;
+}
+/*
+should be global if any...?
+p{
+	color:#1B1919;
+}
+*/
+
+#partners8 {
+    position: relative;
+    left: 32px;
+    top: -2px;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+.dollar {
+    position: absolute;
+    color: #000;
+    z-index: 999;
+    font-size: 20px;
+    top: 12px;
+    left: 10px;
+}
+.positionrelative {
+    position: relative;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.aud {
+    position: absolute;
+    color: #000;
+    z-index: 999;
+    font-size: 16px;
+    top: 15px;
+    right: 10px;
+}
+
+#nav1 li a span {
+    color: #2DBFE8;
+}
+/*added for dropdown menu*/
+.aboutus-menu {
+    list-style-type: none;
+    margin: 0;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left:-7px;
+    top:35px;
+	height: 37px;
+}
+.donate-menu{
+    list-style-type: none;
+    margin: 0;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+	left: -20px;
+	top: 37px;
+}
+.aboutus-menu .first{
+	padding:25px 25px 5px 25px;	
+}
+.donate-menu .first{
+	padding:25px 25px 5px 25px;	
+}
+.aboutus-menu .last{
+	padding:0 25px 5px 25px;
+}
+.donate-menu .last{
+	padding:0 25px 5px 25px;
+}
+.aboutus-menu li{
+	margin: 0;
+	float: left;
+	background-color: #2fc5f4;
+	width: 230px;
+	padding:0 25px 5px 25px;
+}
+.donate-menu li{
+	margin: 0;
+	float: left;
+	background-color: #2fc5f4;
+	width: 230px;
+	padding:0 25px 5px 25px;
+}
+.aboutus:hover .aboutus-menu{
+	display: block;
+}
+.donate:hover .donate-menu{
+	display: block;
+}
+.aboutus .arrow3{
+	background: transparent !important;
+	top: 13px;
+}
+.donate-menu .arrow3{
+	background: transparent !important;
+	top: 13px;
+}
+.aboutus-menu li a{
+	line-height: normal;
+	margin: 0;
+	text-align: left;
+	padding: 4px 0 !important;
+	display: block;
+	font-size: 16px !important;
+	text-decoration: none;
+	color: #fff;
+	text-transform:none;
+}
+.aboutus-menu li a:hover{
+	color: #000 !important;
+}
+.donate-menu li a{
+	line-height: normal;
+	margin: 0;
+	text-align: left;
+	padding: 4px 0 !important;
+	display: block;
+	font-size: 16px !important;
+	text-decoration: none;
+	color: #fff;
+	text-transform:none;
+}
+.donate-menu li a:hover{
+	color: #000 !important;
+}
+.donate:hover .buttonlink.white.donate{
+	background-color: #2fc5f4;
+	color: #000;
+	border: none;
+	
+}
+
+.donate{
+    margin-left: 180px !important;
+}
+nav li img {
+    margin-right: 7px;
+    position: relative;
+    top: 2px;
+}

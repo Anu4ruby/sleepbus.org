@@ -47,8 +47,9 @@ class Home extends MY_Controller {
 
 		$this->data['monthly_donation_form']=$this->load->view('home/monthly-donation-form',$this->data,true);
 		$this->data['one_time_donation_form']=$this->load->view('home/one-time-donation-form',$this->data,true);
-		$this->load->view('templates/header',$this->data);
-		$this->load->view('home/home',$this->data);
-		$this->load->view('templates/footer');
+
+		$this->load->view('templates/header-unresponsive',$this->data);
+		$this->load->view('home/home-unresponsive',$this->data);
+		$this->load->view('templates/footer-unresponsive');
 	}
 }

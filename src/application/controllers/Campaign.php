@@ -14,6 +14,17 @@ class Campaign extends MY_Controller {
     $this->campaign_details($campaign_id);
   }
 
+  public function showall() {
+    $campaigns = $this->Campaign_model->GetListOfCampaigns();
+    $this->data['campaigns'] = $campaigns;
+    $this->data['meta']['page_title'] = 'sleepbus Campaigns';
+
+    $this->load->view('templates/header-unresponsive',$this->data);
+    $this->load->view('campaign/list-unresponsive',$this->data);
+    $this->load->view('templates/footer-unresponsive');
+  }
+
+
   public function campaign_details($campaign_id) {
     $this->data['campaign_id']=$campaign_id;	  
     $this->data['campaign_details']=$this->User_model->GetCampaignDetails($this->data['campaign_id']);
@@ -77,6 +88,22 @@ class Campaign extends MY_Controller {
       $this->data['donations']=$this->User_model->GetAllDonationOfCampaign($this->data['campaign_id'],"limit ".$this->data['pagination']['start_limit'].",".   $this->data['pagination']['end_limit']);
     }
 
+    $total_raised = $this->Campaign_model->GetTotalRaised($this->data['campaign_id']);
+
+    $this->data['raised_amount'] = $total_raised > 0 ? number_format(($total_raised),2) : 0;
+    $this->data['safe_sleeps_raised'] = $total_raised > 0 ? floor($total_raised / 27.50) : 0;
+    $this->data['campaign_goal'] = number_format(($this->data['campaign_details']['campaign_goal']), 2);
+    $this->data['created_time_ago'] = $this->User_model->getTimeAgo($this->data['campaign_details']['dateadded']);
+    $this->data['created_date'] = $this->data['campaign_details']['dateadded'];
+    $this->data['campaigner_photo'] = 'sleepy.png';
+
+	
+		// TODO: HERE	
+
+	  if (file_exists(APPPATH . '/images/' . '47.png')) {
+			$this->data['campaigner_photo'] = '47.png';
+		}	
+
     $this->websitejavascript->include_footer_js=array('CampaignJs','SuccessMessageJs');
     $this->data['meta']['page_title'] = $this->data['campaign_details']['campaign_name'];
     $this->data['active_menu']="campaign";  
@@ -84,9 +111,15 @@ class Campaign extends MY_Controller {
     $this->data['meta']['og_campaign_url'] = $this->data['campaign_details']['url']; 
     $this->data['meta']['og_campaign_description'] = $this->data['campaign_details']['statement']; 
     $this->data['meta']['og_campaign_image'] = $this->data['campaign_details']['image_file']; 
+
     $this->load->view('templates/header',$this->data);
     $this->load->view('campaign/campaign-details',$this->data);
     $this->load->view('templates/footer');
+
+    // toggle for new campaign design
+    //$this->load->view('templates/header-unresponsive',$this->data);
+    //$this->load->view('campaign/campaign-details-unresponsive',$this->data);
+    //$this->load->view('templates/footer-unresponsive');
   }
 
   public function getMoreRecords() {
