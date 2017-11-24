@@ -27,6 +27,8 @@
     case  "meet-the-board" : $route['meet-the-board']="generalpages/meet-the-board";	break;
     case  "in-the-media" : $route['in-the-media']="generalpages/media";	break;
     case  "sleepbus-toolbox" : $route['sleepbus-toolbox']="generalpages/toolbox";	break;
+    case  "bus-criteria" : $route['bus-criteria']="generalpages/bus-criteria";	break;
+    case  "sleepbuslive" : $route['sleepbuslive']="generalpages/sleepbuslive";	break;
     case  "simon-story" : $route['simon-story']="generalpages/simon-story";	break;
     case  "signin" : $route['signin']="account/signin";	break;
     case  "signup" : $route['signup']="account/signup";	break;
@@ -41,6 +43,7 @@
      $route['reset-password/(:any)']="account/reset-password/$1";
 
     $route['campaigns/getMoreRecords'] = "campaign/getMoreRecords";
+    $route['campaigns/list'] = "campaign/showall";
     $route['campaign/(:any)'] = "campaign/show/$1";
 
     /*

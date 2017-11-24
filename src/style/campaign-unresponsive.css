@@ -1,0 +1,676 @@
+/* Avenir Next Pro */ 
+  
+@font-face {font-family: 'AvenirNextLTPro-Regular';src: url('//code.ionicframework.com/assets/fonts/28882F_0_0.eot');src: url('//code.ionicframework.com/assets/fonts/28882F_0_0.eot?#iefix') format('embedded-opentype'),url('//code.ionicframework.com/assets/fonts/28882F_0_0.woff') format('woff'),url('//code.ionicframework.com/assets/fonts/28882F_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'AvenirNextLTPro-Medium';src: url('//code.ionicframework.com/assets/fonts/28882F_1_0.eot');src: url('//code.ionicframework.com/assets/fonts/28882F_1_0.eot?#iefix') format('embedded-opentype'),url('//code.ionicframework.com/assets/fonts/28882F_1_0.woff') format('woff'),url('//code.ionicframework.com/assets/fonts/28882F_1_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'AvenirNextLTPro-UltLt';src: url('//code.ionicframework.com/assets/fonts/29CC36_0_0.eot');src: url('//code.ionicframework.com/assets/fonts/29CC36_0_0.eot?#iefix') format('embedded-opentype'),url('//code.ionicframework.com/assets/fonts/29CC36_0_0.woff') format('woff'),url('//code.ionicframework.com/assets/fonts/29CC36_0_0.ttf') format('truetype');}
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: 'AvenirNextLTPro-Regular',Arial, sans-serif;
+}
+
+body {
+	font-size: 14px;
+
+}
+.pagewidth{
+	 max-width: 1366px;
+	 margin: auto;
+
+}
+
+#header{
+	background: #000;
+	color:#fff;
+	margin: auto;
+}
+#header .pagewidth{
+	padding: 20px;
+	width: 1326px;
+	background: #000;
+}
+#logo{
+	float:left;
+	width: 285px;
+}
+#navbar{
+	display: table;
+	width: 1000px;
+}
+
+#nav1 li{
+	display: block;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin-left: 20px;
+	position: relative;
+	float: left;
+}
+#nav1 li a{
+	color: #fff;
+	text-decoration: none;
+	padding:10px 15px;
+	float: left;
+}
+
+
+#nav2 li{
+	display: block;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin-left: 20px;
+	position: relative;
+	float: left;
+}
+#nav2{
+	float: right;
+}
+#nav2 li a{
+	color: #fff;
+	text-decoration: none;
+	padding:10px 15px;
+	float: left;
+}
+#nav2 img{
+	float: left;
+	margin-right: 10px;
+}
+.buttonlink{
+	border-radius: 5px;
+
+}
+.buttonlink.white{
+	border: 1px solid #fff;
+}
+.alignright{
+	float: right;
+}
+.alignleft{
+	float: left;
+}
+.buttonlink a{
+	color: #fff;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.buttonlink.yellow{
+	background: #ECAF00;
+	text-align: center;
+	margin-top: 20px;
+}
+.buttonlink.green{
+	background: #6FC824;
+	text-align: center;
+}
+.buttonlink.small{
+	padding: 8px 10px;
+	font-size: 12px !important;
+}
+#campaignlogo
+{
+	background: #000;
+	border-radius: 7px;
+	float: left;
+	padding: 5px 15px;
+	top: 670px;
+	position: absolute;
+}
+
+.threefifth{
+	width: 935px;
+	padding: 20px;
+	float: left;
+}
+.twofifth{
+	width: 351px;
+	padding: 20px;
+	float: left;
+}
+.onethird{
+	width: 290px;
+	float: left;
+}
+.twothird{
+	width: 645px;
+	float: left;
+}
+#campaignbanner .threefifth{
+	height: 575px;
+	background-size: cover;
+  background-repeat: no-repeat;
+}
+#campaignbanner {
+    width: 1366px;
+}
+
+#campaignbanner .twofifth{
+	padding: 20px;
+	background-color: #FFBD00;
+	height: 575px;
+}
+#campaignbody{
+width: 1366px;
+}
+#campaigntitle img{
+	vertical-align: middle;
+	margin-right: 15px;
+	float: left;
+}
+#campaigntitle h2{
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	padding: 20px 0px;
+	
+}
+#campaigngoal{
+	font-size: 21px;
+	margin-top: 12px;
+}
+#campaigngoal span{
+	font-size: 30px;
+	font-weight: bold;
+}
+#campaigngoal em{
+	font-style: normal;
+	font-size: 12px;
+}
+
+#donatenow {
+    background: #6FC824;
+    padding: 13px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+a #donatenow, a #shareonfb {
+    color: #fff;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+#shareonfb {
+    background: #00BFE8;
+    text-align: center;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#shareonfb img {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+#numberofshares {
+    float: right;
+    font-size: 12px;
+    font-style: normal;
+    margin-top: 5px;
+}
+#campaignnotice img {
+    width: 100%;
+}
+
+#campaignnotice {
+    padding-top: 30px;
+    padding-bottom:15px;
+}
+
+#campaigndate {
+    font-style: normal;
+    font-size: 12px;
+    float: left;
+}
+#campaignfriendlydate {
+    float: right;
+    font-size: 9px;
+    font-style: normal;
+    text-transform: uppercase;
+}
+#campaignfriendlydate img {
+    vertical-align: bottom;
+    width: 15px;
+    padding-right: 3px;
+}
+#campaigneravatar img {
+    width: 60px;
+    float: left;
+    margin-right: 15px;
+}
+#campaigneravatar {
+    clear: both;
+}
+#campaigninfo {
+    border-bottom: 3px dotted;
+    float: left;
+    width: 100%;
+    padding: 9px 0px;
+    margin: 10px 0px;
+}
+#campaigername{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 10px;
+}
+#campaignerlocation {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+#donationtitle {
+    background: #76CF1C;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 14px;
+    height: 16px;
+}
+#numberofdonations {
+    float: left;
+}
+#recent {
+    float: right;
+}
+#donationentries {
+    background: #F6F6F6;
+
+}
+#donationentries li {
+    list-style: none;
+	border-bottom: 1px solid #D6D6D6;
+	padding: 20px;
+}
+#donationamount {
+    color: #00C7FB;
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    width: 170px;
+}
+#donationamount span {
+    font-size: 20px;
+    vertical-align: super;
+}
+#donationlikes {
+    float: right;
+    font-size: 22px;
+}
+#donationlikes img {
+    width: 55px;
+}
+#donorname {
+    font-size: 18px;
+}
+#donationlist{
+	
+
+}
+#donationdate {
+    color: #AEB2B5;
+    font-size: 14px;
+    line-height: 30px;
+}
+#donationmessage {
+    font-size: 16px;
+    color: #AEB2B5;
+}
+#donationpagination {
+    background: #E5E5E5;
+    padding: 15px;
+    text-align: center;
+    float: left;
+    width: 207px;
+    color: #898989;
+}
+#donationpagination span{
+	color: #000;
+}
+#campaigndescription{
+	padding: 0px 0px 0px 25px;
+}
+.edittext img {
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.edittext {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 19px;
+}
+#campaigntextarea textarea {
+    border: 1px solid #C3C4C3;
+    border-radius: 10px;
+    width: 575px;
+    padding: 20px;
+    font-size: 18px;
+    color: #1B1919;
+    font-weight: lighter;
+    height: 455px;
+    resize: none;
+}
+#campaigntextarea {
+    margin: 15px 0px;
+}
+.campaigntitles input {
+    border: 1px solid #D2D3D2;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 575px;
+    font-size: 16px;
+}
+.campaigntitles h4 {
+    color: #00C7FB;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.campaigntitles {
+    margin-top: 20px;
+}
+#postupdate textarea{
+	border: none;
+	height: 40px;
+	width: 535px;
+	resize: none;
+	padding: 10px;
+	font-size: 16px;
+	
+}
+#postupdate{
+	border: 1px solid #C3C4C3;
+    border-radius: 10px;
+    width: 595px;
+    padding: 10px;
+    font-size: 20px;
+    color: #1B1919;
+    font-weight: lighter;
+	float: left;	
+}
+.postoptions {
+    float: left;
+    border: 2px solid #00C6FB;
+    border-radius: 5px;
+    margin:10px 10px 0px 0px;
+    color: #00C6FB;
+    font-size: 11px;
+    padding: 5px;
+}
+.postoptions input {
+    width: inherit;
+    margin-right: 10px;
+}
+#postupdatebutton{
+	margin-top: 10px;
+}
+#campaigngallery {
+    padding: 0px;
+    float: left;
+    margin-top: 20px;
+    width: 600px;
+}
+#campaigngallery h4 {
+    color: #00C7FB;
+    font-weight: lighter;
+    font-size: 18px;
+    margin-top: 10px;
+}
+#campaigngallery a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #000;
+}
+#gallerygrid{
+	float: left;
+}
+.gallerygridcolumn{
+	width: 30%;
+	margin-right: 5%;
+	float: left;
+}
+.gallerygridcolumn.last{
+	margin-right: 0px;
+	float: right;
+}
+#galleryimage {
+    width: 100%;
+    border: 4px solid #B4B5B4;
+    float: left;
+    margin-top: 20px;
+}
+#deletephoto img , #editphoto img{
+    width: 12px;
+    float: left;
+    position: relative;
+    top: 40px;
+    left: 10px;
+    margin-right: 4px;
+}
+#feeddate{
+	color: #8A8B89;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+#feeddate img {
+    width: 15px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+#feedtitle {
+    color: #00C7FB;
+    margin: 5px 0px;
+}
+
+#clickphoto a{
+	color: #8A8B89;
+	font-size: 14px;
+	text-decoration: none;
+}
+#seemore a{
+	color: #00C7FB;
+	
+}
+#newsfeedcontent {
+    float: left;
+}
+#newsfeed h3, #eventslist h3 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 14px;
+}
+#newsfeedcontent li {
+    list-style: none;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    float: left;
+    width: 320px;
+}
+#feedphoto img {
+    width: 55px;
+    border: 1px solid #B5BABB;
+    vertical-align: top;
+    float: left;
+}
+#feedphoto{
+	float: left;
+}
+#newsfeed {
+    background: #E4E4E3;
+}
+#feeddetails {
+    float: left;
+    margin-top: 10px;
+}
+#feedphoto img {
+    width: 60px;
+    border: 1px solid #B5BABB;
+    vertical-align: top;
+    float: left;
+}
+#feeddescription {
+    font-size: 14px;
+    width: 178px;
+    margin-right: 5px;
+}
+#feeddescriptionexerpt,#eventdetails{
+	font-size: 14px;
+	width: 245px;
+	float: left;
+}
+#seemoreactivity {
+    color: #000;
+    font-size: 14px;
+    margin-top: 10px;
+    float: left;
+}
+#eventslist {
+    float: left;
+    margin-top: 20px;
+}
+#eventtitle {
+    background: #76CF1C;
+    padding: 7px 12px;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#eventslist li{
+	list-style: none;
+	float: left;
+	width: 350px;
+	margin-top: 15px;
+}
+#eventcontent {
+    background: #fff;
+    padding: 15px;
+    border-radius: 0px 0px 10px 10px;
+}
+#eventfriendlydate{
+	color: #8A8B89;
+	font-size: 10px;
+	text-transform: uppercase;
+	float: right;
+}
+#eventfriendlydate img {
+    width: 15px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+#eventdetails {
+    margin-top: 10px;
+    height: 65px;
+}
+#eventdate, #eventtime, #eventlocation {
+    width: 330px;
+    font-size: 14px;
+    margin-bottom:10px;
+}
+#eventdate span, #eventtime span, #eventlocation span {
+    text-transform: uppercase;
+    color: #76CF1C;
+    font-size: 14px;
+}
+#addevent {
+    background: #76CF1C;
+    border-radius: 10px;
+    float: left;
+    margin: 20px 0px 0px 0px;
+    padding: 15px;
+    width: 320px;
+}
+#addevent h3 {
+    color: #fff;
+    font-size: 16px;
+}
+#editeventname, #editeventlocation, #editdescription {
+    font-size: 14px;
+    margin-top: 10px;
+    float: left;
+}
+#editeventname input, #editeventlocation input {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 7px;
+    color: #AEB2B5;
+    display: block;
+    margin-top: 5px;
+    width: 305px;
+    font-size: 14px;
+}
+#editdate, #edittime{
+    font-size: 14px;
+    margin-top: 10px;
+    float: left;
+  
+ }
+ #editdate{
+  width: 120px;	 	 
+ }
+ #edittime{
+width: 110px;	 
+ }
+#editdate input{
+	border: 1px solid #000;
+    border-radius: 5px;
+    padding: 7px;
+    color: #AEB2B5;
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    width: 100px;
+}
+#edittime input{
+	border: 1px solid #000;
+    border-radius: 5px;
+    padding: 7px;
+    color: #AEB2B5;
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    width: 90px;
+}
+#editdescription textarea{
+	border: 1px solid #000;
+    border-radius: 5px;
+    padding: 7px;
+    color: #AEB2B5;
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;	
+    width: 305px;
+    height: 80px;
+    resize: none;
+}
+#addeventbutton{
+	margin-top: 10px;
+	float: left;
+}
+#endtime{
+	float: right;
+	padding-top: 40px;
+}
+#nextpage {
+    float: left;
+    color: #A6A6A6;
+    background: #D8D8D8;
+    padding: 15px 20px;
+}
+#campaigntextarea p {
+    font-family: 'AvenirNextLTPro-UltLt';
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+}

@@ -72,27 +72,30 @@ class MY_Controller extends CI_Controller {
 		}
 		else // front end settings
 		{
-         $this->load->library('CommonFunctions');	   
-	     $this->data['active_menu']=$segment;
-     	 $this->load->library('WebsiteCss');
-         $this->load->library('WebsiteJavascript');
- 	     $this->load->Model('Website_model');
-		 $this->data['ip_address']=$this->GetIPAddress();		 
-		 $this->data['ip_country']=$this->GetIpLocation();		 
+      $this->load->library('CommonFunctions');	   
+      $this->data['active_menu']=$segment;
 
-		 $this->load->helper('form');
-   	     $this->load->model('Account_model'); 
-    	 $this->user_info=$this->Account_model->CheckUser($this->session->userdata('site_username'),$this->session->userdata('site_password'));
-		 
-         if($this->uri->segment(1) == "user")
-		 {
-		  $this->UserSessionCheck();
-		 }	
-		 // Payment Settings
-		 $this->data['price_type']="AUD";	 
 
-	     $this->data['merchantEmail'] = getenv('PP_MERCHANT_EMAIL');
-         $this->data['paypal_url'] = getenv('PP_FORM_URL');
+
+      $this->load->library('WebsiteJavascript');
+
+      $this->load->Model('Website_model');
+      $this->data['ip_address']=$this->GetIPAddress();		 
+      $this->data['ip_country']=$this->GetIpLocation();		 
+
+      $this->load->helper('form');
+      $this->load->model('Account_model'); 
+      $this->user_info=$this->Account_model->CheckUser($this->session->userdata('site_username'),$this->session->userdata('site_password'));
+
+      if($this->uri->segment(1) == "user")
+      {
+        $this->UserSessionCheck();
+      }	
+      // Payment Settings
+      $this->data['price_type']="AUD";	 
+
+      $this->data['merchantEmail'] = getenv('PP_MERCHANT_EMAIL');
+      $this->data['paypal_url'] = getenv('PP_FORM_URL');
 
 	    }
 	}

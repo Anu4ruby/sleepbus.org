@@ -110,6 +110,7 @@
    if($res->num_rows() > 0)
    {
     $row=$res->row_array();
+	$campaign_details['dateadded']=$row['dateadded'];
 	$campaign_details['campaign_name']=$row['campaign_name'];
 	$campaign_details['campaign_type']=$row['campaign_type'];	
 	$campaign_details['campaign_goal']=$row['campaign_goal'];
