@@ -209,7 +209,7 @@ This issue has gone on long enough, get in touch and get onboard."</p>
 				
 			<p><span>Simon Rowe | sleepbus Founder</span></p>
 			
-<p><a href="/connect">Read Simon's story & the birth of sleepbus.</a></p>
+<p><a href="/about-us">Read Simon's story & the birth of sleepbus.</a></p>
 				
 		</div>
 	</div>
